@@ -268,3 +268,16 @@ int main()
     cin >> number;
     cout << "The factorial of the number " << number << " is " << factorial_2(number) << endl;
 }
+
+int main () // With do-while statement
+{
+    string password = "12345";
+    string guess;
+    do {
+        cout << "Give me a password: " << endl;
+        cin >> guess; } while (guess != password);
+
+    cout << "Welcome, Fabio!" << endl;
+    return 0;
+}
+

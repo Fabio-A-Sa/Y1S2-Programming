@@ -5,31 +5,14 @@
 #include <cmath>
 using namespace std;
 
-int factorial_1 (int number)
+int main () // With do-while statement
 {
-    int fact = 1;
-    for ( number = number ; number > 1; number--)
-    {
-        fact = fact * number ;
-    }
-    return fact;
-}
+    string password = "12345";
+    string guess;
+    do {
+        cout << "Give me a password: " << endl;
+        cin >> guess; } while (guess != password);
 
-int factorial_2 (int number)
-{
-    int i = 1, fact = 1;
-    while ( i <= number)
-    {
-        fact = fact * i;
-        i++;
-    }
-    return fact;
-}
-
-int main()
-{
-    int number;
-    cout << "Give me a number: " << endl;
-    cin >> number;
-    cout << "The factorial of the number " << number << " is " << factorial_2(number) << endl;
+    cout << "Welcome, Fabio!" << endl;
+    return 0;
 }
