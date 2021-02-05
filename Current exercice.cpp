@@ -3,56 +3,68 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <vector>
 using namespace std;
 
-void print_array (int array[], int size) 
+void print_vector (vector<int> something)
 {
-    for (int i = 0; i < size; i++) {
-        cout << array[i] << " "; }   
+    for (int i = 0; i < something.size() ; i++) {
+        cout << something[i] << " "; }
 }
 
-int main() // Work with arrays
+int main () // Using vectors
 {
-    int size, index, new_value;
-    string answer;
-    cout << "What size is your array? " << endl;
-    cin >> size;
-    int next_number, numbers[size];
+    vector<int> numbers = {1, 2, 3};
+    int answer, index, new_value;
 
-    for (int i = 0; i < size; i++) {
-        cout << "What's next number? ";
-        cin >> next_number;
-        numbers[i] = next_number; }
+    cout << "In the begin, the vector is: ";
+    print_vector(numbers);
+    cout << endl;
 
-    cout << "Your array is: ";
-    print_array(numbers, size);
-    
-    do {
-        cout << endl;
-        cout << "Do you like to modify any value?\nY --> Yes\nN --> No\nYour answer: ";
+    do
+    {
+        cout << "Do you like to modify or increment this vector?\n1 --> Modify\n2 --> Increment\n3 --> No" << endl;
+        cout << "Your choice: ";
         cin >> answer;
-        if (answer == "Y" || answer == "y")
+        
+        switch (answer)
         {
-            cout << "Which index do you like to modify? ";
+        case 1:
+            cout << "Which index would you like to modify?: ";
             cin >> index;
 
-            if (index >= size) {
-                cout << "Input not valid! Try again:" << endl;
-            }
-            
-            else {
+            if (index < numbers.size()) {
                 cout << "New value: ";
                 cin >> new_value;
-
                 numbers[index] = new_value;
+                cout << " " << endl;
+                cout << "The vector is now: ";
+                print_vector(numbers); }
+            else {
+                cout << "Out of the range! Please try again.";
+                break; }
 
-                cout << "Your array is now: ";
-                print_array(numbers, size);
-            }
+            break;
+
+        case 2:
+            cout << "Which number do you like to append? ";
+            cin >> new_value;
+            numbers.push_back(new_value);
+            cout << " " << endl;
+            cout << "The vector is now: ";
+            print_vector(numbers);
+            break;
+        
+        default:
+            break;
         }
+        
+    cout << endl;
+    } while (answer != 3);
 
-    } while (answer != "N" && answer != "n");
-
+    cout << "Final version of vector: ";
+    print_vector(numbers);
+    cout << endl;
     cout << "Done!";
     return 0;
 }
