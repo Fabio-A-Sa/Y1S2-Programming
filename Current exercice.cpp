@@ -3,25 +3,12 @@
 #include <iostream>
 using namespace std;
 
-double imc (int massa, double altura)
+int main() // Boolean data type
 {
-    double indice;
-    indice = massa / (altura/100 * altura/100);
-    return indice;
-}
-
-void print (int massa, int altura)
-{
-    cout << "Your IMC is " << imc(massa, altura);
-}
-
-int main()
-{
-    int w;
-    double h;
-    cout << "Your weight: ";
-    cin >> w;
-    cout << "Your height: ";
-    cin >> h;
-    print(w, h);
+    bool pizza_is_good = true;
+    cout << pizza_is_good << endl; // Return 1 --> True ; 0 --> False
+    if (pizza_is_good) 
+    {
+        cout << "Its true, of couse!";
+    }
 }

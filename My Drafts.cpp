@@ -109,3 +109,21 @@ int main()
     cin >> h;
     print(w, h);
 }
+
+int main()
+{
+    char x = 'F';
+    cout << (int) x; // View ASCII characters value
+}
+
+int main() // Boolean data type
+{
+    bool pizza_is_good = true;
+    cout << pizza_is_good << endl; // Return 1 --> True ; 0 --> False
+    if (pizza_is_good) 
+    {
+        cout << "Its true, of couse!";
+    }
+}
+
+
