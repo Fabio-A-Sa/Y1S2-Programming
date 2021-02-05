@@ -240,3 +240,20 @@ int main() // Loops: I --> Initialize variable ; C --> Condition; U --> Update v
         cout << x << endl; }
 }
 
+int factorial (int number)
+{
+    int fact = 1;
+    for ( number = number ; number > 1; number--)
+    {
+        fact = fact * number ;
+    }
+    return fact;
+}
+
+int main()
+{
+    int number;
+    cout << "Give me a number: " << endl;
+    cin >> number;
+    cout << "The factorial of the number " << number << " is " << factorial(number) << endl;
+}
