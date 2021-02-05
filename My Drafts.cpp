@@ -229,3 +229,14 @@ int main()
     cin >> base;
     converter_2 (number, base);
 }
+
+int main() // Loops: I --> Initialize variable ; C --> Condition; U --> Update variable
+{
+    int x, i = 0;
+    while (i < 10) {
+        cout << i << endl;
+        i++; }
+    for (x = 0; x < 10; x++) {
+        cout << x << endl; }
+}
+
