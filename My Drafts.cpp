@@ -19,8 +19,8 @@ int main()
 }
 
 #include <iostream>
-#include <cmath>
 using namespace std;
+// using functions and nested functions
 
 int main()
 {
@@ -32,9 +32,6 @@ int main()
     double result = pow(base, exponent);
     cout << "The result is " << result;
 }
-
-#include <iostream>
-using namespace std;
 
 double power (int a, int b)
 {
@@ -169,10 +166,6 @@ int main()
     cout << text.erase(3); // Delete letter in 3rd index
 }
 
-#include <iostream>
-#include <string>
-using namespace std;
-
 int main()
 {
     string text1, text2;
@@ -190,3 +183,4 @@ int main()
     }
 
 }
+
