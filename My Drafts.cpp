@@ -153,5 +153,15 @@ int main()
     cout << abs(-10.25) << endl; // Absolute value (negative --> positive, positive --> positive)
 }
 
+#include <iostream>
+#include <string>
+using namespace std;
 
+int main()
+{
+    string greeting = "Hello World!";
+    cout << greeting + " for everyone" << endl;
+    cout << greeting.length() << endl;
+    // 02:34:18 in video
+}
 
