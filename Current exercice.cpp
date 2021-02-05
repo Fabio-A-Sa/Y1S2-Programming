@@ -3,33 +3,25 @@
 #include <iostream>
 using namespace std;
 
-int area_superficie (int comprimento, int largura, int altura)
+double imc (int massa, double altura)
 {
-    int area; // Result
-    area = 2 * (comprimento * largura + comprimento * altura + largura * altura);
-    return area;
+    double indice;
+    indice = massa / (altura/100 * altura/100);
+    return indice;
 }
 
-int volume_total (int comprimento, int largura, int altura)
+void print (int massa, int altura)
 {
-    int volume; // Result
-    volume = comprimento * largura * altura;
-    return volume;
+    cout << "Your IMC is " << imc(massa, altura);
 }
 
 int main()
 {
-    int l, w, h;
-    cout << "Imagin that you have a solid. What big is it?" << endl;
-    cout << "Lenght: ";
-    cin >> l;
-    cout << "Width: ";
+    int w;
+    double h;
+    cout << "Your weight: ";
     cin >> w;
-    cout << "Height: ";
+    cout << "Your height: ";
     cin >> h;
-    
-    int area = area_superficie (l, w, h);
-    int volume = volume_total (l, w, h);
-    cout << "This solid has " << area << " units of area and " << volume << " units of volume.";
-
+    print(w, h);
 }
