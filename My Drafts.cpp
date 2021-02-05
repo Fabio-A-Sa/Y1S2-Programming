@@ -126,4 +126,27 @@ int main() // Boolean data type
     }
 }
 
+int main()
+{
+    const int x = 5; // We cant change the value
+    int y = 10; 
+    // nan - not a number
+    // inf - infinite (i.e. pow(9, 999) with include <cmath>)
+}
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int x = 6, y = 4; // integers numbers
+    double z = 1.25; // float number
+
+    cout << x % y << endl; // Remainder between integers
+    cout << remainder(x, z) << endl; // Remainder between float and (float or integer)
+    cout << fmax(x, y) << endl; // Max value
+    cout << fmin(x, z) << endl; // Min value
+}
+
 
