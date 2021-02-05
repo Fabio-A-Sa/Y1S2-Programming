@@ -5,19 +5,54 @@
 #include <cmath>
 using namespace std;
 
-int main ()
+void print_array (int array[], int size) 
 {
-    int counter = 0;
-    string sentence = "Hello World, this is another example";
-    cout << "Your sentence " << sentence << " in vertical is: " << endl;;
+    for (int i = 0; i < size; i++) {
+        cout << array[i] << " "; }   
+}
 
-    for (int i = 0; i < sentence.size(); i++) {
-        cout << sentence[i] << endl; 
-        
-        if (sentence[i] == ' ') {
-            counter = counter + 1;
-            continue; } }
+int main() // Work with arrays
+{
+    int size, index, new_value;
+    string answer;
+    cout << "What size is your array? " << endl;
+    cin >> size;
+    int next_number, numbers[size];
 
-    cout << "And I found " << counter << " spaces in this string!" << endl;
+    for (int i = 0; i < size; i++) {
+        cout << "What's next number? ";
+        cin >> next_number;
+        numbers[i] = next_number; }
+
+    cout << "Your array is: ";
+    print_array(numbers, size);
+    
+    do {
+        cout << endl;
+        cout << "Do you like to modify any value?\nY --> Yes\nN --> No\nYour answer: ";
+        cin >> answer;
+        if (answer == "Y" || answer == "y")
+        {
+            cout << "Which index do you like to modify? ";
+            cin >> index;
+
+            if (index >= size) {
+                cout << "Input not valid! Try again:" << endl;
+            }
+            
+            else {
+                cout << "New value: ";
+                cin >> new_value;
+
+                numbers[index] = new_value;
+
+                cout << "Your array is now: ";
+                print_array(numbers, size);
+            }
+        }
+
+    } while (answer != "N" && answer != "n");
+
+    cout << "Done!";
     return 0;
-} 
+}
