@@ -281,3 +281,31 @@ int main () // With do-while statement
     return 0;
 }
 
+int main ()
+{
+    string word;
+    cout << "Give me a word: ";
+    cin >> word;
+    cout << "Your word " << word << " in vertical is: " << endl;;
+
+    for (int i = 0; i < word.size(); i++) {
+        cout << word[i] << endl; }
+
+}
+
+int main ()
+{
+    int counter = 0;
+    string sentence = "Hello World, this is another example";
+    cout << "Your sentence " << sentence << " in vertical is: " << endl;;
+
+    for (int i = 0; i < sentence.size(); i++) {
+        cout << sentence[i] << endl; 
+        
+        if (sentence[i] == ' ') {
+            counter = counter + 1;
+            continue; } }
+
+    cout << "And I found " << counter << " spaces in this string!" << endl;
+    return 0;
+} 
