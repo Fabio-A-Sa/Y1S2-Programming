@@ -5,14 +5,19 @@
 #include <cmath>
 using namespace std;
 
-int main () // With do-while statement
+int main ()
 {
-    string password = "12345";
-    string guess;
-    do {
-        cout << "Give me a password: " << endl;
-        cin >> guess; } while (guess != password);
+    int counter = 0;
+    string sentence = "Hello World, this is another example";
+    cout << "Your sentence " << sentence << " in vertical is: " << endl;;
 
-    cout << "Welcome, Fabio!" << endl;
+    for (int i = 0; i < sentence.size(); i++) {
+        cout << sentence[i] << endl; 
+        
+        if (sentence[i] == ' ') {
+            counter = counter + 1;
+            continue; } }
+
+    cout << "And I found " << counter << " spaces in this string!" << endl;
     return 0;
-}
+} 
