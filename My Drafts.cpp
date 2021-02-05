@@ -160,8 +160,7 @@ int main()
     getline(cin, text);
     cout << text << endl; // Return the input
     cout << text.length() << endl; // Return input's lenght
-    cout << text.erase(text.length() - 1); // Delete last letter
-    cout << text.pop_back(); // Delete last letter too
+    cout << text.erase(2) << endl; // Delete last letter
     cout << text.insert(5, " something "); // Append "something" in 5th index
     cout << text.erase(3); // Delete letter in 3rd index
 }
