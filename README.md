@@ -14,7 +14,7 @@ This repository contains all the exercises and assessments of the UC Programming
 ## Here are several documents, namely:
 
 ### My Drafts <br/>
-Pieces of code for exercises and assessments, notes that I take during practical classes and other experiences using Pyhton language. It is an authentic disorganized notebook.<br/>
+Pieces of code for exercises and assessments, notes that I take during practical classes and other experiences using C++ language. It is an authentic disorganized notebook.<br/>
 
 ***Bibliography:*** 
 
