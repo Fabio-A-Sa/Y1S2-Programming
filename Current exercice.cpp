@@ -6,12 +6,18 @@ using namespace std;
 
 int main()
 {
-    string text;
-    getline(cin, text);
-    cout << text << endl; // Return the input
-    cout << text.length() << endl; // Return input's lenght
-    cout << text.erase(text.length() - 1); // Delete last letter
-    cout << text.pop_back(); // Delete last letter too
-    cout << text.insert(5, " something "); // Append "something" in 5th index
-    cout << text.erase(3); // Delete letter in 3rd index
+    string text1, text2;
+    cout << "To compare strings:" << endl;
+    cin >> text1;
+    cin >> text2;
+
+    if (text1 == text2)
+    {
+         cout << "Equal!" << endl;
+    }
+    else
+    {
+        cout << "Different!" << endl;
+    }
+
 }

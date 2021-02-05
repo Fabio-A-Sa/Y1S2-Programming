@@ -168,3 +168,25 @@ int main()
     cout << text.insert(5, " something "); // Append "something" in 5th index
     cout << text.erase(3); // Delete letter in 3rd index
 }
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string text1, text2;
+    cout << "To compare strings:" << endl;
+    cin >> text1;
+    cin >> text2;
+
+    if (text1 == text2)
+    {
+         cout << "Equal!" << endl;
+    }
+    else
+    {
+        cout << "Different!" << endl;
+    }
+
+}
