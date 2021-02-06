@@ -10,7 +10,7 @@ using namespace std;
 int main() // Using files
 {
     ofstream file;
-    file.open("hello.xlsx");
+    file.open("hello.txt");
     vector<int> numbers;
 
     for (int n = 0; n <= 1000; n++) {
@@ -20,6 +20,6 @@ int main() // Using files
         file << n << endl; }
 
     cout << "Done!";
-    file.clear();
+
     return 0;
 }
