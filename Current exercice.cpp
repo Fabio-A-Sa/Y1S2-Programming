@@ -7,26 +7,33 @@
 #include <fstream>
 using namespace std;
 
-int main() // Using files
+int main()
 {
-    ofstream file;
-    file.open("hello.txt");
-    vector<int> numbers;
+    int numbers[][3] = {    {1, 2, 3},
+                            {4, 5, 6},
+                            {7, 8, 9},   };
 
-    // Write numbers until 1000 in .txt file
-    for (int n = 0; n <= 1000; n++) {
-        numbers.push_back(n); }
+    for (int row = 0; row < 3; row++) 
+    {
+        for (int column = 0; column < 3; column++) 
+        {
+            cout << numbers[row][column] << " "; 
+        }
+        cout << endl; 
+    }
 
-    for (int n: numbers) {
-        file << n << endl; }
+    vector<vector<int>> more_numbers = {    {10, 11, 12},
+                                            {13, 14, 15},
+                                            {16, 17, 18},    };
 
-    // Read data of hello.txt
-    int input;
-    while (file >> input) {
-        numbers.push_back(input); }
 
-    for (int number : numbers) {
-        cout << number << endl; }
-        
+    for  (int row = 0; row < more_numbers.size(); row++)
+    {
+        for (int column = 0; column < more_numbers[row].size(); column++)
+        {
+            cout << more_numbers[row][column] << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
