@@ -4,34 +4,22 @@
 #include <string>
 #include <cmath>
 #include <vector>
+#include <fstream>
 using namespace std;
 
-int main() // Using new for-loop template
+int main() // Using files
 {
-    vector<int> all_numbers;
-    string answer;
-    int number, resto;
+    ofstream file;
+    file.open("hello.xlsx");
+    vector<int> numbers;
 
-    cout << "Do you like ODD numbers or EVEN numbers? ";
-    cin >> answer;
-    resto = answer == "ODD" ? 1 : 0; // resto == 1 if answer == "ODD" else 0
-    cout << "How many numbers you want? ";
-    cin >> number;
+    for (int n = 0; n <= 1000; n++) {
+        numbers.push_back(n); }
 
-    while (all_numbers.size() < number)
-    {
-        for (int i = 0; i < 2 * number; i++)
-        {
-            if (i % 2 == resto)
-            {
-                all_numbers.push_back(i);
-            }
-        }
-    }
+    for (int n: numbers) {
+        file << n << endl; }
 
-    cout << "Your numbers are: ";
-    for (int n : all_numbers) // for n in all_numbers: print(n)
-    {
-        cout << n << " ";
-    }
+    cout << "Done!";
+    file.clear();
+    return 0;
 }
