@@ -549,3 +549,54 @@ int main() // Swap two numbers
     swap(a, b); 
     return 0;
 }
+
+#include <iostream>
+using namespace std;
+
+int main() // Exercício 1.1 (char --> ascii code)
+{
+    char letter;
+    cout << "Please enter a letter: ";
+    cin >> letter;
+    cout << "ASCII code of '" << letter << "' : " << (int) letter << endl;
+}
+
+int main() // Exercício 1.2 (soma, média, diferença)
+{
+    double A, B, C, media, diferenca;
+    cout << "Please enter three numbers:" << endl;
+    cout << "A ? ";
+    cin >> A;
+    cout << "B ? ";
+    cin >> B;
+    cout << "C ? ";
+    cin >> C;
+
+    cout.precision(4); // Round at 3 decimal cases
+
+    media = (A + B + C) / 3;
+    cout << "media = " << media << endl;
+    diferenca = A - media;
+    cout << "A-media = " << diferenca << endl;
+    diferenca = B - media;
+    cout << "B-media = " << diferenca << endl;
+    diferenca = C - media;
+    cout << "C-media = " << diferenca << endl;
+
+    return 0;
+}
+
+int main() // Exercício 1.3 (massa de uma esfera)
+{
+    const int pi = 3.14;
+    double densidade, raio, massa;
+
+    cout << "Valor da desidade da esfera, em quilogramas por metro cubico (Kg/m^3): ";
+    cin >> densidade;
+    cout << "Valor do raio da esfera, em metros (m): ";
+    cin >> raio;
+
+    massa = 4 / 3 * (densidade*pi*raio*raio*raio);
+    cout << "A esfera considerada tem " << massa << " Kg de massa aproximadamente." << endl;
+    return 0;
+}
