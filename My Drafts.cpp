@@ -815,3 +815,67 @@ int main () // Exercício 2.2.c (construção de um triângulo com os valores)
     }
     return 0;
 }
+
+int main () // Exercício 2.3 (calculadora)
+{
+    double a, b, resultado;
+    string conta;
+
+    cout << "Insira 2 numeros na calculadora:" << endl;
+    cout << "Primeiro numero: ";
+    cin >> a;
+    cout << "Segundo numero: ";
+    cin >> b;
+    cout << "Que conta deseja efetuar?\n+ --> a+b\n- --> a-b\nx --> axb\n/ --> a/b\nSua escolha: ";
+    cin >> conta;
+
+    if (conta == "+")
+    {
+        resultado = a+b ;
+        cout << "a+b = " << resultado << endl;
+    }
+    else if (conta == "-")
+    {
+        resultado = a-b ;
+        cout << "a-b = " << resultado << endl;
+    }
+    else if (conta == "x")
+    {
+        resultado = a*b ;
+        cout << "axb = " << resultado << endl;
+    }
+    else if (conta == "/")
+    {
+        resultado = a/b ;
+        cout << "a/b = " << resultado << endl;
+    }
+    else
+    {
+        cout << "Opcao inexistente na calculadora!" << endl;
+    }
+    return 0;
+}
+
+int main () // Exercício 2.4 (custo do transporte da mercadoria)
+{
+    double peso, resultado;
+
+    cout << "Insira o peso da mercadoria, em gramas: ";
+    cin >> peso;
+
+    if (peso < 500)
+    {
+        resultado = 5;
+    }
+    else if (peso >= 500 && peso <= 1000)
+    {
+        resultado = 5 + (1.5 * ((peso - 500)/100));
+    }
+    else
+    {
+        resultado = 12.5 + (5 * ((peso - 1000)/250));
+    }
+    cout << "O total a pagar e " << resultado << " euros." << endl;
+    return 0;
+}
+
