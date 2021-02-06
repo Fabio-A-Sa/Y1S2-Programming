@@ -19,7 +19,5 @@ int main() // Using files
     for (int n: numbers) {
         file << n << endl; }
 
-    cout << "Done!";
-
     return 0;
 }
