@@ -879,3 +879,85 @@ int main () // Exercício 2.4 (custo do transporte da mercadoria)
     return 0;
 }
 
+int main () // Exercício 2.5 (fórmula resolvente)
+{
+    double a, b, c, binomio, sol1, sol2, complex;
+    string answer;
+
+    cout << "A formula da equacao quadratica e dada por:\n{ ax^2 + bx + c\nInsira os valores dos coeficientes:" << endl;
+    cout << "a = ";
+    cin >> a;
+    cout << "b = ";
+    cin >> b;
+    cout << "c = ";
+    cin >> c;
+    binomio = pow(b, 2) - 4*a*c;
+
+    if (binomio > 0)
+    {
+        answer = "A equacao tem duas raizes reais diferentes: ";
+        sol1 = ((-1*b) + sqrt(binomio))/(2*a);
+        sol2 = ((-1*b) - sqrt(binomio))/(2*a);
+        cout << answer << sol1 << " e " << sol2 << endl;
+    }
+    else if (binomio == 0)
+    {
+        answer = "A equacao tem duas raizes reais iguais: ";
+        sol1 = (-1*b)/(2*a);
+        cout << answer << sol1 << endl;
+    }
+    else
+    {
+        answer = "A equacao tem 2 raizes complexas conjugadas: ";
+        complex = sqrt(binomio*-1)/(2*a);
+        sol1 = (-b)/(2*a);
+        cout << answer << sol1 << "+" << complex << "i " << " e " 
+        << sol1 << "-" << complex << "i" << endl;
+    }
+    return 0;
+}
+
+int main () // Exercício 2.6.a (o número é primo ou não)
+{
+    bool flag = true;
+    int number;
+    string answer;
+
+    cout << "Please enter a number: ";
+    cin >> number;
+
+    for (int i = 2; i < sqrt(number); i++) {
+        flag = flag && ((number % i) != 0); }
+        
+    answer = flag == true ? "Its prime" : "Isn't prime";
+    cout << answer;
+    return 0;
+}
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main () // Exercício 2.6.b (100 primeiros números primos)
+{
+    bool flag = true;
+    int counter = 0;
+
+    for (int cobaia = 2; cobaia < 100; cobaia++)
+    {
+        for (int i = 2; i < sqrt(cobaia); i++)
+        {
+            flag = flag && ((cobaia % i) != 0);
+        } 
+        if (flag != true) // Its not prime
+        {
+            continue;
+        }
+        else
+        {
+            cout << cobaia << " ";
+            counter = counter + 1;
+        }
+    }
+
+}
