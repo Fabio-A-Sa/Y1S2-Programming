@@ -7,33 +7,23 @@
 #include <fstream>
 using namespace std;
 
+void swap(int a , int b)
+{
+    int temporario;
+    temporario = b;
+    b = a;
+    a = temporario;
+    cout << "Value a: " << a << " and value b: " << b << "." << endl;
+}
+
 int main()
 {
-    int numbers[][3] = {    {1, 2, 3},
-                            {4, 5, 6},
-                            {7, 8, 9},   };
-
-    for (int row = 0; row < 3; row++) 
-    {
-        for (int column = 0; column < 3; column++) 
-        {
-            cout << numbers[row][column] << " "; 
-        }
-        cout << endl; 
-    }
-
-    vector<vector<int>> more_numbers = {    {10, 11, 12},
-                                            {13, 14, 15},
-                                            {16, 17, 18},    };
-
-
-    for  (int row = 0; row < more_numbers.size(); row++)
-    {
-        for (int column = 0; column < more_numbers[row].size(); column++)
-        {
-            cout << more_numbers[row][column] << " ";
-        }
-        cout << endl;
-    }
+    int a, b;
+    cout << "Input two numbers" << endl;
+    cout << "Value a: ";
+    cin >> a;
+    cout << "Value b: ";
+    cin >> b;
+    swap(a, b); 
     return 0;
 }

@@ -528,3 +528,24 @@ int main() // Using static and dinamic matrix (array and vector)
     }
     return 0;
 }
+
+void swap(int a , int b)
+{
+    int temporario;
+    temporario = b;
+    b = a;
+    a = temporario;
+    cout << "Value a: " << a << " and value b: " << b << "." << endl;
+}
+
+int main() // Swap two numbers
+{
+    int a, b;
+    cout << "Input two numbers" << endl;
+    cout << "Value a: ";
+    cin >> a;
+    cout << "Value b: ";
+    cin >> b;
+    swap(a, b); 
+    return 0;
+}
