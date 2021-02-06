@@ -486,7 +486,7 @@ int main() // Using files to write and read .txt
 
     // Read data of .txt
     int input;
-    while (file >> input) {
+    while ( file >> input) {
         numbers.push_back(input); }
 
     for (int number : numbers) {
@@ -572,7 +572,7 @@ int main() // Exercício 1.2 (soma, média, diferença)
     cout << "C ? ";
     cin >> C;
 
-    cout.precision(4); // Round at 3 decimal cases
+    cout.precision(4); // Round at 3 decimal places
 
     media = (A + B + C) / 3;
     cout << "media = " << media << endl;
@@ -598,5 +598,109 @@ int main() // Exercício 1.3 (massa de uma esfera)
 
     massa = 4 / 3 * (densidade*pi*raio*raio*raio);
     cout << "A esfera considerada tem " << massa << " Kg de massa aproximadamente." << endl;
+    return 0;
+}
+
+int main() // Exercício 1.4 (solver linear equations with 2 icognits)
+{
+    double a, b, c, d, e, f, x, y;
+    cout << "The linear system is:" << endl;
+    cout << "{ ax + by = c\n{ dx + ey = f" << endl;
+    cout << "Please enter values for each icognit:" << endl;
+    cout << "a: ";
+    cin >> a;
+    cout << "b: ";
+    cin >> b;
+    cout << "c: ";
+    cin >> c;
+    cout << "d: ";
+    cin >> d;
+    cout << "e: ";
+    cin >> e;
+    cout << "f: ";
+    cin >> f;
+
+    x = (c*e - b*f)/(a*e - b*d);
+    y = (a*f - c*d)/(a*e - b*d);
+
+    cout << "Solutions: x = " << x << " and y = " << y << endl;
+    return 0;
+}
+
+int main() // Exercício 1.5 (dias, horas, minutos, segundos)
+{
+    string t1, t2;
+    int d, h1, h2, m1, m2, s1, s2, total, resto;
+
+    // Inputs and Strings --> Integers
+    cout << "Tempo 1 (horas minutos segundos) ? ";
+    getline (cin, t1);
+    h1 = stoi(t1.substr (0,2));
+    m1 = stoi(t1.substr (3,2));
+    s1 = stoi(t1.substr (6,2));
+    cout << "Tempo 2 (horas minutos segundos) ? ";
+    getline (cin, t2);
+    h2 = stoi(t2.substr (0,2));
+    m2 = stoi(t2.substr (3,2));
+    s2 = stoi(t2.substr (6,2));
+    
+    // Total of seconds, remainder...
+    total = (h1+h2)*(60*60) + (m1+m2)*(60) + (s1+s2);
+    cout << total << endl;
+    d = total / (24*60*60);
+    total = total % (24*60*60);
+    h1 = total / (60*60);
+    total = total % (60*60);
+    m1 = total / 60;
+    s1 = total % 60;
+    cout << "Soma dos tempos: " << d << " dia, " << h1 << 
+    " horas, " << m1 << " minutos e " << s1 << " segundos" << endl;
+    return 0;
+}
+
+// Exercício 1.6 (área do triângulo)
+// using #include <cmath> for sqrt
+
+double distance_t (int x1, int x2, int y1, int y2)
+{
+    double dist;
+    dist = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    return dist;
+}
+
+double area (int p, int p1, int p2, int p3)
+{
+    double area;
+    area = sqrt(p*(p-p1)*(p-p2)*(p-p3));
+    return area;
+}
+
+int main()
+{
+    int ax, ay, bx, by, cx, cy;
+    double distance, area_total, l1, l2, l3, l_total;
+
+    // Input
+    cout << "Por favor insira as coordenadas dos vertices do triangulo:" << endl;
+    cout << "Vertice A --> Abcissa (x):";
+    cin >> ax;
+    cout << "Vertice A --> Ordenada (y):";
+    cin >> ay;
+    cout << "Vertice B --> Abcissa (x):";
+    cin >> bx;
+    cout << "Vertice B --> Ordenada (y):";
+    cin >> by;
+    cout << "Vertice C --> Abcissa (x):";
+    cin >> cx;
+    cout << "Vertice C --> Ordenada (y):";
+    cin >> cy;
+
+    // Data
+    l1 = distance_t (ax, bx, ay, by);
+    l2 = distance_t (ax, cx, ay, cy);
+    l3 = distance_t (bx, cx, by, cy);
+    l_total = l1 + l2 + l3;
+    area_total = area (l_total, l1, l2, l3); 
+    cout << "O triangulo considerado tem " << area_total << " unidades de area." << endl;
     return 0;
 }
