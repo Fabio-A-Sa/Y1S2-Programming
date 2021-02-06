@@ -13,11 +13,20 @@ int main() // Using files
     file.open("hello.txt");
     vector<int> numbers;
 
+    // Write numbers until 1000 in .txt file
     for (int n = 0; n <= 1000; n++) {
         numbers.push_back(n); }
 
     for (int n: numbers) {
         file << n << endl; }
 
+    // Read data of hello.txt
+    int input;
+    while (file >> input) {
+        numbers.push_back(input); }
+
+    for (int number : numbers) {
+        cout << number << endl; }
+        
     return 0;
 }

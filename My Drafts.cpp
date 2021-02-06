@@ -471,18 +471,27 @@ int main() // Using new for-loop template
 #include <fstream>
 using namespace std;
 
-int main() // Using files --> Writing
+int main() // Using files to write and read .txt
 {
     ofstream file;
     file.open("hello.txt");
     vector<int> numbers;
 
+    // Write numbers until 1000 in .txt file
     for (int n = 0; n <= 1000; n++) {
         numbers.push_back(n); }
 
     for (int n: numbers) {
         file << n << endl; }
 
-    cout << "Done!";
+    // Read data of .txt
+    int input;
+    while (file >> input) {
+        numbers.push_back(input); }
+
+    for (int number : numbers) {
+        cout << number << endl; }
+        
     return 0;
 }
+
