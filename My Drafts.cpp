@@ -704,3 +704,114 @@ int main()
     cout << "O triangulo considerado tem " << area_total << " unidades de area." << endl;
     return 0;
 }
+
+int main() // Exercício 2.1 ( 1.4 + impossível + indeterminado + possível e determinado)
+{
+    double a, b, c, d, e, f, x, y;
+    cout << "The linear system is:" << endl;
+    cout << "{ ax + by = c\n{ dx + ey = f" << endl;
+    cout << "Please enter values for each icognit:" << endl;
+    cout << "a: ";
+    cin >> a;
+    cout << "b: ";
+    cin >> b;
+    cout << "c: ";
+    cin >> c;
+    cout << "d: ";
+    cin >> d;
+    cout << "e: ";
+    cin >> e;
+    cout << "f: ";
+    cin >> f;
+
+    if ((a*e - b*d) == 0)
+    {
+        // Sistema impossível
+        cout << "Este sistema é impossível!" << endl;
+    }
+    else if (a/d != b/e && b/e != c/f)
+    {
+        // Sistema indeterminado
+        cout << "Este sistema é indeterminado!" << endl;
+    }
+    else
+    {
+        // Sistema possível e determinado
+        x = (c*e - b*f)/(a*e - b*d);
+        y = (a*f - c*d)/(a*e - b*d);
+        cout << "Solutions: x = " << x << " and y = " << y << endl;
+    }
+    return 0;
+}
+
+int main () // Exercício 2.2.a (maior e menor número de entre três)
+{
+    int a, b, c, maior, menor;
+    cout << "Insira 3 numeros:" << endl;
+    cout << "Primeiro numero: ";
+    cin >> a;
+    maior = a;
+    menor = a;
+    cout << "Segundo numero: ";
+    cin >> b;
+    maior = b > maior ? b : maior;
+    menor = b < menor ? b : menor;
+    cout << "Terceiro numero: ";
+    cin >> c;
+    maior = c > maior ? c : maior;
+    menor = c < menor ? c : menor;
+
+    cout << "O maior numero: " << maior << " e o menor: " << menor << endl;
+    return 0;
+}
+
+int main () // Exercício 2.2.b (ordem decrescente)
+{
+    int a, b, c, maior, menor, medio;
+    cout << "Insira 3 numeros:" << endl;
+    cout << "Primeiro numero: ";
+    cin >> a;
+    maior = a;
+    menor = a;
+    cout << "Segundo numero: ";
+    cin >> b;
+    maior = b > maior ? b : maior;
+    menor = b < menor ? b : menor;
+    cout << "Terceiro numero: ";
+    cin >> c;
+    maior = c > maior ? c : maior;
+    menor = c < menor ? c : menor;
+    medio = (a + b + c) - (maior + menor);
+    cout << "Ordem decrescente: " << maior << ", " << medio << ", " << menor << endl;
+    return 0;
+}
+
+int main () // Exercício 2.2.c (construção de um triângulo com os valores)
+{
+    int a, b, c, maior, menor, medio;
+    cout << "Insira 3 numeros:" << endl;
+    cout << "Primeiro numero: ";
+    cin >> a;
+    maior = a;
+    menor = a;
+    cout << "Segundo numero: ";
+    cin >> b;
+    maior = b > maior ? b : maior;
+    menor = b < menor ? b : menor;
+    cout << "Terceiro numero: ";
+    cin >> c;
+    maior = c > maior ? c : maior;
+    menor = c < menor ? c : menor;
+    medio = (a + b + c) - (maior + menor);
+
+    if ((maior >= (medio + menor)) || !(a>0 && b>0 && c>0))
+    {
+        // Se os vértices não se unirem ou um dos comprimentos for negativo
+        cout << "Nao se pode construir um triangulo com estes valores!" << endl;
+    }
+    else
+    {
+        cout << "Pode-se construir um triangulo com estes valores!" << endl;
+    }
+    return 0;
+}

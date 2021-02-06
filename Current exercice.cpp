@@ -5,45 +5,32 @@
 #include <cmath>
 using namespace std;
 
-// Exercício 1.6 (área do triângulo)
-// using #include <cmath> for sqrt
-
-double distance_t (int x1, int x2, int y1, int y2)
+int main () // Exercício 2.2.c (construção de um triângulo com os valores)
 {
-    double dist;
-    dist = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
-    return dist;
-}
+    int a, b, c, maior, menor, medio;
+    cout << "Insira 3 numeros:" << endl;
+    cout << "Primeiro numero: ";
+    cin >> a;
+    maior = a;
+    menor = a;
+    cout << "Segundo numero: ";
+    cin >> b;
+    maior = b > maior ? b : maior;
+    menor = b < menor ? b : menor;
+    cout << "Terceiro numero: ";
+    cin >> c;
+    maior = c > maior ? c : maior;
+    menor = c < menor ? c : menor;
+    medio = (a + b + c) - (maior + menor);
 
-double area (int p, int p1, int p2, int p3)
-{
-    double area;
-    area = sqrt(p*(p-p1)*(p-p2)*(p-p3));
-    return area;
-}
-
-int main()
-{
-    int ax, ay, bx, by, cx, cy;
-    double distance, area_total, l1, l2, l3, l_total;
-    cout << "Por favor insira as coordenadas dos vertices do triangulo:" << endl;
-    cout << "Vertice A --> Abcissa (x):";
-    cin >> ax;
-    cout << "Vertice A --> Ordenada (y):";
-    cin >> ay;
-    cout << "Vertice B --> Abcissa (x):";
-    cin >> bx;
-    cout << "Vertice B --> Ordenada (y):";
-    cin >> by;
-    cout << "Vertice C --> Abcissa (x):";
-    cin >> cx;
-    cout << "Vertice C --> Ordenada (y):";
-    cin >> cy;
-    l1 = distance_t (ax, bx, ay, by);
-    l2 = distance_t (ax, cx, ay, cy);
-    l3 = distance_t (bx, cx, by, cy);
-    l_total = l1 + l2 + l3;
-    area_total = area (l_total, l1, l2, l3); 
-    cout << "O triangulo considerado tem " << area_total << " unidades de area." << endl;
+    if ((maior >= (medio + menor)) || !(a>0 && b>0 && c>0))
+    {
+        // Se os vértices não se unirem ou um dos comprimentos for negativo
+        cout << "Nao se pode construir um triangulo com estes valores!" << endl;
+    }
+    else
+    {
+        cout << "Pode-se construir um triangulo com estes valores!" << endl;
+    }
     return 0;
 }
