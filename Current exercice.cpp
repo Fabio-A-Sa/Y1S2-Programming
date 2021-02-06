@@ -6,65 +6,32 @@
 #include <vector>
 using namespace std;
 
-void print_vector (vector<int> something)
+int main() // Using new for-loop template
 {
-    for (int i = 0; i < something.size() ; i++) {
-        cout << something[i] << " "; }
-}
+    vector<int> all_numbers;
+    string answer;
+    int number, resto;
 
-int main () // Using vectors
-{
-    vector<int> numbers = {1, 2, 3};
-    int answer, index, new_value;
+    cout << "Do you like ODD numbers or EVEN numbers? ";
+    cin >> answer;
+    resto = answer == "ODD" ? 1 : 0; // resto == 1 if answer == "ODD" else 0
+    cout << "How many numbers you want? ";
+    cin >> number;
 
-    cout << "In the begin, the vector is: ";
-    print_vector(numbers);
-    cout << endl;
-
-    do
+    while (all_numbers.size() < number)
     {
-        cout << "Do you like to modify or increment this vector?\n1 --> Modify\n2 --> Increment\n3 --> No" << endl;
-        cout << "Your choice: ";
-        cin >> answer;
-        
-        switch (answer)
+        for (int i = 0; i < 2 * number; i++)
         {
-        case 1:
-            cout << "Which index would you like to modify?: ";
-            cin >> index;
-
-            if (index < numbers.size()) {
-                cout << "New value: ";
-                cin >> new_value;
-                numbers[index] = new_value;
-                cout << " " << endl;
-                cout << "The vector is now: ";
-                print_vector(numbers); }
-            else {
-                cout << "Out of the range! Please try again.";
-                break; }
-
-            break;
-
-        case 2:
-            cout << "Which number do you like to append? ";
-            cin >> new_value;
-            numbers.push_back(new_value);
-            cout << " " << endl;
-            cout << "The vector is now: ";
-            print_vector(numbers);
-            break;
-        
-        default:
-            break;
+            if (i % 2 == resto)
+            {
+                all_numbers.push_back(i);
+            }
         }
-        
-    cout << endl;
-    } while (answer != 3);
+    }
 
-    cout << "Final version of vector: ";
-    print_vector(numbers);
-    cout << endl;
-    cout << "Done!";
-    return 0;
+    cout << "Your numbers are: ";
+    for (int n : all_numbers) // for n in all_numbers: print(n)
+    {
+        cout << n << " ";
+    }
 }
