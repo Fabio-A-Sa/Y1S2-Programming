@@ -1095,3 +1095,32 @@ int main () // FizzBuzz version 2 (sequence)
         }
     }
 }
+
+int main () // Area e perímetro de um círculo
+{
+    const double pi = 3.14;
+    double raio, perimetro, area;
+
+    cout << "Enter a distance: ";
+    cin >> raio;
+
+    perimetro = 2*pi*raio;
+    area = pi*raio*raio;
+
+    cout << "Perimetro do circulo: " <<perimetro << "\nArea do circulo: " << area << endl;
+    return 0;
+}
+
+int main () // hipotenusa de um triângulo retângulo
+{
+    double c1, c2, hipotenusa;
+
+    cout << "Inserir o valor do cateto 1: ";
+    cin >> c1;
+    cout << "Inserir o valor do cateto 2: ";
+    cin >> c2;
+
+    hipotenusa = sqrt(pow(c1, 2) + pow(c2, 2));
+    cout << "A hipotenusa mede " << hipotenusa << " unidades de comprimento." << endl;
+    return 0; 
+}
