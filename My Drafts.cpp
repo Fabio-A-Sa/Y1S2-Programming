@@ -1043,3 +1043,55 @@ int main () // Exercício 2.7.a (tabela de ângulos) ---->>>>>>>>>>>>>>>>> Bug A
         cout << "   " << sin(degree) << "   " << cos(degree) << "   " << tan(degree) << endl;
     }
 }
+
+int main () // FizzBuzz version 1 (a number) 
+{
+    int number;
+    cout << "Please enter a number: ";
+    cin >> number;
+    if (number % 15 == 0)
+    {
+        cout << "FizzBuzz";
+    }
+    else if (number % 3 == 0)
+    {
+        cout << "Fizz";
+    }
+    else if (number % 5 == 0)
+    {
+        cout << "Buzz";
+    }
+    else
+    {
+        cout << number;
+    }
+    return 0;
+}
+
+int main () // FizzBuzz version 2 (sequence) 
+{
+    int number, i;
+    cout << "Please enter a number: ";
+    cin >> number;
+    cout << "The sequence is: ";
+
+    for (int i = 1; i <= number; i++)
+    {
+        if (i % 15 == 0)
+        {
+            cout << "FizzBuzz ";
+        }
+        else if (i % 3 == 0)
+        {
+            cout << "Fizz ";
+        }
+        else if (i % 5 == 0)
+        {
+            cout << "Buzz ";
+        }
+        else
+        {
+            cout << i << " ";
+        }
+    }
+}
