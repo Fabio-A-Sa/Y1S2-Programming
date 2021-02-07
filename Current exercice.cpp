@@ -8,27 +8,29 @@
 #include <cmath>
 using namespace std;
 
-// There is one bug in this code! But I quit now!
-int main () // Exercício 2.6.b (100 primeiros números primos)
-{
-    bool flag = true;
-    int counter = 0;
 
-    for (int cobaia = 2; cobaia < 100; cobaia++)
+int main () // Exercício 2.6.e (ver se um número é perfeito)
+{
+    int number, total = 0;
+    string answer;
+
+    cout << "Please enter a number: ";
+    cin >> number;
+    cout << "Divisors of " << number << ": ";
+
+    for (int divisor = 1; divisor < number; divisor++)
     {
-        for (int i = 2; i < sqrt(cobaia); i++)
+        if (number % divisor == 0)
         {
-            flag = flag && ((cobaia % i) != 0);
-        } 
-        if (flag != true) // Its not prime
-        {
-            continue;
-        }
-        else
-        {
-            cout << cobaia << " ";
-            counter = counter + 1;
+            cout << divisor << " ";
+            total = total + divisor;
         }
     }
 
+    cout << endl;
+    answer = number == total ? "Its perfect!" : "Isn't perfect!";
+    cout << answer << endl;
+
+    return 0;
 }
+

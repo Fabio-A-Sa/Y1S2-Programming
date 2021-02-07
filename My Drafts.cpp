@@ -934,30 +934,90 @@ int main () // Exercício 2.6.a (o número é primo ou não)
     return 0;
 }
 
-#include <iostream>
-#include <cmath>
-using namespace std;
-
 int main () // Exercício 2.6.b (100 primeiros números primos)
 {
-    bool flag = true;
-    int counter = 0;
+    bool flag;
+    int cobaia = 0, contador = 0;
 
-    for (int cobaia = 2; cobaia < 100; cobaia++)
-    {
-        for (int i = 2; i < sqrt(cobaia); i++)
+    for (int cobaia = 2; contador < 100; cobaia++)
+    {   
+        flag = true;
+
+        for (int i = 2; i < sqrt(cobaia); i++) 
         {
-            flag = flag && ((cobaia % i) != 0);
-        } 
-        if (flag != true) // Its not prime
-        {
-            continue;
+            flag = flag && ((cobaia % i) != 0); 
         }
-        else
+            
+        if (flag == true)
         {
             cout << cobaia << " ";
-            counter = counter + 1;
+            contador++;
+        }
+    }
+    return 0;
+}
+
+int main () // Exercício 2.6.c (números primos inferiores a 1000)
+{
+    bool flag;
+    int cobaia = 0;
+
+    for (int cobaia = 2; cobaia < 1000; cobaia++)
+    {   
+        flag = true;
+
+        for (int i = 2; i < sqrt(cobaia); i++) 
+        {
+            flag = flag && ((cobaia % i) != 0); 
+        }
+            
+        if (flag == true)
+        {
+            cout << cobaia << " ";
+        }
+    }
+    return 0;
+}
+
+int main () // Exercício 2.6.d (divisores de um número)
+{
+    int number;
+
+    cout << "Please enter a number: ";
+    cin >> number;
+    cout << "Divisors of " << number << ": ";
+
+    for (int divisor = 2; divisor <= number; divisor++)
+    {
+        if (number % divisor == 0)
+        {
+            cout << divisor << " ";
+        }
+    }
+    return 0;
+}
+
+int main () // Exercício 2.6.e (ver se um número é perfeito)
+{
+    int number, total = 0;
+    string answer;
+
+    cout << "Please enter a number: ";
+    cin >> number;
+    cout << "Divisors of " << number << ": ";
+
+    for (int divisor = 1; divisor < number; divisor++)
+    {
+        if (number % divisor == 0)
+        {
+            cout << divisor << " ";
+            total = total + divisor;
         }
     }
 
+    cout << endl;
+    answer = number == total ? "Its perfect!" : "Isn't perfect!";
+    cout << answer << endl;
+
+    return 0;
 }
