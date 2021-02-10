@@ -1124,3 +1124,73 @@ int main () // hipotenusa de um triângulo retângulo
     cout << "A hipotenusa mede " << hipotenusa << " unidades de comprimento." << endl;
     return 0; 
 }
+
+int main () // Mechanics
+{
+    double a, b, degree, radius, meters;
+    int const velocidade = 18;
+    double const pi = 3.14;
+
+    cout << "Degree? ";
+    cin >> degree;
+
+    radius = (degree*pi) / 180;
+    a = sin(radius);
+    b = cos(radius);
+    meters = (a*b*velocidade*velocidade)/5;
+
+    cout << "The ball can fly " << meters << " meters." << endl;
+}
+
+int main () // Alarm Clock
+{
+    int hour, minutes, wakeup_hour, wakeup_minute, new_hour, new_minute, new_day;
+    string aday;
+
+    do  {
+        cout << "What time is it?\nHour: ";
+        cin >> hour;
+        cout << "Minutes: ";
+        cin >> minutes;
+        if (hour > 23 || minutes > 59) {
+            cout << "Your input is not valid. Please try again." << endl;
+        }
+        } while (hour > 23 || minutes > 59);
+
+    do {
+        cout << "How many hours and minutes you want sleep?\nHour: ";
+        cin >> wakeup_hour;
+        cout << "Minutes: ";
+        cin >> wakeup_minute;
+        if (hour > 23 || minutes > 59) {
+            cout << "Your input is not valid. Please try again." << endl;
+        }
+        } while (hour > 23 || minutes > 59);
+
+    if (wakeup_hour < 8) {
+        cout << "This is harmfull. You have to sleep at least 8 hours per day!" << endl;
+    }
+
+    new_minute = (minutes + wakeup_minute) % 60;
+    new_hour = (minutes + wakeup_minute) / 60 + (hour + wakeup_hour);
+    new_day = new_hour / 24;
+    aday = new_day == 0 ? "today" : "tomorrow";
+
+    if (new_hour < 10) {
+        if (new_minute < 10) {
+            cout << "Your alarm clock will ring " << aday << " at 0" << new_hour << ":0" << new_minute << "!" << endl;
+        }
+        else {
+            cout << "Your alarm clock will ring " << aday << " at 0" << new_hour << ":" << new_minute << "!" << endl;
+        }
+    }
+    else {
+        if (new_minute < 10) {
+            cout << "Your alarm clock will ring " << aday << " at " << new_hour << ":0" << new_minute << "!" << endl;
+        }
+        else {
+            cout << "Your alarm clock will ring " << aday << " at " << new_hour << ":" << new_minute << "!" << endl;
+        }
+    }
+    return 0;
+}
