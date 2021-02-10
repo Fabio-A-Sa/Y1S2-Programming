@@ -5,16 +5,16 @@
 #include <cmath>
 using namespace std;
 
-int main () // hipotenusa de um triângulo retângulo
+int main () // Mechanics
 {
-    double c1, c2, hipotenusa;
+    double a, b, degree, radius, meters, velocidade = 18, pi = 3.14;
+    cout << "Degree? ";
+    cin >> degree;
 
-    cout << "Inserir o valor do cateto 1: ";
-    cin >> c1;
-    cout << "Inserir o valor do cateto 2: ";
-    cin >> c2;
+    radius = (degree*pi) / 180;
+    a = sin(radius);
+    b = cos(radius);
+    meters = (a*b*velocidade*velocidade)/5;
 
-    hipotenusa = sqrt(pow(c1, 2) + pow(c2, 2));
-    cout << "A hipotenusa mede " << hipotenusa << " unidades de comprimento." << endl;
-    return 0; 
+    cout << "The ball can fly " << meters << " meters." << endl;
 }
