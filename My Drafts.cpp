@@ -1194,3 +1194,48 @@ int main () // Alarm Clock
     }
     return 0;
 }
+
+int main () // Trip cost
+{
+    double distance, many_100, litres;
+    double fuel_to_100, price_per_litre, money;
+
+    cout << "How many kilometers you have to drive? ";
+    cin >> distance;
+    cout << "How many fuel your car spend to travell 100 km? Liters: ";
+    cin >> fuel_to_100;
+    cout << "What is the price for liter of fuel? ";
+    cin >> price_per_litre;
+
+    many_100 = distance / 100;
+    litres = many_100 * fuel_to_100;
+    money = price_per_litre * litres;
+
+    cout << "You will spend " << money << " euros to travel!" << endl;
+}
+
+int main () // Weird sum
+{
+    int a, b, difference, sum, answer;
+    string type;
+
+    cout << "Value of a: ";
+    cin >> a;
+    cout << "Value of b: ";
+    cin >> b;
+
+    sum = a + b;
+    difference = a - b;
+    type = (difference % 2 != 0) ? "odd" : "even";
+
+    if ( type == "odd" ) {
+        answer = sum + a*b;
+        cout << "Because the difference between a and b is " << type << " the weird sum is " << answer << endl;
+    }
+    else {
+        answer = sum*2;
+        cout << "Because the difference between a and b is " << type << " the weird sum is " << answer << endl;
+    }
+    return 0;
+}
+

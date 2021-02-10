@@ -6,55 +6,27 @@
 #include <string>
 using namespace std;
 
-int main () // Alarm Clock
+int main () // Weird sum
 {
-    int hour, minutes, wakeup_hour, wakeup_minute, new_hour, new_minute, new_day;
-    string aday;
+    int a, b, difference, sum, answer;
+    string type;
 
-    do  {
-        cout << "What time is it?\nHour: ";
-        cin >> hour;
-        cout << "Minutes: ";
-        cin >> minutes;
-        if (hour > 23 || minutes > 59) {
-            cout << "Your input is not valid. Please try again." << endl;
-        }
-        } while (hour > 23 || minutes > 59);
+    cout << "Value of a: ";
+    cin >> a;
+    cout << "Value of b: ";
+    cin >> b;
 
-    do {
-        cout << "How many hours and minutes you want sleep?\nHour: ";
-        cin >> wakeup_hour;
-        cout << "Minutes: ";
-        cin >> wakeup_minute;
-        if (hour > 23 || minutes > 59) {
-            cout << "Your input is not valid. Please try again." << endl;
-        }
-        } while (hour > 23 || minutes > 59);
+    sum = a + b;
+    difference = a - b;
+    type = (difference % 2 != 0) ? "odd" : "even";
 
-    if (wakeup_hour < 8) {
-        cout << "This is harmfull. You have to sleep at least 8 hours per day!" << endl;
-    }
-
-    new_minute = (minutes + wakeup_minute) % 60;
-    new_hour = (minutes + wakeup_minute) / 60 + (hour + wakeup_hour);
-    new_day = new_hour / 24;
-    aday = new_day == 0 ? "today" : "tomorrow";
-
-    if (new_hour < 10) {
-        if (new_minute < 10) {
-            cout << "Your alarm clock will ring " << aday << " at 0" << new_hour << ":0" << new_minute << "!" << endl;
-        }
-        else {
-            cout << "Your alarm clock will ring " << aday << " at 0" << new_hour << ":" << new_minute << "!" << endl;
-        }
+    if ( type == "odd" ) {
+        answer = sum + a*b;
+        cout << "Because the difference between a and b is " << type << " the weird sum is " << answer << endl;
     }
     else {
-        if (new_minute < 10) {
-            cout << "Your alarm clock will ring " << aday << " at " << new_hour << ":0" << new_minute << "!" << endl;
-        }
-        else {
-            cout << "Your alarm clock will ring " << aday << " at " << new_hour << ":" << new_minute << "!" << endl;
-        }
+        answer = sum*2;
+        cout << "Because the difference between a and b is " << type << " the weird sum is " << answer << endl;
     }
     return 0;
 }
