@@ -1349,3 +1349,36 @@ int main () // Sum of divisors
     cout << "The sum of divisors of number " << number << " is " << result << endl;
     return 0;
 }
+
+int main () // Grading FPRO
+{
+    double LE, PE, TE, RE;
+    double result;
+
+    cout << "Welcom to FPRO. Enter yours grades in percentage:\nLE: ";
+    cin >> LE;
+    cout << "RE: ";
+    cin >> RE;
+    cout << "PE: ";
+    cin >> PE;
+    cout << "TE: ";
+    cin >> TE;
+
+    bool flag = false;
+    double grades[4] = {PE, TE, LE, RE};
+    for (int g : grades) {
+        flag = flag || (g < 0 || g > 100);
+    }
+
+    if (flag) {
+        cout << "Input error";
+    }
+    else if (PE < 40 or TE < 40) {
+        cout << "RFC";
+    }
+    else {
+        result = (LE + RE + 5 * PE + 3 * TE) / 50;
+        cout << "Your grade is " << result << " values!" << endl;
+    }
+    return 0;
+}
