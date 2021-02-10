@@ -1350,35 +1350,64 @@ int main () // Sum of divisors
     return 0;
 }
 
-int main () // Grading FPRO
+int main () // Looping numbers
 {
-    double LE, PE, TE, RE;
-    double result;
+    string substring, looping = "0123456789876543210";
+    int number;
 
-    cout << "Welcom to FPRO. Enter yours grades in percentage:\nLE: ";
-    cin >> LE;
-    cout << "RE: ";
-    cin >> RE;
-    cout << "PE: ";
-    cin >> PE;
-    cout << "TE: ";
-    cin >> TE;
-
-    bool flag = false;
-    double grades[4] = {PE, TE, LE, RE};
-    for (int g : grades) {
-        flag = flag || (g < 0 || g > 100);
-    }
-
-    if (flag) {
-        cout << "Input error";
-    }
-    else if (PE < 40 or TE < 40) {
-        cout << "RFC";
+    cout << "Enter a integer number: ";
+    cin >> number;
+    substring = to_string(number);
+    
+    if (looping.find(substring) != -1) {
+        cout << "It is a looping number :)" << endl;
     }
     else {
-        result = (LE + RE + 5 * PE + 3 * TE) / 50;
-        cout << "Your grade is " << result << " values!" << endl;
+        cout << "It is not a looping number :(" << endl;
     }
+    return 0;
+}
+
+double rounded (double number, double exponent)
+{
+    double n;
+    n = round((number * pow(10, exponent)))/pow(10, exponent);
+    return n;
+}
+
+int main () // SquareRoot
+{
+    double number, a, b = 0, medio, exponent = -6, precision, zeros;
+    cout << "Enter a number: ";
+    cin >> number;
+    a = number;
+    cout << "Enter a precision of result: ";
+    cin >> precision;
+
+    for (char number: to_string(1 / precision)) {
+        if (number == '0') {
+            exponent++;
+        }
+    }
+    cout << exponent;
+
+    while (true) {
+
+        medio = (a + b) / 2;
+        if ((pow(medio, 2) == number) || ((a-b) < 0)) {
+            break;
+        }
+        if (medio*medio > number) {
+            a = medio;
+        }
+        else {
+            b = medio;
+        }
+        a = rounded(a, exponent);
+        cout << a << " " << b << endl;
+        b = rounded(b, exponent);
+    }
+
+    cout << "The square root of number " << number << " is " << medio << endl;
     return 0;
 }
