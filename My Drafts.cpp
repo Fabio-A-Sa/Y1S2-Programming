@@ -1239,3 +1239,113 @@ int main () // Weird sum
     return 0;
 }
 
+int main () // Easy change
+{
+    int nota_50, nota_20, nota_10, nota_5;
+    int price, received, troco;
+    string answer = "The change is composed by ";
+
+    do  {    
+        do  {
+            cout << "Enter a price of budgeting: ";
+            cin >> price;
+            if (price % 5 != 0) {
+                cout << "Your input is invalid! Price have to be a multiple of 5. Please try again." << endl;
+            }
+            } while (price % 5 != 0);
+
+        do  {
+            cout << "Enter a price received: ";
+            cin >> received;
+            if (received % 5 != 0) {
+                cout << "Your input is invalid! Money received have to be a multiple of 5. Please try again." << endl;
+            }
+            } while (received % 5 != 0);
+
+        troco = received - price;
+        if (troco < 0) {
+            cout << "The customer has to give more money to pay! Please try again." << endl;
+        }
+        } while (troco < 0 || troco % 5 != 0);
+    
+    if (troco == 0) {
+        cout << "You don't need change. It's all paid for." << endl;
+    }
+    else  {
+
+        nota_50 = troco / 50;
+        nota_20 = (troco % 50) / 20;
+        nota_10 = ((troco % 50) % 20) / 10;
+        nota_5 = (((troco % 50) % 20) % 10) / 5;
+
+        int counter = 0;
+        int result[4] = { nota_50, nota_20, nota_10, nota_5 };
+
+        // How many types of notes I will put in answer?
+        for (int index = 0; index < 4; index++) {
+            if (result[index] != 0) {
+                counter++;
+            }
+        }
+
+        string keys[4] = { " notes of 50 euros", " notes of 20 euros", " notes of 10 euros", " notes of 5 euros"};
+        int pointer = counter;
+        counter = 0;
+
+        for (int index = 0; index < 4; index++) {
+            if (result[index] != 0) {
+
+                counter++;
+
+                if (counter < pointer - 1) {
+                    answer = answer + to_string(result[index]) + keys[index] + ", ";
+                }
+                else if (counter == pointer - 1) {
+                    answer = answer + to_string(result[index]) + keys[index] + " and ";
+                }
+                else {
+                    answer = answer + to_string(result[index]) + keys[index] + ".";
+                }
+            }
+            else {
+                continue;
+            }
+        }
+    }
+    cout << answer << endl;
+    return 0;
+}
+
+int main () // Multiples of 3 or 5
+{
+    int number, result;
+    cout << "Enter a number: ";
+    cin >> number;
+    for (int i; i <= number; i++) {
+        if ( i % 5 == 0 || i % 3 == 0 ) {
+            result = result + i;
+        }
+        else {
+            continue;
+        }
+    }
+    cout << "The result is " << result << endl;
+    return 0;
+}
+
+int main () // Sum of divisors
+{
+    int number, result = 0;
+    cout << "Enter a number: ";
+    cin >> number;
+    for (int i = 1; i <= number; i++) {
+        if (number % i == 0) {
+            result = result + i;
+        }
+        else {
+            continue;
+        }
+    }
+    cout << "The sum of divisors of number " << number << " is " << result << endl;
+    return 0;
+}

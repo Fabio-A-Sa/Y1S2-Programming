@@ -6,27 +6,19 @@
 #include <string>
 using namespace std;
 
-int main () // Weird sum
+int main () // Sum of divisors
 {
-    int a, b, difference, sum, answer;
-    string type;
-
-    cout << "Value of a: ";
-    cin >> a;
-    cout << "Value of b: ";
-    cin >> b;
-
-    sum = a + b;
-    difference = a - b;
-    type = (difference % 2 != 0) ? "odd" : "even";
-
-    if ( type == "odd" ) {
-        answer = sum + a*b;
-        cout << "Because the difference between a and b is " << type << " the weird sum is " << answer << endl;
+    int number, result = 0;
+    cout << "Enter a number: ";
+    cin >> number;
+    for (int i = 1; i <= number; i++) {
+        if (number % i == 0) {
+            result = result + i;
+        }
+        else {
+            continue;
+        }
     }
-    else {
-        answer = sum*2;
-        cout << "Because the difference between a and b is " << type << " the weird sum is " << answer << endl;
-    }
+    cout << "The sum of divisors of number " << number << " is " << result << endl;
     return 0;
 }
