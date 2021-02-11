@@ -5,48 +5,23 @@
 #include <cmath>
 #include <string>
 #include <iomanip>
+#include <vector>
 using namespace std;
 
-double rounded (double number, double exponent)
+int main () // Reverse integers
 {
-    double n;
-    n = round((number * pow(10, exponent)))/pow(10, exponent);
-    return n;
-}
+    int number, inverse_number = 0, aux, last_digit;
 
-int main () // SquareRoot
-{
-    double number, a, b = 0, medio, exponent = -6, precision, zeros;
     cout << "Enter a number: ";
     cin >> number;
-    a = number;
-    cout << "Enter a precision of result: ";
-    cin >> precision;
+    aux = number;
 
-    for (char number: to_string(1 / precision)) {
-        if (number == '0') {
-            exponent++;
-        }
-    }
-    cout << exponent;
-
-    while (true) {
-
-        medio = (a + b) / 2;
-        if ((pow(medio, 2) == number) || ((a-b) < 0)) {
-            break;
-        }
-        if (medio*medio > number) {
-            a = medio;
-        }
-        else {
-            b = medio;
-        }
-        a = rounded(a, exponent);
-        cout << a << " " << b << endl;
-        b = rounded(b, exponent);
+    while (aux > 0) {
+        last_digit = aux % 10;
+        inverse_number = 10*inverse_number + last_digit;
+        aux = aux / 10;
     }
 
-    cout << "The square root of number " << number << " is " << medio << endl;
+    cout << "The inverse integer of number " << number << " is " << inverse_number << "!" << endl;
     return 0;
 }

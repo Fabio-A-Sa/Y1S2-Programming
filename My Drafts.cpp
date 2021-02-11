@@ -1389,12 +1389,11 @@ int main () // SquareRoot
             exponent++;
         }
     }
-    cout << exponent;
 
     while (true) {
 
         medio = (a + b) / 2;
-        if ((pow(medio, 2) == number) || ((a-b) < 0)) {
+        if ((pow(medio, 2) == number) || ((a-b) <= precision)) {
             break;
         }
         if (medio*medio > number) {
@@ -1403,11 +1402,108 @@ int main () // SquareRoot
         else {
             b = medio;
         }
-        a = rounded(a, exponent);
-        cout << a << " " << b << endl;
-        b = rounded(b, exponent);
     }
 
-    cout << "The square root of number " << number << " is " << medio << endl;
+    cout << "The square root of number " << number << " is " << rounded (medio, exponent) << endl;
+    return 0;
+}
+
+int factorial (int number)  
+{
+    if (number <= 1) { return 1 ; }
+    else { return number * factorial (number - 1) ; }
+}
+
+ int main () // pi by using the Ramanujan formula
+ {
+    double inverso = 0, pi = 0, acumulador = 0;
+    double const coeficiente = (2*sqrt(2))/(9801);
+
+    for (int K = 0; K <= 50; K++) {
+        acumulador = ( (factorial(4*K)) * (1103 + 26390*K) ) / ( (pow((factorial(K)), 4)) * (pow(396, 4*K)) );
+        inverso = inverso + acumulador;
+    }
+
+    inverso = acumulador * coeficiente;
+    pi = 1 / inverso;
+    cout << "O valor de Pi é " << pi << endl;
+
+    return 0;
+ }
+
+int factorial (int number)  
+{
+    if (number <= 1) { return 1 ; }
+    else { return number * factorial (number - 1) ; }
+}
+
+int main () // combinations using FPRO formula
+{
+    int objects, selected;
+    double result;
+
+    cout << "Number of objects: ";
+    cin >> objects;
+    cout << "Number of objects selected: ";
+    cin >> selected;
+    
+    result = floor((factorial(objects))/(factorial(selected)*factorial(objects-selected)));
+    cout << "Number of combinations: " << result;
+    return 0;
+ }
+
+int main () // Primes between lower and upper numbers
+{
+    int lower, upper;
+    vector<int> prime_numbers;
+    bool flag = true;
+
+    do  {
+        cout << "Lower number: ";
+        cin >> lower;
+        cout << "Upper number: ";
+        cin >> upper;
+        if (lower >= upper) {
+            cout << "Out of range! Please try again!" << endl;
+        }
+        else if (upper <= 0) {
+            cout << "There isn't prime numbers under 0! Please try again!" << endl;
+        }
+        } while (upper <= lower || upper <= 0 );
+
+    for ( int number = lower; number <= upper; number++ ) {
+        flag = true;
+        for ( int denominador = 2; denominador < number ; denominador++ ) {
+            flag = flag && (number % denominador != 0);
+        }
+        if (flag) {
+            prime_numbers.push_back(number);
+        }
+        else {
+            continue;
+        }
+    }
+    cout << "Prime numbers between " << lower << " and " << upper << " are: ";
+    for (int n : prime_numbers) {
+        cout << n << " ";
+    }
+    return 0;
+}
+
+int main () // Reverse integers
+{
+    int number, inverse_number = 0, aux, last_digit;
+
+    cout << "Enter a number: ";
+    cin >> number;
+    aux = number;
+
+    while (aux > 0) {
+        last_digit = aux % 10;
+        inverse_number = 10*inverse_number + last_digit;
+        aux = aux / 10;
+    }
+
+    cout << "The inverse integer of number " << number << " is " << inverse_number << "!" << endl;
     return 0;
 }
