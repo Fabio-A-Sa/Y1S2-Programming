@@ -8,31 +8,19 @@
 #include <vector>
 using namespace std;
 
-double rad (double degree)
+int main () // Exercício 2.8 Juros compostos
 {
-    const double pi = 3.14159265;
-    double rads;
-    rads = (pi*degree)/180.0;
-    return rads;
-}
+    double n, q, j, result;
 
-int main () // Exercício 2.7.b (tabela de ângulos por input)
-{
-    double lower, upper, incremento;
-    string template_b = "ang    sen     cos     tan";
+    cout << "Quantos anos? ";
+    cin >> n;
+    cout << "Quantia inicial: ";
+    cin >> q;
+    cout << "Taxa de juros anuais, em percentagem: ";
+    cin >> j;
 
-    cout << "Enter a lower number in degrees: ";
-    cin >> lower;
-    cout << "Enter a upper number in degrees: ";
-    cin >> upper;
-    cout << "Enter a increment number: ";
-    cin >> incremento;
+    result = q*pow((1+j), n);
 
-    cout << endl << template_b;
-    for (double x = lower; x <= upper; x = x+incremento) {
-        cout << x << "   ";
-        cout << sin(rad (x)) << "   " << cos(rad (x)) << "   " << tan(rad (x)) << endl;
-    }
-
+    cout << "No final de " << n << " anos deveria ter " << result << " euros no banco!" << endl;
     return 0;
 }
