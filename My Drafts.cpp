@@ -1676,3 +1676,44 @@ int main () // Exercício 2.9.c (somador, media, maior, com tecla end of input)
     cout << "Menor numero colocado: " << menor << endl;
     return 0;
 }
+
+int main () // Exercício 2.10.a (capicua com números de 3 dígitos)
+{
+    int number;
+    string comparation;
+
+    cout << "Numero inteiro com 3 digitos: ";
+    cin >> number;
+    comparation = to_string(number);
+
+    if ( comparation[0] == comparation[2] ) {
+        cout << "O numero " << number << " e uma capicua!";
+    }
+    else {
+        cout << "O numero " << number << " nao e uma capicua!";
+    }
+    return 0;
+}
+
+int main () // Exercício 2.10.b (capicua total)
+{
+    int number, last_digit, aux, comparation = 0;
+
+    cout << "Enter a integer number: ";
+    cin >> number;
+    aux = number;
+    
+    while (aux > 0) {
+        last_digit = aux % 10;
+        comparation = comparation*10 + last_digit;
+        aux = aux / 10;
+    }
+
+    if ( number == comparation ) {
+        cout << "O numero " << number << " e uma capicua!";
+    }
+    else {
+        cout << "O numero " << number << " nao e uma capicua!";
+    }
+    return 0;
+}
