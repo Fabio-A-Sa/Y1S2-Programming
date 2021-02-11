@@ -1507,3 +1507,27 @@ int main () // Reverse integers
     cout << "The inverse integer of number " << number << " is " << inverse_number << "!" << endl;
     return 0;
 }
+
+int main () // Split function with c++
+{
+    vector<string> words;
+    string sentence, current_word;
+
+    cout << "Input a sentence: ";
+    getline(cin, sentence);
+    sentence = sentence + " ";
+
+    for (char letter : sentence) {
+        if (letter != ' ') {
+            current_word = current_word + letter;
+        }
+        else {
+            words.push_back(current_word);
+            current_word = "";
+        }
+    }
+    for (string word : words) {
+        cout << word << endl;
+    }
+    return 0;
+}

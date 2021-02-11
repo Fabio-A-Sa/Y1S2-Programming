@@ -8,20 +8,26 @@
 #include <vector>
 using namespace std;
 
-int main () // Reverse integers
+int main () // Split function with c++
 {
-    int number, inverse_number = 0, aux, last_digit;
+    vector<string> words;
+    string sentence, current_word;
 
-    cout << "Enter a number: ";
-    cin >> number;
-    aux = number;
+    cout << "Input a sentence: ";
+    getline(cin, sentence);
+    sentence = sentence + " ";
 
-    while (aux > 0) {
-        last_digit = aux % 10;
-        inverse_number = 10*inverse_number + last_digit;
-        aux = aux / 10;
+    for (char letter : sentence) {
+        if (letter != ' ') {
+            current_word = current_word + letter;
+        }
+        else {
+            words.push_back(current_word);
+            current_word = "";
+        }
     }
-
-    cout << "The inverse integer of number " << number << " is " << inverse_number << "!" << endl;
+    for (string word : words) {
+        cout << word << endl;
+    }
     return 0;
 }
