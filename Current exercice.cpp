@@ -8,26 +8,31 @@
 #include <vector>
 using namespace std;
 
-int main () // Split function with c++
+double rad (double degree)
 {
-    vector<string> words;
-    string sentence, current_word;
+    const double pi = 3.14159265;
+    double rads;
+    rads = (pi*degree)/180.0;
+    return rads;
+}
 
-    cout << "Input a sentence: ";
-    getline(cin, sentence);
-    sentence = sentence + " ";
+int main () // Exercício 2.7.b (tabela de ângulos por input)
+{
+    double lower, upper, incremento;
+    string template_b = "ang    sen     cos     tan";
 
-    for (char letter : sentence) {
-        if (letter != ' ') {
-            current_word = current_word + letter;
-        }
-        else {
-            words.push_back(current_word);
-            current_word = "";
-        }
+    cout << "Enter a lower number in degrees: ";
+    cin >> lower;
+    cout << "Enter a upper number in degrees: ";
+    cin >> upper;
+    cout << "Enter a increment number: ";
+    cin >> incremento;
+
+    cout << endl << template_b;
+    for (double x = lower; x <= upper; x = x+incremento) {
+        cout << x << "   ";
+        cout << sin(rad (x)) << "   " << cos(rad (x)) << "   " << tan(rad (x)) << endl;
     }
-    for (string word : words) {
-        cout << word << endl;
-    }
+
     return 0;
 }
