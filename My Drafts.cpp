@@ -1607,3 +1607,72 @@ int main () // Exercício 2.8 Juros compostos
     cout << "No final de " << n << " anos deveria ter " << result << " euros no banco!" << endl;
     return 0;
 }
+
+int main () // Exercício 2.9.a (somador, media, maior, menor com 0)
+{
+    int soma = 0, maior = -100000, menor = 100000, input;
+    double media, contador;
+
+    do  {
+        cout << "Numero: ";
+        cin >> input;
+        maior = input > maior ? input : maior;
+        menor = input < menor ? input : menor;
+        soma = soma + input;
+        contador = contador + 1;
+        } while (input != 0);
+
+    media = soma / contador;
+    cout << "Dados obtidos\nSoma: " << soma << endl;
+    cout << "Media: " << media << endl;
+    cout << "Maior numero colocado: " << maior << endl;
+    cout << "Menor numero colocado: " << menor << endl;
+    return 0;
+}
+
+int main () // Exercício 2.9.b (somador, media, maior, com comprimento)
+{
+    int soma = 0, maior = -100000, menor = 100000, input, comprimento;
+    double media, contador = 0;
+
+    cout << "Qual e o comprimento da sequencia? ";
+    cin >> comprimento;
+
+    do  {
+        cout << "Numero: ";
+        cin >> input;
+        maior = input > maior ? input : maior;
+        menor = input < menor ? input : menor;
+        soma = soma + input;
+        contador = contador + 1;
+        } while (contador != comprimento);
+
+    media = soma / contador;
+    cout << "Dados obtidos\nSoma: " << soma << endl;
+    cout << "Media: " << media << endl;
+    cout << "Maior numero colocado: " << maior << endl;
+    cout << "Menor numero colocado: " << menor << endl;
+    return 0;
+}
+
+int main () // Exercício 2.9.c (somador, media, maior, com tecla end of input)
+{
+    int soma = 0, maior = -100000, menor = 100000, input;
+    double media, contador = 0;
+
+    do  {
+        cout << "Numero: ";
+        cin >> input;
+        maior = input > maior ? input : maior;
+        menor = input < menor ? input : menor;
+        soma = soma + input;
+        contador = contador + 1;
+        } while (!(cin.eof()));
+
+    media = soma / contador;
+    cout << "Dados obtidos\nSoma: " << soma << endl;
+    cout << "Media: " << media << endl;
+    cout << "Maior numero colocado: " << maior << endl;
+    cout << "Menor numero colocado: " << menor << endl;
+    return 0;
+}
