@@ -1991,3 +1991,23 @@ int main () // Exercício 2.14.b -> SquareRot de Heron with precision
     return 0;
 }
 
+int main () // Exercício 2.15 --> Tabuada de tempos
+{
+    srand(time(NULL));
+    int a, b, result, input;
+    double tempo_inicial = 0, tempo_final = 0, tempo;
+    a = rand() % 10 + 2;
+    b = rand() % 10 + 2;
+
+    cout << a << " x " << b << " = ";
+    cin >> input;
+    result = a*b;
+    if (result != input) { cout << "Resultado incorrecto!" << endl ; }
+
+    tempo = tempo_final - tempo_inicial;
+    if (tempo < 5) { cout << "Bom" << endl ; }
+    else if (tempo >= 5 && tempo <= 10) { cout << "Suficiente" << endl ; }
+    else { cout << "Insuficiente" << endl ; }
+
+    return 0;
+}

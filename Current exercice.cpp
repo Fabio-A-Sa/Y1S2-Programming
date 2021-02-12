@@ -3,41 +3,29 @@
 
 #include <iostream>
 #include <cmath>
+#include <ctime>
 #include <string>
 #include <iomanip>
 #include <vector>
 using namespace std;
 
-void rounded (double number, double exponent)
+int main () // Exercício 2.15 --> Tabuada de tempos
 {
-    double n;
-    n = floor (number * pow(10, exponent) + 0.5) / pow(10, exponent);
-    cout << n;
-}
+    srand(time(NULL));
+    int a, b, result, input;
+    double tempo_inicial = 0, tempo_final = 0, tempo;
+    a = rand() % 10 + 2;
+    b = rand() % 10 + 2;
 
-int main () // Exercício 2.14.b -> SquareRot de Heron with precision
-{
-    double n, rq, rqn, delta, dif;
-    int nMaxIter, exponent = -6;
+    cout << a << " x " << b << " = ";
+    cin >> input;
+    result = a*b;
+    if (result != input) { cout << "Resultado incorrecto!" << endl ; }
 
-    cout << "Enter a number: ";
-    cin >> n;
-    cout << "Enter a precision of result: ";
-    cin >> delta;
+    tempo = tempo_final - tempo_inicial;
+    if (tempo < 5) { cout << "Bom" << endl ; }
+    else if (tempo >= 5 && tempo <= 10) { cout << "Suficiente" << endl ; }
+    else { cout << "Insuficiente" << endl ; }
 
-    for (char number: to_string(1 / delta)) {
-        if (number == '0') {
-            exponent++;
-        }
-    }
-
-    rq = 1;
-    do  {
-        rqn = (rq + n / rq) / 2;
-        dif = n - pow(rqn, 2);
-        rq = rqn;
-        } while (abs(dif) > delta);
-
-    rounded (rqn, exponent);
     return 0;
 }
