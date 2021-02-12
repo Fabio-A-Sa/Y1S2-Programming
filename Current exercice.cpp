@@ -8,25 +8,32 @@
 #include <vector>
 using namespace std;
 
-int main () // Exercício 2.10.b (capicua total)
+int factorial (int number) 
 {
-    int number, last_digit, aux, comparation = 0;
+    if (number <= 1) { return 1 ; }
+    else { return number * factorial(number - 1) ; }
+}
 
-    cout << "Enter a integer number: ";
-    cin >> number;
-    aux = number;
-    
-    while (aux > 0) {
-        last_digit = aux % 10;
-        comparation = comparation*10 + last_digit;
-        aux = aux / 10;
-    }
+int main () // Exercício 2.11.c -> e elevado a -x
+{
+    int n, x;
+    double result = 1; 
 
-    if ( number == comparation ) {
-        cout << "O numero " << number << " e uma capicua!";
+    cout << "Quantas parcelas devo somar? ";
+    cin >> n;
+    cout << "Qual o valor de x? ";
+    cin >> x;
+
+    for (int i = 1; i < n ; i++) {
+
+        double denominador = factorial(i);
+        if ( i%2 == 1) {
+            result = result - pow(x, i)/denominador;
+        }
+        else {
+            result = result + pow(x, i)/denominador;
+        }
     }
-    else {
-        cout << "O numero " << number << " nao e uma capicua!";
-    }
+    cout << "O valor de e elevado a menos x: " << result << endl;
     return 0;
 }
