@@ -1932,3 +1932,62 @@ int main () // Exercício 2.13 - Fatorização
     return 0;
 }
 
+int main () // Exercício 2.14.a -> SquareRot de Heron
+{
+    double n, rq, rqn, delta, dif;
+    int nMaxIter, exponent = 0;
+
+    cout << "Enter a number: ";
+    cin >> n;
+    cout << "Enter a precision of result: ";
+    cin >> delta;
+    cout << "Max iteration: ";
+    cin >> nMaxIter;
+
+    int counter = 0;
+    rq = 1;
+    do  {
+        rqn = (rq + n / rq) / 2;
+        dif = n - pow(rqn, 2);
+        rq = rqn;
+        counter++;
+        } while (abs(dif) > delta && counter != nMaxIter);
+
+    cout << rq << endl;
+    return 0;
+}
+
+void rounded (double number, double exponent)
+{
+    double n;
+    n = floor (number * pow(10, exponent) + 0.5) / pow(10, exponent);
+    cout << n;
+}
+
+int main () // Exercício 2.14.b -> SquareRot de Heron with precision
+{
+    double n, rq, rqn, delta, dif;
+    int nMaxIter, exponent = -6;
+
+    cout << "Enter a number: ";
+    cin >> n;
+    cout << "Enter a precision of result: ";
+    cin >> delta;
+
+    for (char number: to_string(1 / delta)) {
+        if (number == '0') {
+            exponent++;
+        }
+    }
+
+    rq = 1;
+    do  {
+        rqn = (rq + n / rq) / 2;
+        dif = n - pow(rqn, 2);
+        rq = rqn;
+        } while (abs(dif) > delta);
+
+    rounded (rqn, exponent);
+    return 0;
+}
+

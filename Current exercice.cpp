@@ -8,42 +8,36 @@
 #include <vector>
 using namespace std;
 
-double rounded (double number, double exponent)
+void rounded (double number, double exponent)
 {
     double n;
-    n = round((number * pow(10, exponent)))/pow(10, exponent);
-    return n;
+    n = floor (number * pow(10, exponent) + 0.5) / pow(10, exponent);
+    cout << n;
 }
 
-int main () // SquareRoot
+int main () // Exercício 2.14.b -> SquareRot de Heron with precision
 {
-    double number, a, b = 0, medio, exponent = -6, precision, zeros;
-    cout << "Enter a number: ";
-    cin >> number;
-    a = number;
-    cout << "Enter a precision of result: ";
-    cin >> precision;
+    double n, rq, rqn, delta, dif;
+    int nMaxIter, exponent = -6;
 
-    for (char number: to_string(1 / precision)) {
+    cout << "Enter a number: ";
+    cin >> n;
+    cout << "Enter a precision of result: ";
+    cin >> delta;
+
+    for (char number: to_string(1 / delta)) {
         if (number == '0') {
             exponent++;
         }
     }
 
-    while (true) {
+    rq = 1;
+    do  {
+        rqn = (rq + n / rq) / 2;
+        dif = n - pow(rqn, 2);
+        rq = rqn;
+        } while (abs(dif) > delta);
 
-        medio = (a + b) / 2;
-        if ((pow(medio, 2) == number) || ((a-b) <= precision)) {
-            break;
-        }
-        if (medio*medio > number) {
-            a = medio;
-        }
-        else {
-            b = medio;
-        }
-    }
-
-    cout << "The square root of number " << number << " is " << rounded (medio, exponent) << endl;
+    rounded (rqn, exponent);
     return 0;
 }
