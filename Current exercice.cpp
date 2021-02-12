@@ -8,35 +8,54 @@
 #include <vector>
 using namespace std;
 
-int factorial (int number) 
+
+vector<int> primes_until (int number)
 {
-    if (number <= 1) { return 1 ; }
-    else { return number * factorial(number - 1) ; }
+    vector<int> primes;
+    bool flag = true;
+
+    for (int n = 2; n <= number; n++) {
+        flag = true;
+        for (int denom = 2; denom <= sqrt(n) ; denom++) {
+            flag = flag && ( n % denom != 0 );
+            }
+        if (flag) {
+            primes.push_back(n);
+        }
+        else { continue; }
+    }
+    return primes;
 }
 
-int main () // Exercício 2.11.c -> e elevado a -x com precisão
+int main () 
 {
-    int x, i = 1;
-    double result = 1, precision;
-    const double e = 2.71828; 
-
-    cout << "Qual o valor de x? ";
-    cin >> x;
-    cout << "Qual a precisao pretendida? ";
-    cin >> precision;
-    double compare = pow(e, (-1)*x);
-
+    int number;
     do  {
-        double denominador = factorial(i);
-        if ( i%2 == 1) {
-            result = result - pow(x, i)/denominador;
+        cout << "Please enter a integer number: ";
+        cin >> number;
+        if (number < 2) {
+            cout << "Input error. Please try again!" << endl;
         }
-        else {
-            result = result + pow(x, i)/denominador;
-        }
-        i++;
-        } while ( abs(result - compare) > precision );
+        } while (number < 2);
+    int aux = number;
 
-    cout << "O valor de e elevado a menos x: " << result << endl;
+    vector<int> factors;
+    for (int n: primes_until(number)) {
+        while ( aux % n  == 0 ) {
+            aux = aux / n;
+            factors.push_back(n);
+        }
+    }
+
+    string answer = "O numero " + to_string(number) + " pode ser fatorizado em ";
+    for (int fact : factors) {
+        answer = answer + to_string(fact) + " x ";
+    }
+
+    int index = 0;
+    while (index != (answer.size()-3)) {
+        cout << answer[index];
+        index++;
+    }
     return 0;
 }
