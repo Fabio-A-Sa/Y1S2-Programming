@@ -9,22 +9,24 @@
 #include <vector>
 using namespace std;
 
-double round (double x, unsigned n) 
-{   
-    double rounded = floor(x * (pow(10, n)) + 0.5) / pow(10, n) ;
-    return rounded;
+bool readFracc(int &numerator, int &denominator) 
+{
+    char operador;
+    cin >> numerator >> operador >> denominator;
+    bool flag = (operador != '/' || denominator == 0 || numerator == 0);
+
+    if (flag) {
+        // Fração não válida
+        numerator = 0;
+        denominator = 0;
+        return !flag;
+    }
+    else {
+        return !flag;
+    }
 }
 
-int main () 
-{   
-    double number;
-    int decimal_places;
-
-    cout << "Enter a floar number: ";
-    cin >> number;
-    cout << "Number of decimal places to round: ";
-    cin >> decimal_places;
-    cout << round (number, decimal_places);
-    
-    return 0;
+int main () // Test function
+{
+    cout << readFracc(numerator)
 }
