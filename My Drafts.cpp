@@ -1795,3 +1795,88 @@ int main () // Exercício 2.11.c -> e elevado a -x
     cout << "O valor de e elevado a menos x: " << result << endl;
     return 0;
 }
+
+int main () // Exercício 2.12.a - Pi com precisão
+{
+    int i = 1;
+    double result = 0, precision; 
+    double const pi = 3.14159265359;
+
+    cout << "Precisao pretendida? ";
+    cin >> precision;
+
+    do {
+        double denominador = 2*i-1;
+        if ( i%2 == 1) {
+            // Somar
+            result = result + 4/denominador;
+        }
+        else {
+            // Subtrair
+            result = result - 4/denominador;
+        }
+        i++;
+
+        } while (abs(result-pi) > precision);
+
+    cout << "O valor de pi: " << result << endl;
+    return 0;
+}
+
+int factorial (int number) 
+{
+    if (number <= 1) { return 1 ; }
+    else { return number * factorial(number - 1) ; }
+}
+
+int main () // Exercício 2.12.b - e com precisão
+{
+    double result = 0, precision; 
+    int i = 1;
+    double const e = 2.71828;
+
+    cout << "Precisao pretendida? ";
+    cin >> precision;
+
+    do {
+        double denominador = factorial(i-1);
+        result = result + 1/denominador;
+        i++;
+        } while (abs(result - e) > precision) ;
+
+    cout << "O valor de e: " << result << endl;
+    return 0;
+}
+
+int factorial (int number) 
+{
+    if (number <= 1) { return 1 ; }
+    else { return number * factorial(number - 1) ; }
+}
+
+int main () // Exercício 2.11.c -> e elevado a -x com precisão
+{
+    int x, i = 1;
+    double result = 1, precision;
+    const double e = 2.71828; 
+
+    cout << "Qual o valor de x? ";
+    cin >> x;
+    cout << "Qual a precisao pretendida? ";
+    cin >> precision;
+    double compare = pow(e, (-1)*x);
+
+    do  {
+        double denominador = factorial(i);
+        if ( i%2 == 1) {
+            result = result - pow(x, i)/denominador;
+        }
+        else {
+            result = result + pow(x, i)/denominador;
+        }
+        i++;
+        } while ( abs(result - compare) > precision );
+
+    cout << "O valor de e elevado a menos x: " << result << endl;
+    return 0;
+}

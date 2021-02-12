@@ -14,18 +14,19 @@ int factorial (int number)
     else { return number * factorial(number - 1) ; }
 }
 
-int main () // Exercício 2.11.c -> e elevado a -x
+int main () // Exercício 2.11.c -> e elevado a -x com precisão
 {
-    int n, x;
-    double result = 1; 
+    int x, i = 1;
+    double result = 1, precision;
+    const double e = 2.71828; 
 
-    cout << "Quantas parcelas devo somar? ";
-    cin >> n;
     cout << "Qual o valor de x? ";
     cin >> x;
+    cout << "Qual a precisao pretendida? ";
+    cin >> precision;
+    double compare = pow(e, (-1)*x);
 
-    for (int i = 1; i < n ; i++) {
-
+    do  {
         double denominador = factorial(i);
         if ( i%2 == 1) {
             result = result - pow(x, i)/denominador;
@@ -33,7 +34,9 @@ int main () // Exercício 2.11.c -> e elevado a -x
         else {
             result = result + pow(x, i)/denominador;
         }
-    }
+        i++;
+        } while ( abs(result - compare) > precision );
+
     cout << "O valor de e elevado a menos x: " << result << endl;
     return 0;
 }
