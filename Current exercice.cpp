@@ -9,46 +9,23 @@
 #include <vector>
 using namespace std;
 
-double distance (double x1, double x2, double y1, double y2) 
+bool isPrime (int number) 
 {
-    double dist;
-    dist = sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
-    return dist;
+    bool flag = true;
+    for (int i = 2; i < number ; i++) {
+        flag = flag && ( number % i != 0);
+    }
+    return flag;
 }
 
-double area (double p, double p1, double p2, double p3)
+int main () // Exercício 3.2.c -> Primos até 1000
 {
-    double area;
-    area = sqrt(p*(p-p1)*(p-p2)*(p-p3));
-    return area;
-}
+    int number = 2, counter = 0;
 
-int main() // Exercício 3.1 --> Areas e distancias com funções
-{
-    double ax, ay, bx, by, cx, cy;
-    double distance, area_total, l1, l2, l3, l_total;
+    do  {
+        if (isPrime(number)) { cout << number << " "; counter++; number++; }
+        else { counter++; number++; }
+        } while (counter < 1000);
 
-    // Input
-    cout << "Insira as coordenadas dos vertices do triangulo:" << endl;
-    cout << "Vertice A --> Abcissa (x):";
-    cin >> ax;
-    cout << "Vertice A --> Ordenada (y):";
-    cin >> ay;
-    cout << "Vertice B --> Abcissa (x):";
-    cin >> bx;
-    cout << "Vertice B --> Ordenada (y):";
-    cin >> by;
-    cout << "Vertice C --> Abcissa (x):";
-    cin >> cx;
-    cout << "Vertice C --> Ordenada (y):";
-    cin >> cy;
-
-    // Data
-    l1 = distance (ax, bx, ay, by);
-    l2 = distance (ax, cx, ay, cy);
-    l3 = distance (bx, cx, by, cy);
-    l_total = l1 + l2 + l3;
-    area_total = area (l_total, l1, l2, l3); 
-    cout << "O triangulo considerado tem " << area_total << " unidades de area." << endl;
     return 0;
 }

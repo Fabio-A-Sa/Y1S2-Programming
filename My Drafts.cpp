@@ -2061,3 +2061,47 @@ int main() // Exercício 3.1 --> Areas e distancias com funções
     cout << "O triangulo considerado tem " << area_total << " unidades de area." << endl;
     return 0;
 }
+
+bool isPrime (int number) 
+{
+    bool flag = true;
+    for (int i = 2; i < number; i++) {
+        flag = flag && ( number % i != 0);
+    }
+    return flag;
+}
+
+int main () // Exercício 3.2.a -> Ver se um número é primo
+{
+    int number;
+    cout << "Number? ";
+    cin >> number;
+
+    if (isPrime(number)) { cout << "This number is prime!" << endl ; }
+    else { cout << "This number isn't prime!" << endl; }
+    return 0;
+}
+
+int main () // Exercício 3.2.b -> 100 primeiros números primos
+{
+    int number = 2, counter = 0;
+
+    do  {
+        if (isPrime(number)) { cout << number << " "; counter++; number++; }
+        else { number++; }
+        } while (counter != 100);
+
+    return 0;
+}
+
+int main () // Exercício 3.2.c -> Primos até 1000
+{
+    int number = 2, counter = 0;
+
+    do  {
+        if (isPrime(number)) { cout << number << " "; counter++; number++; }
+        else { counter++; number++; }
+        } while (counter < 1000);
+
+    return 0;
+}
