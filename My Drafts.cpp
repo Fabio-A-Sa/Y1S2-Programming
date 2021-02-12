@@ -1931,3 +1931,4 @@ int main () // Exercício 2.13 - Fatorização
     }
     return 0;
 }
+

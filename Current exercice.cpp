@@ -8,54 +8,42 @@
 #include <vector>
 using namespace std;
 
-
-vector<int> primes_until (int number)
+double rounded (double number, double exponent)
 {
-    vector<int> primes;
-    bool flag = true;
-
-    for (int n = 2; n <= number; n++) {
-        flag = true;
-        for (int denom = 2; denom <= sqrt(n) ; denom++) {
-            flag = flag && ( n % denom != 0 );
-            }
-        if (flag) {
-            primes.push_back(n);
-        }
-        else { continue; }
-    }
-    return primes;
+    double n;
+    n = round((number * pow(10, exponent)))/pow(10, exponent);
+    return n;
 }
 
-int main () 
+int main () // SquareRoot
 {
-    int number;
-    do  {
-        cout << "Please enter a integer number: ";
-        cin >> number;
-        if (number < 2) {
-            cout << "Input error. Please try again!" << endl;
-        }
-        } while (number < 2);
-    int aux = number;
+    double number, a, b = 0, medio, exponent = -6, precision, zeros;
+    cout << "Enter a number: ";
+    cin >> number;
+    a = number;
+    cout << "Enter a precision of result: ";
+    cin >> precision;
 
-    vector<int> factors;
-    for (int n: primes_until(number)) {
-        while ( aux % n  == 0 ) {
-            aux = aux / n;
-            factors.push_back(n);
+    for (char number: to_string(1 / precision)) {
+        if (number == '0') {
+            exponent++;
         }
     }
 
-    string answer = "O numero " + to_string(number) + " pode ser fatorizado em ";
-    for (int fact : factors) {
-        answer = answer + to_string(fact) + " x ";
+    while (true) {
+
+        medio = (a + b) / 2;
+        if ((pow(medio, 2) == number) || ((a-b) <= precision)) {
+            break;
+        }
+        if (medio*medio > number) {
+            a = medio;
+        }
+        else {
+            b = medio;
+        }
     }
 
-    int index = 0;
-    while (index != (answer.size()-3)) {
-        cout << answer[index];
-        index++;
-    }
+    cout << "The square root of number " << number << " is " << rounded (medio, exponent) << endl;
     return 0;
 }
