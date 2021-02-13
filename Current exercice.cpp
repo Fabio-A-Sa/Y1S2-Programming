@@ -25,3 +25,6 @@ bool readFracc(int &numerator, int &denominator)
         return !flag;
     }
 }
+
+
+
