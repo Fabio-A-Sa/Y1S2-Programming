@@ -2206,3 +2206,47 @@ int main () // Test function
 {
     cout << readFracc(numerator)
 }
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+    int A, B, sum;
+
+    cout << "Enter a number: ";
+    cin >> A;
+    cout << "Another number: ";
+    cin >> B;
+    sum = A+B;
+
+    if (sum < -2147483648) {
+        cout << "sum underflow" << endl;
+    }
+    else if (sum > 2147483647) {
+        cout << "sum overflow" << endl;
+    }
+    else {
+        cout << "The sum is: " << sum << endl;
+    }
+    return 0;
+}
+
+void until_overflow_d ()
+{
+    int const max_value = 4294967295;
+    bool flag = false;
+    int cobaia = max_value;
+
+    while (flag != true) {
+        flag = true
+        for (int denominador; int <= sqrt(cobaia); denominador++) {
+            flag = flag and (cobaia % denominador != 0);
+        }
+        if (!(flag)) {
+            cobaia = cobaia - 1;
+            continue;
+        }
+    }
+    cout << cobaia << endl;
+} 
