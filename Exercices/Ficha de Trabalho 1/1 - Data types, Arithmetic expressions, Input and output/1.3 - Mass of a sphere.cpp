@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    const int pi = 3.14;
+    const double pi = 3.14;
     double densidade, raio, massa;
 
     cout << "Valor da desidade da esfera, em quilogramas por metro cubico (Kg/m^3): ";
