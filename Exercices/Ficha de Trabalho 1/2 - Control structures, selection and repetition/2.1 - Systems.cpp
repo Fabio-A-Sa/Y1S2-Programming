@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-int main() // Exercício 2.1 ( 1.4 + impossível + indeterminado + possível e determinado)
+int main()
 {
     double a, b, c, d, e, f, x, y;
     cout << "The linear system is:" << endl;
