@@ -7,40 +7,22 @@ using namespace std;
 
 int main ()
 {
-    double a, b, resultado;
-    string conta;
+    int A, B, sum;
 
-    cout << "Insira 2 numeros na calculadora:" << endl;
-    cout << "Primeiro numero: ";
-    cin >> a;
-    cout << "Segundo numero: ";
-    cin >> b;
-    cout << "Que conta deseja efetuar?\n+ --> a+b\n- --> a-b\nx --> axb\n/ --> a/b\nSua escolha: ";
-    cin >> conta;
+    cout << "Enter a number: ";
+    cin >> A;
+    cout << "Another number: ";
+    cin >> B;
+    sum = A+B;
 
-    if (conta == "+")
-    {
-        resultado = a+b ;
-        cout << "a+b = " << resultado << endl;
+    if (sum < -2147483648) {
+        cout << "sum underflow" << endl;
     }
-    else if (conta == "-")
-    {
-        resultado = a-b ;
-        cout << "a-b = " << resultado << endl;
+    else if (sum > 2147483647) {
+        cout << "sum overflow" << endl;
     }
-    else if (conta == "x")
-    {
-        resultado = a*b ;
-        cout << "axb = " << resultado << endl;
-    }
-    else if (conta == "/")
-    {
-        resultado = a/b ;
-        cout << "a/b = " << resultado << endl;
-    }
-    else
-    {
-        cout << "Opcao inexistente na calculadora!" << endl;
+    else {
+        cout << "The sum is: " << sum << endl;
     }
     return 0;
 }
