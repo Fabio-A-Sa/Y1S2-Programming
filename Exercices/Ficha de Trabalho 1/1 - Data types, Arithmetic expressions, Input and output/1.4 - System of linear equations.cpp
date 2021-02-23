@@ -25,7 +25,7 @@ int main()
 
     x = (c*e - b*f)/(a*e - b*d);
     y = (a*f - c*d)/(a*e - b*d);
-
     cout << "Solutions: x = " << x << " and y = " << y << endl;
+    
     return 0;
 }
