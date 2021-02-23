@@ -5,6 +5,8 @@
 #include <string>
 using namespace std;
 
+// Falta coisas!
+
 int main ()
 {
     double a, b, resultado;
