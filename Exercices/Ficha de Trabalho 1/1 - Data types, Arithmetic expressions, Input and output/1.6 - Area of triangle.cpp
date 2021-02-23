@@ -45,6 +45,6 @@ int main()
     l3 = distance_t (bx, cx, by, cy);
     l_total = l1 + l2 + l3;
     area_total = area (l_total, l1, l2, l3); 
-    cout << "O triangulo considerado tem " << area_total << " unidades de area." << endl;
+    cout << "O triangulo considerado possui " << area_total << " unidades de area." << endl;
     return 0;
 }
