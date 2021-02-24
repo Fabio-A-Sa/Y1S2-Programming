@@ -11,3 +11,4 @@ int main()
     cin >> letter;
     cout << "ASCII code of '" << letter << "' : " << (int) letter << endl;
 }
+
