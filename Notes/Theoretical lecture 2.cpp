@@ -1,6 +1,6 @@
 // Created on February 25, 2021
 // @author: Fábio Araújo de Sá
-// Theoretical lecture 6->12
+// Theoretical lecture 2, pages 6->17
 
 #include <iostream>
 #include <iomanip>
@@ -58,4 +58,76 @@ int if_and_else_statements ()
     return 0;
 }
 
+// Switch - case statements
+int switch_and_case ()
+{
+    int number, option, result;
+    cout << "Integer number: ";
+    cin >> number;
+    cout << "Chose an option:\n1 -- > Add 5\n2 -- > Multiply by 5" << endl;
+    cin >> option;
+    switch (option) {
+    case 1:
+        result = number + 5;
+        cout << "The result is " << result << endl;
+        break;
+    case 2:
+        result = 5 * number;
+        cout << "The result is " << result << endl;
+        break;
+    default:
+        cout << "Option is not valid" << endl;
+    }
+    return 0;
+}
 
+// Precision of output with include <iomanip>
+int result_with_precision ()
+{
+    int first, second, precision;
+    double quotient;
+    cout << "Enter two numbers: ";
+    cin >> first >> second;
+    cout << "Precision? ";
+    cin >> precision;
+    quotient = (double) first / second;
+    cout << "The result with precision is " << fixed << setprecision(precision) << quotient << endl;
+    return 0;
+}
+
+// Lecture summary
+int calculator ()
+{
+    const unsigned int RESULT_PRECISION = 3;
+    double operand1, operand2;
+    char operation;
+    double result;
+    bool validOperation = false;
+
+    cout << "x op y ? ";
+    cin >> operand1 >> operation >> operand2;
+
+    if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
+
+        validOperation = true;
+
+        if (operation == '+')
+            result = operand1 + operand2;
+        else if (operation == '-')
+            result = operand1 - operand2;
+        else if (operation == '*')
+            result = operand1 * operand2;
+        else if (operation == '/')
+            result = operand1 / operand2;
+
+    }
+
+    if (validOperation) {
+        cout << operand1 << ' ' << operation << ' ' << operand2 << " = ";
+        cout << fixed << setprecision(5) << result << endl;
+    }
+    else {
+    cerr << "Invalid operation !" << endl;
+    }
+    return 0;
+}
