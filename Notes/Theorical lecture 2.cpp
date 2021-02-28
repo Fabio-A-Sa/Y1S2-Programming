@@ -1,6 +1,6 @@
 // Created on February 25, 2021
 // @author: Fábio Araújo de Sá
-// Theoretical lecture 2, pages 6 -> 17
+// Theoretical lecture 2, pages 6 --> 17
 
 #include <iostream>
 #include <iomanip>
