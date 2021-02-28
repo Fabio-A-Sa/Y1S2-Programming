@@ -11,15 +11,9 @@ int main()
 
     // Inputs and Strings --> Integers
     cout << "Tempo 1 (horas minutos segundos) ? ";
-    getline (cin, t1);
-    h1 = stoi(t1.substr (0,2));
-    m1 = stoi(t1.substr (3,2));
-    s1 = stoi(t1.substr (6,2));
+    cin >> h1 >> m1 >> s1;
     cout << "Tempo 2 (horas minutos segundos) ? ";
-    getline (cin, t2);
-    h2 = stoi(t2.substr (0,2));
-    m2 = stoi(t2.substr (3,2));
-    s2 = stoi(t2.substr (6,2));
+    cin >> h2 >> m2 >> s2;
     
     // Total of seconds, remainder...
     total = (h1+h2)*(60*60) + (m1+m2)*(60) + (s1+s2);
