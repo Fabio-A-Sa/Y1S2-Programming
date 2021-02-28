@@ -6,25 +6,14 @@ using namespace std;
 
 int main() 
 {
-    double A, B, C, mean, diference;
+    double A, B, C;
     cout << "Please enter three numbers:" << endl;
-    cout << "A ? ";
-    cin >> A;
-    cout << "B ? ";
-    cin >> B;
-    cout << "C ? ";
-    cin >> C;
+    cin >> A >> B >> C;
 
-    cout.precision(4); // Round at 3 decimal places
-
-    mean = (A + B + C) / 3;
-    cout << "mean = " << mean << endl;
-    diference = A - mean;
-    cout << "A-mean = " << diference << endl;
-    diference = B - mean;
-    cout << "B-mean = " << diference << endl;
-    diference = C - mean;
-    cout << "C-mean = " << diference << endl;
+    cout << "mean = " << (A + B + C) / 3 << endl;
+    cout << "A-mean = " << A - (A + B + C) / 3 << endl;
+    cout << "B-mean = " << B - (A + B + C) / 3 << endl;
+    cout << "C-mean = " << C - (A + B + C) / 3 << endl;
 
     return 0;
 }
