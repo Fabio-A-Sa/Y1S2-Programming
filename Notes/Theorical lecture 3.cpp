@@ -3,6 +3,8 @@
 // Theorical lecture 3, pages 18 -> ?
 
 #include <iostream>
+#include <ios>
+#include <limits>
 using namespace std;
 
 // More switch statements with numbers. We can combine cases.
@@ -85,8 +87,14 @@ int main ()
     int number;
     cout << "Please enter a integer number: ";
     cin >> number;
-    if ( !)  {
+    if ( !cin.fail() )  {
         cout << "Number * 2 = " << number*2 << endl;
+    }
+    else {
+        cin.clear();                                            // Limpa a flag de erro
+        cin.ignore(100000, '\n');                               // Limpa caracteres do buffer
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');     // Limpa caracteres do buffer outra opção, com #include <ios> e # include <limits>
+        cout << "Input error" << endl;
     }
     return 0;
 }
