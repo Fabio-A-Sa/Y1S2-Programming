@@ -6,7 +6,6 @@ using namespace std;
 
 int main()
 {
-    string t1, t2;
     int d, h1, h2, m1, m2, s1, s2, total, resto;
 
     // Inputs and Strings --> Integers

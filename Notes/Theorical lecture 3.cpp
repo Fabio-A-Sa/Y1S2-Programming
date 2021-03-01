@@ -68,7 +68,7 @@ int do_while_statement ()
 }
 
 // For statement:
-int main () 
+int for_statement () 
 {
     int value;
     cout << "Enter a integer number in range (0, 10): ";
@@ -79,3 +79,8 @@ int main ()
     return 0;
 }
 
+// Invalids outputs
+int main () 
+{
+    return 0;
+}
