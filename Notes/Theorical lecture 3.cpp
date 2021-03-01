@@ -82,5 +82,11 @@ int for_statement ()
 // Invalids outputs
 int main () 
 {
+    int number;
+    cout << "Please enter a integer number: ";
+    cin >> number;
+    if ( !)  {
+        cout << "Number * 2 = " << number*2 << endl;
+    }
     return 0;
 }

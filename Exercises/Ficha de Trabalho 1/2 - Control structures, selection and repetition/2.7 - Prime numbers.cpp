@@ -65,24 +65,27 @@ void prime100_c ()
     }
 }
 
-void until_overflow_d ()
+void d ()
 {
     int const max_value = 4294967295;
     bool flag = false;
     int cobaia = max_value;
 
     while (flag != true) {
-        flag = true
-        for (int denominador; int <= sqrt(cobaia); denominador++) {
-            flag = flag and (cobaia % denominador != 0);
+        flag = true;
+        for (int denominador = 2; denominador <= cobaia; denominador++) {
+            flag = flag && (cobaia % denominador != 0);
         }
-        if (!(flag)) {
+        if (!flag) {
+            cout << cobaia << "por aqui" << endl;
             cobaia = cobaia - 1;
-            continue;
+        }
+        else {
+            cout << cobaia << endl;
         }
     }
-    cout << cobaia << endl;
-} 
+    return 0;
+}
 
 void divisors_e ()
 {
