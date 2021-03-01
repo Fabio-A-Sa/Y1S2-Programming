@@ -1,6 +1,6 @@
 // Created on March 1, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 3, pages 18 -> ?
+// Theorical lecture 3, pages 18 -> 22
 
 #include <iostream>
 #include <ios>
