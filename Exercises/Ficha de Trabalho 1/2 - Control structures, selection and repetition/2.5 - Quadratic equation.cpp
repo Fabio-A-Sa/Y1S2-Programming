@@ -2,6 +2,7 @@
 // @author: Fábio Araújo de Sá
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main () 
@@ -9,7 +10,7 @@ int main ()
     double a, b, c, binomio, sol1, sol2, complex;
     string answer;
 
-    cout << "A formula da equacao quadratica e dada por:\n{ ax^2 + bx + c\nInsira os valores dos coeficientes:" << endl;
+    cout << "The formula for the quadratic equation is given by: \n{ ax^2 + bx + c\nEnter the coefficient values:" << endl;
     cout << "a = ";
     cin >> a;
     cout << "b = ";
@@ -20,24 +21,23 @@ int main ()
 
     if (binomio > 0)
     {
-        answer = "A equacao tem duas raizes reais diferentes: ";
+        answer = "The equation has 2 different real roots: ";
         sol1 = ((-1*b) + sqrt(binomio))/(2*a);
         sol2 = ((-1*b) - sqrt(binomio))/(2*a);
-        cout << answer << sol1 << " e " << sol2 << endl;
+        cout << answer << sol1 << " and " << sol2 << endl;
     }
     else if (binomio == 0)
     {
-        answer = "A equacao tem duas raizes reais iguais: ";
+        answer = "The equation has 2 equal real roots: ";
         sol1 = (-1*b)/(2*a);
         cout << answer << sol1 << endl;
     }
     else
     {
-        answer = "A equacao tem 2 raizes complexas conjugadas: ";
+        answer = "The equation has 2 complex roots: ";
         complex = sqrt(binomio*-1)/(2*a);
         sol1 = (-b)/(2*a);
-        cout << answer << sol1 << "+" << complex << "i " << " e " 
-        << sol1 << "-" << complex << "i" << endl;
+        cout << answer << sol1 << "+" << complex << "i and " << sol1 << "-" << complex << "i" << endl;
     }
     return 0;
 }
