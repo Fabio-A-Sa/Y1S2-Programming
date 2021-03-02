@@ -25,19 +25,13 @@ int main()
     double distance, area_total, l1, l2, l3, l_total;
 
     // Input
-    cout << "Por favor insira as coordenadas dos vertices do triangulo:" << endl;
-    cout << "Vertice A --> Abcissa (x):";
-    cin >> ax;
-    cout << "Vertice A --> Ordenada (y):";
-    cin >> ay;
-    cout << "Vertice B --> Abcissa (x):";
-    cin >> bx;
-    cout << "Vertice B --> Ordenada (y):";
-    cin >> by;
-    cout << "Vertice C --> Abcissa (x):";
-    cin >> cx;
-    cout << "Vertice C --> Ordenada (y):";
-    cin >> cy;
+    cout << "Triangle: " << endl;
+    cout << "Vertice A (x and y): ";
+    cin >> ax >> ay;
+    cout << "Vertice B (x and y): ";
+    cin >> bx >> by;
+    cout << "Vertice C (x and y): ";
+    cin >> cx >> cy;
 
     // Data
     l1 = distance_t (ax, bx, ay, by);
@@ -45,6 +39,9 @@ int main()
     l3 = distance_t (bx, cx, by, cy);
     l_total = l1 + l2 + l3;
     area_total = area (l_total, l1, l2, l3); 
-    cout << "O triangulo considerado possui " << area_total << " unidades de area." << endl;
+
+    // Output
+    cout << "Area of triangle: " << area_total << endl;
+
     return 0;
 }
