@@ -8,7 +8,7 @@ int main ()
 {
     double peso, resultado;
 
-    cout << "Insira o peso da mercadoria, em gramas: ";
+    cout << "Weight of merchandise in grams: ";
     cin >> peso;
 
     if (peso < 500)
@@ -23,6 +23,6 @@ int main ()
     {
         resultado = 12.5 + (5 * ((peso - 1000)/250));
     }
-    cout << "O total a pagar e " << resultado << " euros." << endl;
+    cout << "Total: " << resultado << " euros." << endl;
     return 0;
 }

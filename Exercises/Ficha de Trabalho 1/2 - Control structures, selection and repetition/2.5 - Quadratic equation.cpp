@@ -4,7 +4,8 @@
 #include <iostream>
 using namespace std;
 
-int main ()
+int main () 
+{
     double a, b, c, binomio, sol1, sol2, complex;
     string answer;
 
