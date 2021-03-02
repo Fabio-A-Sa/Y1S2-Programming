@@ -9,9 +9,9 @@ int main()
     int d, h1, h2, m1, m2, s1, s2, total, resto;
 
     // Inputs and Strings --> Integers
-    cout << "Tempo 1 (horas minutos segundos) ? ";
+    cout << "Time 1 (hours minutes seconds) ? ";
     cin >> h1 >> m1 >> s1;
-    cout << "Tempo 2 (horas minutos segundos) ? ";
+    cout << "Time 2 (hours minutes seconds) ? ";
     cin >> h2 >> m2 >> s2;
     
     // Total of seconds, remainder...
@@ -23,7 +23,9 @@ int main()
     total = total % (60*60);
     m1 = total / 60;
     s1 = total % 60;
-    cout << "Soma dos tempos: " << d << " dia, " << h1 << 
-    " horas, " << m1 << " minutos e " << s1 << " segundos" << endl;
+
+    // Output
+    cout << "Time1 + Time2 = " << d << " days, " << h1 << " hours, " << m1 << " minutes and " << s1 << " seconds" << endl;
+
     return 0;
 }
