@@ -11,20 +11,17 @@ int main()
     cout << "{ ax + by = c\n{ dx + ey = f" << endl;
     cout << "Please enter values for each icognit (a, b, c, d, e): " << endl;
     cin >> a >> b >> c >> d >> e >> f ;
-    
-    if ((a*e - b*d) == 0)
-    {
-        // Sistema impossível
-        cout << "Este sistema é impossível!" << endl;
+
+    if (a == d && b == e) {
+        // Multiples solutions --> Inconsistent system
+        cout << "Inconsistent system" << endl;
     }
-    else if (a/d != b/e && b/e != c/f)
-    {
-        // Sistema indeterminado
-        cout << "Este sistema é indeterminado!" << endl;
+    else if ((a*e - b*d) == 0) {
+        // We can't divide by 0 --> Impossible system
+        cout << "Impossible system" << endl;
     }
-    else
-    {
-        // Sistema possível e determinado
+    else {
+        // Possible
         x = (c*e - b*f)/(a*e - b*d);
         y = (a*f - c*d)/(a*e - b*d);
         cout << "Solutions: x = " << x << " and y = " << y << endl;
