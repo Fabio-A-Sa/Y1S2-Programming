@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    double a, b, c, d, e, f, x, y;
+    int a, b, c, d, e, f, x, y;
     cout << "The linear system is:" << endl;
     cout << "{ ax + by = c\n{ dx + ey = f" << endl;
     cout << "Please enter values for each icognit (a, b, c, d, e, f):" << endl;

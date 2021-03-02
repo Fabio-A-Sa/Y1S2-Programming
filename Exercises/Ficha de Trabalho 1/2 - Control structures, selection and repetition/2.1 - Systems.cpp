@@ -9,20 +9,9 @@ int main()
     double a, b, c, d, e, f, x, y;
     cout << "The linear system is:" << endl;
     cout << "{ ax + by = c\n{ dx + ey = f" << endl;
-    cout << "Please enter values for each icognit:" << endl;
-    cout << "a: ";
-    cin >> a;
-    cout << "b: ";
-    cin >> b;
-    cout << "c: ";
-    cin >> c;
-    cout << "d: ";
-    cin >> d;
-    cout << "e: ";
-    cin >> e;
-    cout << "f: ";
-    cin >> f;
-
+    cout << "Please enter values for each icognit (a, b, c, d, e): " << endl;
+    cin >> a >> b >> c >> d >> e >> f ;
+    
     if ((a*e - b*d) == 0)
     {
         // Sistema impossível
