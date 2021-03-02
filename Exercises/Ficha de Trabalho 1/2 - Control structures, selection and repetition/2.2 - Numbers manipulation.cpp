@@ -7,69 +7,66 @@ using namespace std;
 void largest_and_smallest_a ()
 {
     int a, b, c, maior, menor;
-    cout << "Insira 3 numeros:" << endl;
-    cout << "Primeiro numero: ";
+    cout << "Three numbers:" << endl;
+    cout << "First number: ";
     cin >> a;
     maior = a;
     menor = a;
-    cout << "Segundo numero: ";
+    cout << "Second number: ";
     cin >> b;
     maior = b > maior ? b : maior;
     menor = b < menor ? b : menor;
-    cout << "Terceiro numero: ";
+    cout << "Third number: ";
     cin >> c;
     maior = c > maior ? c : maior;
     menor = c < menor ? c : menor;
 
-    cout << "O maior numero: " << maior << " e o menor: " << menor << endl;
+    cout << "Larger number is " << maior << " and lower number is " << menor << endl;
 }
 
 void descending_order_b ()
 {
     int a, b, c, maior, menor, medio;
-    cout << "Insira 3 numeros:" << endl;
-    cout << "Primeiro numero: ";
+    cout << "Three numbers:" << endl;
+    cout << "First number: ";
     cin >> a;
     maior = a;
     menor = a;
-    cout << "Segundo numero: ";
+    cout << "Second number: ";
     cin >> b;
     maior = b > maior ? b : maior;
     menor = b < menor ? b : menor;
-    cout << "Terceiro numero: ";
+    cout << "Third number: ";
     cin >> c;
     maior = c > maior ? c : maior;
     menor = c < menor ? c : menor;
     medio = (a + b + c) - (maior + menor);
-    cout << "Ordem decrescente: " << maior << ", " << medio << ", " << menor << endl;
+    cout << "Descending order: " << maior << ", " << medio << ", " << menor << endl;
 }
 
 void triangle_enabled_c ()
 {
     int a, b, c, maior, menor, medio;
-    cout << "Insira 3 numeros:" << endl;
-    cout << "Primeiro numero: ";
+    cout << "Three numbers:" << endl;
+    cout << "First number: ";
     cin >> a;
     maior = a;
     menor = a;
-    cout << "Segundo numero: ";
+    cout << "Second number: ";
     cin >> b;
     maior = b > maior ? b : maior;
     menor = b < menor ? b : menor;
-    cout << "Terceiro numero: ";
+    cout << "Third number: ";
     cin >> c;
     maior = c > maior ? c : maior;
     menor = c < menor ? c : menor;
     medio = (a + b + c) - (maior + menor);
 
-    if ((maior >= (medio + menor)) || !(a>0 && b>0 && c>0))
-    {
-        // Se os vértices não se unirem ou um dos comprimentos for negativo
-        cout << "Nao se pode construir um triangulo com estes valores!" << endl;
+    if ((maior >= (medio + menor)) || !(a>0 && b>0 && c>0)) {
+        cout << "It is impossible to build a triangle based on these three numbers" << endl;
     }
-    else
-    {
-        cout << "Pode-se construir um triangulo com estes valores!" << endl;
+    else {
+        cout << "This numbers can represent the length of the 3 sides of a triangle" << endl;
     }
 }
 
