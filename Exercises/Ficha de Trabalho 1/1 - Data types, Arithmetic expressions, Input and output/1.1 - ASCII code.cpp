@@ -9,6 +9,5 @@ int main()
     char letter;
     cout << "Please enter a letter: ";
     cin >> letter;
-    cout << "ASCII code of '" << letter << "' : " << (int) letter << endl;
+    cout << "ASCII code of '" << letter << " is " << (int) letter << endl;
 }
-

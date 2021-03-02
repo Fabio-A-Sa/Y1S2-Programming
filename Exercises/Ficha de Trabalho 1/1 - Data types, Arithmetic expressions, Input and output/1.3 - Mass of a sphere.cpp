@@ -2,6 +2,7 @@
 // @author: Fábio Araújo de Sá
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main()
@@ -9,14 +10,12 @@ int main()
     const double pi = 3.14;
     double densidade, raio, massa;
 
-    cout << "Valor da desidade da esfera, em quilogramas por metro cubico (Kg/m^3): ";
+    cout << "Specific Mass (Kg/m^3): ";
     cin >> densidade;
-    cout << "Valor do raio da esfera, em metros (m): ";
+    cout << "Radius (m): ";
     cin >> raio;
 
-    massa = 4 / 3 * (densidade*pi*raio*raio*raio);
-    cout << "A esfera considerada tem " << massa << " Kg de massa aproximadamente." << endl;
+    massa = (double) 4 / 3 * (densidade*pi*pow(raio, 3));
+    cout << "Mass of a sphere: " << massa << endl;
     return 0;
 }
-
-int main ()
