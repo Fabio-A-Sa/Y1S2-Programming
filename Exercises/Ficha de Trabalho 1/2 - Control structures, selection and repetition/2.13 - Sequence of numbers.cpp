@@ -7,35 +7,14 @@ using namespace std;
 
 void length_a ()
 {
-    int soma = 0, maior = -100000, menor = 100000, input;
-    double media, contador;
-
-    do  {
-        cout << "Numero: ";
-        cin >> input;
-        maior = input > maior ? input : maior;
-        menor = input < menor ? input : menor;
-        soma = soma + input;
-        contador = contador + 1;
-        } while (input != 0);
-
-    media = soma / contador;
-    cout << "Dados obtidos\nSoma: " << soma << endl;
-    cout << "Media: " << media << endl;
-    cout << "Maior numero colocado: " << maior << endl;
-    cout << "Menor numero colocado: " << menor << endl;
-}
-
-void zero_b ()
-{
     int soma = 0, maior = -100000, menor = 100000, input, comprimento;
     double media, contador = 0;
 
-    cout << "Qual e o comprimento da sequencia? ";
+    cout << "Length of the sequence? ";
     cin >> comprimento;
 
     do  {
-        cout << "Numero: ";
+        cout << "Number: ";
         cin >> input;
         maior = input > maior ? input : maior;
         menor = input < menor ? input : menor;
@@ -44,10 +23,31 @@ void zero_b ()
         } while (contador != comprimento);
 
     media = soma / contador;
-    cout << "Dados obtidos\nSoma: " << soma << endl;
-    cout << "Media: " << media << endl;
-    cout << "Maior numero colocado: " << maior << endl;
-    cout << "Menor numero colocado: " << menor << endl;
+    cout << endl << "Sum: " << soma << endl;
+    cout << "Mean: " << media << endl;
+    cout << "Smallest number: " << menor << endl;
+    cout << "Larger number: " << maior << endl;
+}
+
+void zero_b ()
+{
+    int soma = 0, maior = -100000, menor = 100000, input;
+    double media, contador;
+
+    do  {
+        cout << "Number: ";
+        cin >> input;
+        maior = input > maior ? input : maior;
+        menor = input < menor ? input : menor;
+        soma = soma + input;
+        contador = contador + 1;
+        } while (input != 0);
+
+    media = soma / contador;
+    cout << endl << "Sum: " << soma << endl;
+    cout << "Mean: " << media << endl;
+    cout << "Smallest number: " << menor << endl;
+    cout << "Larger number: " << maior << endl;
 }
 
 void endInput_c ()
@@ -56,7 +56,7 @@ void endInput_c ()
     double media, contador = 0;
 
     do  {
-        cout << "Numero: ";
+        cout << "Number: ";
         cin >> input;
         maior = input > maior ? input : maior;
         menor = input < menor ? input : menor;
@@ -65,10 +65,10 @@ void endInput_c ()
         } while (!(cin.eof()));
 
     media = soma / contador;
-    cout << "Dados obtidos\nSoma: " << soma << endl;
-    cout << "Media: " << media << endl;
-    cout << "Maior numero colocado: " << maior << endl;
-    cout << "Menor numero colocado: " << menor << endl;
+    cout << endl << "Sum: " << soma << endl;
+    cout << "Mean: " << media << endl;
+    cout << "Smallest number: " << menor << endl;
+    cout << "Larger number: " << maior << endl;
 }
 
 int main ()
