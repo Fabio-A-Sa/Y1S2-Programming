@@ -17,24 +17,24 @@ void serie_a_with_precision ()
     double result = 0, precision; 
     double const pi = 3.14159265359;
 
-    cout << "Precisao pretendida? ";
+    cout << "Precision? ";
     cin >> precision;
 
     do {
         double denominador = 2*i-1;
         if ( i%2 == 1) {
-            // Somar
+            // Sum
             result = result + 4/denominador;
         }
         else {
-            // Subtrair
+            // Subtract
             result = result - 4/denominador;
         }
         i++;
 
         } while (abs(result-pi) > precision);
 
-    cout << "O valor de pi: " << result << endl;
+    cout << "Pi: " << result << endl;
 }
 
 void serie_b_with_precision ()
@@ -43,7 +43,7 @@ void serie_b_with_precision ()
     int i = 1;
     double const e = 2.71828;
 
-    cout << "Precisao pretendida? ";
+    cout << "Number of parts? ";
     cin >> precision;
 
     do {
@@ -52,7 +52,7 @@ void serie_b_with_precision ()
         i++;
         } while (abs(result - e) > precision) ;
 
-    cout << "O valor de e: " << result << endl;
+    cout << "Euler number: " << result << endl;
 }
 
 void serie_c_with_precision ()
@@ -61,9 +61,9 @@ void serie_c_with_precision ()
     double result = 1, precision;
     const double e = 2.71828; 
 
-    cout << "Qual o valor de x? ";
+    cout << "X value? ";
     cin >> x;
-    cout << "Qual a precisao pretendida? ";
+    cout << "Precision? ";
     cin >> precision;
     double compare = pow(e, (-1)*x);
 
@@ -78,7 +78,7 @@ void serie_c_with_precision ()
         i++;
         } while ( abs(result - compare) > precision );
 
-    cout << "O valor de e elevado a menos x: " << result << endl;
+    cout << "e^-x = " << result << endl;
 }
 
 int main ()
