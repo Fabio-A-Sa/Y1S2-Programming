@@ -5,7 +5,7 @@
 #include <cmath>
 using namespace std;
 
-void a ()
+void length_a ()
 {
     int soma = 0, maior = -100000, menor = 100000, input;
     double media, contador;
@@ -26,7 +26,7 @@ void a ()
     cout << "Menor numero colocado: " << menor << endl;
 }
 
-void b ()
+void zero_b ()
 {
     int soma = 0, maior = -100000, menor = 100000, input, comprimento;
     double media, contador = 0;
@@ -50,7 +50,7 @@ void b ()
     cout << "Menor numero colocado: " << menor << endl;
 }
 
-void c ()
+void endInput_c ()
 {
     int soma = 0, maior = -100000, menor = 100000, input;
     double media, contador = 0;
@@ -73,8 +73,8 @@ void c ()
 
 int main ()
 {
-    a () ;
-    b () ;
-    c () ;
+    length_a () ;
+    zero_b () ;
+    endInput_c () ;
     return 0;
 }
