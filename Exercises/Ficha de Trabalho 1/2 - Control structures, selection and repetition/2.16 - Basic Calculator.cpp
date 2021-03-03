@@ -20,28 +20,23 @@ int main ()
     cout << "Que conta deseja efetuar?\n+ --> a+b\n- --> a-b\nx --> axb\n/ --> a/b\nSua escolha: ";
     cin >> conta;
 
-    if (conta == "+")
-    {
+    if (conta == "+") {
         resultado = a+b ;
         cout << "a+b = " << resultado << endl;
     }
-    else if (conta == "-")
-    {
+    else if (conta == "-") {
         resultado = a-b ;
         cout << "a-b = " << resultado << endl;
     }
-    else if (conta == "x")
-    {
+    else if (conta == "x") {
         resultado = a*b ;
         cout << "axb = " << resultado << endl;
     }
-    else if (conta == "/")
-    {
+    else if (conta == "/") {
         resultado = a/b ;
         cout << "a/b = " << resultado << endl;
     }
-    else
-    {
+    else {
         cout << "Opcao inexistente na calculadora!" << endl;
     }
     return 0;
