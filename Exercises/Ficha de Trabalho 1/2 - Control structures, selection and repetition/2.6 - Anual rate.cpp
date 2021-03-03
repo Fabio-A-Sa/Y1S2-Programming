@@ -2,21 +2,22 @@
 // @author: Fábio Araújo de Sá
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main ()
 {
     double n, q, j, result;
 
-    cout << "Quantos anos? ";
+    cout << "Years? ";
     cin >> n;
-    cout << "Quantia inicial: ";
+    cout << "Initial amount: ";
     cin >> q;
-    cout << "Taxa de juros anuais, em percentagem: ";
+    cout << "Annual interest rate: ";
     cin >> j;
 
     result = q*pow((1+j), n);
 
-    cout << "No final de " << n << " anos deveria ter " << result << " euros no banco!" << endl;
+    cout << "Amount that a depositor can withdraw from the bank: " << result << endl;
     return 0;
 }
