@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <string>
 using namespace std;
 
 vector<int> primes_until (int number)
@@ -19,7 +20,6 @@ vector<int> primes_until (int number)
         if (flag) {
             primes.push_back(n);
         }
-        else { continue; }
     }
     return primes;
 }
