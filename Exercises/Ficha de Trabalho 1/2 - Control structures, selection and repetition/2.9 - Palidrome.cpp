@@ -2,6 +2,7 @@
 // @author: Fábio Araújo de Sá
 
 #include <iostream>
+#include <string>
 using namespace std;
 
 void palindrome_a ()
@@ -9,15 +10,15 @@ void palindrome_a ()
     int number;
     string comparation;
 
-    cout << "Numero inteiro com 3 digitos: ";
+    cout << "Enter a number with 3 digits: ";
     cin >> number;
     comparation = to_string(number);
 
     if ( comparation[0] == comparation[2] ) {
-        cout << "O numero " << number << " e uma capicua!";
+        cout << "Number " << number << " is a palindrome!";
     }
     else {
-        cout << "O numero " << number << " nao e uma capicua!";
+        cout << "Number " << number << " is not a palindrome!";
     }
 }
 
@@ -36,10 +37,10 @@ void palindrome_total_b ()
     }
 
     if ( number == comparation ) {
-        cout << "O numero " << number << " e uma capicua!";
+        cout << "Number " << number << " is a palindrome!";
     }
     else {
-        cout << "O numero " << number << " nao e uma capicua!";
+        cout << "Number " << number << " is not a palindrome!";
     }
 }
 
