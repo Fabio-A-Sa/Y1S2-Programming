@@ -2,12 +2,13 @@
 // @author: Fábio Araújo de Sá
 
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 using namespace std;
+const double pi = 3.14159265;
 
 double rad (double degree)
 {
-    const double pi = 3.14159265;
     double rads;
     rads = (pi*degree)/180.0;
     return rads;
@@ -16,18 +17,26 @@ double rad (double degree)
 void angle_table_a ()
 {
     double angulos[] = {0, 15, 30, 45, 60, 75, 90};
-    string template_f = "ang     sen        cos         tan";
+    string template_f = "ang\tsen\tcos\ttan";
 
     cout << template_f << endl;
-    for (double degree : angulos)
-    {
-        cout << degree;
-        degree = rad(degree);
-        double a = sin(degree);
-        double b = cos(degree); 
-        double c = tan(degree);
+    cout << setprecision(6) << fixed;
 
-        cout << "   " << a << "   " << b << "   " << c << setprecision(6) << fixed << endl;
+    for (double degree : angulos) {
+
+        cout << (int) degree << "\t";
+        degree = rad(degree);        
+        double a = sin(degree);
+        double b = cos(degree);
+
+        cout << a << "\t" << b << "\t";
+
+        if (degree == rad(90)) {
+            cout << "infinite" << endl;
+        }
+        else {
+            cout << tan(degree) << endl;
+        }
     }
 }
 
@@ -52,7 +61,7 @@ void angles_input_b ()
 
 int main () 
 {
-    angle_table_a ()
-    angles_input_b () 
+    angle_table_a () ;
+    // angles_input_b () ;
     return 0;
 }
