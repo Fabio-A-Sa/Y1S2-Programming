@@ -16,22 +16,22 @@ void serie_a ()
     int n;
     double result = 0; 
 
-    cout << "Quantas parcelas devo somar? ";
+    cout << "Enter a integer number: ";
     cin >> n;
 
     for (int i = 1; i <= n ; i++) {
 
         double denominador = 2*i-1;
         if ( i%2 == 1) {
-            // Somar
+            // Sum
             result = result + 4/denominador;
         }
         else {
-            // Subtrair
+            // Subtract
             result = result - 4/denominador;
         }
     }
-    cout << "O valor de pi: " << result << endl;
+    cout << "Value of pi: " << result << endl;
 }
 
 void serie_b ()
@@ -39,7 +39,7 @@ void serie_b ()
     int n;
     double result = 0; 
 
-    cout << "Quantas parcelas devo somar? ";
+    cout << "Enter a integer number: ";
     cin >> n;
 
     for (int i = 1; i < n ; i++) {
@@ -48,7 +48,7 @@ void serie_b ()
         result = result + 1/denominador;
 
     }
-    cout << "O valor de e: " << result << endl;
+    cout << "Euler number: " << result << endl;
 }
 
 void serie_c ()
@@ -56,9 +56,9 @@ void serie_c ()
     int n, x;
     double result = 1; 
 
-    cout << "Quantas parcelas devo somar? ";
+    cout << "Number of parts: ";
     cin >> n;
-    cout << "Qual o valor de x? ";
+    cout << "X value: ";
     cin >> x;
 
     for (int i = 1; i < n ; i++) {
@@ -71,7 +71,7 @@ void serie_c ()
             result = result + pow(x, i)/denominador;
         }
     }
-    cout << "O valor de e elevado a menos x: " << result << endl;
+    cout << "e^x = " << result << endl;
 }
 
 int main () 
