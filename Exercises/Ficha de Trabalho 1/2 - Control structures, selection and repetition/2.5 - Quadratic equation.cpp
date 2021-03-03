@@ -10,13 +10,8 @@ int main ()
     double a, b, c, binomio, sol1, sol2, complex;
     string answer;
 
-    cout << "The formula for the quadratic equation is given by: \n{ ax^2 + bx + c\nEnter the coefficient values:" << endl;
-    cout << "a = ";
-    cin >> a;
-    cout << "b = ";
-    cin >> b;
-    cout << "c = ";
-    cin >> c;
+    cout << "Solution of Ax^2 + Bx + C = 0\nInsert the coefficients (A B C): " << endl;
+    cin >> a >> b >> c;
     binomio = pow(b, 2) - 4*a*c;
 
     if (binomio > 0)
