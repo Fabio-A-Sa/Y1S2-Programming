@@ -42,26 +42,41 @@ void angle_table_a ()
 
 void angles_input_b () 
 {
-    double lower, upper, incremento;
-    string template_b = "ang    sen     cos     tan";
+    double lower, upper, increment;
+    string template_b = "ang\tsen\tcos\ttan";
 
     cout << "Enter a lower number in degrees: ";
     cin >> lower;
     cout << "Enter a upper number in degrees: ";
     cin >> upper;
     cout << "Enter a increment number: ";
-    cin >> incremento;
+    cin >> increment;
 
-    cout << endl << template_b;
-    for (double x = lower; x <= upper; x = x+incremento) {
-        cout << x << "   ";
-        cout << sin(rad (x)) << "   " << cos(rad (x)) << "   " << tan(rad (x)) << endl;
+    cout << template_b << endl;
+    cout << setprecision(6) << fixed;
+
+    for (int i = lower ; i <= upper; i+=increment) {
+
+        cout << i << "\t";
+        double degree = rad(i);        
+        double a = sin(degree);
+        double b = cos(degree);
+
+        cout << a << "\t" << b << "\t";
+
+        if (i == 90 || i == 180) {
+            cout << "infinite" << endl;
+        }
+        else {
+            cout << tan(degree) << endl;
+        }
     }
 }
+
 
 int main () 
 {
     angle_table_a () ;
-    // angles_input_b () ;
+    angles_input_b () ;
     return 0;
 }
