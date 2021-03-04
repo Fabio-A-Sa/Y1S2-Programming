@@ -33,18 +33,13 @@ void exercise_b ()
 {
     int d, h1, h2, m1, m2, s1, s2, total, resto;
     string t1, t2;
+    char sep1, sep2;
 
     // Inputs and Strings --> Integers
     cout << "Time 1 (hours:minutes:seconds) ? ";
-    getline (cin, t1);
-    h1 = stoi(t1.substr (0,2));
-    m1 = stoi(t1.substr (3,2));
-    s1 = stoi(t1.substr (6,2));
+    cin >> h1 >> sep1 >> m1 >> sep2 >> s1;
     cout << "Time 2 (hours:minutes:seconds) ? ";
-    getline (cin, t2);
-    h2 = stoi(t2.substr (0,2));
-    m2 = stoi(t2.substr (3,2));
-    s2 = stoi(t2.substr (6,2));
+    cin >> h2 >> sep1 >> m2 >> sep2 >> s2;
 
     // Total of seconds, remainder...
     total = (h1+h2)*(60*60) + (m1+m2)*(60) + (s1+s2);
