@@ -1,6 +1,6 @@
 // Created on March 4, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 4, pages 22 --> ?
+// Theorical lecture 4, pages 22 --> 30
 
 #include <iostream>
 #include <cmath>
@@ -49,8 +49,72 @@ int upper_and_lower_strings ()
     return 0;
 }
 
-int main ()
+int calculator_main ()
 {
-    upper_and_lower_strings();
+    const unsigned int NUMBER_PRECISION = 3;
+    double operand1, operand2; 
+    char operation;
+    double result;
+    bool validOperation;
+    char anotherOperation;
+
+    do  {
+        
+        bool validOperands;
+        anotherOperation = true;
+        
+        do  {
+                cout << endl << "x op y ? ";
+                cin >> operand1 >> operation >> operand2;   
+                
+                if (cin.fail()) {
+
+                    validOperands = false;
+
+                    if (cin.eof()) {
+                        anotherOperation = false;
+                    }
+                    else {
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                    }
+                }      
+                else {
+                    cin.ignore(1000, '\n');           
+                }
+            } while (anotherOperation && !validOperands);
+
+        // compute result if operation is valid
+        validOperation = true;
+        switch (operation) {
+            case '+':
+                result = operand1 + operand2;
+                break;
+            case '-':
+                result = operand1 - operand2;
+                break;
+            case '*':
+                result = operand1 * operand2;
+                break;
+            case '/':
+                result = operand1 / operand2;
+                break;
+            default:
+                validOperation = false;
+        }
+
+        //show result or invalid operator message
+        if (validOperation) {
+            cout << fixed << setprecision(NUMBER_PRECISION);
+            cout << operand1 << ' ' << operation << ' ' << operand2 <<
+            " = " << result << endl;
+        }
+        else {
+            cerr << "Invalid operator !\n";
+            cout << "Another operation (Y/N) ? ";
+            cin >> anotherOperation;
+            anotherOperation = toupper(anotherOperation);
+        }
+        } while (anotherOperation == 'Y');
     return 0;
 }
