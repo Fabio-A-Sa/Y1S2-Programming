@@ -49,6 +49,7 @@ int upper_and_lower_strings ()
     return 0;
 }
 
+// Calculator with cin.ignore() items to confirm input
 int calculator_main ()
 {
     const unsigned int NUMBER_PRECISION = 3;
