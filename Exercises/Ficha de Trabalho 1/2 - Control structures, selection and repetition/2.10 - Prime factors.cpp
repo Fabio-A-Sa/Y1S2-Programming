@@ -45,7 +45,7 @@ int main ()
         }
     }
 
-    string answer = "O numero " + to_string(number) + " pode ser fatorizado em ";
+    string answer = "Number " + to_string(number) + " can be fatorized into ";
     for (int fact : factors) {
         answer = answer + to_string(fact) + " x ";
     }
