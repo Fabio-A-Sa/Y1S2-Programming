@@ -43,10 +43,23 @@ void c ()
         } while (counter != 100);
 }
 
+void d ()
+{
+    const unsigned int max_value = ULONG_MAX;
+    bool flag = false;
+    unsigned int cobaia = max_value;
+
+    while (!isPrime(cobaia)) {
+        cobaia = cobaia - 1;
+    }
+    cout << cobaia << endl;
+}
+
 int main () 
 {
-    a () ;
-    b () ;
-    c () ;
+    //a () ;
+    //b () ;
+    //c () ;
+    d () ;
     return 0;
 }
