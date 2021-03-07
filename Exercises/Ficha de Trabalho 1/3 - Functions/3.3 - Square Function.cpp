@@ -47,7 +47,7 @@ string compare (int number, double result, double delta)
     else { return "Disapproved!" ; } 
 }
 
-int main () // Exercício 3.3 --> SquareRot de Heron with precision function
+int main ()
 {
     double n, rq, rqn, delta, dif;
     int nMaxIter;
