@@ -57,9 +57,9 @@ void d ()
 
 int main () 
 {
-    //a () ;
-    //b () ;
-    //c () ;
+    a () ;
+    b () ;
+    c () ;
     d () ;
     return 0;
 }
