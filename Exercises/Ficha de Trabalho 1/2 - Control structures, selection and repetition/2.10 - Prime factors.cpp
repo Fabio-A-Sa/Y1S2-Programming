@@ -27,7 +27,7 @@ vector<int> primes_until (int number)
 
 int main ()
 {
-    int number;
+    int number, aux;
     do  {
         cout << "Please enter a integer number: ";
         cin >> number;
@@ -35,7 +35,7 @@ int main ()
             cout << "Input error. Please try again!" << endl;
         }
         } while (number < 2);
-    int aux = number;
+    aux = number;
 
     vector<int> factors;
     for (int n: primes_until(number)) {
