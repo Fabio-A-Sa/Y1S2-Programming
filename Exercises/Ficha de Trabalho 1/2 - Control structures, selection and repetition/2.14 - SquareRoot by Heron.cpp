@@ -16,8 +16,8 @@ double rounded (double number, double exponent)
 
 void srqt_heron_a ()
 {
-    double n, rq, rqn, delta, dif = 50;
-    int nMaxIter, exponent = -6;
+    double n, rq, rqn, delta, dif;
+    int nMaxIter;
 
     cout << "Enter a number: ";
     cin >> n;
@@ -26,17 +26,10 @@ void srqt_heron_a ()
     cout << "Max iteration: ";
     cin >> nMaxIter;
 
-    for (char number: to_string(1 / delta)) {
-        if (number == '0') {
-            exponent++;
-        }
-    }
-
-    int counter = 0;
     rq = 1;
     do  {
         rqn = (rq + n / rq) / 2;
-        dif = n - rqn;
+        dif = n - pow(rqn, 2);
         rq = rqn;
         } while (abs(dif) > delta);
     cout << rq << endl;
@@ -45,26 +38,23 @@ void srqt_heron_a ()
 void heron_with_precision ()
 {
     double n, rq, rqn, delta, dif;
-    int exponent = -6;
+    int nMaxIter, counter;
 
     cout << "Enter a number: ";
     cin >> n;
     cout << "Enter a precision of result: ";
     cin >> delta;
-
-    for (char number: to_string(1 / delta)) {
-        if (number == '0') {
-            exponent++;
-        }
-    }
+    cout << "Max iteration: ";
+    cin >> nMaxIter;
 
     rq = 1;
+    counter = 0;
     do  {
         rqn = (rq + n / rq) / 2;
-        dif = n - rqn;
+        dif = n - pow(rqn, 2);
         rq = rqn;
-        } while (abs(dif) > delta);
-
+        counter+=;
+        } while (abs(dif) > delta && counter <= nMaxIter);
     cout << rq << endl;
 }
 
