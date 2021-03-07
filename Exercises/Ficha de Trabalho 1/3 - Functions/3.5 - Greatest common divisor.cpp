@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 using namespace std;
 
 int greatest_common_divisor (int a, int b) {
