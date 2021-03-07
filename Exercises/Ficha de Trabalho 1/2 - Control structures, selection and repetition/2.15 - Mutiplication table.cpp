@@ -22,12 +22,18 @@ int main ()
     tempo = tempo_final - tempo_inicial;
 
     if (result != input) { 
-        cout << "Resultado incorrecto!" << endl ;
+        cout << "Incorrect result!" << endl ;
     }
     else {
-            if (tempo < 5) { cout << "Bom" << endl ; }
-            else if (tempo >= 5 && tempo <= 10) { cout << "Suficiente" << endl ; }
-            else { cout << "Insuficiente" << endl ; }
+            if (tempo < 5) { 
+                cout << "Very Good" << endl ; 
+            }
+            else if (tempo >= 5 && tempo <= 10) { 
+                cout << "Good" << endl ; 
+            }
+            else { 
+                cout << "Insufficient" << endl ; 
+            }
     }
     return 0;
 }
