@@ -21,7 +21,15 @@ int main () {
     string input, answer;
     cout << "Enter a integer number: ";
     getline(cin, input);
-    answer = readInt(input) ? "True" : "False";
-    cout << answer << endl;
+
+    if ( !cin.fail() )  {
+        answer = readInt(input) ? "True" : "False";
+        cout << answer << endl;
+    }
+    else {
+        cin.clear();                                            // Clean error flag
+        cin.ignore(100000, '\n');                               // Clean buffer
+        cout << "Input error" << endl;
+    }
     return 0;
 }
