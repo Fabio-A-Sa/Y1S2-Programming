@@ -53,7 +53,7 @@ void heron_with_precision ()
         rqn = (rq + n / rq) / 2;
         dif = n - pow(rqn, 2);
         rq = rqn;
-        counter+=;
+        counter++ ;
         } while (abs(dif) > delta && counter <= nMaxIter);
     cout << rq << endl;
 }
