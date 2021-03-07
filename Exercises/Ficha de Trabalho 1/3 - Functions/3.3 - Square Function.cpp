@@ -43,8 +43,8 @@ string compare (int number, double result, double delta)
 {
     // Test function
     bool flag = rounded(sqrt(number), expn(delta)) == result ? true : false ;
-    if (flag) { return "Resultado aprovado!" ; }
-    else { return "Resultado reprovado!" ; } 
+    if (flag) { return "Approved!" ; }
+    else { return "Disapproved!" ; } 
 }
 
 int main () // Exercício 3.3 --> SquareRot de Heron with precision function
