@@ -2382,3 +2382,334 @@ int main () {
     cout << answer << endl;
     return 0;
 }
+
+// Declaration and simple operations with integers and float numbers
+int declarations_and_simple_operations ()
+{
+        int operand1, operand2, sum, difference, product;
+        double quotient;
+
+        cout << "operand1 operand2 ? ";
+        cin >> operand1 >> operand2;
+        sum = operand1 + operand2;
+        difference = operand1 - operand2;
+        product = operand1 * operand2;
+        quotient = (double) operand1 / operand2;
+
+        cout << "sum = " << sum << endl;
+        cout << "difference = " << difference << endl;
+        cout << "product = " << product << endl;
+        cout << "quotient = " << quotient << endl;
+        return 0;
+}
+
+// Literals ans constants
+int literals_and_constants () 
+{
+    cout << "Integer and decimal number: " << 1032 << endl;
+    cout << "Integer and octal number: " << 012 << endl;
+    cout << "Integer and hexadecimal number: " << 0x54 << endl;
+    cout << "Real number with exponent: " << 2E-2 << endl;
+    cout << "Character: " << 'A' << endl;
+    cout << "String: " << "A simple string" << endl;
+    cout << "String with quotes: " << "A 'name' simple thing" << endl;
+    return 0;
+}
+
+// Else and If statements
+int if_and_else_statements ()
+{
+    int number;
+    cout << "Integer number? ";
+    cin >> number;
+
+    if (number == 0) { 
+        cout << "Zero";
+    }
+    else if (number < 0) {
+        cout << "Negative number";
+    }
+    else {
+        cout << "Positive number";
+    }
+    return 0;
+}
+
+// Switch - case statements
+int switch_and_case ()
+{
+    int number, option, result;
+    cout << "Integer number: ";
+    cin >> number;
+    cout << "Chose an option:\n1 -- > Add 5\n2 -- > Multiply by 5" << endl;
+    cin >> option;
+    switch (option) {
+    case 1:
+        result = number + 5;
+        cout << "The result is " << result << endl;
+        break;
+    case 2:
+        result = 5 * number;
+        cout << "The result is " << result << endl;
+        break;
+    default:
+        cout << "Option is not valid" << endl;
+    }
+    return 0;
+}
+
+// Precision of output with include <iomanip>
+int result_with_precision ()
+{
+    int first, second, precision;
+    double quotient;
+    cout << "Enter two numbers: ";
+    cin >> first >> second;
+    cout << "Precision? ";
+    cin >> precision;
+    quotient = (double) first / second;
+    cout << "The result with precision is " << fixed << setprecision(precision) << quotient << endl;
+    return 0;
+}
+
+// Lecture summary
+int calculator ()
+{
+    const unsigned int RESULT_PRECISION = 3;
+    double operand1, operand2;
+    char operation;
+    double result;
+    bool validOperation = false;
+
+    cout << "x op y ? ";
+    cin >> operand1 >> operation >> operand2;
+
+    if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
+
+        validOperation = true;
+
+        if (operation == '+')
+            result = operand1 + operand2;
+        else if (operation == '-')
+            result = operand1 - operand2;
+        else if (operation == '*')
+            result = operand1 * operand2;
+        else if (operation == '/')
+            result = operand1 / operand2;
+
+    }
+
+    if (validOperation) {
+        cout << operand1 << ' ' << operation << ' ' << operand2 << " = ";
+        cout << fixed << setprecision(5) << result << endl;
+    }
+    else {
+    cerr << "Invalid operation !" << endl;
+    }
+    return 0;
+}
+
+// More switch statements with numbers. We can combine cases.
+int combine_cases ()
+{
+    int month, year, numDays;
+    cout << "Please enter a month (respective integer number): ";
+    cin >> month;
+    cout << "Please enter a year (respective integer number): ";
+    cin >> year;
+
+    switch (month) {
+        case 1: case 3: case 5:  case 7: case 8: case 10: case 12: 
+            numDays = 31;
+            break;
+        case 4: case 6: case 9: case 11:
+            numDays = 30;
+            break;
+        case 2:
+            if ( year%4 == 0 ) {
+                numDays = 29;
+            }
+            else {
+                numDays = 28;
+            }
+            break;
+    }
+    cout << "This month has " << numDays << " days.";
+    return 0; 
+}
+
+// While statement
+int while_statement ()
+{   
+    int number = -1;
+    while ( number < 0 ) {
+        cout << "Enter a positive number: ";
+        cin >> number;
+        if (number < 0) {
+            cout << "Input error" << endl;
+        }
+    }
+    cout << "Your positive number is " << number << endl;
+    return 0;
+}
+
+// Do.. while statement:
+int do_while_statement ()
+{   
+    int number, sum = 0;
+    do  {
+        cout << "Enter a positive number: ";
+        cin >> number;
+        if (number <= 0) {
+            continue;
+        }
+        else {
+            sum = sum + number;
+        }
+        } while ( number > 0 );
+    cout << "Your sum is " << sum << endl;
+    return 0;
+}
+
+// For statement:
+int for_statement () 
+{
+    int value;
+    cout << "Enter a integer number in range (0, 10): ";
+    cin >> value;
+    for (int i = 0; i <= value; i++) {
+        cout << "Number: " << i << endl;
+    }
+    return 0;
+}
+
+// Invalids outputs
+int main () 
+{
+    int number;
+    cout << "Please enter a integer number: ";
+    cin >> number;
+    if ( !cin.fail() )  {
+        cout << "Number * 2 = " << number*2 << endl;
+    }
+    else {
+        cin.clear();                                            // Limpa a flag de erro
+        cin.ignore(100000, '\n');                               // Limpa caracteres do buffer
+        cin.ignore(numeric_limits<streamsize>::max(),'\n');     // Limpa caracteres do buffer outra opção, com #include <ios> e # include <limits>
+        cout << "Input error" << endl;
+    }
+    return 0;
+}
+
+// Manipulation digits with setw and setfill
+int digits_manipulation ()
+{
+    int dd, mm, yyyy;
+    char sep1, sep2;
+
+    cout << "Date (dd:mm:yyyy): ";
+    cin >> dd >> sep1 >> mm >> sep2 >> yyyy;
+    cout << "Date: " << setfill('0') << setw(2) << dd << sep1 << setw(2) << mm << sep2 << setw(4) << yyyy << endl;
+
+    if (sep1 != ':' || sep2 != ':' || cin.peek() != '\n') {
+        cout << "Invalid date" << endl;
+    }
+
+    return 0;
+}
+
+// Upper and lower strings --> Char by char #include <cctype>
+int upper_and_lower_strings () 
+{
+    string sentence;
+    cout << "Enter a sentence: ";
+    getline(cin, sentence);
+    int length = sentence.length(); 
+
+    for (int i = 0; i < length; i++) { 
+
+        int c = sentence[i]; 
+        if (islower(c))  
+            sentence[i] = toupper(c); 
+        else if (isupper(c))  
+            sentence[i] = tolower(c); 
+        else
+            continue;
+    }
+
+    cout << sentence << endl;
+    return 0;
+}
+
+// Calculator with cin.ignore() items to confirm input 
+int calculator_main ()
+{
+    const unsigned int NUMBER_PRECISION = 3;
+    double operand1, operand2; 
+    char operation;
+    double result;
+    bool validOperation;
+    char anotherOperation;
+
+    do  {
+        
+        bool validOperands;
+        anotherOperation = true;
+        
+        do  {
+                cout << endl << "x op y ? ";
+                cin >> operand1 >> operation >> operand2;   
+                
+                if (cin.fail()) {
+
+                    validOperands = false;
+
+                    if (cin.eof()) {
+                        anotherOperation = false;
+                    }
+                    else {
+                        cin.clear();
+                        cin.ignore(1000, '\n');
+                    }
+                }      
+                else {
+                    cin.ignore(1000, '\n');           
+                }
+            } while (anotherOperation && !validOperands);
+
+        // compute result if operation is valid
+        validOperation = true;
+        switch (operation) {
+            case '+':
+                result = operand1 + operand2;
+                break;
+            case '-':
+                result = operand1 - operand2;
+                break;
+            case '*':
+                result = operand1 * operand2;
+                break;
+            case '/':
+                result = operand1 / operand2;
+                break;
+            default:
+                validOperation = false;
+        }
+
+        //show result or invalid operator message
+        if (validOperation) {
+            cout << fixed << setprecision(NUMBER_PRECISION);
+            cout << operand1 << ' ' << operation << ' ' << operand2 <<
+            " = " << result << endl;
+        }
+        else {
+            cerr << "Invalid operator !\n";
+            cout << "Another operation (Y/N) ? ";
+            cin >> anotherOperation;
+            anotherOperation = toupper(anotherOperation);
+        }
+        } while (anotherOperation == 'Y');
+    return 0;
+}
+
+
