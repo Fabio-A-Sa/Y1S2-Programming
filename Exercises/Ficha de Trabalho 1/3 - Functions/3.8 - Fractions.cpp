@@ -13,6 +13,35 @@ bool readFraction(int &numerator, char option, int &denominator) {
     return flag;
 }
 
+void reduceFraction(int &numerator, int &denominator) {
+
+    
+}
+
+int greatest_common_divisor (int a, int b) {
+
+    if (a == b && a != 0 ) {
+        return a;
+    }
+    else if ( a*b == 0 ) {
+        int answer = a == 0 ? b : a;
+        return answer;
+    }
+    else {
+        while ( a != b ) {
+            if ( a > b ) {
+                a = a - b;
+            }
+            else if ( b > a ) {
+                b = b - a;
+            }
+            else {
+                return a;
+            }
+        }
+    }
+}
+
 int main()
 {
     int a, b;
