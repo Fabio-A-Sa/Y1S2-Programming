@@ -40,8 +40,18 @@ int numberDays (int month, int year) {
     return days;
 }
 
+int numberOfBeginning () {
+
+}
+
+void printMonth () {
+
+}
+
 int main ()
 {
+    int month, year;
+    
     cout << numberDays (3, 2016) << endl;
 }
 
