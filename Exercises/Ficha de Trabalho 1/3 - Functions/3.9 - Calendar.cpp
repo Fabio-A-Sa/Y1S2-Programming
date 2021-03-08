@@ -37,7 +37,6 @@ int numberDays (int month, int year) {
             }
             break;
     }
-
     return days;
 }
 
@@ -48,9 +47,8 @@ int numberOfBeginning (int month, int year) {
     c = month;
     d = 1;
     s = year / 100;
-
-    ds = ((5*a)/c + c + d - 2*(s%4) + 7) % 7 ;
-
+    int aux = floor((5*a)/c);
+    ds = (aux + c + d - 2*(s%4) + 7) % 7 ;
     return ds;
 }
 
@@ -60,7 +58,7 @@ void printMonth (int month, int year) {
     int beginning_day, counter = 0;
 
     vector<string> monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-    beginning_day = numberOfBeginning(month, year) == 1 ? 6 : numberOfBeginning(month, year) - 1;
+    beginning_day = numberOfBeginning(month, year) == 1 ? 6 : numberOfBeginning(month, year) + 2;
     header_1 = monthsName[month-1] + "/";
     header_2 = "Sun\tMon\tTue\tWed\tThu\tFri\tSat\n";
 
@@ -75,11 +73,10 @@ void printMonth (int month, int year) {
     while (pointer <= numberDays(month, year)) {
         cout << pointer << "\t";
         counter = counter + 1;
-        if (counter == 7) {
+        if (counter >= 7) {
             counter = 0;
             cout << endl;
         }
-
         pointer = pointer + 1;
     }
 }
@@ -87,8 +84,12 @@ void printMonth (int month, int year) {
 int main ()
 {
     int month, year;
-    cout << "Enter a month/year ";
-    cin >> month >> year;
-    printMonth(month, year);
+    cout << "\nEnter a year: ";
+    cin >> year;
+
+    for (int month = 1; month < 13; month++) {
+        printMonth(month, year);
+        cout << "  " << endl;
+    }
     return 0;
 }
