@@ -5,6 +5,7 @@
 #include <cmath>
 #include <iomanip>
 #include <string>
+#include <vector>
 using namespace std;
 
 bool isLeapYear (int year) {
@@ -40,19 +41,28 @@ int numberDays (int month, int year) {
     return days;
 }
 
-int numberOfBeginning () {
+int numberOfBeginning (int month, int year) {
     return 0;
 }
 
-void printMonth () {
+void printMonth (int month, int year) {
+
+    string header_1, header_2;
+    int beginning_day;
+
+    vector<string> monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+    beginning_day = numberOfBeginning(month, year);
+    header_1 = monthsName[month-1] + "/" + to_string(year); 
+    header_2 = ""
     cout << endl;
 }
 
 int main ()
 {
     int month, year;
-    
-    cout << numberDays (3, 2016) << endl;
+    cout << "Enter a month/year ";
+    cin >> month >> year;
+    printMonth(month, year);
     return 0;
 }
 
