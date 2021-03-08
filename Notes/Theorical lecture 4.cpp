@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <climits>
 #include <cctype>
+#include <string>
 using namespace std;
 
 // Manipulation digits with setw and setfill
