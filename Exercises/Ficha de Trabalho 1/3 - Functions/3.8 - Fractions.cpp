@@ -48,11 +48,66 @@ void reduceFraction(int &numerator, int &denominator) {
 int main()
 {
     int a, b;
-    char op;
+    char op, key;
     string answer;
 
-    cout << "Enter a fraction a/b with integer numbers: ";
-    cin >> a >> op >> b;
+    do  {
+
+        cout << "Enter a statement with a operator b with integer numbers: ";
+        cin >> a >> op >> b;
+        
+        if (!cin.fail()) {
+
+            switch (op) {
+
+                case '+':
+                    cout << a << " " << op << " " << b << " = " << a+b << endl;
+                    break;
+
+                case '-':
+                    cout << a << " " << op << " " << b << " = " << a-b << endl;
+                    break;
+
+                case 'x' :case '*':
+                    cout << a << " " << op << " " << b << " = " << a*b << endl;
+                    break;          
+                
+                case '\': case '/':
+                
+                    break;
+            
+    
+            default:
+
+                break;
+    }
+
+        }
+        else {
+            cin.clear();
+            cin.ignore('\n', 10000);
+        }
+
+        cout << "More? Y/N";
+        cin >> key;
+
+        } while (key != "N");
+
+    if (!cin.fail()) {
+
+    }
+    else {
+        cin.clear();
+        cin.ignore('\n', 10000);
+    }
+    switch (op) {
+    case '':
+        /* code */
+        break;
+    
+    default:
+        break;
+    }
     answer = readFraction(a, op, b) ? "Valid function" : "Invalid function";
     cout << answer << endl;
     if (readFraction(a, op, b)) {
