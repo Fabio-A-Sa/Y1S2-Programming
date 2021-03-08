@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <climits>
 using namespace std;
 
 int factorial_ite(unsigned int n) {
@@ -22,7 +23,7 @@ int factorial_rec(unsigned int n) {
         return n;
     }
     else {
-        return n * factorial_rec(n-1)
+        return n * factorial_rec(n-1);
     }
 }
 
@@ -32,6 +33,18 @@ int main ()
 
     cout << "Number: ";
     cin >> number;
-    cout << "The factorial of number " << number << " is " << factorial_ite(number) << endl;
+    unsigned long long result = factorial_ite(number);
+    cout << "The factorial of number " << number << " is " << result << endl;
+
+    unsigned int n = 1;
+    result = 1;
+    while (true) {
+        result = factorial_rec(n);
+        if (result > ULLONG_MAX || result == 0) {
+            break;
+        }
+        n = n + 1;
+    }
+    cout << "Max n for ULLONG integer is " << n-1 << endl;
     return 0;
 }
