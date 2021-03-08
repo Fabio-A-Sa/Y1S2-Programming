@@ -45,7 +45,7 @@ void reduceFraction(int &numerator, int &denominator) {
     denominator = denominator / gcd;
 }
 
-int main()
+int main ()
 {
     int a, b;
     string answer, key;
@@ -73,26 +73,33 @@ int main()
                     break;          
                 
                 default:
+
+                    answer = readFraction(a, op, b) ? "Valid function" : "Invalid function";
+                    cout << answer << endl;
+                    if (readFraction(a, op, b)) {
+                        cout << a << op << b << " = ";
+                        reduceFraction(a, b);
+                        if (b == 1) {
+                            cout << a << endl;
+                        }
+                        else {
+                            cout << a << op << b << endl;
+                        }
+                    }
                     break;
                 
                 }
-
         }
         else {
             cin.clear();
             cin.ignore('\n', 10000);
+            cout << "Invalid input. Please try again!" << endl;
         }
 
-        cout << "More? Y/N";
+        cout << "More? Y/N ";
         cin >> key;
 
         } while (key != "N");
 
-    answer = readFraction(a, op, b) ? "Valid function" : "Invalid function";
-    cout << answer << endl;
-    if (readFraction(a, op, b)) {
-        reduceFraction(a, b);
-    }
-    cout << a << op << b;
     return 0;
 }
