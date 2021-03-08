@@ -64,7 +64,7 @@ void retangle () {
 
 int main () 
 {
-    char op;
+    int op;
     do  {
 
         cout << "Area of... \n1 --> Circle\n2 --> Triangle\n3 --> Retangle\nYour choice: ";
@@ -84,6 +84,6 @@ int main ()
                 cout << "Input error. Please try again.";
             }
 
-        } while (op != '1' && op != '2' && op != '3');
+        } while (op != 1 && op != 2 && op != 3);
     return 0;
 }
