@@ -42,7 +42,16 @@ int numberDays (int month, int year) {
 }
 
 int numberOfBeginning (int month, int year) {
-    return 0;
+
+    int ds, a, c, d, s;
+    a = year % 100;
+    c = month;
+    d = 1;
+    s = year / 100;
+
+    ds = ((5*a)/c + c + d - 2*(s%4) + 7) % 7 ;
+
+    return ds;
 }
 
 void printMonth (int month, int year) {
@@ -52,9 +61,14 @@ void printMonth (int month, int year) {
 
     vector<string> monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     beginning_day = numberOfBeginning(month, year);
-    header_1 = monthsName[month-1] + "/" + to_string(year); 
-    header_2 = ""
-    cout << endl;
+    header_1 = monthsName[month-1] + "/";
+    header_2 = "Sun\tMon\tTue\tWed\tThu\tFri\tSat\n";
+
+    cout << header_1 << year << "\n" << header_2;
+
+
+    cout << beginning_day;
+    
 }
 
 int main ()
@@ -65,4 +79,3 @@ int main ()
     printMonth(month, year);
     return 0;
 }
-
