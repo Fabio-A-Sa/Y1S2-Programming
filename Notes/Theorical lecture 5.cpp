@@ -1,6 +1,6 @@
 // Created on March 8, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 5, pages 30 --> ??
+// Theorical lecture 5, pages 29 --> ??
 
 int main ()
 {
