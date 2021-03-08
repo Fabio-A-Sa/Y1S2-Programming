@@ -62,7 +62,7 @@ void endInput_c ()
         menor = input < menor ? input : menor;
         soma = soma + input;
         contador = contador + 1;
-        } while (!(cin.eof()));
+        } while (!(cin.eof())); // --> CTRL Z do teclado
 
     media = soma / contador;
     cout << endl << "Sum: " << soma << endl;
