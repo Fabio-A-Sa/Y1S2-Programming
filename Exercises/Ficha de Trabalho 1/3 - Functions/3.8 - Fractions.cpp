@@ -13,11 +13,6 @@ bool readFraction(int &numerator, char option, int &denominator) {
     return flag;
 }
 
-void reduceFraction(int &numerator, int &denominator) {
-
-    
-}
-
 int greatest_common_divisor (int a, int b) {
 
     if (a == b && a != 0 ) {
@@ -42,6 +37,14 @@ int greatest_common_divisor (int a, int b) {
     }
 }
 
+void reduceFraction(int &numerator, int &denominator) {
+
+    int gcd;
+    gcd = greatest_common_divisor(numerator, denominator);
+    numerator = numerator / gcd;
+    denominator = denominator / gcd;
+}
+
 int main()
 {
     int a, b;
@@ -52,5 +55,9 @@ int main()
     cin >> a >> op >> b;
     answer = readFraction(a, op, b) ? "Valid function" : "Invalid function";
     cout << answer << endl;
+    if (readFraction(a, op, b)) {
+        reduceFraction(a, b);
+    }
+    cout << a << op << b;
     return 0;
 }
