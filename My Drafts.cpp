@@ -3040,3 +3040,15 @@ int main ()
         } while (op != 1 && op != 2 && op != 3);
     return 0;
 }
+
+int rollDie(int low = 1, int high = 6)
+{
+    assert(high >= low);
+    return (rand() % (high - low + 1)) + low;
+}
+
+int main ()
+{
+    rollDie();
+    return 0;
+}
