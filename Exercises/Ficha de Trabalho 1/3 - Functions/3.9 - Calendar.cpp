@@ -57,18 +57,31 @@ int numberOfBeginning (int month, int year) {
 void printMonth (int month, int year) {
 
     string header_1, header_2;
-    int beginning_day;
+    int beginning_day, counter = 0;
 
     vector<string> monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-    beginning_day = numberOfBeginning(month, year);
+    beginning_day = numberOfBeginning(month, year) == 1 ? 6 : numberOfBeginning(month, year) - 1;
     header_1 = monthsName[month-1] + "/";
     header_2 = "Sun\tMon\tTue\tWed\tThu\tFri\tSat\n";
 
     cout << header_1 << year << "\n" << header_2;
 
+    while (counter != beginning_day) {
+        cout << " " << "\t";
+        counter ++;
+    }
 
-    cout << beginning_day;
-    
+    int pointer = 1;
+    while (pointer <= numberDays(month, year)) {
+        cout << pointer << "\t";
+        counter = counter + 1;
+        if (counter == 7) {
+            counter = 0;
+            cout << endl;
+        }
+
+        pointer = pointer + 1;
+    }
 }
 
 int main ()
