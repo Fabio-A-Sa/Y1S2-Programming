@@ -41,11 +41,11 @@ int numberDays (int month, int year) {
 }
 
 int numberOfBeginning () {
-
+    return 0;
 }
 
 void printMonth () {
-
+    cout << endl;
 }
 
 int main ()
@@ -53,5 +53,6 @@ int main ()
     int month, year;
     
     cout << numberDays (3, 2016) << endl;
+    return 0;
 }
 
