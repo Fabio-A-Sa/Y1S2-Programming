@@ -48,8 +48,8 @@ void reduceFraction(int &numerator, int &denominator) {
 int main()
 {
     int a, b;
-    char op, key;
-    string answer;
+    string answer, key;
+    char op;
 
     do  {
 
@@ -60,7 +60,7 @@ int main()
 
             switch (op) {
 
-                case '+':
+                case 'x':
                     cout << a << " " << op << " " << b << " = " << a+b << endl;
                     break;
 
@@ -68,19 +68,19 @@ int main()
                     cout << a << " " << op << " " << b << " = " << a-b << endl;
                     break;
 
-                case 'x' :case '*':
+                case 'x': case '*':
                     cout << a << " " << op << " " << b << " = " << a*b << endl;
                     break;          
                 
                 case '\': case '/':
-                
+
                     break;
             
     
-            default:
+                default:
 
                 break;
-    }
+            }
 
         }
         else {
