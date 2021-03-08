@@ -7,7 +7,16 @@
 #include <string>
 using namespace std;
 
+
+bool isBissexto (int year) {
+
+    bool flag = true;
+    
+    return flag;
+}
+
 int main ()
 {
     return 0;
 }
+
