@@ -3191,3 +3191,20 @@ int main() {
 
     return 0;
 }
+
+int findOdd(const std::vector<int>& numbers){
+  for (int n : numbers) {
+    int contador = 0;
+    for (int m : numbers) {
+      if (m == n) {
+        contador++ ;
+      }
+    }
+    if (contador % 2 == 1) {
+        return n;
+    }
+    else {
+      continue;
+    }
+  }
+}
