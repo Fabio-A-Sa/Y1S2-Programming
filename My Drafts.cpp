@@ -3251,7 +3251,7 @@ int max(vector<int> list){
     return maxim;
 }
 
-std::string boolean_to_string(bool b){
+std::string boolean_to_string(bool b) {
     
     if (b) {
       return "true"
@@ -3270,4 +3270,11 @@ bool is_uppercase(const std::string &s) {
         flag = flag && (c == toupper(c));
     }
     return flag;
+}
+
+int hexToDec(std::string hexString)
+{   
+    int answer;
+    answer = (0x) hexString;
+    return answer;
 }
