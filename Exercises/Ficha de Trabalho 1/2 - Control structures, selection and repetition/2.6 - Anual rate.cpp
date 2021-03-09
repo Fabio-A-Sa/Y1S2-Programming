@@ -7,7 +7,8 @@ using namespace std;
 
 int main ()
 {
-    double n, q, j, result;
+    double n, q, j;
+    int amount = 0;
 
     cout << "Years? ";
     cin >> n;
@@ -16,8 +17,11 @@ int main ()
     cout << "Annual interest rate: ";
     cin >> j;
 
-    result = q*pow((1+j), n);
+    while (n) {
+        amount = (amount + q)*(1 + j);
+        n--;
+    }
 
-    cout << "Amount that a depositor can withdraw from the bank: " << result << endl;
+    cout << "Amount that a depositor can withdraw from the bank: " << amount << endl;
     return 0;
 }
