@@ -3208,3 +3208,17 @@ int findOdd(const std::vector<int>& numbers){
     }
   }
 }
+
+int findDifference(std::array<int, 3> a, std::array<int, 3> b) {
+
+    int total_volume_a = 1, total_volume_b = 1;
+    for (int length_a : a) {
+      total_volume_a = total_volume_a * length_a;
+    }
+    for (int length_b : b) {
+      total_volume_b = total_volume_b * length_b;
+    }
+
+    return abs(total_volume_a - total_volume_b);
+
+}
