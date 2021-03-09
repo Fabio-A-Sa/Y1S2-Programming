@@ -3250,3 +3250,15 @@ int max(vector<int> list){
     }
     return maxim;
 }
+
+std::string boolean_to_string(bool b){
+    
+    if (b) {
+      return "true"
+    }
+    return "false"
+}
+
+std::string boolean_to_string(bool b){
+  return b ? "true" : "false";
+}
