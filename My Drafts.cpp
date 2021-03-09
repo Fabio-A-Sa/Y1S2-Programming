@@ -3262,3 +3262,12 @@ std::string boolean_to_string(bool b){
 std::string boolean_to_string(bool b){
   return b ? "true" : "false";
 }
+
+bool is_uppercase(const std::string &s) {
+    
+    bool flag = true;
+    for (char c : s) {
+        flag = flag && (c == toupper(c));
+    }
+    return flag;
+}
