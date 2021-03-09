@@ -3222,3 +3222,31 @@ int findDifference(std::array<int, 3> a, std::array<int, 3> b) {
     return abs(total_volume_a - total_volume_b);
 
 }
+
+int min(vector<int> list){
+    
+    int minim = 10000;
+    for (int n : list) {
+        if (n < minim) {
+            minim = n;
+        }
+        else {
+            continue;
+        }
+    }
+    return minim;
+}
+
+int max(vector<int> list){
+    
+    int maxim = -10000;
+    for (int n : list) {
+        if (n > maxim) {
+            maxim = n;
+        }
+        else {
+            continue;
+        }
+    }
+    return maxim;
+}
