@@ -9,6 +9,7 @@ using namespace std;
 
 const double PI = 3.1415;
 
+// Difference between call-by-value and call-by-reference
 void swap_by_value (int a , int b) {
     int temp = a;
     a = b;
@@ -21,7 +22,7 @@ void swap_by_reference (int &a , int &b) {
     b = temp;
 }
 
-int main ()
+int swap ()
 {
     int x = 1, y = 2;
     swap_by_value (x, y);
