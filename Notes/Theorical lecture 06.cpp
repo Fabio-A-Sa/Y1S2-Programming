@@ -24,9 +24,9 @@ void swap_by_reference (int &a , int &b) {
 int main ()
 {
     int x = 1, y = 2;
-    swap1 (x, y);
+    swap_by_value (x, y);
     cout << "Value of x: " << x << " and value of y: " << y;
-    swap2 (x, y);
+    swap_by_reference (x, y);
     cout << "Value of x: " << x << " and value of y: " << y;
     return 0;
 }
