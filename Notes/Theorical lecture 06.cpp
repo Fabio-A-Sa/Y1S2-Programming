@@ -31,6 +31,7 @@ int swap ()
     // By value --> the value is changed in memory --> "Global variable"
     swap_by_reference (x, y);
     cout << "Value of x: " << &x << " and value of y: " << y << endl;
+    // Show memory positions / adress
     cout << "Address of x: " << &x << " and address of y: " << &y << endl;
     return 0;
 }
