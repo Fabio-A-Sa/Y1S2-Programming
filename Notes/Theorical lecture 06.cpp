@@ -25,9 +25,16 @@ void swap_by_reference (int &a , int &b) {
 int swap ()
 {
     int x = 1, y = 2;
+    // By value --> the value does not change out of scope
     swap_by_value (x, y);
     cout << "Value of x: " << x << " and value of y: " << y;
+    // By value --> the value is changed in memory --> "Global variable"
     swap_by_reference (x, y);
     cout << "Value of x: " << x << " and value of y: " << y;
+    return 0;
+}
+
+int main ()
+{
     return 0;
 }
