@@ -1,6 +1,6 @@
 // Created on March 11, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 6, pages 45 --> ??
+// Theorical lecture 6, pages 45 --> 52
 
 #include <iostream>
 #include <cmath>
