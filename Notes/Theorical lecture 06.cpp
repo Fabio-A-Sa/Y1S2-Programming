@@ -9,7 +9,13 @@ using namespace std;
 
 const double PI = 3.1415;
 
-void swap (int a , int b) {
+void swap_by_value (int a , int b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+void swap_by_reference (int &a , int &b) {
     int temp = a;
     a = b;
     b = temp;
@@ -18,7 +24,9 @@ void swap (int a , int b) {
 int main ()
 {
     int x = 1, y = 2;
-    swap (x, y);
-    cout << 
+    swap1 (x, y);
+    cout << "Value of x: " << x << " and value of y: " << y;
+    swap2 (x, y);
+    cout << "Value of x: " << x << " and value of y: " << y;
     return 0;
 }
