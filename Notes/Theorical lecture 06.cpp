@@ -7,6 +7,7 @@
 #include <iomanip>
 using namespace std;
 
+// Using global variables
 const double PI = 3.1415;
 
 // Difference between call-by-value and call-by-reference
