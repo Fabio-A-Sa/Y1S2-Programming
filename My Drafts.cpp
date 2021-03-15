@@ -3278,3 +3278,4 @@ int hexToDec(std::string hexString)
     answer = (0x) hexString;
     return answer;
 }
+
