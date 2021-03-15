@@ -35,18 +35,6 @@ int recursive_factorial(int number) {
     }
 }
 
-// Recursive function: fibonacci
-
-int fib_number (int number) {
-
-    if (number == 2 || number == 1) {
-        return 
-    }
-    else {
-        return 
-    }
-}
-
 // Recursive funcion: vertical numbers
 void vertical_numbers(int number) {
 
@@ -56,6 +44,17 @@ void vertical_numbers(int number) {
     else { 
         vertical_numbers(number/10); 
         cout << number % 10 << endl;
+    }
+}
+
+// Recursive function: fibonacci
+int fib_numbers (int number) {
+
+    if (number == 2 || number == 1) {
+        return 1;
+    }
+    else {
+        return fib_number(number - 1) + fib_number (number - 2);
     }
 }
 
@@ -73,6 +72,6 @@ int main ()
     // Recursive funcions, vertical numbers and factorial;
     vertical_numbers(12684);
     cout << recursive_factorial(6) << endl;
-
+    cout << fib_numbers(20) << endl;
     return 0;
 }
