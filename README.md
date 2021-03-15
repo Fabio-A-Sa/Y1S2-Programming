@@ -22,6 +22,10 @@ Notes that I take during theoretical lectures.<br/>
 ### Exercises
 Varied exercises of easy, medium and difficult level, about the subject taught in the present week. They complement the weekly work developed during the practical classes.<br/>
 
+### Project 1
+Description available soon.
+<br/>
+
 <br>
 
 ***Bibliography:*** 
