@@ -9,11 +9,13 @@ using namespace std;
 
 // Function that generates a random number between min-number and max-number
 int random_numbers (int min, int max) {
-    int number = min + rand() % ;
+    int number = min + rand() % (max - min + 1);
     return number;
 }
+
 int main ()
 {   
+    srand(time(NULL));
     cout << random_numbers(5, 10) << endl;
     return 0;
 }
