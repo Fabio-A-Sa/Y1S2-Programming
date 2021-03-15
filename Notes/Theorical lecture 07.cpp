@@ -1,6 +1,6 @@
 // Created on March 15, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 7, pages 52 --> ??
+// Theorical lecture 7, pages 52 --> 68
 
 #include <iostream>
 #include <cmath>
@@ -32,6 +32,18 @@ int recursive_factorial(int number) {
     }
     else { 
         return number * recursive_factorial (number - 1); 
+    }
+}
+
+// Recursive function: fibonacci
+
+int fib_number (int number) {
+
+    if (number == 2 || number == 1) {
+        return 
+    }
+    else {
+        return 
     }
 }
 
