@@ -69,7 +69,7 @@ int main ()
         cout << "Ticket number: " << static_options() << endl;
     }
 
-    // Recursive funcions, vertical numbers and factorial;
+    // Recursive funcions: vertical numbers, factorial and fibonacii;
     vertical_numbers(12684);
     cout << recursive_factorial(6) << endl;
     cout << fib_numbers(20) << endl;

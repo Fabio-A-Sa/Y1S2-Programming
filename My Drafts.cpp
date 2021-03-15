@@ -3306,3 +3306,47 @@ int swap ()
     return 0;
 }
 
+int random_numbers (int min, int max) {
+
+    int number = min + rand() % (max - min + 1);
+    return number;
+}
+
+int static_options () {
+
+    static int ticketNumber = 0; 
+    ticketNumber ++;
+    return ticketNumber;
+
+}
+
+int recursive_factorial(int number) {
+
+    if (number <= 1) { 
+        return number; 
+    }
+    else { 
+        return number * recursive_factorial (number - 1); 
+    }
+}
+
+void vertical_numbers(int number) {
+
+    if (number < 10) { 
+        cout << number << endl; 
+    }
+    else { 
+        vertical_numbers(number/10); 
+        cout << number % 10 << endl;
+    }
+}
+
+int fib_numbers (int number) {
+
+    if (number == 2 || number == 1) {
+        return 1;
+    }
+    else {
+        return fib_numbers (number - 1) + fib_numbers (number - 2);
+    }
+}
