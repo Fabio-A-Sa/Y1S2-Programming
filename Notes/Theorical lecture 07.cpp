@@ -27,10 +27,16 @@ int static_options () {
 // Recursive function with factorial
 int recursive_factorial(int number) {
 
-    if (number == 1) { return number; }
+    if (number <= 1) { return number; }
     else { return number * recursive_factorial (number - 1); }
 }
 
+// Recursive funcion: vertical numbers
+int vertical_numbers(int number) {
+
+    
+    if (number < 10) { return number ;}
+}
 
 int main ()
 {   
@@ -44,8 +50,8 @@ int main ()
     }
 
     // Recursive funcions, vertical numbers and factorial;
-    cout << vertical_number(10) << endl;
-    cout
-    
+    cout << vertical_number(12684) << endl;
+    cout << recursive_factorial(6) << endl;
+
     return 0;
 }
