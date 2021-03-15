@@ -16,6 +16,13 @@ This repository contains all the exercises and assessments of the UC Programming
 ## Description available soon.
 <br/>
 
+
+## How to run in Terminal
+```
+git clone https://github.com/Fabio-A-Sa/Y1S2-Programming.git
+cd Project 1/Source/
+main.exe
+```
 <br>
 
 ***Bibliography:*** 
