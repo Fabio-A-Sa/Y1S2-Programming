@@ -4,11 +4,12 @@
 
 #include <iostream>
 #include <cmath>
+#include <ctime>
 using namespace std;
 
-// Function that generate a random number between min-number and max-number
+// Function that generates a random number between min-number and max-number
 int random_numbers (int min, int max) {
-    int number = min + rand();
+    int number = min + rand() % ;
     return number;
 }
 int main ()
