@@ -24,15 +24,28 @@ int static_options () {
 
 }
 
+// Recursive function with factorial
+int recursive_factorial(int number) {
+
+    if (number == 1) { return number; }
+    else { return number * recursive_factorial (number - 1); }
+}
+
+
 int main ()
 {   
     // Include seed using time --> PseudoRandom
     srand(time(NULL));
     cout << random_numbers(5, 10) << endl;
 
-    // Static qualifier
+    // Static number
     for (int i = 0; i < 10; i++) {
         cout << "Ticket number: " << static_options() << endl;
     }
+
+    // Recursive funcions, vertical numbers and factorial;
+    cout << vertical_number(10) << endl;
+    cout
+    
     return 0;
 }
