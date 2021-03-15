@@ -27,15 +27,24 @@ int static_options () {
 // Recursive function: factorial
 int recursive_factorial(int number) {
 
-    if (number <= 1) { return number; }
-    else { return number * recursive_factorial (number - 1); }
+    if (number <= 1) { 
+        return number; 
+    }
+    else { 
+        return number * recursive_factorial (number - 1); 
+    }
 }
 
 // Recursive funcion: vertical numbers
 void vertical_numbers(int number) {
 
-    if (number < 10) { cout << number << endl; }
-    else { vertical_numbers(number/10); cout << number % 10 << endl;}
+    if (number < 10) { 
+        cout << number << endl; 
+    }
+    else { 
+        vertical_numbers(number/10); 
+        cout << number % 10 << endl;
+    }
 }
 
 int main ()
