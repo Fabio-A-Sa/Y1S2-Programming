@@ -9,8 +9,17 @@ using namespace std;
 
 // Function that generates a random number between min-number and max-number
 int random_numbers (int min, int max) {
+    
     int number = min + rand() % (max - min + 1);
     return number;
+}
+
+
+// Static qualified
+void static_options () {
+
+
+
 }
 
 int main ()
