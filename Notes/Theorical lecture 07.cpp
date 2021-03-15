@@ -35,7 +35,7 @@ int recursive_factorial(int number) {
 void vertical_numbers(int number) {
 
     if (number < 10) { cout << number << endl; }
-    else { cout << number % 10 << endl; vertical_numbers(number/10); }
+    else { vertical_numbers(number/10); cout << number % 10 << endl;}
 }
 
 int main ()
@@ -50,7 +50,7 @@ int main ()
     }
 
     // Recursive funcions, vertical numbers and factorial;
-    cout << vertical_numbers(12684) << endl;
+    vertical_numbers(12684);
     cout << recursive_factorial(6) << endl;
 
     return 0;
