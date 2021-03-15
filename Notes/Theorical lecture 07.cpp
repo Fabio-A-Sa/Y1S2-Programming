@@ -32,7 +32,7 @@ int main ()
 
     // Static qualifier
     for (int i = 0; i < 10; i++) {
-        cout << static_options();
+        cout << "Ticket number: " << static_options() << endl;
     }
     return 0;
 }
