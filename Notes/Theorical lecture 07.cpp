@@ -15,7 +15,7 @@ int random_numbers (int min, int max) {
 }
 
 
-// Static qualified
+// Static qualifier --> Start is 0, and then whenever it is called, it is previous value + 1
 int static_options () {
 
     static int ticketNumber = 0; // Beginnig
@@ -29,6 +29,8 @@ int main ()
     // Include seed using time --> PseudoRandom
     srand(time(NULL));
     cout << random_numbers(5, 10) << endl;
+
+    // Static qualifier
     for (int i = 0; i < 10; i++) {
         cout << static_options();
     }
