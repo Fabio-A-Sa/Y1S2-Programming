@@ -3,3 +3,4 @@
 // Theorical lecture 7, pages 52 --> ??
 
 #include <iostream>
+#include <cmath>
