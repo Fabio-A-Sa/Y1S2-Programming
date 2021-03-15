@@ -54,7 +54,7 @@ int fib_numbers (int number) {
         return 1;
     }
     else {
-        return fib_number(number - 1) + fib_number (number - 2);
+        return fib_numbers (number - 1) + fib_numbers (number - 2);
     }
 }
 
