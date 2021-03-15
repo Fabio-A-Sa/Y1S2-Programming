@@ -15,6 +15,7 @@ int random_numbers (int min, int max) {
 
 int main ()
 {   
+    // Include seed using time --> PseudoRandom
     srand(time(NULL));
     cout << random_numbers(5, 10) << endl;
     return 0;
