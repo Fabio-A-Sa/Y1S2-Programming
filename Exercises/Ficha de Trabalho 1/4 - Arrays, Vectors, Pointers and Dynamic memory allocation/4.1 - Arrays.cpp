@@ -13,9 +13,22 @@ void readArray(int a[], size_t nElem) {
 
 }
 
+int findValueInArray(const  int  a[], size_t nElem, int value, size_t pos1, size_t pos2) {
+
+    int answer = -1;
+    for (int index = pos1 ; index < pos2; index ++ ) {
+        if (a[index] == value) {
+            answer = index;
+            break;
+        }
+    }
+    return answer;
+}
+
 int main () 
 {
-    int numbers[7] = {89, 56, 54, 1, 0, 89, 56} ;
+    int numbers[15] = {89, 56, 54, 1, 0, 89, 50, 58, 6, 8, 27, 158, 4, 33, 11} ;
     readArray(numbers, 4);
+    cout << findValueInArray(numbers, 15, 11, 3, 8) << endl;
     return 0;
 }
