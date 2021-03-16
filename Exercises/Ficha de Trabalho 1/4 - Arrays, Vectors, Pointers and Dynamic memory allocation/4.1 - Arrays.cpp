@@ -25,10 +25,20 @@ int findValueInArray(const  int  a[], size_t nElem, int value, size_t pos1, size
     return answer;
 }
 
+size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1, size_t pos2, size_t index[]) {
+
+    for () {
+        
+    }
+    return index[];
+}
+
 int main () 
 {
     int numbers[15] = {89, 56, 54, 1, 0, 89, 50, 58, 6, 8, 27, 158, 4, 33, 11} ;
+    size_t index[15] = {};
     readArray(numbers, 4);
     cout << findValueInArray(numbers, 15, 11, 3, 8) << endl;
+    cout << findMultValuesInArray(numbers, ) << endl;
     return 0;
 }
