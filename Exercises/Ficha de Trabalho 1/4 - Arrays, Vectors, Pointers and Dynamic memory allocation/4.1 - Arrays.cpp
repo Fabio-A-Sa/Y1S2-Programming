@@ -27,8 +27,10 @@ int findValueInArray(const  int  a[], size_t nElem, int value, size_t pos1, size
 
 size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1, size_t pos2, size_t index[]) {
 
-    for () {
-        
+    for (int i = pos1 ; i < pos2 ; i++ ) {
+        if (a[i] == value) {
+            index.push_back(i);
+        }
     }
     return index[];
 }
