@@ -30,13 +30,13 @@ int findValueInArray(vector<int> &v, size_t nElem, int value, size_t pos1, size_
     return answer;
 }
 
-size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1, size_t pos2, size_t index[]) {
+size_t findMultValuesInArray(vector<int> &v, size_t nElem, int value, size_t pos1, size_t pos2, vector<int> index) {
 
     size_t pointer = 0, loop = 0;
     for (int i = pos1 ; i < pos2 ; i++ ) {
 
         loop ++;
-        if (a[i] == value) {
+        if (v[i] == value) {
             index[pointer] = i;
             pointer ++;
         }
@@ -50,7 +50,7 @@ size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1
 int main () 
 {   
     int next_number;
-    vector<int> numbers;
+    vector<int> numbers, index;
 
     while (!cin.eof()) {
         cout << "Enter a number (letter for skip): ";
@@ -58,21 +58,20 @@ int main ()
         numbers.push_back(next_number);
     }
     cin.clear();
-    cin.ignore('\n', 1000);
+    cin.ignore("\n", 1000);
     int size_of_vector = numbers.size();
 
-    // Read numbers, a)
+    // Read numbers
     do  {
         cout << "How many numbers would you like to read? Integer number: ";
         cin >> next_number;
         if (next_number >= size_of_vector) {
-            cout << "Input error. Please try again with an integer number less than 15" << endl;
+            cout << "Input error. Please try again with an integer number less than " << size_of_vector << endl;
         }
         } while (next_number >= size_of_vector);
-    cout << "Value of " << next_number << "th number is ";
     readArray(numbers, next_number);
 
-    // Search value, b)
+    // Search value
     int max_index, min_index, value, limit;
     do  {
         cout << "Min and max index to search (integer numbers between 0 and 15): ";
@@ -81,10 +80,10 @@ int main ()
         cin >> value;
         cout << "Max numbers to search: ";
         cin >> limit;
-        if (min_index < 0 || max_index < 0 || max_index <= min_index || limit > size_of_array) {
+        if (min_index < 0 || max_index < 0 || max_index <= min_index || limit > size_of_vector) {
             cout << "Input error. Please try again." << endl;
         }
-        } while (min_index < 0 || max_index < 0 || max_index <= min_index || limit > size_of_array);
+        } while (min_index < 0 || max_index < 0 || max_index <= min_index || limit > size_of_vector);
     int answer = findValueInArray(numbers, limit, value, min_index, max_index);
     if (answer == -1) {
         cout << "Not found!" << endl;

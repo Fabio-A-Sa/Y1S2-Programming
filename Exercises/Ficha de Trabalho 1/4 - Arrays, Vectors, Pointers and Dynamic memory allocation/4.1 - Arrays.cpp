@@ -70,7 +70,6 @@ int main ()
             cout << "Input error. Please try again with an integer number less than 15" << endl;
         }
         } while (next_number >= size_of_array);
-    cout << "Value of " << next_number << "th number is ";
     readArray(numbers, next_number);
 
     // Search value, b)
