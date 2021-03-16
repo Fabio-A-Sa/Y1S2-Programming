@@ -52,12 +52,29 @@ int main ()
         pointer ++;
     }
 
-    cout << "Which number would you read? ";
-    cin >> next_number;
+    // Read numbers, a)
+    do  {
+        cout << "How many numbers you would like to read? Integer number: ";
+        cin >> next_number;
+        if (next_number >= size_of_array) {
+            cout << "Input error. Please try again with integer number less than 15" << endl;
+        }
+        } while (next_number >= size_of_array);
     cout << "Value of " << next_number << "th number is ";
     readArray(numbers, 4);
-    
+
+    // Search value, b)
+    int max_index, min_index;
+    do  {
+        cout << "Min and max index to search (integer numbers between 0 and 15): ";
+        cin >> min_index >> max_index;
+        cout << "Which value would you like to search?";
+        cin >> 
+        } while (min_index < 0 || max_index < 0 || max_index < min_index);
     cout << findValueInArray(numbers, 15, 11, 3, 8) << endl;
+
+
+
     cout << findMultValuesInArray(numbers, 15, 89, 1, 13, index) << endl;
     return 0;
 }
