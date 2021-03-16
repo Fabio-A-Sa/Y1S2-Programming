@@ -39,9 +39,7 @@ size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1
 
 int main () 
 {   
-    int size_of_array;
-    cout << "Size of array: ";
-    cin >> size_of_array;
+    const int size_of_array = 15;
     int numbers[size_of_array];
     size_t index[size_of_array];
     int pointer = 0, next_number = 0;
@@ -56,14 +54,14 @@ int main ()
 
     // Read numbers, a)
     do  {
-        cout << "How many numbers you would like to read? Integer number: ";
+        cout << "How many numbers would you like to read? Integer number: ";
         cin >> next_number;
         if (next_number >= size_of_array) {
-            cout << "Input error. Please try again with integer number less than 15" << endl;
+            cout << "Input error. Please try again with an integer number less than 15" << endl;
         }
         } while (next_number >= size_of_array);
     cout << "Value of " << next_number << "th number is ";
-    readArray(numbers, 4);
+    readArray(numbers, next_number);
 
     // Search value, b)
     int max_index, min_index, value;
@@ -72,17 +70,16 @@ int main ()
         cin >> min_index >> max_index;
         cout << "Which value would you like to search?";
         cin >> value;
-        } while (min_index < 0 || max_index < 0 || max_index < min_index);
+        } while (min_index < 0 || max_index < 0 || max_index <= min_index);
     int answer = findValueInArray(numbers, size_of_array, value, min_index, max_index);
     if (answer == -1) {
         cout << "Not found!" << endl;
     }
     else {
-        cout << "Number " << value << " can be found in " << answer << " position in array" << endl;
+        cout << "Number " << value << " can be found in " << answer << "th position in array" << endl;
     }
 
-
-
-    cout << findMultValuesInArray(numbers, 15, 89, 1, 13, index) << endl;
+    // Repeted numbers, e)
+    cout << "Your number has found " << findMultValuesInArray(numbers, size_of_array, value, min_index, max_index, index) << " times in array" << endl;
     return 0;
 }
