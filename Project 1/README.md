@@ -1,6 +1,6 @@
 # Project 1 Description - Programming [PROG]
 
-This repository contains all the exercises and assessments of the UC Programming, taught by Jorge Silva at [Integrated Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MIEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br/>
+This repository contains all code, data and  of the UC Programming, taught by Jorge Silva at [Integrated Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MIEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br/>
 
 <br/>
 <p align="center">
@@ -15,6 +15,8 @@ This repository contains all the exercises and assessments of the UC Programming
 
 ## Description available soon.
 <br/>
+
+## Deadlines
 
 
 ## How to run in Terminal
