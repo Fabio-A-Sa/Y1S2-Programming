@@ -50,7 +50,8 @@ size_t findMultValuesInArray(vector<int> &v, size_t nElem, int value, size_t pos
 int main () 
 {   
     int next_number;
-    vector<int> numbers, index;
+    vector<int> numbers;
+    vector<int> index;
 
     while (!cin.eof()) {
         cout << "Enter a number (letter for skip): ";
@@ -58,7 +59,7 @@ int main ()
         numbers.push_back(next_number);
     }
     cin.clear();
-    cin.ignore('\n', 1000);
+    cin.ignore(100000, '\n');
     int size_of_vector = numbers.size();
 
     // Read numbers
@@ -92,7 +93,7 @@ int main ()
         cout << "Number " << value << " can be found in " << answer << "th position in array" << endl;
     }
 
-    // Repeted numbers, e)
+    // Repeted numbers
     cout << "Your number has found " << findMultValuesInArray(numbers, limit, value, min_index, max_index, index) << " times in array" << endl;
     return 0;
 }
