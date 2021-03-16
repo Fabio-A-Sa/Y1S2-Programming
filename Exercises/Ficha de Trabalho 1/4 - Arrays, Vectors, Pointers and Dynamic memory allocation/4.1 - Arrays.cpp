@@ -40,10 +40,23 @@ size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1
 int main () 
 {
     const int size_of_array = 15;
-    int numbers[size_of_array] = {89, 56, 54, 1, 0, 89, 50, 58, 6, 8, 27, 158, 89, 33, 11} ;
+    int numbers[size_of_array];
     size_t index[size_of_array];
+    int pointer = 0, next_number = 0;
 
+    // Input numbers
+    while (pointer != size_of_array) {
+        cout << "Enter a number: ";
+        cin >> next_number;
+        numbers[pointer] = next_number;
+        pointer ++;
+    }
+
+    cout << "Which number would you read? ";
+    cin >> next_number;
+    cout << "Value of " << next_number << "th number is ";
     readArray(numbers, 4);
+    
     cout << findValueInArray(numbers, 15, 11, 3, 8) << endl;
     cout << findMultValuesInArray(numbers, 15, 89, 1, 13, index) << endl;
     return 0;
