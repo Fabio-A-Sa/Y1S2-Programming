@@ -58,7 +58,7 @@ int main ()
         numbers.push_back(next_number);
     }
     cin.clear();
-    cin.ignore("\n", 1000);
+    cin.ignore('\n', 1000);
     int size_of_vector = numbers.size();
 
     // Read numbers
