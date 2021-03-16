@@ -38,8 +38,10 @@ size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1
 }
 
 int main () 
-{
-    const int size_of_array = 15;
+{   
+    int size_of_array;
+    cout << "Size of array: ";
+    cin >> size_of_array;
     int numbers[size_of_array];
     size_t index[size_of_array];
     int pointer = 0, next_number = 0;
@@ -64,14 +66,20 @@ int main ()
     readArray(numbers, 4);
 
     // Search value, b)
-    int max_index, min_index;
+    int max_index, min_index, value;
     do  {
         cout << "Min and max index to search (integer numbers between 0 and 15): ";
         cin >> min_index >> max_index;
         cout << "Which value would you like to search?";
-        cin >> 
+        cin >> value;
         } while (min_index < 0 || max_index < 0 || max_index < min_index);
-    cout << findValueInArray(numbers, 15, 11, 3, 8) << endl;
+    int answer = findValueInArray(numbers, size_of_array, value, min_index, max_index);
+    if (answer == -1) {
+        cout << "Not found!" << endl;
+    }
+    else {
+        cout << "Number " << value << " can be found in " << answer << " position in array" << endl;
+    }
 
 
 
