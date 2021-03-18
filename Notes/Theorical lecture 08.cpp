@@ -6,7 +6,7 @@
 #include <array>
 using namespace std;
 
-int main () 
+void arrays () 
 {
     const int size_of_array = 10;
     int numbers[size_of_array];
@@ -15,6 +15,8 @@ int main ()
         numbers[index] = index + 1;
     }
 
+    for (int number: numbers) {
+        cout << "Number: " << number << endl;
+    }
     return 0;
 }
-
