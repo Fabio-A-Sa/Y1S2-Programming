@@ -1,12 +1,13 @@
 // Created on March 18, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 8, pages 70 --> ??
+// Theorical lecture 8, pages 70 --> 78
 
 #include <iostream>
 #include <array>
 using namespace std;
 
 void arrays ()  {
+
     const int size_of_array = 10;
     int numbers[size_of_array];
 
@@ -26,8 +27,23 @@ void arrays ()  {
     }
 }
 
+void multidimensional_arrays () {
+
+    const int size_of_array = 3;
+    int numbers[size_of_array][size_of_array];
+
+    // Input numbers to matrix
+    for (int main = 0; main < size_of_array ; main ++ ) {
+        for (int index = 0; index < size_of_array ; index ++ ) {
+            numbers[main][index] = index + 20;
+            cout << "Number " << main << "x" << index << " is " << numbers[main][index] << endl;
+        }
+    }
+}
+
 int main ()
 {
     arrays () ;
+    multidimensional_arrays () ;
     return 0;
 }
