@@ -11,12 +11,14 @@ void arrays ()
     const int size_of_array = 10;
     int numbers[size_of_array];
 
+    // Write numbers in array, number = index + 10
     for (int index = 0 ; index < (sizeof(numbers) / sizeof(numbers[0])) ; index ++) {
-        numbers[index] = index + 1;
+        numbers[index] = index + 10;
     }
 
+    // Show values
     for (int number: numbers) {
         cout << "Number: " << number << endl;
     }
-    return 0;
+
 }
