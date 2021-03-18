@@ -26,3 +26,8 @@ void arrays ()  {
     }
 }
 
+int main ()
+{
+    arrays () ;
+    return 0;
+}
