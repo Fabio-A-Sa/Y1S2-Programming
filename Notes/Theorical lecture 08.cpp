@@ -30,6 +30,7 @@ void arrays ()  {
 void multidimensional_arrays () {
 
     const int size_of_array = 3;
+    // Matrix 3*3
     int numbers[size_of_array][size_of_array];
 
     // Input numbers to matrix
@@ -42,7 +43,7 @@ void multidimensional_arrays () {
 }
 
 int main ()
-{
+{  
     arrays () ;
     multidimensional_arrays () ;
     return 0;
