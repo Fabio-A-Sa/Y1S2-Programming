@@ -37,16 +37,19 @@ int main ()
     vector<int> numbers;
     srand(time(NULL));
 
-    // Input numbers
+    // Input numbers and print them
+    cout << "Numbers: ";
     for (int number = 0 ; number < 100 ; number = rand() % 6 + number + 1) {
+        cout << number << " ";
         numbers.push_back(number);
     }
 
-    for () {
-        
-    }
-    cout << "Numbers: "
-    // example = {0, 3, 8, 9, 10, 12, 18, 24, 26, 29, 33, 37, 39, 40, 42, 48, 52, 58, 63, 68, 73, 74, 78, 80, 84, 88, 91, 93, 96}
+
+    int input;
+    do  {
+            cout << "Input a positive integer number: ";
+            cin >> input;
+        } while (cin.fail() || input < 0);
 
     return 0;
 }
