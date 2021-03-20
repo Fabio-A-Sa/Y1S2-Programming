@@ -7,10 +7,16 @@ using namespace std;
 
 void bubbleSort(vector<int> &v) {
 
-    
+    int aux;
+
+    if () {
+
+    }
+
 }
 
 int main () 
-{
+{   
+    vector<int> numbers = {} ;
     return 0;
 }
