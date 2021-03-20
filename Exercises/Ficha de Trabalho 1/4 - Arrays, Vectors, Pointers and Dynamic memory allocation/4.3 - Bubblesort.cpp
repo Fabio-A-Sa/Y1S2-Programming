@@ -41,6 +41,7 @@ void bubbleSort(vector<int> &v) {
 int main () 
 {   
     vector<int> numbers = {1, -1, 1, 4, 5} ;
+    char answer;
     bubbleSort(numbers);
     
     for (int number: numbers) {
