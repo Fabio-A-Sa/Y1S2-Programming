@@ -10,25 +10,30 @@ int binarySearch(const vector<int> &v, int value) {
     
     int first = 0;
     int last = v.size() - 1;
+    int middle;
     bool found = false;
 
     while ( !found && first < last ) {
 
-        int middle = (first + last) / 2;
+        middle = (first + last) / 2;
+        cout << "middle " << v[middle] << endl;
 
         if (v[middle] == value) {
-            found = found || true;
+            found = true;
         }
         else if (value < v[middle]) {
             last = middle - 1;
+            cout << "last " << v[last] << endl;
         }
         else {
             first = middle + 1;
+            cout << "first " << v[first] << endl;
         }
+        
+        if (found) 
+            return middle;
+            break;
     }
-
-    if (found) 
-        return first;
     return -1;
 }
 
@@ -37,19 +42,29 @@ int main ()
     vector<int> numbers;
     srand(time(NULL));
 
-    // Input numbers and print them
+    // Generate numbers
     cout << "Numbers: ";
     for (int number = 0 ; number < 100 ; number = rand() % 6 + number + 1) {
         cout << number << " ";
         numbers.push_back(number);
     }
 
-
+    // Input a value to search
     int input;
     do  {
-            cout << "Input a positive integer number: ";
+            cout << "\nInput a positive integer number: ";
             cin >> input;
-        } while (cin.fail() || input < 0);
+            if (cin.fail() || input < 0) {
+                cout << "Invalid input. Please try again. " << endl;
+            }
+        } while (input < 0);
 
+    // Search
+    if (binarySearch(numbers, input) == -1) {
+        cout << "Number " << input << " not in vector." << endl;
+    }
+    else {
+        cout << "Index of number " << input << " is " << binarySearch(numbers, input) << endl;
+    }
     return 0;
 }
