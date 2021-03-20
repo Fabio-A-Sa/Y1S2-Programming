@@ -57,7 +57,7 @@ int main ()
             }
         } while (input < 0);
 
-    // Search
+    // Search for results
     if (binarySearch(numbers, input) == -1) {
         cout << "Number " << input << " not in vector." << endl;
     }
