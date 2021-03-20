@@ -9,30 +9,28 @@ using namespace std;
 int binarySearch(const vector<int> &v, int value) {
     
     int first = 0;
-    int last = v.size() - 1;
+    int last = v.size();
     int middle;
     bool found = false;
 
-    while ( !found && first < last ) {
+    while ( !found && first <= last ) {
 
         middle = (first + last) / 2;
-        cout << "middle " << v[middle] << endl;
 
         if (v[middle] == value) {
             found = true;
         }
         else if (value < v[middle]) {
             last = middle - 1;
-            cout << "last " << v[last] << endl;
         }
         else {
             first = middle + 1;
-            cout << "first " << v[first] << endl;
         }
         
-        if (found) 
+        if (found) {
             return middle;
             break;
+        }
     }
     return -1;
 }
