@@ -20,13 +20,29 @@ void bubbleSort(vector<int> &v, char answer) {
 
             while (counter + 1 < size_of_vector) {
                 
-                if (v[counter] > v[counter + 1]) {
-                    aux = v[counter+1];
-                    v[counter+1] = v[counter];
-                    v[counter] = aux;
-                    flag = flag && false;
+                if (answer == 'a') {
+
+                    if (v[counter] > v[counter + 1]) {
+                        aux = v[counter+1];
+                        v[counter+1] = v[counter];
+                        v[counter] = aux;
+                        flag = flag && false;
+                    }
+                    counter++ ;
+
                 }
-                counter++ ;
+
+                else {
+
+                    if (v[counter] < v[counter + 1]) {
+                        aux = v[counter+1];
+                        v[counter+1] = v[counter];
+                        v[counter] = aux;
+                        flag = flag && false;
+                    }
+                    counter++ ;
+
+                }
             }
 
             if (flag) {
