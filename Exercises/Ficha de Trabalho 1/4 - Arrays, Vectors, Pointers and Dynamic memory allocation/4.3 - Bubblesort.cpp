@@ -56,9 +56,21 @@ void bubbleSort(vector<int> &v, char answer) {
 
 int main () 
 {   
-    vector<int> numbers = {1, -1, 9, 4, 5, -15, 2, 0} ;
+    vector<int> numbers ;
     char answer;
+    int number;
 
+    // Input numbers
+    while (!cin.fail()) {
+        cout << "To skip press a random letter. Another number: ";
+        cin >> number;
+        numbers.push_back(number);
+    } ;
+    numbers.pop_back();             // Ignore back input (letter == input "0")
+    cin.clear();                    // Clean error flag                 
+    cin.ignore(100000, '\n');       // Clean error characters
+
+    // Ascending or descending order
     do  {
 
         cout << "Ascending or descending order? a/d ";
