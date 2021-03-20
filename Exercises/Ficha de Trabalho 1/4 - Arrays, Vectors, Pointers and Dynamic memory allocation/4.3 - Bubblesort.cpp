@@ -5,6 +5,16 @@
 #include <vector>
 using namespace std;
 
+bool ascending (int x, int y) {
+    bool answer = x > y ? true : false;
+    return answer;
+}
+
+bool descending (int x, int y) {
+    bool answer = x < y ? true : false;
+    return answer;
+}
+
 void bubbleSort(vector<int> &v, char answer) {
 
     int size_of_vector;
@@ -22,7 +32,7 @@ void bubbleSort(vector<int> &v, char answer) {
                 
                 if (answer == 'a') {
 
-                    if (v[counter] > v[counter + 1]) {
+                    if (descending(v[counter], v[counter + 1])) {
                         aux = v[counter+1];
                         v[counter+1] = v[counter];
                         v[counter] = aux;
@@ -32,9 +42,9 @@ void bubbleSort(vector<int> &v, char answer) {
 
                 }
 
-                else {
+                else if (answer == 'd') {
 
-                    if (v[counter] < v[counter + 1]) {
+                    if (ascending(v[counter], v[counter + 1])) {
                         aux = v[counter+1];
                         v[counter+1] = v[counter];
                         v[counter] = aux;
