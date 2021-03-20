@@ -50,7 +50,7 @@ int main ()
     // Input a value to search
     int input;
     do  {
-            cout << "\nInput a positive integer number: ";
+            cout << "\nEnter a positive integer number: ";
             cin >> input;
             if (cin.fail() || input < 0) {
                 cout << "Invalid input. Please try again. " << endl;
