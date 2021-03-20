@@ -6,12 +6,12 @@
 using namespace std;
 
 bool ascending (int x, int y) {
-    bool answer = x > y ? true : false;
+    bool answer = x > y ? false : true;
     return answer;
 }
 
 bool descending (int x, int y) {
-    bool answer = x < y ? true : false;
+    bool answer = x < y ? false : true;
     return answer;
 }
 
