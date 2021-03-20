@@ -6,6 +6,16 @@
 #include <ctime>
 using namespace std;
 
+int binarySearch(const vector<int> &v, int value) {
+    
+    
+
+
+
+
+
+}
+
 int main ()
 {   
     vector<int> numbers;
