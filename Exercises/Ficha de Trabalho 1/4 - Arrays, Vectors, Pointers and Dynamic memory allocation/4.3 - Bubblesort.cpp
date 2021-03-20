@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-void bubbleSort(vector<int> &v) {
+void bubbleSort(vector<int> &v, char answer) {
 
     int size_of_vector;
     size_of_vector = v.size();
@@ -40,9 +40,20 @@ void bubbleSort(vector<int> &v) {
 
 int main () 
 {   
-    vector<int> numbers = {1, -1, 1, 4, 5} ;
+    vector<int> numbers = {1, -1, 9, 4, 5, -15, 2, 0} ;
     char answer;
-    bubbleSort(numbers);
+
+    do  {
+
+        cout << "Ascending or descending order? a/d ";
+        cin >> answer;
+        if (answer != 'a' && answer != 'd') {
+            cout << "Invalid input. Please try again." << endl ;
+        }
+
+        } while (answer != 'a' && answer != 'd') ;
+
+    bubbleSort(numbers, answer);
     
     for (int number: numbers) {
         cout << number << " " ;
