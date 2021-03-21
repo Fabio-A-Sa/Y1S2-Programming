@@ -58,6 +58,24 @@ vector<vector<int>> random_pluviosity (int year) {
     return pluviosity_year;
 }
 
+vector<double> averages (vector<vector<int>> plu ) {
+
+    int counter = 0;
+    int sum = 0;
+    int total_sum = 0;
+    double basic_average; main_average;
+    vector<int> solution;
+
+    for (int month = 0 ; month < 12 ; month ++ ) {
+        for (int day = 0 ; day < plu[month].size() ; day ++ ) {
+            sum = sum + 
+            counter ++;
+        }
+        
+    }
+    return solution;
+}
+
 int main ()
 {   
     srand(time(NULL));
@@ -65,15 +83,19 @@ int main ()
     cout << "Enter a year: ";
     cin >> year;
     vector<string> monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-    vector<vector<int>> pluviosity_year = random_pluviosity (year);
+    vector<vector<int>> pluviosity = random_pluviosity (year);
 
     // Print all data
     cout << "\nRandom pluviosity (in milimeters) by month. Year " << year << ":\n" << endl;
     for (int month = 0 ; month <= 12 ; month ++) {
         cout << monthsName[month] << ": ";
-        for (int day = 0 ; day < pluviosity_year[month].size() ; day ++ ) {
-            cout << pluviosity_year[month][day] << ", ";
-            }
+        for (int day = 0 ; day < pluviosity[month].size() ; day ++ ) {
+            cout << pluviosity[month][day] << ", ";
         }
         cout << endl;
+    }
+
+    // Statistics~
+    vector<double> average = averages(pluviosity);
+    
 } 
