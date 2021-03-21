@@ -6,6 +6,7 @@
 #include <cmath>
 #include <string>
 #include <ctime>
+#include <iomanip>
 using namespace std;
 
 bool isLeapYear (int year) {
@@ -123,9 +124,9 @@ int main ()
     // Print all data
     cout << "\nRandom pluviosity (in milimeters) by month. Year " << year << ":\n" << endl;
     for (int month = 0 ; month < 12 ; month ++) {
-        cout << monthsName[month] << ": ";
+        cout << setfill(' ') << setw(12) << monthsName[month] << ": ";
         for (int day = 0 ; day < pluviosity[month].size() ; day ++ ) {
-            cout << pluviosity[month][day] << ", ";
+            cout << setfill(' ') << setw(3) << pluviosity[month][day] << " ";
         }
         cout << " " << endl;
     }
