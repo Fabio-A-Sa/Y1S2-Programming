@@ -122,7 +122,11 @@ int main ()
     vector<vector<int>> pairs;
 
     // Print all data
-    cout << "\nRandom pluviosity (in milimeters) by month. Year " << year << ":\n" << endl;
+    cout << "\nRandom pluviosity (in milimeters) by month. Year " << year << ":\n            " << endl;
+    for (int day = 1 ; day <= 31 ; day ++ ) {
+        cout << day << setfill(' ') << setw(3) ;
+    }
+    cout << endl;
     for (int month = 0 ; month < 12 ; month ++) {
         cout << setfill(' ') << setw(12) << monthsName[month] << ": ";
         for (int day = 0 ; day < pluviosity[month].size() ; day ++ ) {
@@ -157,4 +161,4 @@ int main ()
     cout << " \n " << endl;
  
     return 0;
-} 
+}
