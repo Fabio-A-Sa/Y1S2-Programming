@@ -78,27 +78,27 @@ void localMax_usingVector(vector<vector<int>> a, int nRows, int nLines, char ans
                 }
 
                 else if (line == 0) {
+                    if (a[line][row] > a[line][row-1] && a[line][row] > a[line][row+1] && a[line][row] > a[line+1][row] && 
+                        a[line][row] > a[line+1][row-1] && a[line][row] > a[line+1][row+1]) {
+                        cout << "Number " << a[line][row] << " is in " << line << " line and " << row << " row of matrix" << endl;
+                    }
+                }
+
+                else if (row == 0) {
+                    if (a[line][row] > a[line+1][row] && a[line][row] > a[line-1][row] && a[line][row] > a[line][row+1] && 
+                        a[line][row] > a[line-1][row+1] && a[line][row] > a[line+1][row+1]) {
+                        cout << "Number " << a[line][row] << " is in " << line << " line and " << row << " row of matrix" << endl;
+                    }
+                }
+
+                else if (line == nLines - 1) {
                     if (a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row] && 
                         a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row]) {
                         cout << "Number " << a[line][row] << " is in " << line << " line and " << row << " row of matrix" << endl;
                     }
                 }
 
-                else if (line == 0) {
-                    if (a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row] && 
-                        a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row]) {
-                        cout << "Number " << a[line][row] << " is in " << line << " line and " << row << " row of matrix" << endl;
-                    }
-                }
-
-                else if (line == 0) {
-                    if (a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row] && 
-                        a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row]) {
-                        cout << "Number " << a[line][row] << " is in " << line << " line and " << row << " row of matrix" << endl;
-                    }
-                }
-
-                else if (line == 0) {
+                else if (row == nRows - 1) {
                     if (a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row] && 
                         a[line][row] > a[line][row] && a[line][row] > a[line][row] && a[line][row] > a[line][row]) {
                         cout << "Number " << a[line][row] << " is in " << line << " line and " << row << " row of matrix" << endl;
