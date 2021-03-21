@@ -5,6 +5,7 @@
 #include <vector>
 #include <cmath>
 #include <string>
+#include <ctime>
 using namespace std;
 
 bool isLeapYear (int year) {
@@ -39,6 +40,10 @@ int numberDays (int month, int year) {
     return days;
 }
 
+vector<vector<int>> random_pluviosity () {
+    
+
+}
 
 int main ()
 {   
@@ -50,9 +55,9 @@ int main ()
     vector<double> pluviosity_month;
     cout << "Enter a year: ";
     cin >> year;
-    for (int month = 0 ; month < 12 ; month++ ) {
+    for (int month = 1 ; month <= 12 ; month++ ) {
         for (int day = 1 ; day <= numberDays(month, year) ; day ++ ) {
-            cout << "Day " << day << " of " << monthsName[month] << ". Pluviosity: ";
+            cout << "Day " << day << " of " << monthsName[month-1] << ". Pluviosity: ";
             cin >> pluv_day;
             pluviosity_month.push_back(pluv_day);
         }
@@ -60,15 +65,5 @@ int main ()
         pluviosity_month.clear();
     }
 
-    // Print all data
-    for (vector<double> month : pluviosity_year) {
-        for (int day : month) {
-            cout << day << ", ";
-        }
-        cout << endl;
-    }   
 
-    // Example --> Year 2021
-    vector<vector<double>> year_2021 = {} ;
-    return 0;
 }
