@@ -70,7 +70,13 @@ void vectorUnion(const vector<int> &v1, const vector<int> &v2, vector<int> &v3) 
 
 void vectorIntersection(const vector<int> &v1, const vector<int> &v2, vector<int> &v3) {
 
-
+    for (int number1: v1) {
+        for (int number2: v2) {
+            if (number1 == number2 && notInside(v3, number2)) {
+                v3.push_back(number1);
+            }
+        }
+    }
 }
 
 int main () 
@@ -105,7 +111,7 @@ int main ()
     }
 
     // Intersection vector
-    vectorIntersection(numbers1, numbers2, union_vector);
+    vectorIntersection(numbers1, numbers2, intersection_vector);
     cout << "\nIntersection: ";
     for (int number: intersection_vector) {
         cout << number << " ";
