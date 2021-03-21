@@ -32,9 +32,7 @@ void bubbleSort(vector<int> &v) {
             if (flag) {
                 break;
             } 
-
         }
-
     }
 }
 
@@ -58,7 +56,37 @@ void removeDuplicates(vector<int> &v) {
     v = result;
 }
 
+void vectorUnion(const vector<int> &v1, const vector<int> &v2, vector<int> &v3) {
+
+
+}
+
+void vectorIntersection(const vector<int> &v1, const vector<int> &v2, vector<int> &v3) {
+
+
+}
+
 int main () 
-{
+{   
+    vector<int> numbers1 = {0, 2, 2, 8, 2, 9, 5, 2, 0, 0, 9, 15, 8, 5, 3, 2, 4, 1, 1, 0} ;
+    vector<int> numbers2 = {4, 2, 8, 15, 8, 8, 8, 0, 1, 2, 9, 3, 1, 0, 0, 1, 5, 8, 15, 2} ;
+    vector<int> union_vector ;
+    vector<int> intersection_vector ;
+
+    // Remove duplicates and sort by ascending order
+    removeDuplicates(numbers1);
+    removeDuplicates(numbers2);
+    bubbleSort(numbers1);
+    bubbleSort(numbers2); 
+
+    for (int number: numbers1) {
+        cout << number << " ";
+    }
+    cout << endl;
+
+    for (int number: numbers2) {
+        cout << number << " ";
+    }
+
     return 0;
 }
