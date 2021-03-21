@@ -42,7 +42,33 @@ int numberDays (int month, int year) {
 
 int main ()
 {   
+    // Input values
     int year;
+    double pluv_day;
+    vector<string> monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+    vector<vector<double>> pluviosity_year;
+    vector<double> pluviosity_month;
+    cout << "Enter a year: ";
+    cin >> year;
+    for (int month = 0 ; month < 12 ; month++ ) {
+        for (int day = 1 ; day <= numberDays(month, year) ; day ++ ) {
+            cout << "Day " << day << " of " << monthsName[month] << ". Pluviosity: ";
+            cin >> pluv_day;
+            pluviosity_month.push_back(pluv_day);
+        }
+        pluviosity_year.push_back(pluviosity_month);
+        pluviosity_month.clear();
+    }
 
+    // Print all data
+    for (vector<double> month : pluviosity_year) {
+        for (int day : month) {
+            cout << day << ", ";
+        }
+        cout << endl;
+    }   
+
+    // Example --> Year 2021
+    vector<vector<double>> year_2021 = {} ;
     return 0;
 }
