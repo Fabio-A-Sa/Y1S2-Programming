@@ -81,6 +81,7 @@ void vectorIntersection(const vector<int> &v1, const vector<int> &v2, vector<int
 
 int main () 
 {   
+    // Examples
     vector<int> numbers1 = {0, 2, 2, 8, 2, 9, 5, 2, 0, 0, 20, 15, 8, 5, 3, 2, 4, 1, 1, 0} ;
     vector<int> numbers2 = {4, 2, 8, 15, 7, 8, 8, 0, 1, 2, 9, 3, 1, 0, 0, 1, 5, 8, 15, 2, 35, -9} ;
     vector<int> union_vector ;
