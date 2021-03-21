@@ -68,8 +68,8 @@ void vectorIntersection(const vector<int> &v1, const vector<int> &v2, vector<int
 
 int main () 
 {   
-    vector<int> numbers1 = {0, 2, 2, 8, 2, 9, 5, 2, 0, 0, 9, 15, 8, 5, 3, 2, 4, 1, 1, 0} ;
-    vector<int> numbers2 = {4, 2, 8, 15, 8, 8, 8, 0, 1, 2, 9, 3, 1, 0, 0, 1, 5, 8, 15, 2} ;
+    vector<int> numbers1 = {0, 2, 2, 8, 2, 9, 5, 2, 0, 0, 20, 15, 8, 5, 3, 2, 4, 1, 1, 0} ;
+    vector<int> numbers2 = {4, 2, 8, 15, 7, 8, 8, 0, 1, 2, 9, 3, 1, 0, 0, 1, 5, 8, 15, 2, 35, -9} ;
     vector<int> union_vector ;
     vector<int> intersection_vector ;
 
@@ -79,12 +79,28 @@ int main ()
     bubbleSort(numbers1);
     bubbleSort(numbers2); 
 
+    // Show vectors
+    cout << "Vector 1: ";
     for (int number: numbers1) {
         cout << number << " ";
     }
-    cout << endl;
 
+    cout << "\nVector 2: ";
     for (int number: numbers2) {
+        cout << number << " ";
+    }   
+
+    // Union vector
+    vectorUnion(numbers1, numbers2, union_vector);
+    cout << "\nUnion: ";
+    for (int number: union_vector) {
+        cout << number << " ";
+    }
+
+    // Intersection vector
+    vectorIntersection(numbers1, numbers2, union_vector);
+    cout << "\nIntersection: ";
+    for (int number: intersection_vector) {
         cout << number << " ";
     }
 
