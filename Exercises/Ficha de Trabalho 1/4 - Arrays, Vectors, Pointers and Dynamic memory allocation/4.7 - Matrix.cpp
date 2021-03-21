@@ -65,12 +65,12 @@ int main ()
 
     char answer;
     do  {
-        cout << "Local maxima values or ():";
+        cout << "Do you want to consider that any element of the matrix can be a local maximum? Y/N : ";
         cin >> answer;
-        if (answer != 'Y' || answer != 'N') {
+        if (answer != 'Y' && answer != 'N') {
             cout << "Invalid input. Please try again." << endl;
         }
-        } while (answer != 'Y' || answer != 'N');
+        } while (answer != 'Y' && answer != 'N');
 
     localMax_usingVector(matrix_vector, answer);
 
