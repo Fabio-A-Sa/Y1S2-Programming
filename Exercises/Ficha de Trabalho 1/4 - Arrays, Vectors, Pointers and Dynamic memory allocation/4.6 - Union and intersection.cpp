@@ -58,6 +58,13 @@ void removeDuplicates(vector<int> &v) {
 
 void vectorUnion(const vector<int> &v1, const vector<int> &v2, vector<int> &v3) {
 
+    for (int number: v1) {
+        v3.push_back(number);
+    }
+    for (int number: v2) {
+        v3.push_back(number);
+    }
+    removeDuplicates(v3);
 
 }
 
