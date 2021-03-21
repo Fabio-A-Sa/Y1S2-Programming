@@ -26,7 +26,7 @@ void localMax_usingArray(const int a[][NE]) {
     }
 }
 
-void localMax_usingVector(vector<vector<int>> a) {
+void localMax_usingVector(vector<vector<int>> a, char answer) {
     
     cout << "Local maxima: " << endl;
     for (int line = 1 ; line + 1 < NE ; line++ ) {
@@ -63,12 +63,16 @@ int main ()
         values.clear();
     }
 
-    for (int line = 0 ; line < nLines ; line ++ ) {
-        for (int row = 0 ; row < nRows ; row ++ ) {
-            cout << "Number " << matrix_vector[line][row] << endl;
-        }   
-    }
+    char answer;
+    do  {
+        cout << "Local maxima values or ():";
+        cin >> answer;
+        if (answer != 'Y' || answer != 'N') {
+            cout << "Invalid input. Please try again." << endl;
+        }
+        } while (answer != 'Y' || answer != 'N');
 
+    localMax_usingVector(matrix_vector, answer);
 
     return 0;   
 }
