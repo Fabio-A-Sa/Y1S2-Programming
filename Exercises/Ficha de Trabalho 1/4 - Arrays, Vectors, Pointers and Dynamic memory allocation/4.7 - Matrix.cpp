@@ -52,9 +52,8 @@ void localMax_usingVector(vector<vector<int>> a, int nRows, int nLines, char ans
 
         cout << "Local maxima: " << endl;
         for (int line = 0 ; line < nLines ; line ++ ) {
-            cout << "line " << line << endl;
             for (int row = 0 ; row < nRows ; row ++ ) {
-                cout << "row " << row << endl;
+
                 if (line == 0 && row == 0) {
                     if (a[line][row] > a[line+1][row] && a[line][row] > a[line+1][row+1] && a[line][row] > a[line][row+1]) {
                         cout << "Number " << a[line][row] << " is in " << line << " line and " << row << " row of matrix" << endl;
