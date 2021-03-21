@@ -51,8 +51,7 @@ vector<vector<int>> random_pluviosity () {
     cin >> year;
     for (int month = 1 ; month <= 12 ; month++ ) {
         for (int day = 1 ; day <= numberDays(month, year) ; day ++ ) {
-            cout << "Day " << day << " of " << monthsName[month-1] << ". Pluviosity: ";
-            cin >> pluv_day;
+            pluv_day = (rand() % rand() ) % rand();
             pluviosity_month.push_back(pluv_day);
         }
         pluviosity_year.push_back(pluviosity_month);
@@ -64,15 +63,15 @@ vector<vector<int>> random_pluviosity () {
 
 int main ()
 {   
+    srand(time(NULL));
     vector<string> monthsName = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
     vector<vector<int>> pluviosity_year = random_pluviosity ();
 
-
     // Print all data
     for (int month = 0 ; month <= 12 ; month ++) {
-        cout << monthsName[month] << " ";
+        cout << monthsName[month] << ": ";
         for (int day = 0 ; day < pluviosity_year[month].size() ; day ++ ) {
-            cout << day << ", ";
+            cout << pluviosity_year[month][day] << ", ";
         }
         cout << endl;
     }   
