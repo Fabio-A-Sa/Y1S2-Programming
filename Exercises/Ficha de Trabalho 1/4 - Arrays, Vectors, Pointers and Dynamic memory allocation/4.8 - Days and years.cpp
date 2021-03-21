@@ -146,12 +146,14 @@ int main ()
     // Maximum value
     pairs = maximum_pluviosity(pluviosity);
     int max_value = pluviosity[pairs[0][0]][pairs[0][1]];
+    cout << "\nDaily maximum pluviosity in " << year << ": " << max_value << endl;
 
-    // Maximum values
+    // Maximum days
+    cout << "\nDays of maximum pluviosity:\n" << endl;
     for (vector<int> pair : pairs) {
-        cout << "Day " << pair[1] << " of " << monthsName[pair[0]] << endl;
+        cout << "Day " << pair[1]+1 << " of " << monthsName[pair[0]] << endl;
     }
+    cout << " \n " << endl;
  
-
     return 0;
 } 
