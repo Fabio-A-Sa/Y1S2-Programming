@@ -122,6 +122,26 @@ void localMax_usingVector(vector<vector<int>> a, int nRows, int nLines, char ans
 
 int main () 
 {       
+    // Example
+    int matrix[][NE] = {{7, 3, 4, 1, 3}, 
+                        {2, 9, 6, 2, 1}, 
+                        {1, 3, 5, 1, 4}, 
+                        {6, 5, 2, 7, 5}, 
+                        {4, 2, 1, 3, 6}};
+    localMax_usingArray(matrix);
+
+    // Input user values --> Array (2D)
+    int input;
+    int user_matrix[NE][NE];
+    for (int line = 0 ; line < NE ; line ++) {
+        for (int row = 0 ; row < NE ; row ++ ) {
+            cout << "Another number: ";
+            cin >> input;
+            user_matrix[line][row] = input;
+        }
+    }
+    localMax_usingArray(user_matrix);
+
     // Input user values --> Vector (2D)
     vector<vector<int>> matrix_vector;
     vector<int> values;
