@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 
-void bubbleSort(vector<int> &v, char answer) {
+void bubbleSort(vector<int> &v) {
 
     int size_of_vector;
     size_of_vector = v.size();
@@ -20,29 +20,13 @@ void bubbleSort(vector<int> &v, char answer) {
 
             while (counter + 1 < size_of_vector) {
                 
-                if (answer == 'a') {
-
-                    if (descending(v[counter], v[counter + 1])) {
+                if (v[counter] > v[counter + 1]) {
                         aux = v[counter+1];
                         v[counter+1] = v[counter];
                         v[counter] = aux;
                         flag = flag && false;
                     }
                     counter++ ;
-
-                }
-
-                else if (answer == 'd') {
-
-                    if (ascending(v[counter], v[counter + 1])) {
-                        aux = v[counter+1];
-                        v[counter+1] = v[counter];
-                        v[counter] = aux;
-                        flag = flag && false;
-                    }
-                    counter++ ;
-
-                }
             }
 
             if (flag) {
