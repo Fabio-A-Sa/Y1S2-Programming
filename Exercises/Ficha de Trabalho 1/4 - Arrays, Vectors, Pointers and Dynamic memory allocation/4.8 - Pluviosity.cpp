@@ -85,7 +85,7 @@ vector<double> averages (vector<vector<int>> plu ) {
 vector<vector<int>> maximum_pluviosity (vector<vector<int>> pluviosity) {
 
     // Search for highest value
-    int max_value = -10;
+    int max_value = -100;
     for (int month = 0 ; month < 12 ; month ++ ) {
         for (int day = 0 ; day < pluviosity[month].size() ; day ++ ) {
             max_value = max_value < pluviosity[month][day] ? pluviosity[month][day] : max_value;
@@ -122,20 +122,19 @@ int main ()
     vector<vector<int>> pairs;
 
     // Print all data
-    cout << "\nRandom pluviosity (in milimeters) by month. Year " << year << ":\n            " << endl;
+    cout << "\nRandom pluviosity (in milimeters) by month. Year " << year << ":\n" << endl;
+    cout << setfill(' ') << setw(15) << "Days:" << "  ";
     for (int day = 1 ; day <= 31 ; day ++ ) {
-        cout << day << setfill(' ') << setw(3) ;
+        cout << setfill(' ') << setw(3) << day << " ";
     }
-    cout << endl;
+    cout << " \n" << endl;
     for (int month = 0 ; month < 12 ; month ++) {
-        cout << setfill(' ') << setw(12) << monthsName[month] << ": ";
+        cout << setfill(' ') << setw(15) << monthsName[month] << ": ";
         for (int day = 0 ; day < pluviosity[month].size() ; day ++ ) {
             cout << setfill(' ') << setw(3) << pluviosity[month][day] << " ";
         }
         cout << " " << endl;
     }
-
-    // Statistics
 
     // Average by month
     average = averages(pluviosity);
