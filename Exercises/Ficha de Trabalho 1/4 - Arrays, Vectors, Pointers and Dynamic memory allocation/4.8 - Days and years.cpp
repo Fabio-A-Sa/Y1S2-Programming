@@ -63,16 +63,21 @@ vector<double> averages (vector<vector<int>> plu ) {
     int counter = 0;
     int sum = 0;
     int total_sum = 0;
-    double basic_average; main_average;
-    vector<int> solution;
+    double basic_average, main_average;
+    vector<double> solution;
 
     for (int month = 0 ; month < 12 ; month ++ ) {
         for (int day = 0 ; day < plu[month].size() ; day ++ ) {
-            sum = sum + 
+            sum = sum + plu[month][day] ;
             counter ++;
         }
-        
+        total_sum = total_sum + sum;
+        basic_average = (double) sum / plu[month].size();
+        solution.push_back(basic_average);
+        sum = 0;
     }
+    main_average = (double) total_sum / counter;
+    solution.push_back(main_average);
     return solution;
 }
 
@@ -95,7 +100,8 @@ int main ()
         cout << endl;
     }
 
-    // Statistics~
+    // Statistics
     vector<double> average = averages(pluviosity);
-    
+    cout << "Average pluviosity (in milimeters) by month:\n";
+    for ()
 } 
