@@ -99,9 +99,9 @@ vector<vector<int>> maximum_pluviosity (vector<vector<int>> pluviosity) {
             if (pluviosity[month][day] == max_value) {
                 month_day.push_back(month);
                 month_day.push_back(day);
+                solution.push_back(month_day);
+                month_day.clear();
             }
-            solution.push_back(month_day);
-            month_day.clear();
         }
     }
     return solution;
