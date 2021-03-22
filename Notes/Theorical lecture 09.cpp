@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <cstddef>
 using namespace std;
 
 // Using vectors
@@ -19,5 +20,9 @@ void vectors_init () {
 // Using pointer
 int main () 
 {
+    int x = 10;
+    int& r = x;
+    int * ptr;
+    cout << r << endl;
     return 0;
 }
