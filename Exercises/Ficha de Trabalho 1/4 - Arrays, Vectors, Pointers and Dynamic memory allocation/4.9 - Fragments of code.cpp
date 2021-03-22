@@ -25,11 +25,18 @@ void fragment_2 () {
 
 int main ()
 {
-    fragment_1();
+    fragment_1 ();
 
-    //
+    // Output:
+    // x = 2 and y = 2
+    // ref_x = 2 and ref_y = 2
 
-    fragment_2();
+    fragment_2 ();
+
+    // Output:
+    // x = 1 and y = 2
+    // ptr_x = "memory adress of x" and ptr_y = "memory adress of y"
+    // *ptr_x = 2 and *ptr_y = 2
 
     return 0;
 }
