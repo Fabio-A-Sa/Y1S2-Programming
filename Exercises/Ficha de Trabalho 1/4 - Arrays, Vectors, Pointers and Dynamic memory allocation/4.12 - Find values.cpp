@@ -5,10 +5,10 @@
 #include <array>
 using namespace std;
 
-void readArray(int a[], size_t nElem) {
+void readArray(int *a[], size_t nElem) {
 
     for (int index = 0 ; index < nElem ; index++ ) {
-        cout << index << ": " << a[index] << endl;
+        cout << index << ": " << *a[index] << endl;
     }
 
 }
