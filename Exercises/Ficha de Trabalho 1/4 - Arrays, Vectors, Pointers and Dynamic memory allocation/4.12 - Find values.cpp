@@ -5,6 +5,8 @@
 #include <array>
 using namespace std;
 
+// Falta colocar correctamente os pointers --> Ver mais tarde!
+
 void readArray(int *a[], size_t nElem) {
 
     for (int index = 0 ; index < nElem ; index++ ) {
