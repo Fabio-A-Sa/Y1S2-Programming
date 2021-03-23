@@ -3,25 +3,26 @@
 
 #include <iostream>
 #include <array>
+
 using namespace std;
 
-int comparator (const void* number1 , const void* number2) {
+// Não funciona --> Verificar mais tarde!
 
-    return (*(int*)number1 - *(int*)number2);
+int comparator ( const void *arg1, const void *arg2 ) {
+   return  *arg1 - *arg2 ;
 }
 
-int main ()
+int main( int argc, char **argv )
 {
-    int number;
-    
-    int example[] = {120, 2, 5, -9, 8, 52, -1, 0, 6} ;
+    int i;
+    int arr[5] = {5, 8, 6, 4, 1} ;
+    int size = 5;
+    int base = arr[0];
 
-    qsort (void* base, size_t num, size_t size, int (*comparator)(const void*,const void*))
+    qsort (void* base, size_t num, size_t size, int (*comparator)(const void*,const void*));    
 
+    // Print sorted data
+    for( i = 0 ; i < size ; ++i )
+        cout << arr[i] << " " ;
 
-    qsort(example);
-    for (int number : example) {
-        cout << number << " ";
-    }
-    return 0;
 }
