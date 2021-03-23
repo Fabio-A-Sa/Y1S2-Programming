@@ -19,53 +19,48 @@ void fill_grades(vector< vector<int> > &grade, size_t numberStudents, size_t num
     }
 }
 
-void compute_st_ave(const vector< vector<int> > &grade, vector<double>
-&st_ave, size_t numberStudents, size_t numberQuizzes)
-{
- // numberStudents = grade.size(); //alternative to parameters
- // numberQuizzes = grade[0].size(); //alternative to parameters
-for (size_t st_num = 0; st_num < numberStudents; st_num++)
-{
-double sum = 0;
-for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++)
-sum = sum + grade[st_num][quiz_num];
-st_ave.push_back(sum/numberQuizzes);
- //WHY NOT st_ave[st_num] = sum/numberQuizzes; ???
+void compute_st_ave(const vector< vector<int> > &grade, vector<double> &st_ave, size_t numberStudents, size_t numberQuizzes) {
+
+    for (size_t st_num = 0; st_num < numberStudents; st_num++) {
+        double sum = 0;
+        for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++) {
+            sum = sum + grade[st_num][quiz_num];
+        }
+        st_ave.push_back(sum/numberQuizzes);
+    }
 }
+
+void compute_quiz_ave(const vector< vector<int> > &grade, vector<double> &quiz_ave, size_t numberStudents, size_t numberQuizzes) {
+    
+    for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++) {
+        double sum = 0;
+        for (size_t st_num = 0; st_num < numberStudents; st_num++) {
+            sum = sum + grade[st_num][quiz_num];
+        }
+        quiz_ave.push_back(sum/numberStudents);
+    }
 }
-void compute_quiz_ave(const vector< vector<int> > &grade, vector<double>
-&quiz_ave, size_t numberStudents, size_t numberQuizzes)
-{
-for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++)
-{
-double sum = 0;
-for (size_t st_num = 0; st_num < numberStudents; st_num++)
-sum = sum + grade[st_num][quiz_num];
-quiz_ave.push_back(sum/numberStudents);
-}
-}
-void display(const vector< vector<int> > &grade, const vector<double>
-&st_ave, const vector<double> &quiz_ave, size_t numberStudents, size_t
-numberQuizzes)
-{
-cout.setf(ios::fixed);
-cout.setf(ios::showpoint);
-cout.precision(1);
-cout << setw(10) << "Student"
-<< setw(5) << "Ave"
-<< setw(15) << "Quizzes\n";
-for (size_t st_num = 0; st_num < numberStudents; st_num++)
-{
-cout << setw(10) << st_num + 1
-<< setw(5) << st_ave[st_num] << " ";
-for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++)
-cout << setw(5) << grade[st_num][quiz_num];
-cout << endl;
-}
-cout << "Quiz averages = ";
-for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++)
-cout << setw(5) << quiz_ave[quiz_num];
-cout << endl;
+    
+void display(const vector< vector<int> > &grade, const vector<double> &st_ave, const vector<double> &quiz_ave, size_t numberStudents, size_t numberQuizzes) {
+
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(1);
+    cout << setw(10) << "Student" << setw(5) << "Ave" << setw(15) << "Quizzes\n";
+
+    for (size_t st_num = 0; st_num < numberStudents; st_num++) {
+        cout << setw(10) << st_num + 1 << setw(5) << st_ave[st_num] << " ";
+        for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++) {
+            cout << setw(5) << grade[st_num][quiz_num];
+        }
+        cout << endl;
+    }
+
+    cout << "Quiz averages = ";
+    for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++) {
+        cout << setw(5) << quiz_ave[quiz_num];
+    }
+    cout << endl;
 }
 
 int main ()
