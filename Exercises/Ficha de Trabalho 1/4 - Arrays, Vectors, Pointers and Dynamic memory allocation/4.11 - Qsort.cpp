@@ -13,10 +13,9 @@ int comparator ( const void *arg1, const void *arg2 ) {
 
 int main( int argc, char **argv )
 {
-    int i;
     int arr[5] = {5, 8, 6, 4, 1} ;
-    size_t size = 5;
     int base = arr[0];
+    size_t size = 5;
     size_t num;
 
     qsort (void* base, size_t num, size_t size, int (*comparator)(const void*,const void*));    
