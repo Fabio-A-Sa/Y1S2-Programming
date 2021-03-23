@@ -64,7 +64,7 @@ int main ()
         pointer ++;
     }
 
-    // Read numbers, a)
+    // Read numbers
     do  {
         cout << "How many numbers would you like to read? Integer number: ";
         cin >> next_number;
@@ -74,7 +74,7 @@ int main ()
         } while (next_number >= size_of_array);
     readArray(numbers, next_number);
 
-    // Search value, b)
+    // Search value
     int max_index, min_index, value, limit;
     do  {
         cout << "Min and max index to search (integer numbers between 0 and 15): ";
@@ -95,7 +95,7 @@ int main ()
         cout << "Number " << value << " can be found in " << answer << "th position in array" << endl;
     }
 
-    // Repeted numbers, e)
+    // Repeted numbers
     cout << "Your number has found " << findMultValuesInArray(numbers, limit, value, min_index, max_index, index) << " times in array" << endl;
     return 0;
 }
