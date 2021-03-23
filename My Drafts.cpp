@@ -4294,3 +4294,90 @@ int main ()
     cout << r << endl;
     return 0;
 }
+
+int findOdd(const std::vector<int>& numbers){
+  for (int n : numbers) {
+    int contador = 0;
+    for (int m : numbers) {
+      if (m == n) {
+        contador++ ;
+      }
+    }
+    if (contador % 2 == 1) {
+        return n;
+    }
+    else {
+      continue;
+    }
+  }
+}
+
+int findDifference(std::array<int, 3> a, std::array<int, 3> b) {
+
+    int total_volume_a = 1, total_volume_b = 1;
+    for (int length_a : a) {
+      total_volume_a = total_volume_a * length_a;
+    }
+    for (int length_b : b) {
+      total_volume_b = total_volume_b * length_b;
+    }
+
+    return abs(total_volume_a - total_volume_b);
+
+}
+
+int min(vector<int> list){
+    
+    int minim = 10000;
+    for (int n : list) {
+        if (n < minim) {
+            minim = n;
+        }
+        else {
+            continue;
+        }
+    }
+    return minim;
+}
+
+int max(vector<int> list){
+    
+    int maxim = -10000;
+    for (int n : list) {
+        if (n > maxim) {
+            maxim = n;
+        }
+        else {
+            continue;
+        }
+    }
+    return maxim;
+}
+
+std::string boolean_to_string(bool b){
+    
+    if (b) {
+      return "true"
+    }
+    return "false"
+}
+
+std::string boolean_to_string(bool b){
+  return b ? "true" : "false";
+}
+
+bool is_uppercase(const std::string &s) {
+    
+    bool flag = true;
+    for (char c : s) {
+        flag = flag && (c == toupper(c));
+    }
+    return flag;
+}
+
+int hexToDec(std::string hexString)
+{   
+    int answer;
+    answer = (0x) hexString;
+    return answer;
+}
