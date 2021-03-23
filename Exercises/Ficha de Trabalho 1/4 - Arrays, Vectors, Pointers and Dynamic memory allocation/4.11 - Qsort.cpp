@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <array>
-
 using namespace std;
 
 // Não funciona --> Verificar mais tarde!
