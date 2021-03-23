@@ -8,32 +8,17 @@
 #include <cstddef>
 using namespace std;
 
-int main ()
-{
-vector< vector<int> > grade;// how many elements has 'grade' vector ?
-vector<double> st_ave; // and 'st_ave' & ‘quiz_ave’ vectors ?
-vector<double> quiz_ave;
-size_t numberStudents, numberQuizzes;
-cout << "Number of students ? "; cin >> numberStudents;
-cout << "Number of quizzes ? "; cin >> numberQuizzes;
-fill_grades(grade,numberStudents,numberQuizzes);
-compute_st_ave(grade, st_ave, numberStudents, numberQuizzes);
-compute_quiz_ave(grade, quiz_ave, numberStudents, numberQuizzes);
-display(grade, st_ave, quiz_ave, numberStudents, numberQuizzes);
-return 0;
+void fill_grades(vector< vector<int> > &grade, size_t numberStudents, size_t numberQuizzes) {
+    
+    for (size_t st_num = 0; st_num < numberStudents; st_num++) {
+        vector<int> studentGrade;
+        for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++) {
+            studentGrade.push_back(10 + rand() % 11);
+        }
+        grade.push_back(studentGrade);
+    }
 }
-void fill_grades(vector< vector<int> > &grade, size_t numberStudents,
-size_t numberQuizzes)
-{
-for (size_t st_num = 0; st_num < numberStudents; st_num++)
-{
-vector<int> studentGrade;
-for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++)
-studentGrade.push_back(10 + rand() % 11);
-grade.push_back(studentGrade);
-}
-}
-100
+
 void compute_st_ave(const vector< vector<int> > &grade, vector<double>
 &st_ave, size_t numberStudents, size_t numberQuizzes)
 {
@@ -81,4 +66,24 @@ cout << "Quiz averages = ";
 for (size_t quiz_num = 0; quiz_num < numberQuizzes; quiz_num++)
 cout << setw(5) << quiz_ave[quiz_num];
 cout << endl;
+}
+
+int main ()
+{
+    vector< vector<int> > grade;
+    vector<double> st_ave;
+    vector<double> quiz_ave;
+    size_t numberStudents, numberQuizzes;
+
+    cout << "Number of students ? "; 
+    cin >> numberStudents;
+    cout << "Number of quizzes ? "; 
+    cin >> numberQuizzes;
+
+    fill_grades(grade,numberStudents,numberQuizzes);
+    compute_st_ave(grade, st_ave, numberStudents, numberQuizzes);
+    compute_quiz_ave(grade, quiz_ave, numberStudents, numberQuizzes);
+    display(grade, st_ave, quiz_ave, numberStudents, numberQuizzes);
+
+    return 0;
 }
