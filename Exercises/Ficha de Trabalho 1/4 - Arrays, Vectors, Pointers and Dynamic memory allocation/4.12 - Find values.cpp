@@ -13,7 +13,7 @@ void readArray(int *a[], size_t nElem) {
 
 }
 
-int findValueInArray(const  int  a[], size_t nElem, int value, size_t pos1, size_t pos2) {
+int findValueInArray(const int *a[], size_t nElem, int value, size_t pos1, size_t pos2) {
 
     int answer = -1, loop = 0;
     for (int index = pos1 ; index < pos2; index ++ ) {
@@ -30,7 +30,7 @@ int findValueInArray(const  int  a[], size_t nElem, int value, size_t pos1, size
     return answer;
 }
 
-size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1, size_t pos2, size_t index[]) {
+size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1, size_t pos2, size_t *index[]) {
 
     size_t pointer = 0, loop = 0;
     for (int i = pos1 ; i < pos2 ; i++ ) {
