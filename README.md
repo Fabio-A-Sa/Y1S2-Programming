@@ -25,6 +25,9 @@ Varied exercises of easy, medium and difficult level, about the subject taught i
 ### Project 1
 Description available soon. <br/>
 
+### Project 2
+Description available soon. <br/>
+
 <br>
 
 ***Bibliography:*** 
