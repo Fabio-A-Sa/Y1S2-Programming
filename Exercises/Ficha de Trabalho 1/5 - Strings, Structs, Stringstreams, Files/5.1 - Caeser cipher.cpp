@@ -26,6 +26,7 @@ char encryptChar(char c, int key) {
         return tolower(abc[index]);
     }
     else {
+        // Spaces, numbers and others characters
         return c;
     }
 }
@@ -45,21 +46,31 @@ int main ()
     string sentence;
     char answer;
 
-    // Input
     cout << "Your sentence: ";
     getline(cin, sentence);
-    cout << "Key: ";
-    cin >> offset;
-    cout << "Encryption or decryption? E/D";
-    cin >> answer;
 
-    if (tolower(answer) == "e") {
+    do  {
+        cout << "Key: ";
+        cin >> offset;
+        if (!cin) {
+            cout << "Invalid key. Please enter a integer number. " << endl;
+        }
+        } while (!cin);
+
+    do  {
+        cout << "Encryption or decryption? E/D : ";
+        cin >> answer;
+        } while (!cin || (answer !) ;
+
+    if (tolower(answer) == 'e') {
         cout << "Encryption: " << encryptString(sentence, offset) << endl;
     }
-    else if (tolower(answer) == "d") {
+    else if (tolower(answer) == 'd') {
         cout << "Decryption: " << encryptString(sentence, -offset) << endl;
     }
+    else {
+        cout << "Invalid input. Please try again." << endl;
+    }
 
-    cout << encryptString(sentence, offset) << endl;
     return 0;
 }
