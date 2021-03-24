@@ -71,7 +71,7 @@ int main ()
     char answer;
     string input;
 
-    // Input numbers
+    // Input char, or string, or Person's name
     while (input != "0") {
         cout << "To skip press 0. Another string: ";
         getline(cin, input);
