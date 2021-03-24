@@ -6,12 +6,12 @@
 #include <vector>
 using namespace std;
 
-bool ascending (char x, char y) {
+bool ascending (string x, string y) {
     bool answer = x > y ? false : true;
     return answer;
 }
 
-bool descending (char x, char y) {
+bool descending (string x, string y) {
     bool answer = x < y ? false : true;
     return answer;
 }
@@ -25,7 +25,7 @@ void bubbleSort(vector<string> &v, char answer) {
 
         for (int index = 0 ; index < size_of_vector ; index ++) {
 
-            char aux;
+            string aux;
             int counter = 0;
             bool flag = true;
 
@@ -67,17 +67,17 @@ void bubbleSort(vector<string> &v, char answer) {
 
 int main () 
 {   
-    vector<int> numbers ;
+    vector<string> chars ;
     char answer;
-    int number;
+    string input;
 
     // Input numbers
-    while (!cin.fail()) {
-        cout << "To skip press a random letter. Another number: ";
-        cin >> number;
-        numbers.push_back(number);
+    while (input != "0") {
+        cout << "To skip press 0. Another number: ";
+        cin >> input;
+        chars.push_back(input);
     } ;
-    numbers.pop_back();             // Ignore back input (letter == input "0")
+    chars.pop_back();             // Ignore back input (letter == input "0")
     cin.clear();                    // Clean error flag                 
     cin.ignore(100000, '\n');       // Clean error characters
 
@@ -92,10 +92,10 @@ int main ()
 
         } while (answer != 'a' && answer != 'd') ;
 
-    bubbleSort(numbers, answer);
+    bubbleSort(chars, answer);
     
-    for (int number: numbers) {
-        cout << number << " " ;
+    for (string i: chars) {
+        cout << i << " " ;
     }
     return 0;
 }
