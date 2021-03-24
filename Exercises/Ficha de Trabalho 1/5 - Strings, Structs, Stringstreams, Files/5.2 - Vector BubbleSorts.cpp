@@ -74,7 +74,7 @@ int main ()
     // Input numbers
     while (input != "0") {
         cout << "To skip press 0. Another string: ";
-        cin >> input;
+        getline(cin, input);
         chars.push_back(input);
     } ;
     chars.pop_back();             // Ignore back input (letter == input "0")
