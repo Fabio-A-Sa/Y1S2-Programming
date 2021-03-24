@@ -73,7 +73,7 @@ int main ()
 
     // Input numbers
     while (input != "0") {
-        cout << "To skip press 0. Another number: ";
+        cout << "To skip press 0. Another string: ";
         cin >> input;
         chars.push_back(input);
     } ;
