@@ -21,16 +21,30 @@ char encryptChar(char c, int key) {
         index = (abc.find(tolower(c)) + key) % 26;
         return toupper(abc[index]);
     }   
-    else {
+    else if (islower(c)) {
         index = (abc.find(c) + key) % 26;
         return tolower(abc[index]);
     }
+    else {
+        return c;
+    }
+}
+
+string encryptString(string s, int key) {
+
+    string solution;
+    for (char letter : s) {
+        solution = solution + encryptChar(letter, key);
+    }
+    return solution;
 }
 
 int main ()
 {
-    int offset = 3;
+    int offset = -10;
     char letter = 'A';
-    cout << encryptChar2(letter, offset) << endl;
+    string sentense = "The quick brown fox JUMPS over the lazy dog";
+
+    cout << encryptString(sentense, offset) << endl;
     return 0;
 }
