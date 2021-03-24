@@ -8,6 +8,11 @@ using namespace std;
 // Global string
 string abc = "abcdefghijklmnopqrstuvwxyz";
 
+char encryptChar2(char c, int key) {
+    char solution = islower(c) ? abc[(abc.find(c) + key) % 26] : toupper(abc[(abc.find(tolower(c)) + key) % 26]) ;
+    return solution;
+}
+
 char encryptChar(char c, int key) {
 
     int index;
@@ -25,7 +30,7 @@ char encryptChar(char c, int key) {
 int main ()
 {
     int offset = 3;
-    char letter = 'a';
-    cout << encryptChar(letter, offset) << endl;
+    char letter = 'A';
+    cout << encryptChar2(letter, offset) << endl;
     return 0;
 }
