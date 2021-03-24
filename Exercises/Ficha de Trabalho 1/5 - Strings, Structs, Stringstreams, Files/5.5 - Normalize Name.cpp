@@ -18,35 +18,24 @@ bool isAllowed(string word) {
 
 string to_upper (string str) {
 
-    string up = "";
-    for (char letter : str) {
-        up = up + toupper(letter);
+    for (int index = 0 ; index < str.size() ; index++ ) {
+        str[index] = toupper(str[index]);
     }
-    return up;
+    return str;
 }
 
 string normalizeName(const string &name) {
 
+    bool space_atras = false;
+    string name = to_upper(name);
     string solution;
     string word;
     vector<string> allowed_names;
 
-    for (char letter : to_upper(name)) {
+    for (int index = 0 ; index < name.size() ; index ++ ) {
 
-        if (letter != ' ') {
-            word = word + letter;
-        }
-        else {
-            if (isAllowed(word)) {
-                allowed_names.push_back(word);
-                word = "";
-            }
-            else {
-                word = "";
-            }
-        }
+        
     }
-    allowed_names.push_back(word);
 
     for (string name : allowed_names) {
         solution = solution + name + " ";
