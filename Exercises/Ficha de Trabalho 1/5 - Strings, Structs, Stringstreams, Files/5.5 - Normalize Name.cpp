@@ -16,13 +16,23 @@ bool isAllowed(string word) {
     return flag;
 }
 
+string to_upper (string str) {
+
+    string up = "";
+    for (char letter : str) {
+        up = up + toupper(letter);
+    }
+    return up;
+}
+
 string normalizeName(const string &name) {
 
     string solution;
     string word;
     vector<string> allowed_names;
 
-    for (char letter : name) {
+    for (char letter : to_upper(name)) {
+
         if (letter != ' ') {
             word = word + letter;
         }
@@ -36,6 +46,7 @@ string normalizeName(const string &name) {
             }
         }
     }
+    allowed_names.push_back(word);
 
     for (string name : allowed_names) {
         solution = solution + name + " ";
@@ -47,7 +58,7 @@ int main ()
 {
     string name;
     cout << "Enter a name: ";
-    getline(cin,name);
+    getline(cin, name);
     cout << "Normalization: " << normalizeName(name) << endl;
     return 0;
 }
