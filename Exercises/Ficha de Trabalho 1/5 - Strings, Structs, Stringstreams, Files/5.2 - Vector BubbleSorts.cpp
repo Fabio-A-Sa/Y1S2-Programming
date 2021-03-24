@@ -3,19 +3,20 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
-bool ascending (int x, int y) {
+bool ascending (char x, char y) {
     bool answer = x > y ? false : true;
     return answer;
 }
 
-bool descending (int x, int y) {
+bool descending (char x, char y) {
     bool answer = x < y ? false : true;
     return answer;
 }
 
-void bubbleSort(vector<int> &v, char answer) {
+void bubbleSort(vector<string> &v, char answer) {
 
     int size_of_vector;
     size_of_vector = v.size();
@@ -24,7 +25,7 @@ void bubbleSort(vector<int> &v, char answer) {
 
         for (int index = 0 ; index < size_of_vector ; index ++) {
 
-            int aux;
+            char aux;
             int counter = 0;
             bool flag = true;
 
