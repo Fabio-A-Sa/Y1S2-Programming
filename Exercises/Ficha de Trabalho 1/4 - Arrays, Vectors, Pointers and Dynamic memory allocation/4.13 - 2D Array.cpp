@@ -8,7 +8,7 @@
 #include <cstddef>
 using namespace std;
 
-// Falta adicionar os pointers e a alocação dinâmica de memória --> Ver mais tarde
+// Falta adicionar os pointers e a alocação dinâmica de memória --> Ver mais tarde 
 
 void fill_grades(vector< vector<int> > &grade, size_t numberStudents, size_t numberQuizzes) {
     
