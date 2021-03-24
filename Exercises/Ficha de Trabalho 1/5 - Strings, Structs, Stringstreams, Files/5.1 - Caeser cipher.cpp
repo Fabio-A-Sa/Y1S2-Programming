@@ -41,10 +41,25 @@ string encryptString(string s, int key) {
 
 int main ()
 {
-    int offset = -10;
-    char letter = 'A';
-    string sentense = "The quick brown fox JUMPS over the lazy dog";
+    int offset;
+    string sentence;
+    char answer;
 
-    cout << encryptString(sentense, offset) << endl;
+    // Input
+    cout << "Your sentence: ";
+    getline(cin, sentence);
+    cout << "Key: ";
+    cin >> offset;
+    cout << "Encryption or decryption? E/D";
+    cin >> answer;
+
+    if (tolower(answer) == "e") {
+        cout << "Encryption: " << encryptString(sentence, offset) << endl;
+    }
+    else if (tolower(answer) == "d") {
+        cout << "Decryption: " << encryptString(sentence, -offset) << endl;
+    }
+
+    cout << encryptString(sentence, offset) << endl;
     return 0;
 }
