@@ -44,6 +44,8 @@ int main ()
     cout << "Letter: ";
     cin >> letter;
 
-    cout << using_find (sequence, times, letter);
+    answer1 = my_own (sequence, times, letter) ? "My own function: true" : "My own function: false" ;
+    answer2 = using_find (sequence, times, letter) ? "Using Find() method: true" : "Using Find() method: true";
+    cout << answer1 << endl << answer2 << endl;
     return 0;
 }
