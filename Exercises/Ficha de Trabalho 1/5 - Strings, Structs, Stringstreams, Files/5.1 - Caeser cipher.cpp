@@ -52,15 +52,26 @@ int main ()
     do  {
         cout << "Key: ";
         cin >> offset;
-        if (!cin) {
+        if (cin.fail()) {
             cout << "Invalid key. Please enter a integer number. " << endl;
         }
-        } while (!cin);
+        } while (!cin.fail());
 
     do  {
         cout << "Encryption or decryption? E/D : ";
         cin >> answer;
-        } while (!cin || (answer !) ;
+        if (cin.fail()) {
+            cout << "Invalid input. Please try again" << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');  
+        }
+        if (tolower(answer) != 'e' && tolower(answer) != 'd') {
+            cout << "Invalid letter. Please choose E or D. " << endl;
+            cin.clear();
+            cin.ignore(10000, '\n');  
+        } 
+
+        } while (!cin.fail() && (tolower(answer) != 'e' && tolower(answer) != 'd')) ;
 
     if (tolower(answer) == 'e') {
         cout << "Encryption: " << encryptString(sentence, offset) << endl;
