@@ -22,16 +22,20 @@ bool my_own (const string &s, int nc, char c) {
     return false;
 }
 
-bool using_find () {
+bool using_find (const string &s, int nc, char c) {
 
-
+    string search;
+    for (int number = 0 ; number < nc ; number ++ ) {
+        search = search + c ;
+    }
+    return s.find(search) < s.size();
 }
 
 int main ()
 {
-    string sequence = "abcddeeddf" ;
+    string sequence = "abcddeedf" ;
     int times = 3 ;
     char letter = 'd' ;
-    cout << my_own (sequence, times, letter);
+    cout << using_find (sequence, times, letter);
     return 0;
 }
