@@ -18,13 +18,26 @@ bool isAllowed(string word) {
 
 string normalizeName(const string &name) {
 
+    string solution;
+    string word;
+    vector<string> allowed_names;
+
+    for (char letter : name) {
+        if (letter != ' ') {
+            word = word + letter;
+        }
+        else {
+            if (isAllowed(toupper(word))
+        }
+    }
+
 }
 
 int main ()
 {
     string name;
     cout << "Enter a name: ";
-    getline(cin, name);
-    cout << "Normalization: " << normalizeName(name) << endl;
+    getline(cin, toupper(name));
+    cout << "Normalization: " << normalizeName(toupper(name)) << endl;
     return 0;
 }
