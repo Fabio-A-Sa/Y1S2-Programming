@@ -16,7 +16,15 @@ bool isAllowed(string word) {
     return flag;
 }
 
+string normalizeName(const string &name) {
+
+}
+
 int main ()
 {
+    string name;
+    cout << "Enter a name: ";
+    getline(cin, name);
+    cout << "Normalization: " << normalizeName(name) << endl;
     return 0;
 }
