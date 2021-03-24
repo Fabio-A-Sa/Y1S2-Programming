@@ -33,9 +33,17 @@ bool using_find (const string &s, int nc, char c) {
 
 int main ()
 {
-    string sequence = "abcddeedf" ;
-    int times = 3 ;
-    char letter = 'd' ;
+    string sequence, answer1, answer2 ;
+    int times ;
+    char letter ;
+
+    cout << "Sequence: ";
+    getline(cin, sequence);
+    cout << "Times: ";
+    cin >> times;
+    cout << "Letter: ";
+    cin >> letter;
+
     cout << using_find (sequence, times, letter);
     return 0;
 }
