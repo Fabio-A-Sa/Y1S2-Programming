@@ -27,17 +27,27 @@ string normalizeName(const string &name) {
             word = word + letter;
         }
         else {
-            if (isAllowed(toupper(word))
+            if (isAllowed(word)) {
+                allowed_names.push_back(word);
+                word = "";
+            }
+            else {
+                word = "";
+            }
         }
     }
 
+    for (string name : allowed_names) {
+        solution = solution + name + " ";
+    }
+    return solution;
 }
 
 int main ()
 {
     string name;
     cout << "Enter a name: ";
-    getline(cin, toupper(name));
-    cout << "Normalization: " << normalizeName(toupper(name)) << endl;
+    getline(cin,name);
+    cout << "Normalization: " << normalizeName(name) << endl;
     return 0;
 }
