@@ -26,15 +26,16 @@ string to_upper (string str) {
 
 string normalizeName(const string &name) {
 
-    bool space_atras = false;
     string name = to_upper(name);
     string solution;
-    string word;
+    string word = "";
     vector<string> allowed_names;
 
     for (int index = 0 ; index < name.size() ; index ++ ) {
 
-        
+        if (name[index] == " ") {
+
+        }
     }
 
     for (string name : allowed_names) {
