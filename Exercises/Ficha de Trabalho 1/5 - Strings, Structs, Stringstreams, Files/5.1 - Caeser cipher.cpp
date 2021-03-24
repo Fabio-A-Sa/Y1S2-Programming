@@ -2,7 +2,6 @@
 // @author: Fábio Araújo de Sá
 
 #include <iostream>
-#include <cmath>
 #include <string>
 using namespace std;
 
