@@ -101,7 +101,8 @@ int main ()
     cout << "End: x = " << x << " and y = " << y << endl;
 
     malloc_memory ();
+    cout << endl;
     new_memory ();
-     
+
     return 0;
 }
