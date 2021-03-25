@@ -1,12 +1,12 @@
 // Created on March 25, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 8, pages 102 --> ??
+// Theorical lecture 8, pages 102 --> 107
 
 #include <iostream>
 #include <vector>
 #include <array>
-#include <cstdlib>  // Using 'malloc' and ' 
-#include <new>      // Using 'new' and 'delete'
+#include <cstdlib>          // Using 'malloc' and 'free'
+#include <new>              // Using 'new' and 'delete'
 using namespace std;
 
 // Auxiliar functions
@@ -67,6 +67,29 @@ void malloc_memory () {
     free(p);
 }
 
+void new_memory () {
+
+    // Reserve memory -> Only the necessary
+    int *p = new int(10);
+
+    if (p != NULL) {
+        // Input data
+        for (int index = 0 ; index < 10 ; index ++ ) {
+            p[index] = index + 1;
+        }
+
+        // Show data
+        for (int i = 0 ; i < 10 ; i++) {
+            cout << p[i] << " ";
+        }
+    }
+    else {
+        cout << "Out of heap memory!" << endl;
+    }
+    // After using memory -> freeing it
+    delete(p);
+}
+
 int main ()
 {
     pointers_numbers();
@@ -78,6 +101,7 @@ int main ()
     cout << "End: x = " << x << " and y = " << y << endl;
 
     malloc_memory ();
-
+    new_memory ();
+     
     return 0;
 }
