@@ -5,23 +5,22 @@
 #include <array>
 using namespace std;
 
-// Falta colocar correctamente os pointers --> Ver mais tarde!
+void readArray(int *a, size_t nElem) {
 
-void readArray(int *a[], size_t nElem) {
-
-    for (int index = 0 ; index < nElem ; index++ ) {
-        cout << index << ": " << *a[index] << endl;
+    for (int index = 0 ; index < nElem ; index ++ ) {
+        cout << index << ": " << *(a+index) << endl;
     }
 
 }
 
-int findValueInArray(const int *a[], size_t nElem, int value, size_t pos1, size_t pos2) {
+int findValueInArray(const int *a, size_t nElem, int value, size_t pos1, size_t pos2) {
 
-    int answer = -1, loop = 0;
-    for (int index = pos1 ; index < pos2; index ++ ) {
+    int answer = -1;
+    int loop = 0;
+    for (int index = pos1 ; index < pos2 ; index ++ ) {
 
         loop ++;
-        if (a[index] == value) {
+        if (*(a+index) == value) {
             answer = index;
             break;
         }
@@ -32,14 +31,15 @@ int findValueInArray(const int *a[], size_t nElem, int value, size_t pos1, size_
     return answer;
 }
 
-size_t findMultValuesInArray(const int a[], size_t nElem, int value, size_t pos1, size_t pos2, size_t *index[]) {
+size_t findMultValuesInArray(const int *a, size_t nElem, int value, size_t pos1, size_t pos2, size_t *index) {
 
-    size_t pointer = 0, loop = 0;
+    size_t pointer = 0;
+    int loop = 0;
     for (int i = pos1 ; i < pos2 ; i++ ) {
 
         loop ++;
-        if (a[i] == value) {
-            index[pointer] = i;
+        if (*(a+i) == value) {
+            *(index+pointer) = i;
             pointer ++;
         }
         if (loop == nElem) {
