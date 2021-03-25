@@ -26,7 +26,15 @@ void pointers_numbers () {
     showArray(example, 5);
 }
 
+void swap_with_pointers (int *xPTR, int *yPTR) {
+    
+    int temp = *xPTR;
+    *xPTR = *yPTR;
+    *yPTR = temp;
+}
+
 void pointers_functions () {
+
     int result;
     int (*p)(int, int);
     p = sum;
@@ -38,5 +46,11 @@ int main ()
 {
     pointers_numbers();
     pointers_functions();
+
+    int x = 10, y = 340;
+    cout << "Begin: x = " << x << " and y = " << y << endl;
+    swap(x, y);
+    cout << "End: x = " << x << " and y = " << y << endl;
+
     return 0;
 }
