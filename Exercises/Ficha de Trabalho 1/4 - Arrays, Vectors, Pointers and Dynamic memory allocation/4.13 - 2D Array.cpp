@@ -5,12 +5,9 @@
 #include <iomanip>
 #include <cstdlib>
 #include <vector>
-#include <cstddef>
 using namespace std;
 
-// Falta adicionar os pointers e a alocação dinâmica de memória --> Ver mais tarde 
-
-void fill_grades(vector< vector<int> > &grade, size_t numberStudents, size_t numberQuizzes) {
+void fill_grades(vector<vector<int>> &grade, size_t numberStudents, size_t numberQuizzes) {
     
     for (size_t st_num = 0; st_num < numberStudents; st_num++) {
         vector<int> studentGrade;
