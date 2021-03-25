@@ -77,7 +77,7 @@ int main ()
         getline(cin, input);
         chars.push_back(input);
     } ;
-    chars.pop_back();             // Ignore back input (letter == input "0")
+    chars.pop_back();               // Ignore back input (letter == input "0")
     cin.clear();                    // Clean error flag                 
     cin.ignore(100000, '\n');       // Clean error characters
 
