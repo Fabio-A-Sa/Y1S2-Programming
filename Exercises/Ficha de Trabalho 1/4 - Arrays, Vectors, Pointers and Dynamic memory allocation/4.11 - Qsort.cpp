@@ -3,25 +3,41 @@
 
 #include <iostream>
 #include <array>
+#include <cstdlib>
 using namespace std;
 
-// Não funciona --> Verificar mais tarde!
+int comparator (const void* a, const void* b) {
 
-int comparator ( const void *arg1, const void *arg2 ) {
-   return  *arg1 - *arg2 ;
+    if (a == b)
+        return 0;
+    else if (a < b) 
+        return 1;
+    else
+        return -1 ;
 }
 
-int main( int argc, char **argv )
-{
-    int arr[5] = {5, 8, 6, 4, 1} ;
-    int base = arr[0];
-    size_t size = 5;
-    size_t num;
+void qsort (void *base, size_t num, size_t size, int (*comparator)(const void*, const void*)) {
 
-    qsort (void* base, size_t num, size_t size, int (*comparator)(const void*,const void*));    
+    // Incomplete
 
-    // Print sorted data
-    for( i = 0 ; i < size ; ++i )
-        cout << arr[i] << " " ;
+}
 
+int main ()
+{   
+    int example[10] = {9, 8, 5, 2, 7, 3, 1, 4, 0, -8} ;
+    int *base;
+    *base = example[0];
+    size_t num = 10;
+    size_t size = sizeof(example[0]);
+
+    qsort (*base, num, size, (*comparator)(void*, void*)) ;
+
+    // Show sorted data
+    cout << "Sorted: ";
+    for (int number : example) {
+        cout << number << " ";
+    }
+    cout << endl;
+
+    return 0;
 }
