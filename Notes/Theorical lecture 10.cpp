@@ -103,6 +103,7 @@ int main ()
     malloc_memory ();
     cout << endl;
     new_memory ();
-
+    cout << endl;
+    
     return 0;
 }
