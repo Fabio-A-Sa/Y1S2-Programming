@@ -5,6 +5,8 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <cstdlib>  // Using 'malloc' and ' 
+#include <new>      // Using 'new' and 'delete'
 using namespace std;
 
 // Auxiliar functions
@@ -42,6 +44,29 @@ void pointers_functions () {
     cout << "Sum: " << result << endl;
 }
 
+void malloc_memory () {
+
+    // Reserve memory -> Only the necessary
+    int *p = (int*)malloc(10*sizeof(int));
+
+    if (p != NULL) {
+        // Input data
+        for (int index = 0 ; index < 10 ; index ++ ) {
+            p[index] = index + 1;
+        }
+
+        // Show data
+        for (int i = 0 ; i < 10 ; i++) {
+            cout << p[i] << " ";
+        }
+    }
+    else {
+        cout << "Out of heap memory!" << endl;
+    }
+    // After using memory -> freeing it
+    free(p);
+}
+
 int main ()
 {
     pointers_numbers();
@@ -51,6 +76,8 @@ int main ()
     cout << "Begin: x = " << x << " and y = " << y << endl;
     swap(x, y);
     cout << "End: x = " << x << " and y = " << y << endl;
+
+    malloc_memory ();
 
     return 0;
 }
