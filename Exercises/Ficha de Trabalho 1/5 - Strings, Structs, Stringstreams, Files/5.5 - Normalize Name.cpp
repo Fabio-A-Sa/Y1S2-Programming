@@ -31,8 +31,12 @@ string normalizeName(const string &name) {
     string word = "";
     vector<string> allowed_names;
 
+    bool isName = false;    
     for (int index = 0 ; index < name.size() ; index ++ ) {
 
+        char letter = name[index];
+
+        if (letter == ' ' && )
         if (name[index] == " ") {
 
         }
