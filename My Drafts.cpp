@@ -4828,20 +4828,38 @@ string to_upper (string str) {
 
 string normalizeName(const string &name) {
 
-    string name = to_upper(name);
+    string names = to_upper(name);
     string solution;
     string word = "";
     vector<string> allowed_names;
 
-    for (int index = 0 ; index < name.size() ; index ++ ) {
+    for (int index = 0 ; index < names.size() ; index ++ ) {
 
-        if (name[index] == " ") {
+        char letter = names[index];
 
+        if (letter != ' ' && names[index+1] != ' ') {
+            word = word + letter;
         }
+        else if (letter != ' ' && names[index+1] == ' ') {
+            word = word + letter;
+            if (isAllowed(word)) {
+                allowed_names.push_back(word);
+            }
+            word = "";
+        }
+        else {
+            continue;
+        }
+    }
+    
+    if (isAllowed(word) && word.find(' ') > word.size()) {
+        allowed_names.push_back(word);
     }
 
     for (string name : allowed_names) {
-        solution = solution + name + " ";
+
+        if (name != " ") 
+            solution = solution + name + " ";
     }
     return solution;
 }
