@@ -6,11 +6,11 @@ using namespace std;
 void printBoard (char jogadas[]) {
 
     cout << "#############" << endl;
-    cout << "# " << jogadas[0] << " # " << jogadas[1] << " # "X #" << endl;
+    cout << "# " << jogadas[0] << " # " << jogadas[1] << " # " << jogadas[2] << " #" << endl;
     cout << "#############" << endl;
-    cout << "# X # O # X #" << endl;
+    cout << "# " << jogadas[3] << " # " << jogadas[4] << " # " << jogadas[5] << " #" << endl;
     cout << "#############" << endl;
-    cout << "# X # O # X #" << endl;
+    cout << "# " << jogadas[6] << " # " << jogadas[7] << " # " << jogadas[8] << " #" << endl;
     cout << "#############" << endl;
 }
 
