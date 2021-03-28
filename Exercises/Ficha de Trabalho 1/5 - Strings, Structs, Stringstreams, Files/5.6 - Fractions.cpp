@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 struct Fraction {
@@ -11,7 +10,15 @@ struct Fraction {
     int denominator;
 };
 
+bool readFraction(Fraction &fraction) {
+
+    bool flag = true;
+    // Some code
+    return flag;
+}
+
 int main () 
-{
+{   
+    // Some inputs
     return 0;
 }
