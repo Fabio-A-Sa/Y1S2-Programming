@@ -97,8 +97,11 @@ void common_error() {
     cin >> age;
     cout << "Name: ";
     getline(cin, name);
+
+    // Output error
     cout << "Name = " << name << endl;
     cout << "Age = " << age << endl;
+    
 }
 
 int main ()
