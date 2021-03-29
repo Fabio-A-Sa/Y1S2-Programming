@@ -9,8 +9,6 @@
 #include <new>              // Using 'new' and 'delete'
 using namespace std;
 
-// Auxiliar functions
-
 void showArray (const int *a , int size) {
 
     for (int i = 0 ; i < size ; i++ ) {
