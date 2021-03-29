@@ -1,6 +1,6 @@
 // Created on March 29, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 11, pages 107 --> ???
+// Theorical lecture 11, pages 107 --> 122
 
 #include <iostream>
 #include <vector>
@@ -58,6 +58,11 @@ void dinamic_allocation_2d_array () {
     for (int i = 0 ; i < numLines ; i++ )
         free(a[i]);
     free(a);
+}
+
+void using strings () {
+
+    string sentence = "Jaime Villate and Tux" ;
 }
 
 int main ()
