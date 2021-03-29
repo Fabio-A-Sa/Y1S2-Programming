@@ -1,6 +1,6 @@
 // Created on March 29, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 11, pages 107 --> 122
+// Theorical lecture 11, pages 107 --> 131
 
 #include <iostream>
 #include <vector>
@@ -84,14 +84,28 @@ void using_strings () {
     cout << "Input two words: ";
     cin >> input1 >> input2;
     cout << endl;
-    string answer = comparation_string(input1, input2) ? "equal" : "not Equal";
-    cout << input1 << " and " << input2 << " are " << answer << endl;
+    string answer = comparation_string(input1, input2) ? "equal" : "not equal";
+    cout << "'" << input1 << "' and '" << input2 << "' are " << answer << endl;
+}
+
+void common_error() {
+
+    string name;
+    int age;
+
+    cout << "Age: ";
+    cin >> age;
+    cout << "Name: ";
+    getline(cin, name);
+    cout << "Name = " << name << endl;
+    cout << "Age = " << age << endl;
 }
 
 int main ()
 {   
-    static_allocation_2d_array();
-    dinamic_allocation_2d_array();
-    using_strings();
+    //static_allocation_2d_array();
+    //dinamic_allocation_2d_array();
+    //using_strings();
+    common_error();
     return 0;
 }
