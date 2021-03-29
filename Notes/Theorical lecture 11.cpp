@@ -82,7 +82,7 @@ void using_strings () {
     cout << endl;
     string input1, input2;
     cout << "Input two words: ";
-    cin >> input1, input2;
+    cin >> input1 >> input2;
     cout << endl;
     string answer = comparation_string(input1, input2) ? "equal" : "not Equal";
     cout << input1 << " and " << input2 << " are " << answer << endl;
