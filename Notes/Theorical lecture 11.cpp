@@ -60,12 +60,32 @@ void dinamic_allocation_2d_array () {
     free(a);
 }
 
+bool comparation_string (string one, string two) {
+
+    bool flag = true;
+
+    if (one.size() != two.size()) {
+        flag = !flag;
+    }
+    else {
+        for (int i = 0 ; i < one.size() ; i++)
+            flag = flag && (one[i] == two[i]);
+    }
+    return flag;
+}
+
 void using_strings () {
 
     string sentence = "Jaime Villate and Tux" ;
     for (char letter : sentence)
         cout << letter << " ";
     cout << endl;
+    string input1, input2;
+    cout << "Input two words: ";
+    cin >> input1, input2;
+    cout << endl;
+    string answer = comparation_string(input1, input2) ? "equal" : "not Equal";
+    cout << input1 << " and " << input2 << " are " << answer << endl;
 }
 
 int main ()
