@@ -106,9 +106,9 @@ void common_error() {
 
 int main ()
 {   
-    //static_allocation_2d_array();
-    //dinamic_allocation_2d_array();
-    //using_strings();
+    static_allocation_2d_array();
+    dinamic_allocation_2d_array();
+    using_strings();
     common_error();
     return 0;
 }
