@@ -60,14 +60,18 @@ void dinamic_allocation_2d_array () {
     free(a);
 }
 
-void using strings () {
+void using_strings () {
 
     string sentence = "Jaime Villate and Tux" ;
+    for (char letter : sentence)
+        cout << letter << " ";
+    cout << endl;
 }
 
 int main ()
 {   
     static_allocation_2d_array();
     dinamic_allocation_2d_array();
+    using_strings();
     return 0;
 }
