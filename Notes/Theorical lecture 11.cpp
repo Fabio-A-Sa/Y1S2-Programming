@@ -5,9 +5,13 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <cstdlib>
+#include <string>
 using namespace std;
 
-void show_static_Array (int a[][NCOL], int numLines, int numCols) {
+#define NULL = 0;
+
+void show_static_Array (int a[], int numLines, int numCols) {
     for (int i = 0 ; i < numLines ; i++) {
         for (int j = 0 ; j < numCols ; j++) {
             cout << a[i][j] << " ";
