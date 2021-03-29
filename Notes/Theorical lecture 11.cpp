@@ -10,7 +10,7 @@ using namespace std;
 #define NLIN 2
 #define NCOL 3
 
-void showArray (int a[][NCOL], int numLines, int numCols) {
+void show_static_Array (int a[][NCOL], int numLines, int numCols) {
     for (int i = 0 ; i < numLines ; i++) {
         for (int j = 0 ; j < numCols ; j++) {
             cout << a[i][j] << " ";
@@ -19,17 +19,30 @@ void showArray (int a[][NCOL], int numLines, int numCols) {
     }
 }
 
-void static_2d_array ()
-{
+void static_allocation_2d_array () {
+    
     int a[NLIN][NCOL];
     for (int i=0; i<NLIN; i++)
         for (int j=0; j<NCOL; j++)
             a[i][j] = 10*(i+1)+j;
-    showArray(a, NLIN, NCOL);
+    show_static_Array(a, NLIN, NCOL);
+}
+
+void show_dinamic_array() {
+    
+}
+
+void dinamic_allocation_2d_array () {
+
+    int numLines = 3;
+    int numCols = 4;
+    int * a = (int *) malloc(numLines * numCols * sizeof(int)) ;
+    show_dinamic_array();
 }
 
 int main ()
 {   
-    static_2d_array();
+    static_allocation_2d_array();
+    dinamic_allocation_2d_array();
     return 0;
 }
