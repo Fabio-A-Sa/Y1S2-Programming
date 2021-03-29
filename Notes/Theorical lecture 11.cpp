@@ -28,8 +28,8 @@ void static_allocation_2d_array () {
     show_static_Array(a, NLIN, NCOL);
 }
 
-void show_dinamic_array() {
-    
+void show_dinamic_array(int * a, int NLIN, int NCOL) {
+
 }
 
 void dinamic_allocation_2d_array () {
@@ -37,7 +37,10 @@ void dinamic_allocation_2d_array () {
     int numLines = 3;
     int numCols = 4;
     int * a = (int *) malloc(numLines * numCols * sizeof(int)) ;
-    show_dinamic_array();
+    for (int i = 0; i < numLines; i++)
+        for (int j=0; j<NCOL; j++)
+
+    show_dinamic_array(*a, numLines, numCols);
 }
 
 int main ()
