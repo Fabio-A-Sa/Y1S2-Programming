@@ -14,19 +14,51 @@ struct Date {
 void readDate (Date *d) {
 
     char character;
-    cout << "Enter a date using format YYYY/MM/DD : ";
+    cout << "Enter a date using format YYYY/MM/DD : " << endl;
     cin >> d->year >> character >> d->month >> character >> d->day ;
 }
 
 void writeDate(Date *d) {
 
     cout << setfill('0') << setw(4) << d->year << "/" << setw(2) << d->month << "/" << setw(2) << d->day << endl;
+    cout << endl;
 }
 
 int compareDates(const Date *d1, const Date *d2) {
 
-
+    if (d1->year < d2->year) {
+        return 1;
+    }
+    else if (d1->year > d2->year) {
+        return -1;
+    }
+    else if (d1->month < d2->month) {
+        return 1;
+    }
+    else if (d1->month > d2->month) {
+        return -1;
+    }
+    else if (d1->day < d2->day) {
+        return 1;
+    }
+    else if (d1->day > d2->day) {
+        return -1;
+    }
+    return 0;
 }
+
+void sortDates(Date *d1, Date *d2) {
+    
+    int sort = compareDates(d1, d2);
+    if (sort) {
+        if (sort < 0) {
+            cout << writeDate(d2) << " " << writeDate(d1) << endl;
+        }
+    }
+    else {
+        cout << "Dates are the same: " << writeDate(d1) << endl;
+    }
+}   
 
 int main () 
 {   
@@ -42,7 +74,7 @@ int main ()
     (*data2).year = rand() % 2022;
 
     writeDate(data2);
-    compareDates(data1, data2);
+    sortDates(data1, data2);
 
     return 0;
 }
