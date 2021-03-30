@@ -13,9 +13,10 @@ struct Fraction {
 
 bool readFraction(Fraction &fraction) {
 
-    bool flag = true;
-    // Some code
-    return flag;
+    if (fraction.denominator == 0)
+        return false;
+    else
+        return true;
 }
 
 int main () 
@@ -26,13 +27,15 @@ int main ()
 
     do  {
         cout << "Enter a fraction type a/b with integer numbers: ";
-        cin >> input.numerator >> option >> input.numerator;
-        if (cin.fail()) {
+        cin >> input.numerator >> option >> input.denominator;
+        if (!cin) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid input. Please try again." << endl;
         }
-        } while (cin.fail() && option != '/');
+        } while (!cin || option != '/');
 
+    answer = readFraction(input) ? "Valid fraction" : "Invalid fraction" ;
+    cout << answer << endl;
     return 0;
 }
