@@ -7,35 +7,39 @@
 using namespace std;
 
 struct EuroMillionsBet {
-
+    
     vector<unsigned> mainNumbers;
     vector<unsigned> luckStars;
 };
 
-bool isInside (vector<unsigned> vector, unsigned int attemp) {
+bool notInside(vector<unsigned> v, unsigned int value) {
 
     bool flag = true;
-    for (unsigned int number : vector)
-        flag = flag && (number != attemp);
+    for (unsigned int index = 0 ; index < v.size() ; index++ ) {
+        flag = flag && (v[index] != value) ;
+    }
     return flag;
 }
 
-void generate_random(EuroMillionsBet key) {
+void generate_random(EuroMillionsBet &key) {
 
+    cout << "test" << endl;
     int counter = 0;
     while (counter != 5) {
         unsigned int guess = rand() % 51;
-        if (!isInside(key.mainNumbers, guess)) {
+        cout << "guess1: " << guess << endl;
+        if (notInside(key.mainNumbers, guess)) {
             key.mainNumbers.push_back(guess);
             counter++;
         }
     }
 
+    cout << "test2" << endl;
     counter = 0;
     while (counter != 2) {
         unsigned int guess = rand() % 13;
-        if (!isInside(key.luckStars, guess)) {
-            key.luckStars.push_back(guess);
+        if (notInside(key.luckStars, guess)) {
+            (key.luckStars).push_back(guess);
             counter++;
         }
     }
@@ -43,7 +47,7 @@ void generate_random(EuroMillionsBet key) {
 
 int main ()
 {
-    // Input users key:
+    // Input user keys:
     EuroMillionsBet user_key;
     int counter = 0;
     unsigned int user_guess;
@@ -61,26 +65,23 @@ int main ()
         counter++;
     }
 
-    // Generate randoms key:
+    // Generate random keys:
     srand(time(NULL));
     EuroMillionsBet random_key;
-    random_key.luckStars = {};
-    random_key.mainNumbers = {};
     generate_random(random_key);
 
     // Comparation
     cout << "\nCorrect main numbers: ";
     for (unsigned int guess : user_key.mainNumbers) {
-        if (isInside(random_key.mainNumbers, guess)) {
+        if (!notInside(random_key.mainNumbers, guess)) {
             cout << guess << " " << endl;
         }
     }
     cout << "\nCorrect lucky stars: ";
     for (unsigned int guess : user_key.luckStars) {
-        if (isInside(random_key.luckStars, guess)) {
+        if (!notInside(random_key.luckStars, guess)) {
             cout << guess << " " << endl;
         }
     }
     return 0;
 }
-
