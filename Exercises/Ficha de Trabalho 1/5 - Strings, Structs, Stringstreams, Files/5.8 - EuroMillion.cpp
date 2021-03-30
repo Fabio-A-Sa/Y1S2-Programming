@@ -48,13 +48,13 @@ int main ()
     int counter = 0;
     unsigned int user_guess;
     while (counter != 5) {
-        cout << "Enter a main number: ";
+        cout << "Enter a main number " << counter + 1 << " : ";
         cin >> user_guess;
         user_key.mainNumbers.push_back(user_guess);
     }
     counter = 0;
     while (counter != 2) {
-        cout << "Enter a lucky number: ";
+        cout << "Enter a lucky number " << counter + 1 << " : ";
         cin >> user_guess;
         user_key.luckStars.push_back(user_guess);
     }
@@ -69,13 +69,13 @@ int main ()
     // Comparation
     cout << "\nCorrect main numbers: ";
     for (unsigned int guess : user_key.mainNumbers) {
-        if (isInside(user_key.mainNumbers, guess)) {
+        if (isInside(random_key.mainNumbers, guess)) {
             cout << guess << " " << endl;
         }
     }
-        cout << "\nCorrect main numbers: ";
-    for (unsigned int guess : user_key.mainNumbers) {
-        if (isInside(user_key.mainNumbers, guess)) {
+    cout << "\nCorrect lucky stars: ";
+    for (unsigned int guess : user_key.luckStars) {
+        if (isInside(random_key.luckStars, guess)) {
             cout << guess << " " << endl;
         }
     }
