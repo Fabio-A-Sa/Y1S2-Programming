@@ -22,7 +22,6 @@ bool isInside (vector<unsigned> vector, unsigned int attemp) {
 
 void generate_random(EuroMillionsBet key) {
 
-    // Numbers (5)
     int counter = 0;
     while (counter != 5) {
         unsigned int guess = rand() % 51;
@@ -31,7 +30,7 @@ void generate_random(EuroMillionsBet key) {
             counter++;
         }
     }
-    // Lucky Stars (2)
+
     counter = 0;
     while (counter != 2) {
         unsigned int guess = rand() % 13;
@@ -47,8 +46,17 @@ int main ()
     // Input users key:
     EuroMillionsBet user_key;
     int counter = 0;
+    unsigned int user_guess;
     while (counter != 5) {
-        
+        cout << "Enter a main number: ";
+        cin >> user_guess;
+        user_key.mainNumbers.push_back(user_guess);
+    }
+    counter = 0;
+    while (counter != 2) {
+        cout << "Enter a lucky number: ";
+        cin >> user_guess;
+        user_key.luckStars.push_back(user_guess);
     }
 
     // Generate randoms key:
@@ -57,6 +65,20 @@ int main ()
     random_key.luckStars = {};
     random_key.mainNumbers = {};
     generate_random(random_key);
+
+    // Comparation
+    cout << "\nCorrect main numbers: ";
+    for (unsigned int guess : user_key.mainNumbers) {
+        if (isInside(user_key.mainNumbers, guess)) {
+            cout << guess << " " << endl;
+        }
+    }
+        cout << "\nCorrect main numbers: ";
+    for (unsigned int guess : user_key.mainNumbers) {
+        if (isInside(user_key.mainNumbers, guess)) {
+            cout << guess << " " << endl;
+        }
+    }
     return 0;
 }
 
