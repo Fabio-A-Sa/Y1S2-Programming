@@ -13,7 +13,7 @@ int main ()
 	}
 
     string aux;
-    cout << "\x1B[2J\x1B[H";
+    cout << "\x1B[2J\x1B";
 	while (!in_file.eof())
 	{
 		getline(in_file, aux);
