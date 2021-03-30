@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <limits>
 using namespace std;
 
 struct Fraction {
@@ -19,6 +20,19 @@ bool readFraction(Fraction &fraction) {
 
 int main () 
 {   
-    // Some inputs
+    Fraction input;
+    char option;
+    string answer;
+
+    do  {
+        cout << "Enter a fraction type a/b with integer numbers: ";
+        cin >> input.numerator >> option >> input.numerator;
+        if (!cin) {
+            cout << "Invalid input. Please try again.";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n')
+        }
+        } while (!cin);
+
     return 0;
 }
