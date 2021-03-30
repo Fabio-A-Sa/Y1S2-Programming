@@ -7,7 +7,7 @@
 using namespace std;
 
 struct EuroMillionsBet {
-    
+
     vector<unsigned> mainNumbers;
     vector<unsigned> luckStars;
 };
@@ -23,18 +23,15 @@ bool notInside(vector<unsigned> v, unsigned int value) {
 
 void generate_random(EuroMillionsBet &key) {
 
-    cout << "test" << endl;
     int counter = 0;
     while (counter != 5) {
         unsigned int guess = rand() % 51;
-        cout << "guess1: " << guess << endl;
         if (notInside(key.mainNumbers, guess)) {
             key.mainNumbers.push_back(guess);
             counter++;
         }
     }
 
-    cout << "test2" << endl;
     counter = 0;
     while (counter != 2) {
         unsigned int guess = rand() % 13;
@@ -54,15 +51,19 @@ int main ()
     while (counter != 5) {
         cout << "Enter a main number " << counter + 1 << " : ";
         cin >> user_guess;
-        user_key.mainNumbers.push_back(user_guess);
-        counter++;
+        if (notInside(user_key.mainNumbers, user_guess)) {
+            user_key.mainNumbers.push_back(user_guess);
+            counter++;
+        }
     }
     counter = 0;
     while (counter != 2) {
         cout << "Enter a lucky number " << counter + 1 << " : ";
         cin >> user_guess;
-        user_key.luckStars.push_back(user_guess);
-        counter++;
+        if (notInside(user_key.luckStars, user_guess)) {
+            user_key.luckStars.push_back(user_guess);
+            counter++;
+        }
     }
 
     // Generate random keys:
