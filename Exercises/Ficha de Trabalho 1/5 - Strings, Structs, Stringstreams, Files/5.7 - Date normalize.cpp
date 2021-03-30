@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <iomanip>
 using namespace std;
 
 struct Date {
@@ -19,7 +20,7 @@ void readDate (Date *d) {
 
 void writeDate(Date *d) {
 
-    cout << d->year << "/" << d->month << "/" << d->day << endl;
+    cout << setfill('0') << setw(4) << d->year << "/" << setw(2) << d->month << "/" << setw(2) << d->day << endl;
 }
 
 int main () 
