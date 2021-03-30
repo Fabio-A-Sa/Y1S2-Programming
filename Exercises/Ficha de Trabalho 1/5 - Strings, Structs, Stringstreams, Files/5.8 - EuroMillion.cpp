@@ -51,12 +51,14 @@ int main ()
         cout << "Enter a main number " << counter + 1 << " : ";
         cin >> user_guess;
         user_key.mainNumbers.push_back(user_guess);
+        counter++;
     }
     counter = 0;
     while (counter != 2) {
         cout << "Enter a lucky number " << counter + 1 << " : ";
         cin >> user_guess;
         user_key.luckStars.push_back(user_guess);
+        counter++;
     }
 
     // Generate randoms key:
