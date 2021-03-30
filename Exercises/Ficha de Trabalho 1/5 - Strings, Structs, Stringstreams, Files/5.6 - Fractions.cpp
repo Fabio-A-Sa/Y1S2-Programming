@@ -27,12 +27,12 @@ int main ()
     do  {
         cout << "Enter a fraction type a/b with integer numbers: ";
         cin >> input.numerator >> option >> input.numerator;
-        if (!cin) {
-            cout << "Invalid input. Please try again.";
+        if (cin.fail()) {
             cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n')
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please try again." << endl;
         }
-        } while (!cin);
+        } while (cin.fail() && option != '/');
 
     return 0;
 }
