@@ -52,11 +52,21 @@ void sortDates(Date *d1, Date *d2) {
     int sort = compareDates(d1, d2);
     if (sort) {
         if (sort < 0) {
-            cout << writeDate(d2) << " " << writeDate(d1) << endl;
+            writeDate(d2);
+            cout << " ";
+            writeDate(d1);
+            cout << endl;
+        }
+        else {
+            writeDate(d1);
+            cout << " ";
+            writeDate(d2);
+            cout << endl;
         }
     }
     else {
-        cout << "Dates are the same: " << writeDate(d1) << endl;
+        cout << "Dates are equal: ";
+        writeDate(d1);
     }
 }   
 
