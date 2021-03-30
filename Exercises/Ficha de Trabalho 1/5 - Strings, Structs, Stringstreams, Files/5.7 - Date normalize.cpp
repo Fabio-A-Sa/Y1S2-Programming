@@ -17,7 +17,7 @@ void readDate (Date *d) {
     cin >> d->year >> character >> d->month >> character >> d->day ;
 }
 
-void writeDate(const Date *d) {
+void writeDate(Date *d) {
 
     cout << d->year << "/" << d->month << "/" << d->day << endl;
 }
@@ -25,13 +25,17 @@ void writeDate(const Date *d) {
 int main () 
 {   
     srand(time(NULL));
-    Date *data1;
+    Date *data1, d1;
+    data1 = &d1;
     readDate(data1);
 
-    Date *data2;
-    data2->day = rand() % 32;
-    data2->month = rand() % 13;
-    data2->year = rand() % 2022;
+    Date *data2, d2;
+    data2 = &d2;
+    (*data2).day = rand() % 32;
+    (*data2).month = rand() % 13;
+    (*data2).year = rand() % 2022;
+
+    writeDate(data2);
 
     return 0;
 }
