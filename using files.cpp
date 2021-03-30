@@ -13,12 +13,13 @@ int main ()
 	}
 
     string aux;
-    cout << "\x1B[2J\x1B";
+    cout << "  \n    \n    \n" << endl;
 	while (!in_file.eof())
 	{
 		getline(in_file, aux);
 		cout << aux << endl;
 	}
 	in_file.close();
+    cout << "  \n    \n    \n" << endl;
 	return 0;
 }
