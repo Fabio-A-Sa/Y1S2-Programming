@@ -5,6 +5,11 @@
 #include <string>
 using namespace std;
 
+struct Date {
+    unsigned int year, month, day;
+} Date;
+
+
 int main () 
 {
     return 0;
