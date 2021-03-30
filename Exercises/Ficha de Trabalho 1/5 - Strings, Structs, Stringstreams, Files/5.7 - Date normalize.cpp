@@ -23,6 +23,11 @@ void writeDate(Date *d) {
     cout << setfill('0') << setw(4) << d->year << "/" << setw(2) << d->month << "/" << setw(2) << d->day << endl;
 }
 
+int compareDates(const Date *d1, const Date *d2) {
+
+
+}
+
 int main () 
 {   
     srand(time(NULL));
@@ -37,6 +42,7 @@ int main ()
     (*data2).year = rand() % 2022;
 
     writeDate(data2);
+    compareDates(data1, data2);
 
     return 0;
 }
