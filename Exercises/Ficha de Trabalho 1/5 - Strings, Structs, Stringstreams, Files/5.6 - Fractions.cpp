@@ -15,8 +15,7 @@ bool readFraction(Fraction &fraction) {
 
     if (fraction.denominator == 0)
         return false;
-    else
-        return true;
+    return true;
 }
 
 int main () 
@@ -28,7 +27,7 @@ int main ()
     do  {
         cout << "Enter a fraction type a/b with integer numbers: ";
         cin >> input.numerator >> option >> input.denominator;
-        if (!cin) {
+        if (!cin || option != '/') {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid input. Please try again." << endl;
@@ -37,5 +36,6 @@ int main ()
 
     answer = readFraction(input) ? "Valid fraction" : "Invalid fraction" ;
     cout << answer << endl;
+
     return 0;
 }
