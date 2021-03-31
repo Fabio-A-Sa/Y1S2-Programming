@@ -635,6 +635,7 @@ int main() // Exercício 1.5 (dias, horas, minutos, segundos)
     // Inputs and Strings --> Integers
     cout << "Tempo 1 (horas minutos segundos) ? ";
     getline (cin, t1);
+    t1 = "10 25 89";
     h1 = stoi(t1.substr (0,2));
     m1 = stoi(t1.substr (3,2));
     s1 = stoi(t1.substr (6,2));

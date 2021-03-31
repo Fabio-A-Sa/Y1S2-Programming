@@ -6,20 +6,22 @@ using namespace std;
 
 int main ()
 {
+
 	ifstream in_file("maze.txt");
 	if (!in_file.good()) {
 		cout << "Error opening file \"maze.txt\".\n";
-		exit(-1);
+		main();
 	}
 
     string aux;
-    cout << "  \n    \n    \n" << endl;
-	while (!in_file.eof())
-	{
-		getline(in_file, aux);
-		cout << aux << endl;
-	}
+	getline(in_file, aux);
+	cout << aux << endl;
+
+	int lines = stoi(aux.substr (0,2));
+    int cols = stoi(aux.substr (aux.size()-2,2));
+
+	cout << "Numbers: " << lines << " " << cols << endl;
+
 	in_file.close();
-    cout << "  \n    \n    \n" << endl;
 	return 0;
 }
