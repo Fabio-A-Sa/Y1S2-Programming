@@ -48,12 +48,12 @@ int main () {
     int number_of_robots = 10;
     vector<Robot> all_robots = create_robots(number_of_robots);
 
-    while (all_robots.size()) {
+    int counter = 0;
+    while (counter < 2*number_of_robots) {
 
-        int counter = 0;
         for (Robot r : all_robots) {
 
-            if (counter == 0) 
+            if (!r.died) 
             {
                 cout << "Name of robot: " << r.name << endl;
                 cout << "X-robot: " << r.x << endl;
@@ -61,15 +61,17 @@ int main () {
                 cout << "Is dead? " << r.died << endl;
                 cout << " " << endl;
             }  
-            else 
+            else if (r.died)
             {
-                cout << r.name << " está morto. Retirado do array em 3, 2, 1..." << endl;
+                cout << r.name << " morto. Retirado do vetor em 3, 2, 1..." << endl;
                 all_robots.erase(all_robots.begin() + counter);
             }
+            else
+            {
+                continue;
+            }
             counter++;
-        }
-        if (counter) {
-            break;
+            r.died = true;
         }
     }
     cout << all_robots.size() << endl;
