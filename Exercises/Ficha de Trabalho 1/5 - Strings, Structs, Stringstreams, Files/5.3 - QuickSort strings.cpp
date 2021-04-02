@@ -9,10 +9,10 @@ using namespace std;
 
 int comparator_d ( const void *arg1, const void *arg2 ) {
 
-   if ((*(char*)arg1 > *(char*)arg2)) {
+   if ((*(char*)arg1 < *(char*)arg2)) {
        return 1;
    }
-   else if ((*(char*)arg1 < *(char*)arg2)) {
+   else if ((*(char*)arg1 > *(char*)arg2)) {
        return -1;
    }
    return 0;
