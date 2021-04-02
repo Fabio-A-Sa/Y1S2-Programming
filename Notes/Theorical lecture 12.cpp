@@ -14,7 +14,7 @@ struct Robot {
     int x;
     int y;
     char symbol;
-    string name;
+    string name; 
     bool died;
 };
 
@@ -53,11 +53,12 @@ int main () {
         cout << "Y-robot: " << r.y << endl;
         cout << "Is dead? " << r.died << endl;
         cout << " " << endl;
+        r.died = true;
     }
 
     for (Robot r : all_robots) {
         
-        r.died = true;
+        r.died = true; // Kill all robots
         if (r.died) 
             cout << r.name << " morto. Retirado do vetor em 3, 2, 1..." << endl;
     }
