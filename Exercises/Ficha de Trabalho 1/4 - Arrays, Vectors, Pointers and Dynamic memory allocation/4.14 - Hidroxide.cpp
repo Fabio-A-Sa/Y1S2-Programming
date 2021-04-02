@@ -15,7 +15,12 @@ bool isHidroxide (string compound) {
 
 int main () 
 {   
-    vector<string> compounds = {"KOH", ""} ;
+    vector<string> compounds = {"KOH", "H2O2", "NaCl", "NaOH", "C9H8O4", "MgOH"} ;
+    
+    for (string compound : compounds) {
+        string answer = isHidroxide(compound) ? " is hidroxide" : " is not hidroxide";
+        cout << compound << answer << endl;
+    }
     
     return 0;   
 }
