@@ -4,10 +4,18 @@
 // Taken from the previous years exercise Sheet
 
 #include <iostream>
-#include <array>
+#include <vector>
 #include <string>
+using namespace std;
+
+bool isHidroxide (string compound) {
+
+    return (compound[compound.size()-2] == 'O' && compound[compound.size()-1] == 'H');
+}
 
 int main () 
-{
-    return 0;
+{   
+    vector<string> compounds = {"KOH", ""} ;
+    
+    return 0;   
 }
