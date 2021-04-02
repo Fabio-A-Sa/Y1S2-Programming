@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 using namespace std;
 
 struct Address {
@@ -14,20 +15,27 @@ struct Address {
 
 struct Person {
     string name;
-    int age;
-    char gender;
-    struct Address address;
+    // int age;
+    // char gender;
+    // struct Address address;
 };
 
 int main ()
 {   
-    Person me;
-    me.name = "Fabio Sa";
-    me.age = 18;
-    me.gender = 'M';
-    me.address.street = "Rua Dr. Roberto Frias";
-    me.address.door_number = 9;
-    me.address.city = "Porto";
+    ifstream file;
+    file.open("C:\\Users\\farau\\Desktop\\Repositórios\\Y1S2-Programming\\Exercises\\Ficha de Trabalho 1\\5 - Strings, Structs, Stringstreams, Files\\Files\\Persons.txt");
+    vector<Person> all_persons;
+
+    while (file) {
+        Person person;
+        getline(cin, person.name);
+        all_persons.push_back(person);
+    }
+    file.close();
+
+    for (Person p : all_persons) {
+        cout << p.name << endl;
+    }
 
     return 0;
 }
