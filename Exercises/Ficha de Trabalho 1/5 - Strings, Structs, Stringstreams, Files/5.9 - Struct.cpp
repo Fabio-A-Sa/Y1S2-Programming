@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 struct Address {
@@ -11,11 +12,22 @@ struct Address {
     string city;
 };
 
+struct Person {
+    string name;
+    int age;
+    char gender;
+    struct Address address;
+};
+
 int main ()
-{
-    Address FEUP;
-    FEUP.street = "Rua Dr Roberto Frias";
-    FEUP.door_number = 145;
-    FEUP.city = "Porto";
+{   
+    Person me;
+    me.name = "Fabio Sa";
+    me.age = 18;
+    me.gender = 'M';
+    me.address.street = "Rua Dr. Roberto Frias";
+    me.address.door_number = 9;
+    me.address.city = "Porto";
+
     return 0;
 }
