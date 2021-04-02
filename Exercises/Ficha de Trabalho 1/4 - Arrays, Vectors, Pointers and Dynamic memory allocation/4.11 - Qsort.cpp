@@ -15,8 +15,25 @@ int main ()
 {   
     int example[10] = {9, 8, 5, 2, 7, 3, 1, 4, 0, -8} ;
 
-    cout << "Ascending or descending order? a/d: "
-    qsort (example, 10, sizeof(int), comparator) ;
+    char answer;
+    cout << "Ascending, descending or order? a/d/h: ";
+    cin >> answer;
+
+    switch (answer) {
+    case 'a':
+        qsort (example, 10, sizeof(int), comparator_a) ;
+        break;
+    case 'd':
+        qsort (example, 10, sizeof(int), comparator_d) ;
+        break;
+    case 'h':
+        qsort (example, 10, sizeof(int), comparator_a) ;
+        break;
+
+    default:
+        cout << "Invalid input!" << endl;
+        exit(0);
+    }
 
     cout << "Sorted: ";
     for (int number : example) {
