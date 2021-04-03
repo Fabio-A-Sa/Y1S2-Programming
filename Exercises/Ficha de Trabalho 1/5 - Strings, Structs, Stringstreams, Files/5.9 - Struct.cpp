@@ -48,6 +48,7 @@ void input_data (vector<Person> &all_persons) {
 int main ()
 {   
     vector<Person> all_persons;
+    vector<Person> same_city;
     input_data (all_persons);
     
     string city;
@@ -56,8 +57,12 @@ int main ()
 
     for (Person person : all_persons) {
         if (person.address.city == city) {
-            cout << "This is a test" << endl;
+            same_city.push_back(person);
         };
+    }
+
+    for (Person person : all_persons) {
+        
     }
     return 0;
 }
