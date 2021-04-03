@@ -22,8 +22,9 @@ struct Person {
 void input_data (vector<Person> &all_persons) {
 
     char answer;
+    struct Person Address;
 
-    while (tolower(answer) != 'q') {
+    while (answer != 'q' || answer != 'Q') {
 
         Person person;
         cout << "Name: ";
@@ -61,8 +62,9 @@ int main ()
         };
     }
 
-    for (Person person : all_persons) {
-        
+    for (Person person : same_city) {
+        cout << person.name << " is in " << person.address.street << " in " << city << endl;
     }
+    
     return 0;
 }
