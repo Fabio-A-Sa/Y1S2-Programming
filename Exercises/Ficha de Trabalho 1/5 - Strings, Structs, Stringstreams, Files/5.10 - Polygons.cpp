@@ -19,7 +19,22 @@ struct Polygon {
 
 int main ()
 {
+    int n_vertices, counter = 0;
+    cout << "How many vertices you want? ";
+    cin >> n_vertices;
 
+    vector<Polygon> all_points ;
+    while (counter != n_vertices) {
+
+        Polygon poligono;
+        cout << "Vertice " << counter + 1 << endl;
+        cout << "X: ";
+        cin >> poligono.ponto.x;
+        cout << "Y: ";
+        cin >> poligono.ponto.y;
+        all_points.push_back(poligono);
+        counter ++;
+    }
 
     return 0;
 }
