@@ -36,5 +36,21 @@ int main ()
         counter ++;
     }
 
+    int total = 0;
+    for (int index = 0 ; index < all_points.size() - 1 ; index ++) {
+        int xa = all_points[index].ponto.x;
+        int ya = all_points[index].ponto.y;
+        int xp = all_points[index+1].ponto.x;
+        int yp = all_points[index+1].ponto.y;
+        total = total + (xa*yp - ya*xp);
+    }
+    int x_inicial = all_points[0].ponto.x;
+    int x_final = all_points[all_points.size()-1].ponto.x;
+    int y_inicial = all_points[0].ponto.y;
+    int y_final = all_points[all_points.size()-1].ponto.y;
+    total = total + (x_final*y_inicial-y_final*x_inicial);
+
+    cout << (double) abs(total)/2 << endl;
+
     return 0;
 }
