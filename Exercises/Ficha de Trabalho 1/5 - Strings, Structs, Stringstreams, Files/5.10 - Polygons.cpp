@@ -49,8 +49,9 @@ int main ()
     int y_inicial = all_points[0].ponto.y;
     int y_final = all_points[all_points.size()-1].ponto.y;
     total = total + (x_final*y_inicial-y_final*x_inicial);
-
-    cout << (double) abs(total)/2 << endl;
+    
+    double area = (double) abs(total)/2;
+    cout << "Total area: " << area << endl;
 
     return 0;
 }
