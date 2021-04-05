@@ -9,11 +9,11 @@ using namespace std;
 
 int main ()
 {   
-    string content, current_line;
+    string content, current_line, uncompressed_name = "Files\\binary_image_uncompressed.txt";
     int lines = 0; int cols = 0;
     ifstream file;
 
-    file.open("Files\\binary_image_uncompressed.txt");
+    file.open(uncompressed_name);
     while (!file.eof()) {
         getline(file, current_line);
         cols = current_line.size();
@@ -46,7 +46,11 @@ int main ()
     part = current_stack[current_stack.size()] == 'b' ? to_string(current_stack.size()) + 'w' : to_string(current_stack.size()) + 'b';
     compressed_content += part;
 
-    cout << compressed_content << " " << compressed_content.size();
+    string compressed_name = "binary_image_compressed.txt";
+    ofstream new_file;
+    new_file.open(compressed_name);
+    new_file << lines << " " << cols << " " << compressed_content;
+    new_file.close();
 
     return 0;
 }
