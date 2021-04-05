@@ -34,7 +34,10 @@ void create_random_phone_list (string name, int value) {
         }
         string first_name = all_names[rand() % all_names.size()];
         string last_name = all_names[rand() % all_names.size()];
-        new_file << counter + 1 << ":" <<setfill(' ') << setw(4) << number << " " << first_name << " " << last_name << endl;
+        if (counter + 1 == value)
+            new_file <<setfill(' ') << setw(4) << counter + 1 << ":  " << number << "  " << first_name << " " << last_name;
+        else
+            new_file <<setfill(' ') << setw(4) << counter + 1 << ":  " << number << "  " << first_name << " " << last_name << endl;
         counter ++;
     }
     
