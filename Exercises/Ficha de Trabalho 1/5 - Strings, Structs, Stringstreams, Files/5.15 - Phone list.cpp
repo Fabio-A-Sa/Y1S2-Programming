@@ -16,6 +16,7 @@ void create_random_phone_list (string name, int value) {
     ifstream names_file;
     names_file.open("Files\\random_names.txt");
 
+    // Store all names into a vector
     vector<string> all_names;
     string current_name;
     while (!names_file.eof()) {
@@ -23,6 +24,7 @@ void create_random_phone_list (string name, int value) {
         all_names.push_back(current_name);
     }
 
+    // Create random number and random names
     int counter = 0;
     while (counter != value) {
 
