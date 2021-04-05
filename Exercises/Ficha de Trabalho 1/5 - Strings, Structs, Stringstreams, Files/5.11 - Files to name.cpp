@@ -11,11 +11,21 @@ using namespace std;
 int main ()
 {   
     vector<string> all_names;
-    string file_name = "Files\\names.txt";
+    string input, file_name;
     string current_name;
 
-    ifstream file;
-    file.open(file_name);
+    cout << "File name: ";
+    cin >> input;
+    file_name = "Files\\" + input + ".txt";
+    ifstream file(file_name);
+
+    while (!file.good()) {
+
+        cout << "File not found. Please try again: ";
+        cin >> input;
+        file_name = "Files\\" + input + ".txt";
+        ifstream file(file_name);
+    }
 
     while (!file.eof()) {
         getline(file, current_name);
