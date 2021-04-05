@@ -11,14 +11,15 @@ struct Person {
     string name;
     int age;
     char gender;
-    struct Address  {
+    struct Address {
 
         string street;
         int door_number;
         string city;
     };
+
     Address address;
-};
+} ;
 
 bool notInVector (vector<string> vec , string attemp) {
     
@@ -44,9 +45,8 @@ void remove_duplicates(vector<string> &streets) {
 void input_data (vector<Person> &all_persons) {
 
     char answer;
-    struct Person Address;
 
-    while (answer != 'q' || answer != 'Q') {
+    while (answer != 'q' && answer != 'Q') {
 
         Person person;
         cout << "Name: ";
