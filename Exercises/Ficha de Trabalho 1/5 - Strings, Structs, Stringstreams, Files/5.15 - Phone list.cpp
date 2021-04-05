@@ -6,6 +6,7 @@
 #include <vector>
 #include <fstream>
 #include <ctime>
+#include <iomanip>
 using namespace std;
 
 void create_random_phone_list (string name, int value) {
@@ -13,13 +14,17 @@ void create_random_phone_list (string name, int value) {
     ofstream new_file;
     new_file.open(name);
     ifstream names_file;
-    names_file.open("random_names.txt");
+    names_file.open("Files\\random_names.txt");
 
     vector<string> all_names;
     string current_name;
-    while (!names_file.eof())
+    while (!names_file.eof()) {
+        names_file >> current_name;
+        all_names.push_back(current_name);
+    }
 
-    while (value) {
+    int counter = 0;
+    while (counter != value) {
 
         string number = "";
         number += '9';
@@ -27,8 +32,10 @@ void create_random_phone_list (string name, int value) {
             int digit = rand() % 10;
             number += to_string(digit);
         }
-        new_file << number << endl;
-        value--;
+        string first_name = all_names[rand() % all_names.size()];
+        string last_name = all_names[rand() % all_names.size()];
+        new_file << counter + 1 << ":" <<setfill(' ') << setw(4) << number << " " << first_name << " " << last_name << endl;
+        counter ++;
     }
     
     new_file.close();
