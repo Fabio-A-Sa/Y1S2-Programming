@@ -13,6 +13,7 @@ int main ()
     int lines = 0; int cols = 0;
     ifstream file;
 
+    // Get all data
     file.open(uncompressed_name);
     while (!file.eof()) {
         getline(file, current_line);
@@ -28,6 +29,7 @@ int main ()
     string current_stack = "";
     current_stack += content[0];
 
+    // Split binary acording bit colour, and get how many bytes in same colour there are.
     for (int index = 1 ; index < content.size() ; index ++ ) {
 
         current_letter = content[index];
@@ -45,7 +47,8 @@ int main ()
     }
     part = current_stack[current_stack.size()] == 'b' ? to_string(current_stack.size()) + 'w' : to_string(current_stack.size()) + 'b';
     compressed_content += part;
-
+    
+    // Create a new file to store compressed data using file stream
     string compressed_name = "binary_image_compressed.txt";
     ofstream new_file;
     new_file.open(compressed_name);
