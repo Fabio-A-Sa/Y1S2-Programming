@@ -20,6 +20,7 @@ int main ()
     ifstream file;
     file.open(file_name);
 
+    // Verify user input
     if (!file.good()) {
 
         while (true) {
@@ -36,14 +37,17 @@ int main ()
         file.open(file_name);
     }
 
+    // Get data
     while (!file.eof()) {
         getline(file, current_name);
         all_names.push_back(current_name);
     }
     file.close();
 
+    // Sort names using qsort algorithm
     sort(all_names.begin(), all_names.end());
 
+    // Create new file and store sorted data, line by line
     string new_file_name = input + "_sorted.txt";
     ofstream another_file;
     another_file.open(new_file_name);
