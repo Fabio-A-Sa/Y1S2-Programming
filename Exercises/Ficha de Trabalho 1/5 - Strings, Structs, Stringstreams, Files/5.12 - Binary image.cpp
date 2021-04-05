@@ -9,12 +9,20 @@ using namespace std;
 
 int main ()
 {   
-    string content;
+    string content, current_line;
+    int lines = 0; int cols = 0;
     ifstream file;
-    file.open("Files\\binary_image_uncompressed");
-    getline(file, content);
+
+    file.open("Files\\binary_image_uncompressed.txt");
+    while (!file.eof()) {
+        getline(file, current_line);
+        cols = current_line.size();
+        lines ++;
+        content += current_line;
+    }
     file.close();
 
-    cout << content << endl;
+    cout << cols << " " << lines << " " << content << endl;
+
     return 0;
 }
