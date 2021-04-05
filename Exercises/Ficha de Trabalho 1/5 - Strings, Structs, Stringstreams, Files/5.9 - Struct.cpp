@@ -19,6 +19,27 @@ struct Person {
     struct Address address;
 };
 
+bool notInVector (vector<string> vec , string attemp) {
+    
+    for (string item : vec) {
+        if (item == attemp) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void remove_duplicates(vector<string> &streets) {
+
+    vector<string> without_duplicates;
+    for (string street : streets) {
+        if (notInVector(without_duplicates, street)) {
+            without_duplicates.push_back(street);
+        }
+    }
+    streets = without_duplicates;
+}
+
 void input_data (vector<Person> &all_persons) {
 
     char answer;
@@ -50,6 +71,7 @@ int main ()
 {   
     vector<Person> all_persons;
     vector<Person> same_city;
+    vector<string> all_streets;
     input_data (all_persons);
     
     string city;
@@ -59,12 +81,20 @@ int main ()
     for (Person person : all_persons) {
         if (person.address.city == city) {
             same_city.push_back(person);
+            all_streets.push_back(person.address.street);
         };
     }
+    
+    remove_duplicates(all_streets);
 
-    for (Person person : same_city) {
-        cout << person.name << " is in " << person.address.street << " in " << city << endl;
+    cout << "City: " << city << endl;
+    for (string street : all_streets) {
+
+        for (Person person : same_city) {
+            cout << person.name << " is in " << person.address.street << " in " << city << endl;
+        }
     }
+
     
     return 0;
 }
