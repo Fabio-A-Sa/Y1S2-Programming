@@ -6,17 +6,18 @@
 #include <string>
 using namespace std;
 
-struct Address {
-    string street;
-    int door_number;
-    string city;
-};
-
 struct Person {
+
     string name;
     int age;
     char gender;
-    struct Address address;
+    struct Address  {
+
+        string street;
+        int door_number;
+        string city;
+    };
+    Address address;
 };
 
 bool notInVector (vector<string> vec , string attemp) {
@@ -89,12 +90,13 @@ int main ()
 
     cout << "City: " << city << endl;
     for (string street : all_streets) {
-
+        cout << "Street: " << street << endl;
         for (Person person : same_city) {
-            cout << person.name << " is in " << person.address.street << " in " << city << endl;
+            if (person.address.street == street) {
+                cout << "- " << person.name << endl;        
+            }
         }
     }
 
-    
     return 0;
 }
