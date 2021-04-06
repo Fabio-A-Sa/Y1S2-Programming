@@ -64,8 +64,10 @@ void option_1 (vector<Person> &persons) {
 
     cout << "Input a new record in phone numbers" << endl;
     string name, phone_number;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Person name: ";
-    cin >> name;
+    getline(cin, name);
     cout << name << "'s phone number: ";
     cin >> phone_number;
 
@@ -79,8 +81,10 @@ void option_2 (vector<Person> &persons) {
 
     cout << "Delete the record of an existing person" << endl;
     string name;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Name: ";
-    cin >> name;
+    getline(cin, name);
 
     if ( exists (persons, name) ) {
         vector<Person> clone;
@@ -100,11 +104,21 @@ void option_3 (vector<Person> &persons) {
 
     cout << "Modify a phone number associated an existing person" << endl;
     string name;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cout << "Name: ";
-    cin >> name;
+    getline(cin, name);
 
+    string new_number;
     if ( exists (persons, name) ) {
-        
+        for (Person &person : persons) {
+            if (person.name == name) {
+                cout << "Enter a new phone number: ";
+                cin >> new_number;
+                person.number = new_number;
+                break;
+            }
+        }
     }       
     else {
         cout << "This name not exists in current phone list" << endl;
@@ -112,7 +126,24 @@ void option_3 (vector<Person> &persons) {
 }
 
 void option_4 (vector<Person> &persons) {
-    
+
+    string name;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Search the phone number of person: ";
+    getline(cin, name);
+
+    if ( exists (persons, name) ) {
+        for (Person person : persons) {
+            if (person.name == name) {
+                cout << name << "'s number is " << person.number << endl;
+                break;
+            }
+        }
+    }       
+    else {
+        cout << "This name not exists in current phone list" << endl;
+    }  
 }
 
 void menu (vector<Person> &persons) {
