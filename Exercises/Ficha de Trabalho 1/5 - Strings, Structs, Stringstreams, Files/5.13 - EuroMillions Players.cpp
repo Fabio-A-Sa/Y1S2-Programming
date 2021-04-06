@@ -47,6 +47,39 @@ void generate_random(vector<unsigned> &key) {
 
 int main ()
 {
+    string file_name = "euromillions_bet.txt";
+    string new_file_name = "euromillions_bet_results.txt";
+    vector<User> all_users;
 
+    ifstream bet;
+    string current_line;
+    bet.open(file_name);
+
+    while (!bet.eof()) {
+
+        User current_user;
+        getline(bet, current_line);
+        current_user.name = current_line;
+        getline(bet, current_line);
+        
+        istringstream new_line (current_line);
+        int numbers = 7;
+        while (numbers) {
+
+            int number;
+            new_line >> number;
+            current_user.numbers.push_back(number);
+            numbers--;
+        }
+
+        all_users.push_back(current_user);
+    }
+
+    for (User user : all_users) {
+        cout << user.name << endl;
+        for (int number : user.numbers) {
+            cout << number << endl;
+        }
+    }
     return 0;
 }
