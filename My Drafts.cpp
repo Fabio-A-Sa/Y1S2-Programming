@@ -2,6 +2,14 @@
 // @author: Fábio Araújo de Sá
 
 #include <iostream>
+#include <cmath>
+#include <fstream>
+#include <iomanip>
+#include <sstream>
+#include <vector>
+#include <array>
+#include <algoritm>
+#include <string>
 using namespace std;
 
 int main()
