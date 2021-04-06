@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream> 
 #include <vector>
 using namespace std;
 
@@ -24,11 +25,23 @@ string to_upper (string str) {
     return str;
 }
 
+void normalizeName(const string name) {
+
+    string names = to_upper(name);
+    string solution;
+    string word = "";
+
+    while (true) {
+        
+    }
+}
+
 int main ()
 {
     string name;
     cout << "Enter a name: ";
     getline(cin, name);
-    cout << "Normalization: " << normalizeName(name) << endl;
+    cout << "Normalization: ";
+    normalizeName(name);
     return 0;
 }
