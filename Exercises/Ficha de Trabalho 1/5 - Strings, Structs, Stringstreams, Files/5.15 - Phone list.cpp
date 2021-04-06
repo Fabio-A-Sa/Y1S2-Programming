@@ -6,6 +6,7 @@
 #include <vector>
 #include <fstream>
 #include <ctime>
+#include <limits>
 #include <iomanip>
 using namespace std;
 
@@ -61,19 +62,44 @@ void menu (vector<Person> &persons) {
         cout << "3 - Modify the phone number associater with an existing person" << endl;
         cout << "4 - Search for number of a given person" << endl;
         cout << "Q - Quit" << endl;
+        cout << "Your choice: ";
         cin >> answer;
 
         while (tolower(answer) != '1' && tolower(answer) != '2' && tolower(answer) != '3' && 
                 tolower(answer) != '4' && tolower(answer) != 'q' ) {
-            
+                
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Input error. Please try again: ";
                 cin >> answer;
         }
 
-        if (tolower(answer) != 'q') 
+        if (tolower(answer) == 'q') 
             break;
+
         else {
-            cout << "Finish";
+            
+            switch (answer)
+            {
+                case '1':
+                    option_1 (persons);
+                    break;
+
+                case '2':
+                    option_2 (persons);
+                    break;
+
+                case '3':
+                    option_3 (persons);
+                    break;
+
+                case '4':
+                    option_4 (persons);
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
@@ -108,10 +134,11 @@ int main ()
 
     ofstream new_file;
     new_file.open("random_phone_list.txt");
-    for (int index = 0 ; index < all_persons.size() ; index ++ ) {
+    new_file << all_persons[0].number << " " << all_persons[0].name;
+    for (int index = 1 ; index < all_persons.size() ; index ++ ) {
         new_file << endl << all_persons[index].number << " " << all_persons[index].name;
     }
-    cout << "Stored all data in current file radom_phone_list.txt" << endl;
+    cout << "Stored all modified data in current file radom_phone_list.txt" << endl;
 
     return 0;
 }
