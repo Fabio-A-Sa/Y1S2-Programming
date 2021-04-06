@@ -66,8 +66,21 @@ int main ()
     phone_list.open("random_phone_list.txt");
     while (!phone_list.eof()) {
         getline(phone_list, current_line);
+        string number = current_line.substr(0, 9);
+        string name = current_line.substr(10, current_line.size()-10);
 
+        Person person;
+        person.name = name;
+        person.number = number;
+        all_persons.push_back(person);
     }
-    
+
+    char answer;
+    while (tolower(answer) != 'q') {
+
+        cout << "Menu:" << endl;
+        cout << "1 - Add a new person"
+    }
+
     return 0;
 }
