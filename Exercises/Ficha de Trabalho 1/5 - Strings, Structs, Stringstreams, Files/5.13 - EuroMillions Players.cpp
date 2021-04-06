@@ -50,7 +50,9 @@ int main ()
     string file_name = "euromillions_bet.txt";
     string new_file_name = "euromillions_bet_results.txt";
     vector<User> all_users;
-
+    vector<unsigned> key;
+    generate_random(key);
+    
     ifstream bet;
     string current_line;
     bet.open(file_name);
