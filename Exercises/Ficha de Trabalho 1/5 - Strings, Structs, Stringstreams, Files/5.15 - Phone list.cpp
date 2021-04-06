@@ -50,6 +50,27 @@ void create_random_phone_list (string name, int value) {
     new_file.close();
 }
 
+void menu (vector<Person> &persons) {
+    
+    char answer;
+    while (tolower(answer) != 'q') {
+
+        cout << "Menu:" << endl;
+        cout << "1 - Add a new person" << endl;
+        cout << "2 - Remove a record of a existing person" << endl;
+        cout << "3 - Modify the phone number associater with an existing person" << endl;
+        cout << "4 - Search for number of a given person" << endl;
+        cout << "Q - Quit" << endl;
+        cin >> answer;
+
+        while (tolower(answer) != '1' && ) {
+
+        }
+
+        if (tolower(answer) != 'q')
+    }
+}
+
 int main ()
 {       
     srand(time(NULL));
@@ -74,13 +95,13 @@ int main ()
         person.number = number;
         all_persons.push_back(person);
     }
+    phone_list.close();
+    	
+    menu(all_persons);
 
-    char answer;
-    while (tolower(answer) != 'q') {
-
-        cout << "Menu:" << endl;
-        cout << "1 - Add a new person"
-    }
+    ofstream new_file;
+    new_file.open("random_phone_list.txt");
+    for (Person person : all_persons)
 
     return 0;
 }
