@@ -9,6 +9,11 @@
 #include <iomanip>
 using namespace std;
 
+struct Person {
+    string number;
+    string name;
+};
+
 void create_random_phone_list (string name, int value) {
 
     ofstream new_file;
@@ -25,8 +30,7 @@ void create_random_phone_list (string name, int value) {
     }
 
     // Create random number and random names
-    int counter = 0;
-    while (counter != value) {
+    while (value) {
 
         string number = "";
         number += '9';
@@ -36,11 +40,11 @@ void create_random_phone_list (string name, int value) {
         }
         string first_name = all_names[rand() % all_names.size()];
         string last_name = all_names[rand() % all_names.size()];
-        if (counter + 1 == value)
-            new_file <<setfill(' ') << setw(4) << counter + 1 << ":  " << number << "  " << first_name << " " << last_name;
+        if (value == 1)
+            new_file << number << " " << first_name << " " << last_name;
         else
-            new_file <<setfill(' ') << setw(4) << counter + 1 << ":  " << number << "  " << first_name << " " << last_name << endl;
-        counter ++;
+            new_file << number << " " << first_name << " " << last_name << endl;
+        value--;
     }
     
     new_file.close();
@@ -56,5 +60,14 @@ int main ()
 
     create_random_phone_list(file_name, value);
 
+    vector<Person> all_persons;
+    ifstream phone_list;
+    string current_line;
+    phone_list.open("random_phone_list.txt");
+    while (!phone_list.eof()) {
+        getline(phone_list, current_line);
+
+    }
+    
     return 0;
 }
