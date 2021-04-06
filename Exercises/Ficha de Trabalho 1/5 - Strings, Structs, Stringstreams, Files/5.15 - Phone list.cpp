@@ -51,6 +51,22 @@ void create_random_phone_list (string name, int value) {
     new_file.close();
 }
 
+void option_1 (vector<Person> &persons) {
+
+}
+
+void option_2 (vector<Person> &persons) {
+    
+}
+
+void option_3 (vector<Person> &persons) {
+    
+}
+
+void option_4 (vector<Person> &persons) {
+    
+}
+
 void menu (vector<Person> &persons) {
     
     char answer;
@@ -101,6 +117,9 @@ void menu (vector<Person> &persons) {
                     break;
             }
         }
+
+        cout << "Continue? Q to Quit or another letter to continue: ";
+        cin >> answer;
     }
 }
 
