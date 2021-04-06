@@ -63,11 +63,18 @@ void menu (vector<Person> &persons) {
         cout << "Q - Quit" << endl;
         cin >> answer;
 
-        while (tolower(answer) != '1' && ) {
-
+        while (tolower(answer) != '1' && tolower(answer) != '2' && tolower(answer) != '3' && 
+                tolower(answer) != '4' && tolower(answer) != 'q' ) {
+            
+                cout << "Input error. Please try again: ";
+                cin >> answer;
         }
 
-        if (tolower(answer) != 'q')
+        if (tolower(answer) != 'q') 
+            break;
+        else {
+            cout << "Finish";
+        }
     }
 }
 
@@ -101,7 +108,10 @@ int main ()
 
     ofstream new_file;
     new_file.open("random_phone_list.txt");
-    for (Person person : all_persons)
+    for (int index = 0 ; index < all_persons.size() ; index ++ ) {
+        new_file << endl << all_persons[index].number << " " << all_persons[index].name;
+    }
+    cout << "Stored all data in current file radom_phone_list.txt" << endl;
 
     return 0;
 }
