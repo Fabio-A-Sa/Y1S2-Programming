@@ -7,6 +7,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <ctime>
 using namespace std;
 
 struct User {
@@ -46,13 +47,14 @@ void generate_random(vector<unsigned> &key) {
 }
 
 int main ()
-{
+{   
+    srand(time(NULL));
     string file_name = "euromillions_bet.txt";
     string new_file_name = "euromillions_bet_results.txt";
     vector<User> all_users;
     vector<unsigned> key;
     generate_random(key);
-    
+
     ifstream bet;
     string current_line;
     bet.open(file_name);
@@ -77,11 +79,31 @@ int main ()
         all_users.push_back(current_user);
     }
 
-    for (User user : all_users) {
-        cout << user.name << endl;
-        for (int number : user.numbers) {
-            cout << number << endl;
-        }
+    bet.close();
+
+    ofstream new_file;
+    new_file.open(new_file_name);
+
+    new_file << "KEY: ";
+    for (unsigned int number : key) {
+        new_file << number << " ";
     }
+    new_file << endl;
+    for (User user : all_users) {
+        new_file << user.name << endl;
+        for (int number : user.numbers) {
+            new_file << number << " ";
+        }
+        new_file << " --> ";
+        for (int guess : user.numbers) {
+            if (!notInside(key, guess)) {
+                new_file << guess << " ";
+            }
+        }
+        new_file << endl;
+    }
+
+    new_file.close();
+
     return 0;
 }

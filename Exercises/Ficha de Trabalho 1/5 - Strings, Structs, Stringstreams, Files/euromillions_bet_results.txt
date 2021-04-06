@@ -1,0 +1,11 @@
+KEY: 37 42 12 24 29 1 8 
+Rosa Ramalhete
+13 18 29 39 50 5 12  --> 29 12 
+Modesto Patacas
+1 8 12 21 23 6 8  --> 1 8 12 8 
+Zeferino Fortunato
+3 13 20 39 49 2 9  --> 
+Fabio Araujo
+15 2 41 28 31 3 7  --> 
+Jorge Silva
+42 49 5 23 7 1 9  --> 42 1 
