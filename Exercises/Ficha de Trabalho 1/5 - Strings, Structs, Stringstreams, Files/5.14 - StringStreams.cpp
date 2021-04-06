@@ -30,10 +30,20 @@ void normalizeName(const string name) {
     string names = to_upper(name);
     string solution;
     string word = "";
+    istringstream substring (names);
 
     while (true) {
-        
-    }
+        string new_word = word;
+        substring >> word;
+
+        if (new_word == word) {
+            break;
+        }
+
+        if (isAllowed(word))
+            solution += word + " ";
+    }   
+    cout << solution;
 }
 
 int main ()
