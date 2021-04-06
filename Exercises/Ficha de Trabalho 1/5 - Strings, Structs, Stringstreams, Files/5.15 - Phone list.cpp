@@ -51,16 +51,64 @@ void create_random_phone_list (string name, int value) {
     new_file.close();
 }
 
+bool exists (vector<Person> persons, string name) {
+
+    for (Person person : persons) {
+        if (person.name == name)
+            return true;
+    }
+    return false;
+}
+
 void option_1 (vector<Person> &persons) {
 
+    cout << "Input a new record in phone numbers" << endl;
+    string name, phone_number;
+    cout << "Person name: ";
+    cin >> name;
+    cout << name << "'s phone number: ";
+    cin >> phone_number;
+
+    Person new_person;
+    new_person.name = name;
+    new_person.number = phone_number;
+    persons.push_back(new_person);
 }
 
 void option_2 (vector<Person> &persons) {
-    
-}
+
+    cout << "Delete the record of an existing person" << endl;
+    string name;
+    cout << "Name: ";
+    cin >> name;
+
+    if ( exists (persons, name) ) {
+        vector<Person> clone;
+        for (Person person : persons) {
+            if (person.name != name) {
+                clone.push_back(person);
+            }
+        }
+        persons = clone;
+    }       
+    else {
+        cout << "This name not exists in current phone list" << endl;
+    }
+}   
 
 void option_3 (vector<Person> &persons) {
-    
+
+    cout << "Modify a phone number associated an existing person" << endl;
+    string name;
+    cout << "Name: ";
+    cin >> name;
+
+    if ( exists (persons, name) ) {
+        
+    }       
+    else {
+        cout << "This name not exists in current phone list" << endl;
+    }   
 }
 
 void option_4 (vector<Person> &persons) {
