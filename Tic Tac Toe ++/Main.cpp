@@ -89,7 +89,10 @@ void play (vector<Player> players, char *board) {
         cout << players[counter].name << " is your turn. Choose an empty position to play: ";
         cin >> position;
 
-        while (!isAvailable(board, position)) {
+        while (!isAvailable(board, position) && cin.peek() != '\n') {
+
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Position not available. Try again: ";
             cin >> position;
         }
@@ -101,26 +104,30 @@ void play (vector<Player> players, char *board) {
     }
 
     printBoard(board);
-    cout << "Congratulations " << players[counter-1].name << "!" << endl;
-
+    cout << "Congratulations " << players[counter-1].name << "!\n" << endl;
 }
 
 int main () 
 {   
+    vector<Player> players;
     const int positions = 9;
     char * board = (char *) malloc (positions * sizeof(char));
 
     fill(board);
-    vector<Player> players;
     choose_options(players);
     play(players, board);
     free(board);
 
     char answer;
-    cout << "Play again? s/n : ";
+    cout << "Play again? Y/N : ";
     cin >> answer;
 
-    if (tolower(answer) == 's') {
+    while (tolower(answer) != 'n' && tolower(answer) != 'y') {
+        cout << "Invalid input. Please try again: ";
+        cin >> answer;
+    }
+
+    if (tolower(answer) == 'y') {
         return main ();
     }
 
