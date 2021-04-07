@@ -59,6 +59,37 @@ void choose_options(vector<Player> &players) {
 
 }
 
+bool end_game(char *board) {
+
+    return false;
+}
+
+bool isAvailable (char *board, int position) {
+
+    return true;
+}
+
+void play (vector<Player> players, char *board) {
+
+    int counter = 0;
+    int position;
+
+    while (!end_game(board)) {
+
+        counter %= 1;
+        cout << players[counter].name << " is your turn. Choose an empty position to play: ";
+        cin >> position;
+
+        while (!isAvailable (board, position])) {
+            cout << "Position not available. Try again: ";
+            cin >> position;
+        }
+        printBoar(board);
+        counter++;
+    }
+
+}
+
 int main () 
 {   
     const int positions = 9;
