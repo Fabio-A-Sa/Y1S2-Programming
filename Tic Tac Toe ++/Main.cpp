@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <limits>
+#include <ctime>
 #include <cstddef>
 
 using namespace std;
@@ -49,7 +50,7 @@ void choose_options(vector<Player> &players) {
         cout << "Invalid symbol. " << player1.name << ", please try again: ";
         cin >> symbol;
     }
-    
+
     player1.symbol = toupper(symbol);
     players.push_back(player1);
 
@@ -89,8 +90,12 @@ void play (vector<Player> players, char *board) {
 
     int counter = 0;
     int position;
-    printBoard(board);
+    int t_initial, t_final;
 
+    printBoard(board);
+    cout << endl;
+
+    t_initial = time(NULL);
     while (!end_game(board)) {
 
         counter = counter % 2;
@@ -106,17 +111,21 @@ void play (vector<Player> players, char *board) {
         }
 
         board[position-1] = players[counter].symbol;
+        cout << endl;
         printBoard(board);
+        cout << endl;
 
         counter++;
     }
-
-    printBoard(board);
-    cout << "Congratulations " << players[counter-1].name << "!\n" << endl;
+    
+    t_final = time(NULL);
+    int delta = t_final - t_initial;
+    cout << "Congratulations " << players[counter-1].name << "! You win in " << delta << " seconds!\n" << endl;
 }
 
 int main () 
-{   
+{      
+    srand(time(NULL));
     vector<Player> players;
     const int positions = 9;
     char * board = (char *) malloc (positions * sizeof(char));
