@@ -149,8 +149,34 @@ void store (string name) {
             winners.push_back(current_winner);
 
         }
+
+        old_file.close();
         
-        for
+        if (inside (winners, name)) {
+            for (Winner &winner : winners) {
+                if (winner.name == name) {
+                    winner.wins += 1;
+                }
+            }
+        }
+        else {
+            Winner new_winner;
+            new_winner.name = name;
+            new_winner.wins = 1;
+            winners.push_back(new_winner);
+        }
+
+        ofstream another_file;
+        another_file.open(file_name);
+
+        another_file << header[0] << endl << header[1] << endl;
+
+        for (int i = 0 ; i < winners.size() -1 ; i++) {
+            another_file << winners[i].name << " - " << winners[i].wins << endl;
+        }
+        another_file << winners[winners.size()-1].name << " - " << winners[winners.size()-1].wins;
+
+        another_file.close();
     }
     
     else {
