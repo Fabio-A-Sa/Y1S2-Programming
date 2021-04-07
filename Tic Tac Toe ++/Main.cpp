@@ -1,33 +1,42 @@
 #include <iostream>
 #include <array>
-#include <vector>
+#include <string>
 #include <cstddef>
 
 using namespace std;
 
-void printBoard (char jogadas[]) {
+void fill (char *board) {
+
+    for (int i = 0 ; i < 9 ; i++) {
+        *(board + i) = char(i+49);
+    }
+}
+
+void printBoard (char *board) {
 
     cout << "#############" << endl;
-    cout << "# " << jogadas[0] << " # " << jogadas[1] << " # " << jogadas[2] << " #" << endl;
+    cout << "# " << board[0] << " # " << board[1] << " # " << board[2] << " #" << endl;
     cout << "#############" << endl;
-    cout << "# " << jogadas[3] << " # " << jogadas[4] << " # " << jogadas[5] << " #" << endl;
+    cout << "# " << board[3] << " # " << board[4] << " # " << board[5] << " #" << endl;
     cout << "#############" << endl;
-    cout << "# " << jogadas[6] << " # " << jogadas[7] << " # " << jogadas[8] << " #" << endl;
+    cout << "# " << board[6] << " # " << board[7] << " # " << board[8] << " #" << endl;
     cout << "#############" << endl;
 }
 
 int main () 
 {   
-    const int positions = 9;
-    const int lines = 3 ; const int cols = 3;
-
     // Dinamic memory allocation using malloc() method
-    char ** board = (char **) malloc (lines * sizeof(char *));
-    for (int i = 0 ; i < cols ; i++)
-        board[i] = (char *) malloc (cols * sizeof(char));
+    const int positions = 9;
+    char * board = (char *) malloc (positions * sizeof(char));
 
-    vector<char> numbers = {'1', '2', '3', '4', '5', '6', '7', '8', '9'} ;
-    printBoard(jogadas);
+    fill(board);
+    printBoard(board);
+
+    for (int i : {1, 2}) {
+        cout << i << endl;
+    }
+
+    free(board);
     return 0;
 }
 
