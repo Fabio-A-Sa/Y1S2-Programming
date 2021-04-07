@@ -32,6 +32,11 @@ bool inside (vector<Winner> winners, string name) {
     return false;
 }
 
+void get_data_string(vector<Winner> winners, vector<string> all_names) {
+    
+    
+}
+
 void store (string name) {
         	
     string file_name = "TicTacToe_Winners.txt";
@@ -89,6 +94,11 @@ void store (string name) {
             winners.push_back(new_winner);
         }
 
+        vector<string> all_names;
+        vector<int> all_wins;
+        get_data_string(winners, all_names);
+        get_data_int(winners, all_wins);
+        
         ofstream another_file;
         another_file.open(file_name);
 
