@@ -86,6 +86,10 @@ bool isAvailable (char *board, int position) {
     return board[position-1] != 'X' && board[position-1] != 'O';
 }
 
+void store (string name) {
+    
+}
+
 void play (vector<Player> players, char *board) {
 
     int counter = 0;
@@ -118,9 +122,12 @@ void play (vector<Player> players, char *board) {
         counter++;
     }
     
+    string winner = players[counter-1].name;
     t_final = time(NULL);
     int delta = t_final - t_initial;
-    cout << "Congratulations " << players[counter-1].name << "! You win in " << delta << " seconds!\n" << endl;
+    cout << "Congratulations " << winner << "! You win in " << delta << " seconds!\n" << endl;
+    store (winner);
+
 }
 
 int main () 
