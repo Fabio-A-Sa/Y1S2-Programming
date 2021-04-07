@@ -42,7 +42,15 @@ void choose_options(vector<Player> &players) {
     player1.name = name;
     cout << "Choose a symbol: 'X' or 'O' : ";
     cin >> symbol;
-    player1.symbol = symbol;
+    
+    while (tolower(symbol) != 'x' && tolower(symbol) != 'o') {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid symbol. " << player1.name << ", please try again: ";
+        cin >> symbol;
+    }
+    
+    player1.symbol = toupper(symbol);
     players.push_back(player1);
 
     cin.clear();
