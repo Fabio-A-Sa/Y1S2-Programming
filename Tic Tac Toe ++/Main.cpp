@@ -119,21 +119,22 @@ void store (string name) {
 
     if (file.good()) {
 
-        file.close();
         vector<string> header;
         vector<Winner> winners;
         string current_line;
         ifstream old_file;
         old_file.open(file_name);
 
-        getline(cin, current_line);
+        getline(old_file, current_line);
+        cout << current_line;
         header.push_back(current_line);
-        getline(cin, current_line);
+        getline(old_file, current_line);
+        cout << current_line;
         header.push_back(current_line);
 
         while (!old_file.eof()) {
 
-            getline(cin, current_line);
+            getline(old_file, current_line);
             string name = current_line.substr(0, 15);
             string wins = "";
             string aux = current_line.substr(16, current_line.size()-16);
@@ -143,9 +144,12 @@ void store (string name) {
                     wins += letter;
                 }
             }
+
             Winner current_winner;
             current_winner.name = name;
+            cout << current_winner.name;
             current_winner.wins = stoi(wins);
+            cout << current_winner.wins << endl;
             winners.push_back(current_winner);
 
         }
@@ -156,6 +160,7 @@ void store (string name) {
             for (Winner &winner : winners) {
                 if (winner.name == name) {
                     winner.wins += 1;
+                    break;
                 }
             }
         }
@@ -253,6 +258,8 @@ int main ()
     }
 
     if (tolower(answer) == 'y') {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         return main ();
     }
 

@@ -1,3 +1,5 @@
 Player          - Time
 ----------------------
 Fabio Sa        - 1
+Jose Silva      - 2
+Pedro Ferreira  - 1
