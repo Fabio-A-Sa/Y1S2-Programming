@@ -69,7 +69,7 @@ void choose_options(vector<Player> &players) {
     getline(cin, name);
     player2.name = name;
     symbol = players[0].symbol == 'X' ? 'O' : 'X';
-    cout << "Your symbol is obviously '" << symbol << "'." << endl;
+    cout << << player2.name << ", your symbol is obviously '" << symbol << "'.\n" << endl;
     player2.symbol = symbol;
     players.push_back(player2);
 
@@ -128,7 +128,7 @@ void play (vector<Player> players, char *board) {
     int counter = 0;
     int position;
     int t_initial, t_final;
-
+    
     printBoard(board);
     cout << endl;
 
