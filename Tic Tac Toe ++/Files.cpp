@@ -37,6 +37,11 @@ void get_data_string(vector<Winner> winners, vector<string> all_names) {
     
 }
 
+void get_data_int(vector<Winner> winners, vector<string> all_names) {
+    
+    
+}
+
 void store (string name) {
         	
     string file_name = "TicTacToe_Winners.txt";
