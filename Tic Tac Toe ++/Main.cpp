@@ -61,32 +61,47 @@ void choose_options(vector<Player> &players) {
 
 bool end_game(char *board) {
 
-    return false;
+    bool condition1 = board[0] == board[1] == board[2];
+    bool condition2 = board[3] == board[4] == board[5];
+    bool condition3 = board[6] == board[7] == board[8];
+    bool condition4 = board[0] == board[3] == board[6];
+    bool condition5 = board[1] == board[4] == board[7];
+    bool condition6 = board[6] == board[7] == board[8];
+    bool condition7 = board[0] == board[4] == board[8];
+    bool condition8 = board[2] == board[4] == board[6];
+    return condition1 || condition2 || condition3 || condition4 || condition5 || condition6 || condition7 || condition8 ;
 }
 
 bool isAvailable (char *board, int position) {
 
-    return true;
+    return board[position-1] != 'X' && board[position-1] != 'O';
 }
 
 void play (vector<Player> players, char *board) {
 
     int counter = 0;
     int position;
+    printBoard(board);
 
     while (!end_game(board)) {
 
-        counter %= 1;
+        counter = counter % 2;
         cout << players[counter].name << " is your turn. Choose an empty position to play: ";
         cin >> position;
 
-        while (!isAvailable (board, position])) {
+        while (!isAvailable (board, position)) {
             cout << "Position not available. Try again: ";
             cin >> position;
         }
-        printBoar(board);
+
+        board[position-1] = players[counter].symbol;
+        printBoard(board);
+
         counter++;
     }
+
+    printBoard(board);
+    cout << "Congratulations " << players[counter-1].name << "!" << endl;
 
 }
 
@@ -98,9 +113,16 @@ int main ()
     fill(board);
     vector<Player> players;
     choose_options(players);
-
-    printBoard(board);
-
+    play(players, board);
     free(board);
+
+    char answer;
+    cout << "Play again? s/n : ";
+    cin >> answer;
+
+    if (tolower(answer) == 's') {
+        return main ();
+    }
+    
     return 0;
 }
