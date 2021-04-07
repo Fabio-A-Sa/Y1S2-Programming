@@ -100,6 +100,16 @@ void normalize (string &name) {
     }
 }
 
+bool inside (vector<Winner> winners, string name) {
+    
+    for (Winner winner : winners) {
+        if (winner.name == name) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void store (string name) {
         	
     string file_name = "TicTacToe_Winners.txt";
@@ -139,7 +149,8 @@ void store (string name) {
             winners.push_back(current_winner);
 
         }
-        cout << "tudo joia";
+        
+        for
     }
     
     else {
