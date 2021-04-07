@@ -69,7 +69,7 @@ void choose_options(vector<Player> &players) {
     getline(cin, name);
     player2.name = name;
     symbol = players[0].symbol == 'X' ? 'O' : 'X';
-    cout << << player2.name << ", your symbol is obviously '" << symbol << "'.\n" << endl;
+    cout << player2.name << ", your symbol is obviously '" << symbol << "'.\n" << endl;
     player2.symbol = symbol;
     players.push_back(player2);
 
@@ -108,12 +108,43 @@ void store (string name) {
     file.open(file_name);
 
     if (file.good()) {
+
+        file.close();
+        vector<string> header;
+        vector<Winner> winners;
+        string current_line;
+        ifstream old_file;
+        old_file.open(file_name);
+
+        getline(cin, current_line);
+        header.push_back(current_line);
+        getline(cin, current_line);
+        header.push_back(current_line);
+
+        while (!old_file.eof()) {
+
+            getline(cin, current_line);
+            string name = current_line.substr(0, 15);
+            string wins = "";
+            string aux = current_line.substr(16, current_line.size()-16);
+
+            for (char letter : aux) {
+                if (letter != ' ' && letter != '-') {
+                    wins += letter;
+                }
+            }
+            Winner current_winner;
+            current_winner.name = name;
+            current_winner.wins = stoi(wins);
+            winners.push_back(current_winner);
+
+        }
         cout << "tudo joia";
     }
     
     else {
 
-        string header = "Player        - Time\n-------------------";
+        string header = "Player          - Time\n----------------------";
         ofstream new_file;
         new_file.open(file_name);
         new_file << header << endl;
