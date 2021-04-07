@@ -104,6 +104,21 @@ void store (string name) {
         	
     string file_name = "TicTacToe_Winners.txt";
     normalize(name);
+    ifstream file;
+    file.open(file_name);
+
+    if (file.good()) {
+        cout << "tudo joia";
+    }
+    
+    else {
+
+        string header = "Player        - Time\n-------------------";
+        ofstream new_file;
+        new_file.open(file_name);
+        new_file << header;
+        new_file.close();
+    }
     
 }
 
