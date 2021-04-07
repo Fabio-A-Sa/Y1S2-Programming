@@ -1,4 +1,4 @@
-Player          - Time
+Player          - Wins
 ----------------------
 Fabio Sa        - 1
 Jose Silva      - 2

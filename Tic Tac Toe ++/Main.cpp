@@ -186,7 +186,7 @@ void store (string name) {
     
     else {
 
-        string header = "Player          - Time\n----------------------";
+        string header = "Player          - Wins\n----------------------";
         ofstream new_file;
         new_file.open(file_name);
         new_file << header << endl;
