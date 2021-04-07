@@ -44,7 +44,7 @@ void choose_options(vector<Player> &players) {
     cin >> symbol;
     player1.symbol = symbol;
     players.push_back(player1);
-    
+
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
@@ -61,7 +61,6 @@ void choose_options(vector<Player> &players) {
 
 int main () 
 {   
-    // Dinamic memory allocation using malloc() method
     const int positions = 9;
     char * board = (char *) malloc (positions * sizeof(char));
 
@@ -69,9 +68,6 @@ int main ()
     vector<Player> players;
     choose_options(players);
 
-    for (Player player : players) {
-        cout << player.name << " " << player.symbol << endl;
-    }
     printBoard(board);
 
     free(board);
