@@ -116,7 +116,8 @@ void store (string name) {
         string header = "Player        - Time\n-------------------";
         ofstream new_file;
         new_file.open(file_name);
-        new_file << header;
+        new_file << header << endl;
+        new_file << name << " - 1";
         new_file.close();
     }
     
