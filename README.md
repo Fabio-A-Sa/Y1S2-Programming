@@ -23,7 +23,9 @@ Notes that I take during theoretical lectures.<br/>
 Varied exercises of easy, medium and difficult level, about the subject taught in the present week. They complement the weekly work developed during the practical classes. <br/>
 
 ### Project 1
-Deadline: 30/04/2021 <br/>
+Pratical work done between 29/03/2021 and 30/04/2021 with [Pedro Ferreira](https://github.com/Pedro-PFerreira). <br>
+Developed in C++ language, this project is a Robot's Game with a maze that will be loaded from .txt simple file. using several datatypes (strings, arrays, vectors, structs, files and Object-Oriented Programming, dinamically memory allocation, Operating System compatibility) and modules that are available in StandardLibrary. <br>
+After the deadline, the project can be viewed in [Proj 1 PROG](https://github.com/Fabio-A-Sa/Proj_PROG). <br/>
 
 ### Project 2
 Description available soon. <br/>
