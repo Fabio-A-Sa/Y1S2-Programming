@@ -4,6 +4,7 @@
 #include <string>
 #include <limits>
 #include <ctime>
+#include <algorithm>
 #include <fstream>
 #include <cstddef>
 
@@ -232,7 +233,7 @@ void play (vector<Player> players, char *board) {
     t_final = time(NULL);
     int delta = t_final - t_initial;
     cout << "Congratulations " << winner << "! You win in " << delta << " seconds!\n" << endl;
-    store (winner);
+    store(winner);
 
 }
 
