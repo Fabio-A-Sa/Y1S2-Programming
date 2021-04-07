@@ -61,14 +61,14 @@ void choose_options(vector<Player> &players) {
 
 bool end_game(char *board) {
 
-    bool condition1 = board[0] == board[1] == board[2];
-    bool condition2 = board[3] == board[4] == board[5];
-    bool condition3 = board[6] == board[7] == board[8];
-    bool condition4 = board[0] == board[3] == board[6];
-    bool condition5 = board[1] == board[4] == board[7];
-    bool condition6 = board[6] == board[7] == board[8];
-    bool condition7 = board[0] == board[4] == board[8];
-    bool condition8 = board[2] == board[4] == board[6];
+    bool condition1 = board[0] == board[1] && board[1] == board[2];
+    bool condition2 = board[3] == board[4] && board[4] == board[5];
+    bool condition3 = board[6] == board[7] && board[7] == board[8];
+    bool condition4 = board[0] == board[3] && board[3] == board[6];
+    bool condition5 = board[1] == board[4] && board[4] == board[7];
+    bool condition6 = board[2] == board[5] && board[5] == board[8];
+    bool condition7 = board[0] == board[4] && board[4] == board[8];
+    bool condition8 = board[2] == board[4] && board[4] == board[6];
     return condition1 || condition2 || condition3 || condition4 || condition5 || condition6 || condition7 || condition8 ;
 }
 
@@ -89,7 +89,7 @@ void play (vector<Player> players, char *board) {
         cout << players[counter].name << " is your turn. Choose an empty position to play: ";
         cin >> position;
 
-        while (!isAvailable (board, position)) {
+        while (!isAvailable(board, position)) {
             cout << "Position not available. Try again: ";
             cin >> position;
         }
@@ -123,6 +123,6 @@ int main ()
     if (tolower(answer) == 's') {
         return main ();
     }
-    
+
     return 0;
 }
