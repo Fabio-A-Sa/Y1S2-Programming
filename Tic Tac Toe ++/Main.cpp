@@ -4,6 +4,7 @@
 #include <string>
 #include <limits>
 #include <ctime>
+#include <fstream>
 #include <cstddef>
 
 using namespace std;
@@ -12,6 +13,12 @@ struct Player {
 
     string name;
     char symbol;
+};
+
+struct Winner {
+
+    string name;
+    int wins;
 };
 
 void fill (char *board) {
@@ -86,7 +93,17 @@ bool isAvailable (char *board, int position) {
     return board[position-1] != 'X' && board[position-1] != 'O';
 }
 
+void normalize (string &name) {
+
+    while (name.size() != 15) {
+        name += ' ';
+    }
+}
+
 void store (string name) {
+        	
+    string file_name = "TicTacToe_Winners.txt";
+    normalize(name);
     
 }
 
