@@ -1,0 +1,5 @@
+# Ignore this files
+.vscode\
+.vs\
+a.exe
+a.out
