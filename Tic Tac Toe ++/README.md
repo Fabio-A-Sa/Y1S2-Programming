@@ -10,19 +10,19 @@
 
 Person project, using C++ language, that includes much of the knowledge acquired in the practical and theorical lectures, namely:
 
-- Input / Output Stream and validation;
+- Input / Output Stream and self-validation;
 - Functions;
 - Streams and Modules available in C/C++ Standard Library;
 - Load and Store data with .txt files;
-- Vectors
-- Arrays
+- Vectors;
+- Arrays;
 - Dinamic Memory Allocation;
 - Pointers;
-- 
+- Pass-by-value and Pass-by-reference;
 - Operating System compatibility;
--
--
--
+- Random() and Time() methods;
+- Structs;
+- Object-oriented Programming;
 
 <br>
 
