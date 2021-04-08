@@ -8,7 +8,7 @@
 
 ## Game
 
-Person project, using C++ language, that includes much of the knowledge acquired in the practical and theorical lectures, namely:
+Personal project, using C++ language, that includes much of the knowledge acquired in the practical and theorical lectures, namely:
 
 - Input / Output Stream and self-validation;
 - Functions;
@@ -20,11 +20,9 @@ Person project, using C++ language, that includes much of the knowledge acquired
 - Pointers;
 - Pass-by-value and Pass-by-reference;
 - Operating System compatibility;
-- Random() and Time() methods;
+- Random( ) and Time( ) methods;
 - Structs;
 - Object-oriented Programming;
-
-<br>
 
 ## How to run in Terminal
 
