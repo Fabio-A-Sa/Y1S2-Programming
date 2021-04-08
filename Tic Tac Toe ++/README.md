@@ -4,10 +4,27 @@
     src= "..\Images\TTT.png" 
     align="center" >
 
-## Game
 <br>
 
-Person project, using C++ language, that includes much of the knowledge acquired in the practical and theorical lectures. 
+## Game
+
+Person project, using C++ language, that includes much of the knowledge acquired in the practical and theorical lectures, namely:
+
+- Input / Output Stream and validation;
+- Functions;
+- Streams and Modules available in C/C++ Standard Library;
+- Load and Store data with .txt files;
+- Vectors
+- Arrays
+- Dinamic Memory Allocation;
+- Pointers;
+- 
+- Operating System compatibility;
+-
+-
+-
+
+<br>
 
 ## How to run in Terminal
 
@@ -17,8 +34,8 @@ cd '.\Tic Tac Toe ++\'
 g++ Main.cpp
 a.exe
 ```
-
 <br>
+
 ***Bibliography:*** 
 
 Nuno Miguel Cardanha Paulino, ["(The Very) Basics of C Programming"](https://paginas.fe.up.pt/~nmcp/basicsofC_v065.pdf) <br>
