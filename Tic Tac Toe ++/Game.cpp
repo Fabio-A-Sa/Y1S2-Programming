@@ -39,7 +39,7 @@ void printBoard (char *board) {
     cout << "#############" << endl;
 }
 
-void choose_options(vector<Player> &players) {
+void choose_options(vector<Player> &players, char mode) {
 
     string name;
     char symbol;
@@ -47,11 +47,20 @@ void choose_options(vector<Player> &players) {
     Player player1;
     cout << "Player 1 Name: ";
     getline(cin, name);
+
+    while (name.size() > 15) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Name too long. Please try again: ";
+        getline(cin, name);
+    }
+
     player1.name = name;
     cout << "Choose a symbol: 'X' or 'O' : ";
     cin >> symbol;
     
     while (tolower(symbol) != 'x' && tolower(symbol) != 'o') {
+
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid symbol. " << player1.name << ", please try again: ";
@@ -65,14 +74,35 @@ void choose_options(vector<Player> &players) {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     Player player2;
-    cout << "Player 2 Name: ";
-    getline(cin, name);
-    player2.name = name;
-    symbol = players[0].symbol == 'X' ? 'O' : 'X';
-    cout << player2.name << ", your symbol is obviously '" << symbol << "'.\n" << endl;
-    player2.symbol = symbol;
-    players.push_back(player2);
+    if (mode == '1') {
 
+        cout << "Player 2 Name: ";
+        getline(cin, name);
+        
+        while (name.size() > 15) {
+
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Name too long. Please try again: ";
+            getline(cin, name);
+        }
+
+        player2.name = name;
+        symbol = players[0].symbol == 'X' ? 'O' : 'X';
+        cout << player2.name << ", your symbol is obviously '" << symbol << "'.\n" << endl;
+        player2.symbol = symbol;
+    }
+
+    else {
+        
+        cout << "Player 2 Name: Computer";
+        player2.name = "Computer";
+        symbol = players[0].symbol == 'X' ? 'O' : 'X';
+        cout << player2.name << ", your symbol is obviously '" << symbol << "'.\n" << endl;
+        player2.symbol = symbol;
+    }
+
+    players.push_back(player2);
 }
 
 bool end_game(char *board) {
@@ -93,7 +123,7 @@ bool isAvailable (char *board, int position) {
     return board[position-1] != 'X' && board[position-1] != 'O';
 }
 
-void play (vector<Player> players, char *board) {
+void play_with_2_players (vector<Player> players, char *board) {
 
     int counter = 0;
     int position;
@@ -115,6 +145,63 @@ void play (vector<Player> players, char *board) {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Position not available. Try again: ";
             cin >> position;
+        }
+
+        board[position-1] = players[counter].symbol;
+        cout << endl;
+        printBoard(board);
+        cout << endl;
+
+        counter++;
+    }
+    
+    string winner = players[counter-1].name;
+    t_final = time(NULL);
+    int delta = t_final - t_initial;
+    cout << "Congratulations " << winner << "! You win in " << delta << " seconds!\n" << endl;
+    store(winner);
+
+}
+
+int compute_random() {
+
+    int number = rand() % 9;
+    while
+
+    return number;
+}
+
+void play_peacefull (vector<Player> players, char *board) {
+
+    int counter = 0;
+    int position;
+    int t_initial, t_final;
+    
+    printBoard(board);
+    cout << endl;
+
+    t_initial = time(NULL);
+    while (!end_game(board)) {
+
+        counter = counter % 2;
+        cout << players[counter].name << " is your turn. Choose an empty position to play: ";
+
+        if (players[counter].name == "Computer") {
+
+            position = compute_random();
+            cout << position;
+        }
+        else {
+
+            cin >> position;
+
+            while (!isAvailable(board, position) && cin.peek() != '\n') {
+
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Position not available. Try again: ";
+                cin >> position;
+            }
         }
 
         board[position-1] = players[counter].symbol;

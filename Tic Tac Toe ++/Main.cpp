@@ -26,20 +26,19 @@ int main ()
 
     char mode = menu();
     switch (mode)
-    {
+    {   
+        choose_options(players, mode);
+
         case '1':
-            choose_options(players);
-            play(players, board);
+            play_with_2_players(players, board);
             break;
         
         case '2':
-            choose_options(players);
-            play(players, board);
+            play_peacefull(players, board);
             break;
 
         case '3':
-            choose_options(players);
-            play(players, board);
+            cout << "Available soon";
             break;
 
         default:
