@@ -7,12 +7,15 @@
 ## Game
 <br>
 
-Person project, using C++ language, that includes many of the knowledge
+Person project, using C++ language, that includes much of the knowledge acquired in the practical and theorical lectures. 
 
 ## How to run in Terminal
 
 ```
-
+git clone https://github.com/Fabio-A-Sa/Y1S2-Programming.git
+cd '.\Tic Tac Toe ++\'
+g++ Main.cpp
+a.exe
 ```
 
 <br>
