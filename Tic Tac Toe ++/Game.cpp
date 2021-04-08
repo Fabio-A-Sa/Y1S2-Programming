@@ -163,11 +163,11 @@ void play_with_2_players (vector<Player> players, char *board) {
 
 }
 
-int compute_random() {
+int compute_random(char *board) {
 
     int number = rand() % 9;
-    while
-
+    while (!isAvailable(board, number))
+        number = rand() % 9;
     return number;
 }
 
@@ -188,7 +188,7 @@ void play_peacefull (vector<Player> players, char *board) {
 
         if (players[counter].name == "Computer") {
 
-            position = compute_random();
+            position = compute_random(board);
             cout << position;
         }
         else {

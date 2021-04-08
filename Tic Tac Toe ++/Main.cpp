@@ -25,10 +25,9 @@ int main ()
     fill(board);
 
     char mode = menu();
+    choose_options(players, mode);
     switch (mode)
     {   
-        choose_options(players, mode);
-
         case '1':
             play_with_2_players(players, board);
             break;
