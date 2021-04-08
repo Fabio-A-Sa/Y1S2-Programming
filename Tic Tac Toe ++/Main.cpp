@@ -24,20 +24,20 @@ int main ()
     char * board = (char *) malloc (positions * sizeof(char));
     fill(board);
 
-    int mode = menu();
+    char mode = menu();
     switch (mode)
     {
-        case 1:
+        case '1':
             choose_options(players);
             play(players, board);
             break;
         
-        case 2:
+        case '2':
             choose_options(players);
             play(players, board);
             break;
 
-        case 3:
+        case '3':
             choose_options(players);
             play(players, board);
             break;
