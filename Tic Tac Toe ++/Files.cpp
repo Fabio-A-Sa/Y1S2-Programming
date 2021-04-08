@@ -32,7 +32,7 @@ bool inside (vector<Winner> winners, string name) {
     return false;
 }
 
-bool without_duplicates_string (vector<string> vector , string name) {
+bool in_string (vector<string> vector , string name) {
 
     for (string attemp : vector) {
         if (attemp == name) {
@@ -42,7 +42,7 @@ bool without_duplicates_string (vector<string> vector , string name) {
     return false;
 }
 
-bool without_duplicates_int (vector<int> vector , int number) {
+bool in_int (vector<int> vector , int number) {
 
     for (int attemp : vector) {
         if (attemp == number) {
@@ -54,12 +54,22 @@ bool without_duplicates_int (vector<int> vector , int number) {
 
 void get_data_string(vector<Winner> winners, vector<string> all_names) {
     
-    
+    for (Winner winner : winners) {
+        if (!in_string(all_names, winner.name)) {
+            all_names.push_back(winner.name);
+        }
+    }
+    sort(all_names.begin(), all_names.end());
 }
 
 void get_data_int(vector<Winner> winners, vector<int> all_wins) {
-    
-    
+
+    for (Winner winner : winners) {
+        if (!in_int(all_wins, winner.wins)) {
+            all_wins.push_back(winner.wins);
+        }
+    }
+    sort(all_wins.begin(), all_wins.end());
 }
 
 void store (string name) {
