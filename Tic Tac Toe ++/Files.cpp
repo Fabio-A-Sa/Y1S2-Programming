@@ -151,16 +151,10 @@ void store (string name) {
 
         for (int number : all_wins) {
             for (string name : all_names) {
-                for (int i = 0 ; i < winners.size() ; i++) {
+                for (Winner winner : winners) {
 
-                    if (winners[i].name == name && winners[i].wins && i != winners.size()-1)
-                        another_file << winners[i].name << " - " << winners[i].wins << endl;
-
-                    else if (winners[i].name == name && winners[i].wins && i == winners.size()-1)
-                        another_file << winners[i].name << " - " << winners[i].wins;
-
-                    else
-                        continue;
+                    if (winner.name == name && winner.wins == number)
+                        another_file << winner.name << " - " << winner.wins << endl;
                 }
             }
         }

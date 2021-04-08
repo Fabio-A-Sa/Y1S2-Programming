@@ -2,4 +2,4 @@ Player          - Wins
 ----------------------
 Jose Silva      - 2
 Pedro Ferreira  - 2
-Fabio Sa        - 4
+Fabio Sa        - 5
