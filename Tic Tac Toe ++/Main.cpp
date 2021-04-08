@@ -22,10 +22,30 @@ int main ()
     vector<Player> players;
     const int positions = 9;
     char * board = (char *) malloc (positions * sizeof(char));
-
     fill(board);
-    choose_options(players);
-    play(players, board);
+
+    int mode = menu();
+    switch (mode)
+    {
+        case 1:
+            choose_options(players);
+            play(players, board);
+            break;
+        
+        case 2:
+            choose_options(players);
+            play(players, board);
+            break;
+
+        case 3:
+            choose_options(players);
+            play(players, board);
+            break;
+
+        default:
+            break;
+    }
+
     free(board);
 
     char answer;
