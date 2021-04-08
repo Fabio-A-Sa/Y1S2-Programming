@@ -32,12 +32,32 @@ bool inside (vector<Winner> winners, string name) {
     return false;
 }
 
+bool without_duplicates_string (vector<string> vector , string name) {
+
+    for (string attemp : vector) {
+        if (attemp == name) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool without_duplicates_int (vector<int> vector , int number) {
+
+    for (int attemp : vector) {
+        if (attemp == number) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void get_data_string(vector<Winner> winners, vector<string> all_names) {
     
     
 }
 
-void get_data_int(vector<Winner> winners, vector<string> all_names) {
+void get_data_int(vector<Winner> winners, vector<int> all_wins) {
     
     
 }
