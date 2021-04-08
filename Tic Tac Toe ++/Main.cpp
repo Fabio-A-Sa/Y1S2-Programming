@@ -12,6 +12,7 @@
 #include <cstddef>
 
 #include "Game.cpp"
+#include "Menu.cpp"
 
 using namespace std;
 
