@@ -70,7 +70,7 @@ void get_data_int(vector<Winner> winners, vector<int> &all_wins) {
             all_wins.push_back(winner.wins);
         }
     }
-    sort(all_wins.begin(), all_wins.end());
+    sort(all_wins.begin(), all_wins.end(), greater<int>());
 }
 
 void store (string name) {
@@ -153,8 +153,14 @@ void store (string name) {
             for (string name : all_names) {
                 for (Winner winner : winners) {
 
-                    if (winner.name == name && winner.wins == number)
+                    if (winner.name == name && winner.wins == number && name != all_names[all_names.size()-1])
                         another_file << winner.name << " - " << winner.wins << endl;
+
+                    else if (winner.name == name && winner.wins == number && name == all_names[all_names.size()-1])
+                        another_file << winner.name << " - " << winner.wins;
+
+                    else
+                        continue;
                 }
             }
         }
