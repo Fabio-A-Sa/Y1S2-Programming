@@ -83,7 +83,7 @@ void choose_options(vector<Player> &players, char mode) {
 
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Name too long. Please try again: ";
+            cout << "Your name is too long. Please try again: ";
             getline(cin, name);
         }
 
@@ -95,7 +95,7 @@ void choose_options(vector<Player> &players, char mode) {
 
     else {
         
-        cout << "Player 2 Name: Computer";
+        cout << "Player 2 Name: Computer" << endl;
         player2.name = "Computer";
         symbol = players[0].symbol == 'X' ? 'O' : 'X';
         cout << player2.name << ", your symbol is obviously '" << symbol << "'.\n" << endl;
@@ -189,8 +189,9 @@ void play_peacefull (vector<Player> players, char *board) {
         if (players[counter].name == "Computer") {
 
             position = compute_random(board);
-            cout << position;
+            cout << position << endl;
         }
+        
         else {
 
             cin >> position;
