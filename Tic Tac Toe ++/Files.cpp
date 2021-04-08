@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <limits>
+#include <iostream>
 #include <algorithm>
 #include <fstream>
 
@@ -52,7 +53,7 @@ bool in_int (vector<int> vector , int number) {
     return false;
 }
 
-void get_data_string(vector<Winner> winners, vector<string> all_names) {
+void get_data_string(vector<Winner> winners, vector<string> &all_names) {
     
     for (Winner winner : winners) {
         if (!in_string(all_names, winner.name)) {
@@ -62,7 +63,7 @@ void get_data_string(vector<Winner> winners, vector<string> all_names) {
     sort(all_names.begin(), all_names.end());
 }
 
-void get_data_int(vector<Winner> winners, vector<int> all_wins) {
+void get_data_int(vector<Winner> winners, vector<int> &all_wins) {
 
     for (Winner winner : winners) {
         if (!in_int(all_wins, winner.wins)) {
@@ -134,6 +135,15 @@ void store (string name) {
         get_data_string(winners, all_names);
         get_data_int(winners, all_wins);
         
+        for (string name : all_names) {
+            cout << name << " ";
+        }
+        cout << endl;
+        for (int wins : all_wins) {
+            cout << wins << " ";
+        }
+        cout << endl;
+
         ofstream another_file;
         another_file.open(file_name);
 
@@ -142,10 +152,13 @@ void store (string name) {
         for (int number : all_wins) {
             for (string name : all_names) {
                 for (int i = 0 ; i < winners.size() ; i++) {
+
                     if (winners[i].name == name && winners[i].wins && i != winners.size()-1)
                         another_file << winners[i].name << " - " << winners[i].wins << endl;
+
                     else if (winners[i].name == name && winners[i].wins && i == winners.size()-1)
                         another_file << winners[i].name << " - " << winners[i].wins;
+
                     else
                         continue;
                 }
