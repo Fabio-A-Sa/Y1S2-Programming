@@ -139,10 +139,18 @@ void store (string name) {
 
         another_file << header[0] << endl << header[1] << endl;
 
-        for (int i = 0 ; i < winners.size() -1 ; i++) {
-            another_file << winners[i].name << " - " << winners[i].wins << endl;
+        for (int number : all_wins) {
+            for (string name : all_names) {
+                for (int i = 0 ; i < winners.size() ; i++) {
+                    if (winners[i].name == name && winners[i].wins && i != winners.size()-1)
+                        another_file << winners[i].name << " - " << winners[i].wins << endl;
+                    else if (winners[i].name == name && winners[i].wins && i == winners.size()-1)
+                        another_file << winners[i].name << " - " << winners[i].wins;
+                    else
+                        continue;
+                }
+            }
         }
-        another_file << winners[winners.size()-1].name << " - " << winners[winners.size()-1].wins;
 
         another_file.close();
     }
