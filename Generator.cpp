@@ -4,8 +4,8 @@
 #include <ctime>
 #include <fstream>
 
-#define MIN_COLS 5;
-#define MIN_LINES 5;
+#define MIN_COLS 10;
+#define MIN_LINES 10;
 #define FENCE '*';
 #define PLAYER 'H';
 #define ROBOT 'R';
@@ -28,16 +28,17 @@ int proportion_fences (int number)
 
 int random (int max) 
 {   
-    int number = rand() % (max + 1) + MIN_COLS ;
+    int number = rand() % (max - 9) + MIN_COLS ;
     return number;
 }
 
 void print_maze (int lines, int cols, vector<char> maze) 
-{
+{   
+    cout << lines << " x " << cols << endl;
     for (int i = 0 ; i < maze.size() ; i ++ ) 
     {
         cout << maze [i];
-        if (i % cols == 0) 
+        if (i > 1 && i % cols == cols - 1) 
         {
             cout << endl;
         }
@@ -56,19 +57,19 @@ void generate (int max_cols, int max_lines, int quantity)
     // Input white spaces
     while (area) 
     {   
-        maze.push_back(' ');
+        maze.push_back('0');
         area--;
     }
 
     // Input border
-    for (int index = 0 ; index < cols ; index ++)
+    for (int index = 0 ; index < lines ; index ++)
     {
         maze[index] = FENCE;
         maze[maze.size() - 1 - index] = FENCE;
     }
 
 
-
+    print_maze (cols, lines, maze);
 
 }
 
