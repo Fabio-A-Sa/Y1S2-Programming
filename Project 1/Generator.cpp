@@ -38,18 +38,24 @@ bool is_Available(vector<char> maze, int index)
 
 void print_maze (int lines, int cols, vector<char> maze, string name) 
 {   
-    ofstream new_file;
-    new_file.open(name);
-    new_file << lines << " x " << cols << endl;
-    for (int i = 0 ; i < maze.size() ; i ++ ) 
-    {
-        new_file << maze [i];
-        if (i > 1 && i % cols == cols - 1 && i != maze.size() - 1 ) 
+    ifstream file;
+    file.open(name);
+
+    if (!file.good())
+    {   
+        ofstream new_file;
+        new_file.open(name);
+        new_file << lines << " x " << cols << endl;
+        for (int i = 0 ; i < maze.size() ; i ++ ) 
         {
-            new_file << endl;
+            new_file << maze [i];
+            if (i > 1 && i % cols == cols - 1 && i != maze.size() - 1 ) 
+            {
+                new_file << endl;
+            }
         }
+        new_file.close();
     }
-    new_file.close();
 }
 
 void generate (int max_cols, int max_lines, int quantity) 
@@ -63,12 +69,6 @@ void generate (int max_cols, int max_lines, int quantity)
         int MIN_LINES = 10;
         int cols = random (max_cols, MIN_COLS);
         int lines = random (max_lines, MIN_LINES);
-
-        while (cols > floor(lines / 2) || abs(cols - lines) > 40) 
-        {
-            cols = random (max_cols, MIN_COLS);
-            lines = random (max_lines, MIN_LINES);
-        }
 
         int area = lines * cols ;
         int qtd_robots = proportion_robots (area);
