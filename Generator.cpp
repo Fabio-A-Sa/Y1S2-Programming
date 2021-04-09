@@ -32,6 +32,18 @@ int random (int max)
     return number;
 }
 
+void print_maze (int lines, int cols, vector<char> maze) 
+{
+    for (int i = 0 ; i < maze.size() ; i ++ ) 
+    {
+        cout << maze [i];
+        if (i % cols == 0) 
+        {
+            cout << endl;
+        }
+    }
+}
+
 void generate (int max_cols, int max_lines, int quantity) 
 {
     int cols = random (max_cols);
@@ -49,6 +61,13 @@ void generate (int max_cols, int max_lines, int quantity)
     }
 
     // Input border
+    for (int index = 0 ; index < cols ; index ++)
+    {
+        maze[index] = FENCE;
+        maze[maze.size() - 1 - index] = FENCE;
+    }
+
+
 
 
 }
