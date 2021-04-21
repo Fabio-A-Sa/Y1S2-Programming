@@ -1,5 +1,5 @@
 Player          - Wins
 ----------------------
 Fabio Sa        - 7
-Pedro Ferreira  - 2
+Pedro Ferreira  - 2Computer        - 1
 Jorge Silva     - 1
