@@ -14,8 +14,21 @@ void open_file () {
     cout << "Directory of file: ";
     getline(cin, directory);
 
+    ifstream new_file;
+    string current_line;
+    new_file.open(directory);
+    if (new_file.good()) {
+        while (!new_file.eof())
+            getline(new_file, current_line);
+            cout << current_line;
+    }
+    else {
+        cout << "This file does not exist. Please try again.";
+    }
+
 }
 int main ()
 {
+    open_file();
     return 0;
 }
