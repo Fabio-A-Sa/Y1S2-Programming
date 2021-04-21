@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <iomanip>
+#include <cstdlib>
 #include <fstream>
 using namespace std;
 
@@ -18,6 +20,7 @@ void open_file () {
     string current_line;
     new_file.open(directory);
     if (new_file.good()) {
+
         while (!new_file.eof()) {
             getline(new_file, current_line);
             cout << current_line;
@@ -27,8 +30,8 @@ void open_file () {
     else {
         cout << "This file does not exist. Please try again.";
     }
-
 }
+
 int main ()
 {
     open_file();
