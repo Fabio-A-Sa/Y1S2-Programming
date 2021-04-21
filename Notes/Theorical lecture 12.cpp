@@ -46,7 +46,7 @@ int main () {
 
     vector<Robot> all_robots = create_robots(number_of_robots);
 
-    for (Robot r : all_robots) {
+    for (Robot &r : all_robots) {
 
         cout << "Name of robot: " << r.name << endl;
         cout << "X-robot: " << r.x << endl;
@@ -58,7 +58,6 @@ int main () {
 
     for (Robot r : all_robots) {
         
-        r.died = true; // Kill all robots
         if (r.died) 
             cout << r.name << " morto. Retirado do vetor em 3, 2, 1..." << endl;
     }
