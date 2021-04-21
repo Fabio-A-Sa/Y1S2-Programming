@@ -11,7 +11,8 @@
 using namespace std;
 
 void open_file () { 
-
+    
+    // Using files
     string directory;
     cout << "Directory of file: ";
     getline(cin, directory);
