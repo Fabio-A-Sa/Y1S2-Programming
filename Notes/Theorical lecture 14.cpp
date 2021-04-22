@@ -5,9 +5,26 @@
 #include <iostream>
 #include <fstream>
 
+const int MAX_NAMELEN = 10;
 using namespace std;
 
+typedef struct {
+    char name[MAX_NAMELEN];
+    unsigned int age;
+} Person;
+
+void using_binary_files () {
+    
+    int place = 1;
+    fstream personFile;
+    Person a[MAX_NAMELEN];
+    personFile.open("names.dat", ios::out | ios::binary);
+    personFile.seekg(place);
+    personFile.write((char *) a, 10*sizeof(Person));
+}
+
 int main ()
-{
+{   
+    using_binary_files();
     return 0;
 }
