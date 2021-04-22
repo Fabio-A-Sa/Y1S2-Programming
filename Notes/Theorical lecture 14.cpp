@@ -1,6 +1,6 @@
 // Created on April 22, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 14, pages 166 --> 1??
+// Theorical lecture 14, pages 166 --> 170
 
 #include <iostream>
 #include <fstream>
@@ -39,6 +39,7 @@ void using_text_files () {
     }
     cout << endl;
     file.clear();
+    file.close();
 }
 
 void using_binary_files () {
@@ -54,5 +55,6 @@ void using_binary_files () {
 int main ()
 {   
     using_binary_files();
+    using_text_files();
     return 0;
 }
