@@ -13,6 +13,34 @@ typedef struct {
     unsigned int age;
 } Person;
 
+void using_text_files () {
+
+    char c;
+    string name = "text.txt";
+    fstream file;
+    file.open(name);
+
+    // using cin >>
+    file.seekg(0, ios::beg); // Pointer to the beginning of file
+    cout << "File contents usign cin: " << endl;
+    while (file >> c)
+    {
+        cout << c;
+    }
+    cout << endl;
+    file.clear(); // Clear eof() flag
+
+    //using get();
+    file.seekg(0, ios::beg);
+    cout << "File contents using get: " << endl;
+    while (file.get(c))
+    {
+        cout << "Next letter: " << c << endl;
+    }
+    cout << endl;
+    file.clear();
+}
+
 void using_binary_files () {
     
     int place = 1;
