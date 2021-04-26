@@ -8,6 +8,11 @@
 #include <vector>
 using namespace std;
 
+union Numbers {
+    int x;
+    double d;
+};
+
 void normalization() {
 
     string input = "      March    25      , 2014      ";
@@ -43,11 +48,16 @@ void time_normalization() {
     }
 }
 
+void using_unions() {
+    
+}
+
 int main ()
 {
     normalization();
     strings_to_numbers();
     time_normalization();
+    using_unions();
     return 0;
 }
 
