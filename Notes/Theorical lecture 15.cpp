@@ -29,6 +29,19 @@ void strings_to_numbers() {
     }
 }
 
+void time_normalization() {
+
+    int hours, minutes;
+    char sinal;
+
+    vector<string> times = {"       18:32", "19       :     21    ", "18: 56"};
+    for (string time : times) {
+        istringstream instr(time);
+        instr >> hours >> sinal >> minutes;
+        cout << hours << sinal << minutes << endl;
+    }
+}
+
 int main ()
 {
     normalization();
