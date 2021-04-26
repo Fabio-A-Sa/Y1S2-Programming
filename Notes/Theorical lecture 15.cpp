@@ -34,6 +34,7 @@ void time_normalization() {
     int hours, minutes;
     char sinal;
 
+    cout << "Times manipulation: \n";
     vector<string> times = {"       18:32", "19       :     21    ", "18: 56"};
     for (string time : times) {
         istringstream instr(time);
@@ -46,6 +47,7 @@ int main ()
 {
     normalization();
     strings_to_numbers();
+    time_normalization();
     return 0;
 }
 
