@@ -13,6 +13,8 @@ union Numbers {
     double d;
 };
 
+enum numType { Int, Double };
+
 void normalization() {
 
     string input = "      March    25      , 2014      ";
