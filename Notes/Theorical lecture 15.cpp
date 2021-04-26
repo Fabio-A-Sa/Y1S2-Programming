@@ -4,11 +4,20 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 using namespace std;
 
 void extraction() {
-    string input
+
+    string input = "      March    25      , 2014      ";
+        string month, comma;
+    int day, year;
+    istringstream istr(input);
+    istr >> month >> day >> comma >> year;
+    
 }
+
+
 int main ()
 {
     extraction();
