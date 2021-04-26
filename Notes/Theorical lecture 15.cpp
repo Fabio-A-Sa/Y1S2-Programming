@@ -49,7 +49,12 @@ void time_normalization() {
 }
 
 void using_unions() {
-    
+
+    //or save the integer or save the double, not both
+    Numbers n;
+    n.x = 10;
+    n.d = 3.14;
+    cout << n.d << " " << n.x << endl;
 }
 
 int main ()
@@ -60,6 +65,3 @@ int main ()
     using_unions();
     return 0;
 }
-
-
-
