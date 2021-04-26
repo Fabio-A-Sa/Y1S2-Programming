@@ -7,9 +7,8 @@
 #include <sstream>
 using namespace std;
 
-void extraction() {
+void normalization() {
 
-    // Normalization string
     string input = "      March    25      , 2014      ";
     string month, comma;
     int day, year;
@@ -19,9 +18,11 @@ void extraction() {
     cout << month << " " << day << comma << " " << year << endl;
 }
 
-
 int main ()
 {
-    extraction();
+    normalization();
     return 0;
 }
+
+
+
