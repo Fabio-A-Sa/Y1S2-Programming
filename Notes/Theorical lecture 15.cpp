@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <string>
-#include <isstring
+using namespace std;
 
 void extraction() {
     string input
