@@ -12,7 +12,7 @@ class Date
     public:
 
         Date(unsigned int year, unsigned int month,unsigned int day);
-        Date(string yearMonthDay); // yearMonthDay must be in format "yyyy/mm/dd"
+        Date(string yearMonthDay);
         void setYear(unsigned int year) ;
         void setMonth(unsigned int month) ;
         void setDay(unsigned int day) ;
@@ -20,14 +20,19 @@ class Date
         unsigned int getYear() const;
         unsigned int getMonth() const;
         unsigned int getDay() const;
-        string getDate() const; // returns the date in format "yyyy/mm/dd"
-        void show() const; // shows the date on the screen in format "yyyy/mm/dd"
+        string getDate() const;
+        void show() const;
+
+        bool isValid();
 
     private:
 
         unsigned int year;
         unsigned int month;
         unsigned int day;
+
+        unsigned int how_many_days(unsigned year, unsigned month);
+        bool isLeapYear (unsigned int year);
 }; 
 
 Date::Date(unsigned int y, unsigned int m,unsigned int d) {
@@ -37,13 +42,44 @@ Date::Date(unsigned int y, unsigned int m,unsigned int d) {
 }
 
 Date::Date(string yearMonthDay) {
-    int d, m, y;
+    int y, m, d;
     char x;
     istringstream str(yearMonthDay);
     str >> y >> x >> m >> x >> d;
     day = d;
     month = m;
     year = y;
+}
+
+unsigned int Date::how_many_days(unsigned year, unsigned month) {
+
+    unsigned int days;
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+        days = 31;
+        break;
+    
+        case 4: case 6: case 9: case 11:
+        days = 30;
+        break;
+
+        case 2:
+            if (isLeapYear(year)) {
+                days = 29;
+            }
+            else {
+                days = 28;
+            }
+            break;
+    }
+    return days;
+}
+
+bool Date::isLeapYear (unsigned int year) {
+
+    bool flag = true;
+    flag = flag && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) ;
+    return flag;
 }
 
 void Date::setYear(unsigned int y) {
