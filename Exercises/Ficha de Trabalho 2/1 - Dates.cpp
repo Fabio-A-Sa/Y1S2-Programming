@@ -41,7 +41,7 @@ class Date
 }; 
 
 bool Date::isEqualTo(const Date &date) {
-    return (day == date.getDay() && month == date.getMonth() && year == data.getYear());
+    return (day == date.getDay() && month == date.getMonth() && year == date.getYear());
 }
 
 bool Date::isNotEqualTo(const Date &date) {
