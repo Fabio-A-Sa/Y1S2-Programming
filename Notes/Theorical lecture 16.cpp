@@ -28,6 +28,10 @@ class Date {
         unsigned int month;
         unsigned int day;
 
+void Date::show() {
+    cout << "Something" << endl;
+}
+
 int main ()
 {
     return 0;
