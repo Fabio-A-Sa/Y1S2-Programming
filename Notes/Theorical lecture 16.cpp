@@ -12,17 +12,11 @@ class Date {
 
     public:
         Date(); 
-        Date(unsigned int y, unsigned int m, unsigned int d);
-        Date(string yearMonthDay);
         void setYear (unsigned int y) ;
         void setMonth (unsigned int m) ;
         void setDay (unsigned int d) ;
-        void setDate (unsigned int y, unsigned int m, unsigned int d) ;
-        unsigned int getYear() ;
-        unsigned int getMonth() ;
-        unsigned int getDay() ;
-        string getStr() ;
         void show() ;
+        bool valid() ;
         
     private:
         unsigned int year;
@@ -35,6 +29,13 @@ Date::Date() {
     day = 0;
     year = 0;
     month = 0;
+}
+
+bool Date::valid() {
+
+    bool answer;
+    answer = (day > 0 && day < 32 && year > 0 && month > 0 && month < 13);
+    return answer;
 }
 
 void Date::setYear (unsigned int y) {
@@ -66,7 +67,13 @@ void using_classes() {
     d1.setYear(y) ;
     d1.setMonth(m) ;
     d1.setDay(d) ;
-    d1.show();
+
+    if (d1.valid())
+        d1.show();
+    else {
+        cout << "Invalid input. Please try again:" << endl;
+        using_classes();
+    }
 }
 
 int main ()
