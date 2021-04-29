@@ -22,11 +22,23 @@ class Date
         void show() const; // shows the date on the screen in format "yyyy/mm/dd"
 
     private:
-    
+
         unsigned int year;
         unsigned int month;
         unsigned int day;
 }; 
+
+void Date::setYear(unsigned int year) {
+    this->year = year;
+}
+
+void Date::setMonth(unsigned int month) {
+    this->month = month;
+}
+
+void Date::setDay(unsigned int day) {
+    this->day = day;
+}
 
 int main ()
 {
