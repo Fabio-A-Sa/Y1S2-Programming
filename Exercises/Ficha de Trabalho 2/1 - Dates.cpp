@@ -48,6 +48,34 @@ bool Date::isNotEqualTo(const Date &date) {
     return !isEqualTo(date);
 }
 
+bool Date::isAfter(const Date &date) {
+
+    bool flag = true;
+    if (year > date.getYear()) {
+        flag = false;
+    }
+    else {
+        if (month > date.getMonth()) {
+            flag = false;
+        }
+        else {
+            if (day > date.getDay()) {
+                flag = false;
+            }
+            else {
+                if (isEqualTo(date)) {
+                    flag = false;
+                }
+            }
+        }
+    }
+    return flag;
+}   
+
+bool Date::isBefore(const Date &date) {
+    return ! (isAfter(date) || isEqualTo(date));
+}
+
 bool Date::isValid() {
 
     bool answer;
@@ -55,7 +83,7 @@ bool Date::isValid() {
     return answer;
 }
 
-Date::Date(unsigned int y, unsigned int m,unsigned int d) {
+Date::Date(unsigned int y, unsigned int m, unsigned int d) {
     year = y;
     month = m;
     day = d;
@@ -181,6 +209,10 @@ void test_new_methods() {
         string data = d.getDate();
         string answer = d.isValid() ? "Valid" : "Not valid";
         cout << data << " --> " << answer << endl;
+    }
+
+    for (int i = 0 ; i < all_dates.size() ; i ++ ) {
+        
     }
 }
 
