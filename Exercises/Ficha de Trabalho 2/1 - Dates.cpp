@@ -35,6 +35,13 @@ class Date
         bool isLeapYear (unsigned int year);
 }; 
 
+bool Date::isValid() {
+
+    bool answer;
+    answer = ( day > 0 && day <= how_many_days(year, month) && month < 13 && month > 0 && year >= 0 && year < 2022 );
+    return answer;
+}
+
 Date::Date(unsigned int y, unsigned int m,unsigned int d) {
     year = y;
     month = m;
@@ -126,7 +133,7 @@ void Date::show() const {
     cout << result << endl;
 }
 
-void test() {
+void test_dates() {
 
     Date d1 = Date ("2021/4/29");
     cout << "Date: ";
@@ -147,8 +154,16 @@ void test() {
     cout << "Next date: " << total_date << endl;
 }
 
+void test_new_methods() {
+
+    Date d3 = Date(2021, 2, 30);
+    string answer = d3.isValid() ? "Valid" : "Not valid";
+    cout << d3.show() << " " << answer;
+}
+
 int main ()
 {
-    test();
+    test_dates();
+    test_new_methods();
     return 0;
 }
