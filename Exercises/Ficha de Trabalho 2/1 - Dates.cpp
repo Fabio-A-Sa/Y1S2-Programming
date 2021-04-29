@@ -40,7 +40,7 @@ Date::Date(string yearMonthDay) {
     int d, m, y;
     char x;
     istringstream str(yearMonthDay);
-    str >> year >> x >> month >> x >> day;
+    str >> y >> x >> m >> x >> d;
     day = d;
     month = m;
     year = y;
@@ -92,16 +92,23 @@ void Date::show() const {
 
 void test() {
 
-    Date d1 = Date (2021, 4, 29);
-    d1.show();
-    cout << "Day: " << d1.getDay() << endl;
-    cout << "Month: " << d1.getMonth() << endl;
-    cout << "Year: " << d1.getYear() << endl;
+    Date d1 = Date ("2021/4/29");
+    cout << "Date: ";
+    d1.show(); 
+    cout << "Current day: " << d1.getDay() << endl;
+    cout << "Current month: " << d1.getMonth() << endl;
+    cout << "Current year: " << d1.getYear() << endl;
     string total = d1.getDate();
-    cout << "Total date: " << total << endl;
-    d1.setDay(d1.getDay() + 1);
-    cout << "Next day: " << d1.getDay() << endl;
-    d1.show();
+    cout << "Current date: " << total << endl;
+
+    Date d2 = Date (d1.getYear(), d1.getMonth(), d1.getDay() + 1);
+    cout << "\nNext day: ";
+    d2.show();
+    cout << "Next day: " << d2.getDay() << endl;
+    cout << "Next month: " << d2.getMonth() << endl;
+    cout << "Next year: " << d2.getYear() << endl;
+    string total_date = d2.getDate();
+    cout << "Next date: " << total_date << endl;
 }
 
 int main ()
