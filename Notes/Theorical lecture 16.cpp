@@ -60,13 +60,13 @@ void using_classes() {
     unsigned int d, m, y;
     cout << "Day: ";
     cin >> d;
+    d1.setDay(d) ;
     cout << "Month: ";
     cin >> m;
+    d1.setMonth(m) ;
     cout << "Year: ";
     cin >> y;
     d1.setYear(y) ;
-    d1.setMonth(m) ;
-    d1.setDay(d) ;
 
     if (d1.valid())
         d1.show();
