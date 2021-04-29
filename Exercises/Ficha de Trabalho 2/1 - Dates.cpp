@@ -30,10 +30,10 @@ class Date
         unsigned int day;
 }; 
 
-Date::Date(unsigned int year, unsigned int month,unsigned int day) {
-    this -> year = 0;
-    this -> month = 0;
-    this -> day = 0;
+Date::Date(unsigned int y, unsigned int m,unsigned int d) {
+    year = y;
+    month = m;
+    day = d;
 }
 
 Date::Date(string yearMonthDay) {
@@ -41,41 +41,38 @@ Date::Date(string yearMonthDay) {
     char x;
     istringstream str(yearMonthDay);
     str >> year >> x >> month >> x >> day;
-    this -> day = d;
-    this -> month = m;
-    this -> year = y;
+    day = d;
+    month = m;
+    year = y;
 }
 
-void Date::setYear(unsigned int year) {
-    this -> year = year;
+void Date::setYear(unsigned int y) {
+    year = y;
 }
 
-void Date::setMonth(unsigned int month) {
-    this -> month = month;
+void Date::setMonth(unsigned int m) {
+    month = m;
 }
 
-void Date::setDay(unsigned int day) {
-    this -> day = day;
+void Date::setDay(unsigned int d) {
+    day = d;
 }
 
-void Date::setDate(unsigned int year, unsigned int month, unsigned int day) {
-    this -> year = year;
-    this -> month = month;
-    this -> day = day;
+void Date::setDate(unsigned int y, unsigned int m, unsigned int d) {
+    year = y;
+    month = m;
+    day = d;
 }
 
 unsigned int Date::getYear() const {
-    this -> year;
     return year;
 }
 
 unsigned int Date::getMonth() const {
-    this -> month;
     return month;
 }
 
 unsigned int Date::getDay() const {
-    this -> day;
     return day;
 }
 
@@ -83,7 +80,7 @@ string Date::getDate() const {
     string all;
     string d = to_string(day); while (d.size() < 2) { d = "0" + d ; } ;
     string m = to_string(month); while (m.size() < 2) { m = "0" + m ; } ;
-    string y = to_string(year); while (y.size() < 2) {y = "0" + y ; } ;
+    string y = to_string(year); while (y.size() < 4) {y = "0" + y ; } ;
     all = y + "/" + m + "/" + d;
     return all;
 }
@@ -97,7 +94,14 @@ void test() {
 
     Date d1 = Date (2021, 4, 29);
     d1.show();
-
+    cout << "Day: " << d1.getDay() << endl;
+    cout << "Month: " << d1.getMonth() << endl;
+    cout << "Year: " << d1.getYear() << endl;
+    string total = d1.getDate();
+    cout << "Total date: " << total << endl;
+    d1.setDay(d1.getDay() + 1);
+    cout << "Next day: " << d1.getDay() << endl;
+    d1.show();
 }
 
 int main ()
