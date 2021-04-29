@@ -51,6 +51,7 @@ bool Date::isNotEqualTo(const Date &date) {
 bool Date::isAfter(const Date &date) {
 
     bool flag = true;
+
     if (year > date.getYear()) {
         flag = false;
     }
