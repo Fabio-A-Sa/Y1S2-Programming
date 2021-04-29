@@ -40,6 +40,14 @@ class Date
         bool isLeapYear (unsigned int year);
 }; 
 
+bool Date::isEqualTo(const Date &date) {
+    return (day == date.getDay() && month == date.getMonth() && year == data.getYear());
+}
+
+bool Date::isNotEqualTo(const Date &date) {
+    return !isEqualTo(date);
+}
+
 bool Date::isValid() {
 
     bool answer;
