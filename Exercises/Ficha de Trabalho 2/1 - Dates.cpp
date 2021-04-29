@@ -95,6 +95,9 @@ void Date::show() const {
 
 void test() {
 
+    Date d1 = Date (2021, 4, 29);
+    d1.show();
+
 }
 
 int main ()
