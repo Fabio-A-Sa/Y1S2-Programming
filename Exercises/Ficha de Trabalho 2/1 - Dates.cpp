@@ -214,8 +214,8 @@ void test_new_methods() {
     d3.setDate(2021, 5, 30);
     d4.setDate(2010, 12, 31);
     d5.setDate(2002, 7, 10);
-    d6.setDate(2021/05/30");
-    d7.setDate("2021/05/30");
+    d6.setDate(2012, 11, 30);
+    d7.setDate(1969, 2, 10);
 
     cout << endl;
     for (int i = 0 ; i < all_dates.size() - 1  ; i ++ ) {
