@@ -5,6 +5,7 @@
 #include <string>
 #include <iomanip>
 #include <sstream>
+#include <vector>
 using namespace std;
 
 class Date
@@ -24,6 +25,10 @@ class Date
         void show() const;
 
         bool isValid();
+        bool isEqualTo(const Date &date);
+        bool isNotEqualTo(const Date &date);
+        bool isAfter(const Date &date);
+        bool isBefore(const Date &date);
 
     private:
 
@@ -60,7 +65,7 @@ Date::Date(string yearMonthDay) {
 
 unsigned int Date::how_many_days(unsigned year, unsigned month) {
 
-    unsigned int days;
+    unsigned int days = 0;
     switch (month) {
         case 1: case 3: case 5: case 7: case 8: case 10: case 12:
         days = 31;
@@ -71,7 +76,7 @@ unsigned int Date::how_many_days(unsigned year, unsigned month) {
         break;
 
         case 2:
-            if (isLeapYear(year)) {
+            if (Date::isLeapYear(year)) {
                 days = 29;
             }
             else {
@@ -152,13 +157,23 @@ void test_dates() {
     cout << "Next year: " << d2.getYear() << endl;
     string total_date = d2.getDate();
     cout << "Next date: " << total_date << endl;
+    cout << endl;
 }
 
 void test_new_methods() {
 
-    Date d3 = Date(2021, 2, 30);
-    string answer = d3.isValid() ? "Valid" : "Not valid";
-    cout << d3.show() << " " << answer;
+    vector<Date> all_dates;
+    Date d3 = Date(2021, 2, 30); all_dates.push_back(d3);
+    Date d4 = Date(2025, 2, 29); all_dates.push_back(d4);
+    Date d5 = Date(2021, 2, 28); all_dates.push_back(d5);
+    Date d6 = Date(2021, 14, 29); all_dates.push_back(d6);
+    Date d7 = Date(2021, 6, 31); all_dates.push_back(d7);
+
+    for (Date d : all_dates) {
+        string data = d.getDate();
+        string answer = d.isValid() ? "Valid" : "Not valid";
+        cout << data << " --> " << answer << endl;
+    }
 }
 
 int main ()
