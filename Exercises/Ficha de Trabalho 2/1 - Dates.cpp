@@ -176,6 +176,7 @@ void Date::show() const {
 
 void test_dates() {
 
+    cout << endl;
     Date d1 = Date ("2021/4/29");
     cout << "Date: ";
     d1.show(); 
@@ -211,11 +212,12 @@ void test_new_methods() {
         cout << data << " --> " << answer << endl;
     }
 
-    d3.setDate(2021, 5, 30);
-    d4.setDate(2010, 12, 31);
-    d5.setDate(2002, 7, 10);
-    d6.setDate(2012, 11, 30);
-    d7.setDate(1969, 2, 10);
+    vector<Date> new_dates;
+    d3.setDate(2021, 5, 30); new_dates.push_back(d3);
+    d4.setDate(2010, 12, 31); new_dates.push_back(d4);
+    d5.setDate(2002, 7, 10); new_dates.push_back(d5);
+    d6.setDate(2012, 11, 30); new_dates.push_back(d6);
+    d7.setDate(1969, 2, 10); new_dates.push_back(d7);
 
     cout << endl;
     for (int i = 0 ; i < all_dates.size() - 1  ; i ++ ) {
