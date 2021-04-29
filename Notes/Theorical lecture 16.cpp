@@ -1,6 +1,6 @@
 // Created on April 29, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 16, pages 177 --> ???
+// Theorical lecture 16, pages 177 --> 195
 
 #include <iostream>
 #include <array>
