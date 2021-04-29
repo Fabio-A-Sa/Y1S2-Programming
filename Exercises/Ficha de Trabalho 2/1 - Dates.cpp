@@ -69,7 +69,7 @@ bool Date::isAfter(const Date &date) {
             }
         }
     }
-    return flag;
+    return !flag;
 }   
 
 bool Date::isBefore(const Date &date) {
@@ -213,12 +213,13 @@ void test_new_methods() {
     }
 
     vector<Date> new_dates;
-    d3.setDate(2021, 5, 30); new_dates.push_back(d3);
+    d3.setDate(1968, 4, 26); new_dates.push_back(d3);
     d4.setDate(2010, 12, 31); new_dates.push_back(d4);
     d5.setDate(2002, 7, 10); new_dates.push_back(d5);
-    d6.setDate(2012, 11, 30); new_dates.push_back(d6);
+    d6.setDate(2002, 7, 10); new_dates.push_back(d6);
     d7.setDate(1969, 2, 10); new_dates.push_back(d7);
 
+    all_dates = new_dates;
     cout << endl;
     for (int i = 0 ; i < all_dates.size() - 1  ; i ++ ) {
 
@@ -228,7 +229,7 @@ void test_new_methods() {
             string dt2 = all_dates[i+1].getDate();
             string answer = all_dates[i].isEqualTo(all_dates[i+1]) ? " is equal to " : " isn't equal to ";
             cout << dt1 << answer << dt2 << endl;
-            answer = all_dates[i].isEqualTo(all_dates[i+1]) ? " isn't equal to " : " is equal to ";
+            answer = all_dates[i].isNotEqualTo(all_dates[i+1]) ? " isn't equal to " : " is equal to ";
             cout << dt1 << answer << dt2 << endl;
             answer = all_dates[i].isBefore(all_dates[i+1]) ? " is before " : " is not before to ";
             cout << dt1 << answer << dt2 << endl;
