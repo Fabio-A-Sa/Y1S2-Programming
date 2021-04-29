@@ -66,9 +66,39 @@ void Date::setDate(unsigned int year, unsigned int month, unsigned int day) {
 
 unsigned int Date::getYear() const {
     this -> year;
+    return year;
+}
+
+unsigned int Date::getMonth() const {
+    this -> month;
+    return month;
+}
+
+unsigned int Date::getDay() const {
+    this -> day;
+    return day;
+}
+
+string Date::getDate() const {
+    string all;
+    string d = to_string(day); while (d.size() < 2) { d = "0" + d ; } ;
+    string m = to_string(month); while (m.size() < 2) { m = "0" + m ; } ;
+    string y = to_string(year); while (y.size() < 2) {y = "0" + y ; } ;
+    all = y + "/" + m + "/" + d;
+    return all;
+}
+
+void Date::show() const {
+    string result = getDate();
+    cout << result << endl;
+}
+
+void test() {
+
 }
 
 int main ()
 {
+    test();
     return 0;
 }
