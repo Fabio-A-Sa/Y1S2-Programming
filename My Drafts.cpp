@@ -6334,3 +6334,71 @@ void using_unions() {
     n.d = 3.14;
     cout << n.d << " " << n.x << endl;
 }
+
+class Date {
+
+    public:
+        Date(); 
+        void setYear (unsigned int y) ;
+        void setMonth (unsigned int m) ;
+        void setDay (unsigned int d) ;
+        void show() ;
+        bool valid() ;
+        
+    private:
+        unsigned int year;
+        unsigned int month;
+        unsigned int day;
+
+};
+
+Date::Date() {
+    day = 0;
+    year = 0;
+    month = 0;
+}
+
+bool Date::valid() {
+
+    bool answer;
+    answer = (day > 0 && day < 32 && year > 0 && month > 0 && month < 13);
+    return answer;
+}
+
+void Date::setYear (unsigned int y) {
+    year = y;
+}
+
+void Date::setMonth (unsigned int m) {
+    month = m;
+}
+
+void Date::setDay (unsigned int d) {
+    day = d;
+}
+
+void Date::show() {
+    cout << day << "-" << month << "-" << year << endl;
+}
+
+void using_classes() {
+
+    Date d1;
+    unsigned int d, m, y;
+    cout << "Day: ";
+    cin >> d;
+    d1.setDay(d) ;
+    cout << "Month: ";
+    cin >> m;
+    d1.setMonth(m) ;
+    cout << "Year: ";
+    cin >> y;
+    d1.setYear(y) ;
+
+    if (d1.valid())
+        d1.show();
+    else {
+        cout << "Invalid input. Please try again:" << endl;
+        using_classes();
+    }
+}
