@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <sstream>
 using namespace std;
 
 class Date
@@ -28,16 +30,42 @@ class Date
         unsigned int day;
 }; 
 
+Date::Date(unsigned int year, unsigned int month,unsigned int day) {
+    this -> year = 0;
+    this -> month = 0;
+    this -> day = 0;
+}
+
+Date::Date(string yearMonthDay) {
+    int d, m, y;
+    char x;
+    istringstream str(yearMonthDay);
+    str >> year >> x >> month >> x >> day;
+    this -> day = d;
+    this -> month = m;
+    this -> year = y;
+}
+
 void Date::setYear(unsigned int year) {
-    this->year = year;
+    this -> year = year;
 }
 
 void Date::setMonth(unsigned int month) {
-    this->month = month;
+    this -> month = month;
 }
 
 void Date::setDay(unsigned int day) {
-    this->day = day;
+    this -> day = day;
+}
+
+void Date::setDate(unsigned int year, unsigned int month, unsigned int day) {
+    this -> year = year;
+    this -> month = month;
+    this -> day = day;
+}
+
+unsigned int Date::getYear() const {
+    this -> year;
 }
 
 int main ()
