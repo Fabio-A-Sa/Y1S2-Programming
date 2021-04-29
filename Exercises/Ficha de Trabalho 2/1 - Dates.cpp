@@ -211,18 +211,30 @@ void test_new_methods() {
         cout << data << " --> " << answer << endl;
     }
 
+    d3.setDate(2021, 5, 30);
+    d4.setDate(2010, 12, 31);
+    d5.setDate(2002, 7, 10);
+    d6.setDate(2021/05/30");
+    d7.setDate("2021/05/30");
+
+    cout << endl;
     for (int i = 0 ; i < all_dates.size() - 1  ; i ++ ) {
-        string dt1 = all_dates[i].getDate();
-        string dt2 = all_dates[i+1].getDate();
-        string answer = all_dates[i].isEqualTo(all_dates[i+1]) ? " is equal to " : " isn't equal to ";
-        cout << dt1 << answer << dt2 << endl;
-        answer = all_dates[i].isEqualTo(all_dates[i+1]) ? " isn't equal to " : " is equal to ";
-        cout << dt1 << answer << dt2 << endl;
-        answer = all_dates[i].isBefore(all_dates[i+1]) ? " is before " : " is not before to ";
-        cout << dt1 << answer << dt2 << endl;
-        answer = all_dates[i].isAfter(all_dates[i+1]) ? " is after " : " is not after to ";
-        cout << dt1 << answer << dt2 << endl;
+
+        if ( all_dates[i].isValid() && all_dates[i+1].isValid() ) {
+
+            string dt1 = all_dates[i].getDate();
+            string dt2 = all_dates[i+1].getDate();
+            string answer = all_dates[i].isEqualTo(all_dates[i+1]) ? " is equal to " : " isn't equal to ";
+            cout << dt1 << answer << dt2 << endl;
+            answer = all_dates[i].isEqualTo(all_dates[i+1]) ? " isn't equal to " : " is equal to ";
+            cout << dt1 << answer << dt2 << endl;
+            answer = all_dates[i].isBefore(all_dates[i+1]) ? " is before " : " is not before to ";
+            cout << dt1 << answer << dt2 << endl;
+            answer = all_dates[i].isAfter(all_dates[i+1]) ? " is after " : " is not after to ";
+            cout << dt1 << answer << dt2 << endl;
+        }
     }
+    cout << endl;
 }
 
 int main ()
