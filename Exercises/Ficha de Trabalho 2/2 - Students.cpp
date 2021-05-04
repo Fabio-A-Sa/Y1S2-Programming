@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 class Student {
@@ -26,6 +27,13 @@ class Student {
         int finalGrade;
 
 } ;
+
+void Student::setGrades(double shortExam, double project, double exam) {
+
+    int result = floor(weightExam * exam + project * weightProject + shortExam * weightShortExam);
+    finalGrade = result;
+    // Static --> Não muda de valor ao longo da implementação do código
+}
 
 int main()
 {
