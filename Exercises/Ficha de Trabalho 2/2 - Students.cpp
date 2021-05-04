@@ -42,7 +42,14 @@ void Student::setGrades(double shortExam, double project, double exam) {
 
 }
 
+void test() {
+
+    Student me = Student("202007658", "Fábio Araujo de Sá");
+
+}
+
 int main()
 {
+    test();
     return 0;
 }
