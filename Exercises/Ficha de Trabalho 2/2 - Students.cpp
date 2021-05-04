@@ -12,6 +12,7 @@ class Student {
 
         Student();
         Student(const string &code, const string &name);
+        void setAtributes();
         void setGrades(double shortExam, double project, double exam);
         string getCode() const;
         string getName() const;
@@ -28,11 +29,17 @@ class Student {
 
 } ;
 
+void Student::setAtributes() {
+    this -> weightExam = 50;
+    this -> weightProject = 30;
+    this -> weightShortExam = 20;
+}
+
 void Student::setGrades(double shortExam, double project, double exam) {
 
-    int result = floor(weightExam * exam + project * weightProject + shortExam * weightShortExam);
+    int result = floor( ( weightExam * exam + project * weightProject + shortExam * weightShortExam ) / 100);
     finalGrade = result;
-    // Static --> Não muda de valor ao longo da implementação do código
+
 }
 
 int main()
