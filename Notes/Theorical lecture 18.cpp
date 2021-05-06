@@ -18,8 +18,8 @@ void swapvalues (T x, T y) {
 
 int main ()
 {
-    swapvalues("Hello", "World");  // Strinfg
-    swapvalues(56165, 651651);
-    swapvalues('F', 'A');
+    swapvalues("Hello", "World");  // Strings
+    swapvalues(56165, 651651);     // Integers
+    swapvalues('F', 'A');          // Chars
     return 0;
 }
