@@ -24,6 +24,7 @@ class Student {
 
         string code;
         string name;
+        int weightShortExam = 50, weightProject, weightExam;
         double shortExam, project, exam;
         int finalGrade;
 
@@ -37,6 +38,7 @@ void Student::setAtributes() {
 
 void Student::setGrades(double shortExam, double project, double exam) {
 
+    
     int result = floor( ( weightExam * exam + project * weightProject + shortExam * weightShortExam ) / 100);
     finalGrade = result;
 
@@ -45,6 +47,7 @@ void Student::setGrades(double shortExam, double project, double exam) {
 void test() {
 
     Student me = Student("202007658", "Fábio Araujo de Sá");
+    m
 
 }
 
