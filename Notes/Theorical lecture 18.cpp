@@ -6,7 +6,20 @@
 #include <string>
 using namespace std;
 
+template <class T>
+void swapvalues (T x, T y) {
+
+    cout << "Before: x = " << x << " and y = " << y << endl;
+    T temp = x;
+    x = y;
+    y = temp;
+    cout << "After: x = " << x << " and y = " << y << endl;
+}
+
 int main ()
 {
+    swapvalues("Hello", "World");  // Strinfg
+    swapvalues(56165, 651651);
+    swapvalues('F', 'A');
     return 0;
 }
