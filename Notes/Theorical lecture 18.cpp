@@ -24,9 +24,10 @@ int main ()
     swapvalues('F', 'A');          // Chars
 
     vector<int> numbers = {5, 51, 51, 6, 51, 65, 53, 8, 52, 51, 96, 14, 541};
-    vector<int>::iterator p = numbers.begin();
-    for (vector<int>::iterator p ; p < numbers.end() ; p++ ) {
+    vector<int>::iterator p;
+    for (p = numbers.begin() ; p != numbers.end() ; p++ ) {
         cout << *p << endl;
     }
+    
     return 0;
 }
