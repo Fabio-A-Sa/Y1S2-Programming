@@ -22,7 +22,11 @@ int main ()
     swapvalues("Hello", "World");  // Strings
     swapvalues(56165, 651651);     // Integers
     swapvalues('F', 'A');          // Chars
-    vector<int> = {5, 51, 51, 6, 51, 65, 53, 8, 52, 51, 96, 14, 541};
-    for ()
+
+    vector<int> numbers = {5, 51, 51, 6, 51, 65, 53, 8, 52, 51, 96, 14, 541};
+    vector<int>::iterator p = numbers.begin();
+    for (vector<int>::iterator p ; p < numbers.end() ; p++ ) {
+        cout << *p << endl;
+    }
     return 0;
 }
