@@ -1,6 +1,11 @@
 // Created on May, 2021
 // @author: Fábio Araújo de Sá
 
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
 class Date {
 
     public: 
@@ -17,7 +22,7 @@ class Date {
         int year;
 };
 
-Date::Date(int d, int m, int year) {
+Date::Date(int d, int m, int y) {
     day = d;
     month = m;
     year = y;
@@ -26,6 +31,7 @@ Date::Date(int d, int m, int year) {
 int Date::getDay() {
     return day;
 }
+
 class Person {
 
     public:    
