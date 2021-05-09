@@ -71,34 +71,54 @@ int Student::getFinalGrade() const{
 
 bool Student::isApproved() const {
     
-    bool answer = finalGrade < 0 ? false : true;
+    bool answer = finalGrade < 10 ? false : true;
     return answer;
 }
 
 void readStudentsData (vector<Student> &all_students) {
 
-    Student student;
     string scode, sname;
     int segrade, pgrade, egrade;
     cout << "Student code? ";
     cin >> scode;
     cout << "Student name? ";
     getline(cin, sname);
+    Student student = Student(scode, sname);
     cout << "Short exam grade? ";
     cin >> segrade;
     cout << "Project grade? ";
     cin >> pgrade;
     cout << "Exam grade? ";
     cin >> egrade;
-
     student.setAtributes();
+    student.setGrades(segrade, pgrade, egrade);
+    student.setFinalGrade(student.getFinalGrade());
+
+    string answer = student.isApproved() ? "You are approved" : "You are not approved";
+    cout << answer << endl;
     all_students.push_back(student);
 }
 
+void show_data(vector<Student> all) {
+
+    cout << "All data: " << endl;
+    for (Student student : all) {
+        cout << student.getName() << " " << student.isApproved() << endl;
+    }
+}
 
 int main()
 {
     vector<Student> all_students;
+    char answer;
+    do  {   
 
+        readStudentsData(all_students);
+        cout << "Continue ? Y/N: ";
+        cin >> answer;
+
+        } while (tolower(answer) != 'n');
+    
+    show_data(all_students);
     return 0;
 }
