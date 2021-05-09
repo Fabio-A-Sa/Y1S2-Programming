@@ -18,13 +18,12 @@ class Student {
         string getName() const;
         int getFinalGrade() const;
         bool isApproved() const;
-        static int weightShortExam, weightProject, weightExam;
 
     private:
 
         string code;
         string name;
-        int weightShortExam = 50, weightProject, weightExam;
+        static int weightShortExam, weightProject, weightExam;
         double shortExam, project, exam;
         int finalGrade;
 
@@ -47,7 +46,6 @@ void Student::setGrades(double shortExam, double project, double exam) {
 void test() {
 
     Student me = Student("202007658", "Fábio Araujo de Sá");
-    m
 
 }
 
