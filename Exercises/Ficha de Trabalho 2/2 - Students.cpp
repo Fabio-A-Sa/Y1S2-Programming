@@ -5,6 +5,8 @@
 #include <string>
 #include <cmath>
 #include <vector>
+#include <limits>
+
 using namespace std;
 
 class Student {
@@ -25,7 +27,7 @@ class Student {
 
         string code;
         string name;
-        static int weightShortExam, weightProject, weightExam;
+        int weightShortExam = 20, weightProject = 30, weightExam = 50;
         double shortExam, project, exam;
         int finalGrade;
 
@@ -35,13 +37,6 @@ Student::Student(const string &code, const string &name) {
 
     this -> code = code;
     this -> name = name;
-}
-
-void Student::setAtributes() {
-
-    this -> weightExam = 50;
-    this -> weightProject = 30;
-    this -> weightShortExam = 20;
 }
 
 void Student::setGrades(double shortExam, double project, double exam) {
@@ -80,7 +75,7 @@ void readStudentsData (vector<Student> &all_students) {
     string scode, sname;
     int segrade, pgrade, egrade;
     cout << "Student code? ";
-    cin >> scode;
+    getline(cin, scode);
     cout << "Student name? ";
     getline(cin, sname);
     Student student = Student(scode, sname);
@@ -90,9 +85,9 @@ void readStudentsData (vector<Student> &all_students) {
     cin >> pgrade;
     cout << "Exam grade? ";
     cin >> egrade;
-    student.setAtributes();
     student.setGrades(segrade, pgrade, egrade);
-    student.setFinalGrade(student.getFinalGrade());
+    int number = student.getFinalGrade();
+    student.setFinalGrade(number);
 
     string answer = student.isApproved() ? "You are approved" : "You are not approved";
     cout << answer << endl;
@@ -114,6 +109,8 @@ int main()
     do  {   
 
         readStudentsData(all_students);
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Continue ? Y/N: ";
         cin >> answer;
 
