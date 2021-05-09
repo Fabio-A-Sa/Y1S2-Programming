@@ -181,7 +181,7 @@ void using_files() {
 
 int main()
 {
-    //manual
+    manual();
     using_files();
     return 0;
 }

@@ -1,6 +1,6 @@
 up20179999;Ana Silva;13.5;17;15.7
 up20207658;Fabio Sa;14;8;19
-up20207658;Fabio Sa;14;8;19
-up20207658;Fabio Sa;14;8;19
-up20207658;Fabio Sa;14;8;19
-up20207658;Fabio Sa;14;8;19
+up20207658;Pedro Ferreira;16;10;20
+up20204358;Alice no Pais das Maravilhas;20;20;20
+up20123158;Jorge Silva;20;6;9
+up21237658;Jaime Villate;20;19;19
