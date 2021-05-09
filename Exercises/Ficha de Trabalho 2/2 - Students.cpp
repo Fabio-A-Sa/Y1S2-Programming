@@ -157,13 +157,23 @@ void using_files() {
             }
             i++;
         }
+
         things.push_back(current_thing);
         
-        for (string thing : things) {
-            cout << thing << endl;
+        string name = things[0];
+        string code = things[1];
+        Student student = Student(code, name);
+        int seg = stod(things[2]);
+        int pg = stod(things[3]);
+        int eg = stod(things[4]);
+        student.setGrades(seg, pg, eg);
 
-        }
+        all_students.push_back(student);
+
     }
+
+    show_data(all_students);
+
     file.close();
 }
 
