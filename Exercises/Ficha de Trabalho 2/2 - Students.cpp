@@ -157,9 +157,11 @@ void using_files() {
             }
             i++;
         }
+        things.push_back(current_thing);
+        
         for (string thing : things) {
             cout << thing << endl;
-            
+
         }
     }
     file.close();
