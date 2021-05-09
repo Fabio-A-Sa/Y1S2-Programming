@@ -101,7 +101,7 @@ void show_data(vector<Student> all) {
 
     cout << "All data: " << endl;
     for (Student student : all) {
-        cout << student.getName() << " " << student.isApproved() << endl;
+        cout << student.getName() << " Final grade: " << student.getFinalGrade() << endl;
     }
 }
 
