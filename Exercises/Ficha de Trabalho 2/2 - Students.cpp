@@ -74,9 +74,7 @@ void readStudentsData (vector<Student> &all_students) {
 
     string scode, sname;
     int segrade, pgrade, egrade;
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    
+
     cout << "Student code? ";
     getline(cin, scode);
     cout << "Student name? ";
@@ -95,6 +93,8 @@ void readStudentsData (vector<Student> &all_students) {
     string answer = student.isApproved() ? "You are approved" : "You are not approved";
     cout << answer << endl;
     all_students.push_back(student);
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 void show_data(vector<Student> all) {
@@ -112,10 +112,10 @@ int main()
     do  {   
 
         readStudentsData(all_students);
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Continue ? Y/N: ";
         cin >> answer;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         } while (tolower(answer) != 'n');
     
