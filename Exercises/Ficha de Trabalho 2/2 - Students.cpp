@@ -136,10 +136,31 @@ void manual() {
 void using_files() {
 
     ifstream file;
+    string current_line;
+    vector<Student> all_students;
+
     file.open("Files\\Students.txt");
-    while (! file.eof()) {
+    while (!file.eof()) {
         
-        
+        vector<string> things;
+        getline(file, current_line);
+        int i = 0;
+        string current_thing;
+        while (i != current_line.size()) {
+
+            if (current_line[i] != ';') {
+                current_thing += current_line[i];
+            }
+            else {
+                things.push_back(current_thing);
+                current_thing = "";
+            }
+            i++;
+        }
+        for (string thing : things) {
+            cout << thing << endl;
+            
+        }
     }
     file.close();
 }
