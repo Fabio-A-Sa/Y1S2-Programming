@@ -6,6 +6,7 @@
 #include <cmath>
 #include <vector>
 #include <limits>
+#include <fstream>
 
 using namespace std;
 
@@ -115,8 +116,8 @@ void showAboveAverageStudents(vector<Student> all) {
     cout << "Grades Average: " << average << endl;
 }
 
-int main()
-{
+void manual() {
+
     vector<Student> all_students;
     char answer;
     do  {   
@@ -130,5 +131,22 @@ int main()
         } while (tolower(answer) != 'n');
     
     show_data(all_students);
+}
+
+void using_files() {
+
+    ifstream file;
+    file.open("Files\\Students.txt");
+    while (! file.eof()) {
+        
+        
+    }
+    file.close();
+}
+
+int main()
+{
+    //manual
+    using_files();
     return 0;
 }
