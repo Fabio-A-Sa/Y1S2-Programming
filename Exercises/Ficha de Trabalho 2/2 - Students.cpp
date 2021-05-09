@@ -100,9 +100,11 @@ void readStudentsData (vector<Student> &all_students) {
 
 void show_data(vector<Student> all) {
 
-    cout << "All data: " << endl;
+    cout << "\nAll data: " << endl;
     for (Student student : all) {
-        cout << student.getName() << " Final grade: " << student.getFinalGrade() << endl;
+        cout << student.getName() << " --> Final grade: " << student.getFinalGrade() ;
+        string answer = student.isApproved() ? " --> Passed" : " --> Not passed";
+        cout << answer << endl;
     }
 }
 
@@ -160,8 +162,8 @@ void using_files() {
 
         things.push_back(current_thing);
         
-        string name = things[0];
-        string code = things[1];
+        string code = things[0];
+        string name = things[1];
         Student student = Student(code, name);
         int seg = stod(things[2]);
         int pg = stod(things[3]);
