@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 using namespace std;
 
 class Date {
@@ -64,7 +65,7 @@ string Person::getName() { return name; }
 char Person::getGender() { return gender; }
 string Person::getBirth() { return birthday.showDate(); }
 
-void get_data(vector<Person> &all) {
+void get_data(vector<Person> &all_persons) {
 
     char answer;
     do  {
@@ -74,12 +75,20 @@ void get_data(vector<Person> &all) {
         int day, year, month;
 
         cout << "Name: ";
-        cin >>
+        getline(cin, name);
+        cout << "Gender: ";
+        cin >> gender;
+        cout << "Birthday: day/month/year: ";
+        cin >> day >> month >> year;
+
+        Date current_date = Date(day, month, year);
+        Person current_person = Person(name, gender, current_date);
+        all_persons.push_back(current_person);
 
         cout << "Continue? Y/N: ";
         cin >> answer;
         cin.clear();
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
         } while (tolower(answer) != 'n') ;
 }
