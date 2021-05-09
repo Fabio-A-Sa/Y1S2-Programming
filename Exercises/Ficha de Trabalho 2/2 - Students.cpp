@@ -74,6 +74,9 @@ void readStudentsData (vector<Student> &all_students) {
 
     string scode, sname;
     int segrade, pgrade, egrade;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    
     cout << "Student code? ";
     getline(cin, scode);
     cout << "Student name? ";
