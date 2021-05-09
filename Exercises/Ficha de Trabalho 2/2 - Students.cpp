@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <vector>
 using namespace std;
 
 class Student {
@@ -18,7 +19,7 @@ class Student {
         string getName() const;
         int getFinalGrade() const;
         bool isApproved() const;
-        void readStudentData();
+        void readStudentData(vector<Student> all_students);
 
     private:
 
@@ -30,7 +31,14 @@ class Student {
 
 } ;
 
+Student::Student(const string &code, const string &name) {
+
+    this -> code = code;
+    this -> name = name;
+}
+
 void Student::setAtributes() {
+
     this -> weightExam = 50;
     this -> weightProject = 30;
     this -> weightShortExam = 20;
@@ -38,11 +46,27 @@ void Student::setAtributes() {
 
 void Student::setGrades(double shortExam, double project, double exam) {
 
-    int result = floor( ( weightExam * exam + project * weightProject + shortExam * weightShortExam ) / 100);
-    finalGrade = result;
+    this -> shortExam = shortExam;
+    this -> project = project;
+    this -> exam = exam;
 }
 
-void Student::readStudentData() {
+string Student::getCode() const {
+    return code;
+}
+
+string Student::getName() const {
+    return name;
+}
+
+int Student::getFinalGrade(double shortExam, double project, double exam) {
+
+    int result = floor( ( weightExam * exam + project * weightProject + shortExam * weightShortExam ) / 100);
+    finalGrade = result;
+    return result;
+}
+
+void Student::readStudentData(vector<Student> &all_students) {
 
     Student student;
     string scode, sname;
@@ -58,10 +82,14 @@ void Student::readStudentData() {
     cout << "Exam grade? ";
     cin >> egrade;
 
+    student.setAtributes();
+    all_students.push_back(student);
 }
 
 
 int main()
 {
+    vector<Student> all_students;
+
     return 0;
 }
