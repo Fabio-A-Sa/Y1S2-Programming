@@ -52,7 +52,23 @@ class Person {
 
 };
 
+void get_data(vector<Person> &all) {
+
+}
+
+void show_data(vector<Person> all) {
+
+    for (Person person : all) {
+        cout << person.getName() << " " << person.getGender() << " ";
+        person.getBirth();
+        cout << endl;
+    }
+}
+
 int main ()
-{
+{   
+    vector<Person> all_persons = {};
+    get_data(all_persons);
+    show_data(all_persons);
     return 0;
 }
