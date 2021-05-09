@@ -18,6 +18,7 @@ class Student {
         string getName() const;
         int getFinalGrade() const;
         bool isApproved() const;
+        void readStudentData();
 
     private:
 
@@ -37,20 +38,30 @@ void Student::setAtributes() {
 
 void Student::setGrades(double shortExam, double project, double exam) {
 
-    
     int result = floor( ( weightExam * exam + project * weightProject + shortExam * weightShortExam ) / 100);
     finalGrade = result;
+}
+
+void Student::readStudentData() {
+
+    Student student;
+    string scode, sname;
+    int segrade, pgrade, egrade;
+    cout << "Student code? ";
+    cin >> scode;
+    cout << "Student name? ";
+    getline(cin, sname);
+    cout << "Short exam grade? ";
+    cin >> segrade;
+    cout << "Project grade? ";
+    cin >> pgrade;
+    cout << "Exam grade? ";
+    cin >> egrade;
 
 }
 
-void test() {
-
-    Student me = Student("202007658", "Fábio Araujo de Sá");
-
-}
 
 int main()
 {
-    test();
     return 0;
 }
