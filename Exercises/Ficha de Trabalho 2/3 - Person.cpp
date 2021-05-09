@@ -14,7 +14,7 @@ class Date {
         int getDay();
         int getYear();
         int getMonth();
-        void showDate();
+        string showDate();
 
     private:
         int day;
@@ -32,8 +32,10 @@ int Date::getDay() { return day; }
 int Date::getMonth() { return  month; }
 int Date::getYear() { return year; }
 
-void Date::showDate() {
-    cout << year << "/" << month << "/" << day;
+string Date::showDate() {
+
+    string all = to_string(year) + '/' + to_string(month) + '/' + to_string(day);
+    return all;
 }
 
 class Person {
@@ -52,16 +54,40 @@ class Person {
 
 };
 
+Person::Person(string name, char gender, Date b) {
+    this -> name = name;
+    this -> gender = gender;
+    this -> birthday = b;
+}
+
+string Person::getName() { return name; }
+char Person::getGender() { return gender; }
+string Person::getBirth() { return birthday.showDate(); }
+
 void get_data(vector<Person> &all) {
 
+    char answer;
+    do  {
+
+        string name;
+        char gender;
+        int day, year, month;
+
+        cout << "Name: ";
+        cin >>
+
+        cout << "Continue? Y/N: ";
+        cin >> answer;
+        cin.clear();
+        cin.ignore();
+
+        } while (tolower(answer) != 'n') ;
 }
 
 void show_data(vector<Person> all) {
 
     for (Person person : all) {
-        cout << person.getName() << " " << person.getGender() << " ";
-        person.getBirth();
-        cout << endl;
+        cout << person.getName() << " " << person.getGender() << " " << person.getBirth() << endl;
     }
 }
 
