@@ -105,6 +105,16 @@ void show_data(vector<Student> all) {
     }
 }
 
+void showAboveAverageStudents(vector<Student> all) {
+    
+    int total = 0;
+    for (Student student : all) {
+        total = total + student.getFinalGrade();
+    }
+    int average = floor(total / all.size());
+    cout << "Grades Average: " << average << endl;
+}
+
 int main()
 {
     vector<Student> all_students;
