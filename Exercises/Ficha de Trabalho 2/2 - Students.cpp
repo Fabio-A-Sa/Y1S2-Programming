@@ -18,8 +18,8 @@ class Student {
         string getCode() const;
         string getName() const;
         int getFinalGrade() const;
+        void setFinalGrade(int result);
         bool isApproved() const;
-        void readStudentData(vector<Student> all_students);
 
     private:
 
@@ -59,14 +59,23 @@ string Student::getName() const {
     return name;
 }
 
-int Student::getFinalGrade(double shortExam, double project, double exam) {
+void Student::setFinalGrade(int number) {
+    finalGrade = number;
+}
+
+int Student::getFinalGrade() const{
 
     int result = floor( ( weightExam * exam + project * weightProject + shortExam * weightShortExam ) / 100);
-    finalGrade = result;
     return result;
 }
 
-void Student::readStudentData(vector<Student> &all_students) {
+bool Student::isApproved() const {
+    
+    bool answer = finalGrade < 0 ? false : true;
+    return answer;
+}
+
+void readStudentsData (vector<Student> &all_students) {
 
     Student student;
     string scode, sname;
