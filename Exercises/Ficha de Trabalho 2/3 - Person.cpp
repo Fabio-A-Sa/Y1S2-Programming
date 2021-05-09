@@ -15,7 +15,7 @@ class Date {
         int getDay();
         int getYear();
         int getMonth();
-        string showDate();
+        void showDate();
 
     private:
         int day;
@@ -33,10 +33,10 @@ int Date::getDay() { return day; }
 int Date::getMonth() { return  month; }
 int Date::getYear() { return year; }
 
-string Date::showDate() {
+void Date::showDate() {
 
     string all = to_string(year) + '/' + to_string(month) + '/' + to_string(day);
-    return all;
+    cout << all << endl;
 }
 
 class Person {
@@ -46,7 +46,7 @@ class Person {
         Person(string name, char gender, Date birthday);
         string getName();
         char getGender();
-        string getBirth();
+        void getBirth();
 
     private:
         string name;
@@ -63,7 +63,7 @@ Person::Person(string name, char gender, Date b) {
 
 string Person::getName() { return name; }
 char Person::getGender() { return gender; }
-string Person::getBirth() { return birthday.showDate(); }
+void Person::getBirth() { birthday.showDate(); }
 
 void get_data(vector<Person> &all_persons) {
 
@@ -71,7 +71,7 @@ void get_data(vector<Person> &all_persons) {
     do  {
 
         string name;
-        char gender;
+        char gender, barra;
         int day, year, month;
 
         cout << "Name: ";
@@ -79,7 +79,7 @@ void get_data(vector<Person> &all_persons) {
         cout << "Gender: ";
         cin >> gender;
         cout << "Birthday: day/month/year: ";
-        cin >> day >> month >> year;
+        cin >> day >> barra >> month >> barra >> year;
 
         Date current_date = Date(day, month, year);
         Person current_person = Person(name, gender, current_date);
@@ -96,7 +96,9 @@ void get_data(vector<Person> &all_persons) {
 void show_data(vector<Person> all) {
 
     for (Person person : all) {
-        cout << person.getName() << " " << person.getGender() << " " << person.getBirth() << endl;
+        cout << person.getName() << " " << person.getGender() << " ";
+        person.getBirth();
+        cout << endl;
     }
 }
 
