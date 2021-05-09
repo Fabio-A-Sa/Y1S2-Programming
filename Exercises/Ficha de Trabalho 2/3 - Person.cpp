@@ -14,7 +14,7 @@ class Date {
         int getDay();
         int getYear();
         int getMonth();
-        void showData();
+        void showDate();
 
     private:
         int day;
@@ -28,17 +28,27 @@ Date::Date(int d, int m, int y) {
     year = y;
 }
 
-int Date::getDay() {
-    return day;
+int Date::getDay() { return day; }
+int Date::getMonth() { return  month; }
+int Date::getYear() { return year; }
+
+void Date::showDate() {
+    cout << year << "/" << month << "/" << day;
 }
 
 class Person {
 
     public:    
-
-
+        Person();
+        Person(string name, char gender, Date birthday);
+        string getName();
+        char getGender();
+        string getBirth();
 
     private:
+        string name;
+        char gender;
+        Date birthday;
 
 };
 
