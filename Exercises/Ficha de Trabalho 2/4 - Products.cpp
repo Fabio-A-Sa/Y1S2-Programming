@@ -48,6 +48,7 @@ Product::Product(double price, string description) {
 }
 
 string Product::getDescription() { return description; }
+double Product::getPrice() { return price; }
 
 
 int main ()
