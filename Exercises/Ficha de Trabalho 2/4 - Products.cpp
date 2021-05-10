@@ -72,7 +72,6 @@ int Item::getQuantity() { return quantity; }
 class Invoice {
 
     public:
-        Invoice();
         Invoice(vector<Item> items, Client client);
         void printInvoice();
 
