@@ -26,6 +26,7 @@ void using_iterator() {
 
 void sort_algorithm() {
 
+    // Fill vector
     vector<int> numbers;
     while (numbers.size() < 20) {
         numbers.push_back(rand() % 100);
