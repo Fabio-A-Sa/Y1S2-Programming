@@ -10,7 +10,7 @@ using namespace std;
 
 void using_iterator() {
 
-    vector<int>::reverse_iterator p;
+    //vector<int>::reverse_iterator p; --> or using "auto" in for loop
     vector<int> numbers;
 
     // Input random numbers in vector
@@ -18,7 +18,7 @@ void using_iterator() {
         numbers.push_back(i); 
     }
     // Iterator in reverse order
-    for (p = numbers.rbegin() ; p != numbers.rend() ; p++ ) {
+    for (p numbers.rbegin() ; p != numbers.rend() ; p++ ) {
         cout << "Number: " << *p << endl;
     }
 
