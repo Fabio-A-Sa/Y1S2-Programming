@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 void using_iterator() {
@@ -22,8 +23,28 @@ void using_iterator() {
     }
 
 }
+
+void sort_algorithm() {
+
+    vector<int> numbers;
+    while (numbers.size() < 20) {
+        numbers.push_back(rand() % 100);
+    }
+    cout << "\nNot sorted: ";
+    for (int number : numbers) {
+        cout << number << " ";
+    }
+    // Sort by ascending order
+    sort(numbers.begin(), numbers.end());
+    cout << "\nSorted: ";
+    for (int number : numbers) {
+        cout << number << " ";
+    }
+}
+
 int main ()
 {
     using_iterator();
+    sort_algorithm();
     return 0;
 }
