@@ -69,6 +69,8 @@ Item::Item(Product product, int quantity) {
 
 int Item::getQuantity() { return quantity; }
 
+class
+
 void test() {
 
 }
