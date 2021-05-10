@@ -50,8 +50,31 @@ Product::Product(double price, string description) {
 string Product::getDescription() { return description; }
 double Product::getPrice() { return price; }
 
+class Item {
+
+    public:
+        Item();
+        Item(Product product, int quantity);
+        int getQuantity();
+
+    private:
+        Product product;
+        int quantity;
+};
+
+Item::Item(Product product, int quantity) {
+    this -> product = product;
+    this -> quantity = quantity;
+} 
+
+int Item::getQuantity() { return quantity; }
+
+void test() {
+
+}
 
 int main ()
 {
+    test();
     return 0;
 }
