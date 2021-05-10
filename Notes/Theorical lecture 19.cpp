@@ -62,8 +62,8 @@ void using_map() {
 
 int main ()
 {
-    //using_iterator();
-    //sort_algorithm();
+    using_iterator();
+    sort_algorithm();
     using_map();
     return 0;
 }
