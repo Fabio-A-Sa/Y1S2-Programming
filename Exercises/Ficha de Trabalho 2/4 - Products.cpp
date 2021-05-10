@@ -29,6 +29,8 @@ Client::Client(string name, string adress) {
 string Client::getName() { return name; }
 string Client:: getAdress() { return adress; }
 
+
+
 int main ()
 {
     return 0;
