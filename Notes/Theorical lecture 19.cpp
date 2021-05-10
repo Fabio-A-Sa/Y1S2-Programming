@@ -18,7 +18,7 @@ void using_iterator() {
         numbers.push_back(i); 
     }
     // Iterator in reverse order
-    for (p numbers.rbegin() ; p != numbers.rend() ; p++ ) {
+    for (p = numbers.rbegin() ; p != numbers.rend() ; p++ ) {
         cout << "Number: " << *p << endl;
     }
 
