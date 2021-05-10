@@ -1,6 +1,6 @@
 // Created on May 10, 2021
 // @author: Fábio Araújoe Sá
-// Theorical lecture 19, pages 251 --> ???
+// Theorical lecture 19, pages 251 --> 268
 
 #include <iostream>
 #include <string>
@@ -47,10 +47,14 @@ void sort_algorithm() {
 void using_map() {
 
     map<int, string> phone_user;
-    phone_user.insert(pair<int, string> (1234, "Pedro"));
-    phone_user.insert(pair<int, string> (5678, "Fabio"));
-    phone_user.insert(pair<int, string> (9101, "Ines"));
+    vector<string> names = {"Fabio", "Ines", "Pedro", "Malva", "Carolina", "Manel"};
 
+    // Fill map, "dictionary in Python"
+    for (int i = 0 ; i < 10 ; i++) {
+        phone_user.insert(pair<int, string> (rand() % 100000000, names[rand() % 6]));
+    }
+
+    // Return values
     for (auto x : phone_user) {
         cout << x.first << " - " << x.second << endl;
     }
