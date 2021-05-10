@@ -89,10 +89,27 @@ Invoice::Invoice(vector<Item> items, Client client) {
 void Invoice::printInvoice() {
 
     cout << client.getName() << endl;
+    cout << client.getAdress() << endl << endl;
+    cout << "Description --> Price --> QTY --> Total" << endl;
+    cout << "---------------------------------------" << endl;
+    for (Item item : items) {
+        cout << item.getQuantity() << endl;
+    }
 }
 
 void test() {
 
+    vector<Item> items;
+    Client client = Client("DEI  - FEUP", "Rua Roberto Frias");
+    
+    Product product1 = Product(999, "Computer");
+    Product product2 = Product(89, "Printer");
+    Product product3 = Product(2, "Bolachas");
+    Item item1 = Item(product1, 10); items.push_back(item1);
+    Item item2 = Item(product2, 3); items.push_back(item2);
+    Item item3 = Item(product3, 90); items.push_back(item3);
+    Invoice invoice = Invoice(items, client);
+    invoice.printInvoice();
 }
 
 int main ()
