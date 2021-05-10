@@ -29,6 +29,25 @@ Client::Client(string name, string adress) {
 string Client::getName() { return name; }
 string Client:: getAdress() { return adress; }
 
+class Product {
+
+    public:
+        Product();
+        Product(double price, string description);
+        string getDescription();
+        double getPrice();
+
+    private:
+        string description;
+        double price;
+};
+
+Product::Product(double price, string description) {
+    this -> price = price;
+    this -> description = description;
+}
+
+string Product::getDescription() { return description; }
 
 
 int main ()
