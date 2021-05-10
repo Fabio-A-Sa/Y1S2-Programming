@@ -50,12 +50,16 @@ void using_map() {
     phone_user.insert(pair<int, string> (1234, "Pedro"));
     phone_user.insert(pair<int, string> (5678, "Fabio"));
     phone_user.insert(pair<int, string> (9101, "Ines"));
+
+    for (auto x : phone_user) {
+        cout << x.first << " - " << x.second << endl;
+    }
 }
 
 int main ()
 {
-    using_iterator();
-    sort_algorithm();
+    //using_iterator();
+    //sort_algorithm();
     using_map();
     return 0;
 }
