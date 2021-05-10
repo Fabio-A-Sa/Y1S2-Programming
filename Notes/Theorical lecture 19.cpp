@@ -10,7 +10,7 @@ using namespace std;
 
 void using_iterator() {
 
-    //vector<int>::reverse_iterator p; --> or using "auto" in for loop
+    vector<int>::reverse_iterator p; // --> or using "auto" in for loop
     vector<int> numbers;
 
     // Input random numbers in vector
