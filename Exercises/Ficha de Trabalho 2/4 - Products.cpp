@@ -69,7 +69,27 @@ Item::Item(Product product, int quantity) {
 
 int Item::getQuantity() { return quantity; }
 
-class
+class Invoice {
+
+    public:
+        Invoice();
+        Invoice(vector<Item> items, Client client);
+        void printInvoice();
+
+    private:
+        vector<Item> items;
+        Client client;
+};
+
+Invoice::Invoice(vector<Item> items, Client client) {
+    this -> items = items;
+    this -> client = client;
+}
+
+void Invoice::printInvoice() {
+
+    cout << client.getName() << endl;
+}
 
 void test() {
 
