@@ -7,7 +7,18 @@
 #include <vector>
 using namespace std;
 
+void using_iterator() {
+
+    // Iterator in reverse order
+    vector<int>::reverse_iterator p;
+    vector<int> numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    for (p = numbers.rbegin() ; p != numbers.rend() ; p++ ) {
+        cout << "Number: " << *p << endl;
+    }
+
+}
 int main ()
 {
+    using_iterator();
     return 0;
 }
