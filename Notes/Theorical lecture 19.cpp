@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <map>
+#include <utility>
 using namespace std;
 
 void using_iterator() {
@@ -42,9 +44,18 @@ void sort_algorithm() {
     }
 }
 
+void using_map() {
+
+    map<int, string> phone_user;
+    phone_user.insert(pair<int, string> (1234, "Pedro"));
+    phone_user.insert(pair<int, string> (5678, "Fabio"));
+    phone_user.insert(pair<int, string> (9101, "Ines"));
+}
+
 int main ()
 {
     using_iterator();
     sort_algorithm();
+    using_map();
     return 0;
 }
