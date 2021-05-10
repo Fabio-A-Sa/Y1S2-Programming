@@ -21,7 +21,6 @@ void using_iterator() {
     for (p = numbers.rbegin() ; p != numbers.rend() ; p++ ) {
         cout << "Number: " << *p << endl;
     }
-
 }
 
 void sort_algorithm() {
