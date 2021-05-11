@@ -23,6 +23,17 @@ class Book {
         string name;
 };
 
+class Library {
+
+    public:
+        Library();
+        void addBook(Book book);
+        void showBooks() const;
+    
+    private:
+        vector<Book> books;
+};
+
 int main() 
 {
     return 0;
