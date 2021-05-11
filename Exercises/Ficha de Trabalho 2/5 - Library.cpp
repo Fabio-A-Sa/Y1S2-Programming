@@ -14,7 +14,13 @@ class Book {
         Book(string bookName);
         void setName(string bookName);
         IdentNum getId() const;
+        string getName() const;
+        void show() const;
 
+    private:
+        static IdentNum numBooks;
+        IdentNum id;
+        string name;
 };
 
 int main() 
