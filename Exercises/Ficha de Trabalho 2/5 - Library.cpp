@@ -35,6 +35,14 @@ IdentNum Book::getId() const {
     return id;
 }
 
+void Book::setName(string bookName) {
+    name = bookName;
+}
+
+string Book::getName() const {
+    return name;
+}
+
 class Library {
 
     public:
