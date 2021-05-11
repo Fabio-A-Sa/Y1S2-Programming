@@ -23,6 +23,18 @@ class Book {
         string name;
 };
 
+IdentNum Book::numBooks = 0;
+
+Book::Book() {
+    numBooks++;
+    id = numBooks;
+    name = "Unknown book name";
+}
+
+IdentNum Book::getId() const {
+    return id;
+}
+
 class Library {
 
     public:
