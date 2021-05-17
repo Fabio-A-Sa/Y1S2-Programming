@@ -1,3 +1,3 @@
-// Created on May 20, 2021
+// Created on May 17, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 20, pages 268 --> ???
+// Theorical lecture 21, pages 285 --> ???
