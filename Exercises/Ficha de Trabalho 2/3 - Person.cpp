@@ -23,6 +23,13 @@ class Date {
         int year;
 };
 
+Date::Date()
+{
+    day = 0;
+    month = 0;
+    year = 0;
+}
+
 Date::Date(int d, int m, int y) {
     day = d;
     month = m;
@@ -54,6 +61,12 @@ class Person {
         Date birthday;
 
 };
+
+Person::Person() {
+    name = "";
+    gender = ' ';
+    birthday = birthday;
+}
 
 Person::Person(string name, char gender, Date b) {
     this -> name = name;
