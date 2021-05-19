@@ -7,6 +7,7 @@
 #include <vector>
 #include <limits>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 
@@ -181,9 +182,11 @@ void using_files() {
         student.setGrades(seg, pg, eg);
 
         all_students.push_back(student);
+        sort(all_students.begin(), all_students.end());
 
     }
 
+    cout << "Show data using STL sort() algorithm: " << endl;
     show_data(all_students);
 
     file.close();
