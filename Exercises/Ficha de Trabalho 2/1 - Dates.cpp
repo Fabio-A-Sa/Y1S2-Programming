@@ -11,7 +11,7 @@ using namespace std;
 class Date
 {
     public:
-
+        Date();
         Date(unsigned int year, unsigned int month,unsigned int day);
         Date(string yearMonthDay);
         void setYear(unsigned int year) ;
@@ -39,6 +39,13 @@ class Date
         unsigned int how_many_days(unsigned year, unsigned month);
         bool isLeapYear (unsigned int year);
 }; 
+
+Date::Date()
+{
+    year = 0;
+    month = 0;
+    day = 0;
+}
 
 bool Date::isEqualTo(const Date &date) {
     return (day == date.getDay() && month == date.getMonth() && year == date.getYear());
