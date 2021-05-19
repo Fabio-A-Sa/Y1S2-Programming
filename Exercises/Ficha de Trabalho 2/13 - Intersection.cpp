@@ -75,15 +75,15 @@ bool isInside(int attemp, vector<int> key) {
 
 void compair(Bet bet, Bet key) {
     
-    cout << "Intersection: \nMain: ";
+    cout << "Main: ";
     for (int number : bet.getMain()) {
-        if (isInside(number, bet.getMain())) {
+        if (isInside(number, key.getMain())) {
             cout << number << " ";
         }
     }
     cout << "\nStars: ";
     for (int number : bet.getStars()) {
-        if (isInside(number, bet.getStars())) {
+        if (isInside(number, key.getStars())) {
             cout << number << " ";
         }
     }
@@ -108,9 +108,12 @@ int main ()
     }
 
     Bet key;
+    int index = 1;
     for (auto attemp : all_bets) {
-        compair(attemp, key);   
+        cout << endl << "Intersection " << index << endl;
+        compair(attemp, key); 
+        index++;
     }
-
+    
     return 0;
 }
