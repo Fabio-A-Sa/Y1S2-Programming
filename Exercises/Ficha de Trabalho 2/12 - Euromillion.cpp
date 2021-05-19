@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <random>
 #include <ctime>
+#include <set>
 using namespace std;
 
 vector<int> main_numbers, lucky_stars;
@@ -45,14 +46,20 @@ void Bet::fill_numbers() {
     
     random_shuffle(main_numbers.begin(), main_numbers.end());
     random_shuffle(lucky_stars.begin(), lucky_stars.end());
-    
+
+    // Fill using lucky_stars vector (a)
+    for (int j = 0 ; j < 2 ; j++ ) {
+        stars.push_back(lucky_stars[j]);
+    }
     for (int i = 0 ; i < 5 ; i++ ) {
         main.push_back(main_numbers[i]);
     }
 
-    // Using lucky_stars vector
-    for (int j = 0 ; j < 2 ; j++ ) {
-        stars.push_back(lucky_stars[j]);
+    //Fill using STL set (b)
+    set<int> numbers;
+    while (numbers.size() < 5) {
+        int next_attemp = rand() % 51;
+        numbers.insert(next_attemp);
     }
 }   
 
