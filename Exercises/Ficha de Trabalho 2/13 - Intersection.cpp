@@ -63,9 +63,32 @@ vector<int> Bet::getStars() {
     return stars;
 }
 
+bool isInside(int attemp, vector<int> key) {
+    
+    for (int number : key) {
+        if (attemp == number) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void compair(Bet bet, Bet key) {
     
-    
+    cout << "Intersection: \nMain: ";
+    for (int number : bet.getMain()) {
+        if (isInside(number, bet.getMain())) {
+            cout << number << " ";
+        }
+    }
+    cout << "\nStars: ";
+    for (int number : bet.getStars()) {
+        if (isInside(number, bet.getStars())) {
+            cout << number << " ";
+        }
+    }
+    cout << endl;
+
 }
 
 int main ()
@@ -86,7 +109,7 @@ int main ()
 
     Bet key;
     for (auto attemp : all_bets) {
-        compair(attemp, key);
+        compair(attemp, key);   
     }
 
     return 0;
