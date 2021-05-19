@@ -3,9 +3,10 @@
 
 #include <iostream>
 #include <string>
+#include <array>
 using namespace std;
 
-template <class T>
+template<typename T>
 
 class Vector
 {
@@ -28,6 +29,25 @@ class Vector
         int bufferSize;
         int size;
 };
+
+Vector::Vector() {
+    size = 0;
+    bufferSize = 0;
+}
+
+Vector::Vector(unsigned int size) {
+    this -> size = size;
+
+}
+
+Vector::Vector(unsigned int size, const T &initial) {
+    this -> size = size;
+    this -> buffer = initial;
+}
+
+Vector::Vector(const Vector<T> &v) {
+    this -> buffer = v;
+}
 
 int main ()
 {
