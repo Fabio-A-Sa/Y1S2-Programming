@@ -52,6 +52,7 @@ class Inventory
         vector<Product> getInventory();
         void includeProduct(Product product);
         void showInventory();
+        bool search(Product product);
 
     private:
 
@@ -77,9 +78,38 @@ void Inventory::showInventory() {
     }
 }
 
+bool Inventory::search(Product p) {
+    for (auto product : products) {
+        if (p.getDescription() == product.getDescription() && p.getQuantity() <= product.getQuantity()) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void test()
-{
-    cout << "Nothing" << endl;
+{   
+    // Initial products
+    Inventory i = Inventory();
+    Product p1 = Product(10, "Iogurtes");
+    Product p2 = Product(3, "Bananas");
+    Product p3 = Product(1, "Computador");
+    i.includeProduct(p1) ; i.includeProduct(p2) ; i.includeProduct(p3);
+    i.showInventory();
+
+    // Search:
+    char answer = 'y';
+    do  {
+        
+        string name;
+        int quantity;
+        cout << "Search for a product:\nProduct name: ";
+        getline(cin, name);
+        cout << "Quantity: ";
+        cin >> quantity;
+        Product new_product 
+
+        } while (tolower(answer) != 'n')
 }
 
 int main()
