@@ -107,9 +107,12 @@ void test()
         getline(cin, name);
         cout << "Quantity: ";
         cin >> quantity;
-        Product new_product 
+        Product new_product = Product(quantity, name);
+        string solution = i.search(new_product) ? "" : "";
+        cout << solution << endl << "Continue? (Y/N): ";
+        cin >> answer;
 
-        } while (tolower(answer) != 'n')
+        } while (tolower(answer) != 'n');
 }
 
 int main()
