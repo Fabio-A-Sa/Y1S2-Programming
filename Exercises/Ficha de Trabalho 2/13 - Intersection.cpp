@@ -27,6 +27,8 @@ class Bet
 
         Bet();
         void fill_numbers();
+        vector<int> getMain();
+        vector<int> getStars();
     
     private:
 
@@ -53,10 +55,39 @@ void Bet::fill_numbers() {
     }
 }   
 
+vector<int> Bet::getMain() {
+    return main;
+}
+
+vector<int> Bet::getStars() {
+    return stars;
+}
+
+void compair(Bet bet, Bet key) {
+    
+    
+}
+
 int main ()
 {   
     srand(time(NULL));
     initialize();
+
+    vector<Bet> all_bets;
+    int N;
+    cout << "N: ";
+    cin >> N;
+
+    while (N) {
+        Bet b;
+        all_bets.push_back(b);
+        N--;
+    }
+
+    Bet key;
+    for (auto attemp : all_bets) {
+        compair(attemp, key);
+    }
 
     return 0;
 }
