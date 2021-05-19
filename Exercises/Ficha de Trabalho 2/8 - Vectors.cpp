@@ -8,8 +8,7 @@ using namespace std;
 
 template<typename T>
 
-class Vector
-{
+class Vector {
     public:
 
         Vector();
@@ -51,5 +50,8 @@ Vector::Vector(const Vector<T> &v) {
 
 int main ()
 {
+    Vector v = Vector(10);
+    v.push_back(5);
+    v.clear();
     return 0;
 }
