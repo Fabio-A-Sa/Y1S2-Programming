@@ -53,7 +53,7 @@ void using_my_algorithm() {
         ofstream file; 
         file.open(new_file);
 
-        for (auto word : all_names) {
+        for (auto word : new_names) {
             file << word << endl;
         }
         
