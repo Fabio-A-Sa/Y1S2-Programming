@@ -19,9 +19,6 @@ void initialize() {
     for (int number = 1 ; number < 13 ; number ++) {
         lucky_stars.push_back(number);
     }
-
-    random_shuffle(main_numbers.begin(), main_numbers.end());
-    random_shuffle(lucky_stars.begin(), lucky_stars.end());
 }
 
 class Bet
@@ -45,7 +42,17 @@ Bet::Bet() {
 
 void Bet::fill_numbers() {
     
-}
+    random_shuffle(main_numbers.begin(), main_numbers.end());
+    random_shuffle(lucky_stars.begin(), lucky_stars.end());
+
+    for (int i = 0 ; i < 5 ; i++ ) {
+        main.push_back(main_numbers[i]);
+    }
+    for (int j = 0 ; j < 2 ; j++ ) {
+        stars.push_back(lucky_stars[j]);
+    }
+
+}   
 
 int main ()
 {   
