@@ -21,7 +21,7 @@ bool inList (list<string> lst, string name) {
 void using_my_algorithm() {
 
     string current_file = "Files\\Names.txt", new_file = "Files\\Sorted.txt";
-    vector<string> all_names = {}, new_names = {};
+    list<string> all_names = {}, new_names = {};
     ifstream file;
     file.open(current_file);
     
@@ -37,12 +37,10 @@ void using_my_algorithm() {
         file.close();
         
         for (auto name : all_names) {
-            if (!inVector(new_names, name)) {
+            if (!inList(new_names, name)) {
                 new_names.push_back(name);
             }
         }
-
-        sort(new_names.begin(), new_names.end());
 
     }
     else {
