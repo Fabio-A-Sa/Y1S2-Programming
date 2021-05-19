@@ -109,10 +109,20 @@ void readStudentsData (vector<Student> &all_students) {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
-void show_data(vector<Student> all) {
+void show_data(vector<Student> all_students) {
 
     cout << "\nAll data: " << endl;
-    for (Student student : all) {
+    cout << "Show data using STL sort() ascending grade algorithm: " << endl;
+    sort(all_students.begin(), all_students.end(), [](Student const & a, Student const & b) -> bool { return a.getFinalGrade() < b.getFinalGrade(); } );
+    for (Student student : all_students) {
+        cout << student.getName() << " --> Final grade: " << student.getFinalGrade() ;
+        string answer = student.isApproved() ? " --> Passed" : " --> Not passed";
+        cout << answer << endl;
+    }
+    cout << endl << "\nAll data: " << endl;
+    cout << "Show data using STL sort() ascending name algorithm: " << endl;
+    sort(all_students.begin(), all_students.end(), [](Student const & a, Student const & b) -> bool { return a.getName() < b.getName(); } );
+    for (Student student : all_students) {
         cout << student.getName() << " --> Final grade: " << student.getFinalGrade() ;
         string answer = student.isApproved() ? " --> Passed" : " --> Not passed";
         cout << answer << endl;
@@ -182,11 +192,9 @@ void using_files() {
         student.setGrades(seg, pg, eg);
 
         all_students.push_back(student);
-        sort(all_students.begin(), all_students.end());
 
     }
 
-    cout << "Show data using STL sort() algorithm: " << endl;
     show_data(all_students);
 
     file.close();
@@ -194,7 +202,7 @@ void using_files() {
 
 int main()
 {
-    manual();
+    //manual();
     using_files();
     return 0;
 }
