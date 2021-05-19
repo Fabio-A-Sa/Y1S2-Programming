@@ -21,6 +21,12 @@ class Client {
 
 };
 
+Client::Client()
+{
+    name = "";
+    adress = "";
+}
+
 Client::Client(string name, string adress) {
     this -> name = name;
     this -> adress = adress;
@@ -42,6 +48,12 @@ class Product {
         double price;
 };
 
+Product::Product()
+{
+    description = "";
+    price = 0;
+}
+
 Product::Product(double price, string description) {
     this -> price = price;
     this -> description = description;
@@ -56,11 +68,19 @@ class Item {
         Item();
         Item(Product product, int quantity);
         int getQuantity();
+        double getPrice();
+        string getDescription();
 
     private:
         Product product;
         int quantity;
 };
+
+Item::Item()
+{
+    product = product;
+    quantity = 0;
+}
 
 Item::Item(Product product, int quantity) {
     this -> product = product;
@@ -68,10 +88,13 @@ Item::Item(Product product, int quantity) {
 } 
 
 int Item::getQuantity() { return quantity; }
+double Item::getPrice() {return product.getPrice(); }
+string Item::getDescription() {return product.getDescription(); }
 
 class Invoice {
 
     public:
+        Invoice();
         Invoice(vector<Item> items, Client client);
         void printInvoice();
 
@@ -80,6 +103,12 @@ class Invoice {
         Client client;
 };
 
+Invoice::Invoice()
+{
+    items = {};
+    client = client;
+}
+
 Invoice::Invoice(vector<Item> items, Client client) {
     this -> items = items;
     this -> client = client;
@@ -87,12 +116,13 @@ Invoice::Invoice(vector<Item> items, Client client) {
 
 void Invoice::printInvoice() {
 
+    cout << endl << endl;
     cout << client.getName() << endl;
-    cout << client.getAdress() << endl << endl;
+    cout << client.getAdress() << endl;
     cout << "Description --> Price --> QTY --> Total" << endl;
     cout << "---------------------------------------" << endl;
     for (Item item : items) {
-        cout << item.getQuantity() << endl;
+        cout << item.getDescription() << "   " << item.getQuantity() << "   " << item.getPrice() << "   " << item.getQuantity() * item.getPrice() << endl;
     }
 }
 
