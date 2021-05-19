@@ -35,6 +35,10 @@ Product::Product(int id, int quantity, string description) {
     this -> description = description;
 }
 
+int Product::getId() {return id; }
+int Product::getQuantity() {return quantity; }
+string Product::getDescription() {return description; }
+
 class Inventory
 {
     public:
