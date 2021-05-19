@@ -24,7 +24,15 @@ class Product
 };
 
 Product::Product() {
+    id = 0;
+    quantity = 0;
+    string description = "";
+}
 
+Product::Product(int id, int quantity, string description) {
+    this -> id = id;
+    this -> quantity = quantity;
+    this -> description = description;
 }
 
 class Inventory
