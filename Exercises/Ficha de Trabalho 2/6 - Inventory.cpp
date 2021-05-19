@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <limits>
 using namespace std;
 
 class Product
@@ -108,9 +109,12 @@ void test()
         cout << "Quantity: ";
         cin >> quantity;
         Product new_product = Product(quantity, name);
-        string solution = i.search(new_product) ? "" : "";
+        string solution = i.search(new_product) ? "Product available" : "Product not available";
         cout << solution << endl << "Continue? (Y/N): ";
         cin >> answer;
+
+        cin.clear();
+        cin.ignore(10000, '\n');
 
         } while (tolower(answer) != 'n');
 }
