@@ -54,6 +54,7 @@
         "map": "cpp",
         "set": "cpp",
         "sstream": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "random": "cpp"
     }
 }
