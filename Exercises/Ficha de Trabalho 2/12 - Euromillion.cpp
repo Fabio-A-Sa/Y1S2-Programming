@@ -51,12 +51,12 @@ void Bet::fill_numbers() {
     for (int j = 0 ; j < 2 ; j++ ) {
         stars.push_back(lucky_stars[j]);
     }
-
 }   
 
 int main ()
 {   
     srand(time(NULL));
     initialize();
+
     return 0;
 }
