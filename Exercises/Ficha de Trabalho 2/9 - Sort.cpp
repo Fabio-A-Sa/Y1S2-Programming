@@ -9,6 +9,7 @@
 using namespace std;
 
 bool inVector (vector<string> vector, string name) {
+
     for (auto attemp : vector) {
         if (attemp == name) {
             return true;
@@ -45,7 +46,7 @@ void using_my_algorithm() {
 
     }
     else {
-        cout << "Wrong file" << endl;
+        cout << "Wrong file!" << endl;
     }
     
     if (new_names.size()) {
@@ -58,6 +59,10 @@ void using_my_algorithm() {
         }
         
         file.close();
+    }
+
+    else {
+        cout << "Wrong file!" << endl;
     }
 
 }
