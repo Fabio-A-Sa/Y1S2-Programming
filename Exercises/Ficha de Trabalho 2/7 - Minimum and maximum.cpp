@@ -8,6 +8,7 @@ using namespace std;
 template<class T>
 
 void max_and_min(T v) {
+
     int max = -100000;
     int min = 100000;
 
@@ -24,7 +25,7 @@ void max_and_min(T v) {
 
 int main()
 {   
-    vector<int> v = {1, 2, 3};
+    vector<int> v = {-101, 2, 356, 0, 7, 567, -96};
     max_and_min(v);
     return 0;
 }
