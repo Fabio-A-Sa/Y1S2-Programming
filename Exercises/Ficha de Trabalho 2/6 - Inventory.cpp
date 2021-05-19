@@ -79,7 +79,7 @@ void Inventory::showInventory() {
 
 void test()
 {
-    
+    cout << "Nothing" << endl;
 }
 
 int main()
