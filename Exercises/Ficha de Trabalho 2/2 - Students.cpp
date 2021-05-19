@@ -34,6 +34,16 @@ class Student {
 
 } ;
 
+Student::Student()
+{
+    code = "";
+    name = "";
+    shortExam = 0;
+    project = 0;
+    exam = 0;
+    finalGrade = 0;
+}
+
 Student::Student(const string &code, const string &name) {
 
     this -> code = code;
