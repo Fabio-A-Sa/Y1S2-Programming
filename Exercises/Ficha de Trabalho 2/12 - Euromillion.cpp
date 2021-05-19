@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <random>
+#include <ctime>
 using namespace std;
 
 vector<int> main_numbers, lucky_stars;
@@ -17,8 +19,9 @@ void initialize() {
     for (int number = 1 ; number < 13 ; number ++) {
         lucky_stars.push_back(number);
     }
-    random_shuffle(main_numbers.begin(), main_numbers.end());
 
+    random_shuffle(main_numbers.begin(), main_numbers.end());
+    random_shuffle(lucky_stars.begin(), lucky_stars.end());
 }
 
 class Bet
@@ -46,6 +49,7 @@ void Bet::fill_numbers() {
 
 int main ()
 {   
+    srand(time(NULL));
     initialize();
     return 0;
 }
