@@ -16,9 +16,9 @@ class Book {
         Book(string bookName);
         void setId (IdentNum num);
         void setName(string bookName);
-        IdentNum getId() const;
-        string getName() const;
-        void show() const;
+        IdentNum getId();
+        string getName();
+        void show();
 
     private:
         static IdentNum numBooks;
@@ -34,7 +34,13 @@ Book::Book() {
     name = "Unknown book name";
 }
 
-IdentNum Book::getId() const {
+Book::Book(string bookName) {
+    numBooks++;
+    id = numBooks;
+    name = bookName;
+}
+
+IdentNum Book::getId() {
     return id;
 }
 
@@ -42,7 +48,7 @@ void Book::setName(string bookName) {
     name = bookName;
 }
 
-string Book::getName() const {
+string Book::getName(){
     return name;
 }
 
@@ -51,21 +57,21 @@ class Library {
     public:
         Library();
         void addBook(Book book);
-        void showBooks() const;
+        void showBooks();
     
     private:
         vector<Book> books;
 };
 
 Library::Library() {
-    books.clear();
+    books = {};
 }
 
 void Library::addBook(Book b) {
     books.push_back(b);
 }
 
-void Library::showBooks() const {
+void Library::showBooks() {
     for (int i = 0 ; i < books.size() ; i++ ) {
         cout << books[i].getId() << " - " << books[i].getName() << endl;
     }
@@ -73,14 +79,14 @@ void Library::showBooks() const {
 
 void test() {
 
-    Library lib;
-    Book b1;
-    Book b2("My first book");
+    Library lib = Library();
+    Book b1 = Book("Os 3 Porquinhos");
+    Book b2 = Book("O patinho Feio");
 
     lib.addBook(b1);
     lib.addBook(b2);
 
-    Book b3;
+    Book b3 = Book();
 
     string book_name;
     cout << "Book name? ";
