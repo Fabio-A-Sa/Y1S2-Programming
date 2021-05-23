@@ -10,7 +10,7 @@ using namespace std;
 template<class FowardIterator, class UniaryPredicate>
 FowardIterator remove_if(FowardIterator first, FowardIterator last, UniaryPredicate pred);
 
-
+// Perguntar ao professor
 
 int main ()
 {
