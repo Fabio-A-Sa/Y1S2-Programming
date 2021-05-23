@@ -3,23 +3,30 @@
 
 #include <iostream>
 #include <string>
-using namespace std;
 
 namespace myfuncs {
-    void cout(const string &s);
-    bool endl(const string &s);
+    void cout(const std::string &s);
+    bool endl(const std::string &s);
 }
 
-void myfuncs::cout(const string &s) {
-
+void myfuncs::cout(const std::string &s) {
+    int i = 0;
+    while (s[i]) {
+        if (isalpha(s[i])) {
+            std::cout << s[i];
+        }
+        i++;
+    }
 }
 
-bool myfuncs::endl(const string &s) {
-    
+bool myfuncs::endl(const std::string &s) {
+    return islower(s[s.size()-1]);
 }
 
 int main ()
 {
-    std::cout << "Test";
+    std::string test = "This0isa7test0stofMainFunctioN";
+    myfuncs::cout(test);
+    std::string answer = 
     return 0;
 }
