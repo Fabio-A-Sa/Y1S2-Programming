@@ -15,8 +15,8 @@ class Date
     friend bool operator <= (Date date1, Date date2);
     friend bool operator >= (Date date1, Date date2);
     friend bool operator == (Date date1, Date date2);
-    friend void operator << (Date date1, Date date2);
-    friend void operator >> (Date date1, Date date2);
+    friend void operator << (Date &date1, Date &date2);
+    friend void operator >> (Date &date1, Date &date2);
 
     public:
         Date();
@@ -246,16 +246,21 @@ bool operator == (Date date1, Date date2) {
     return date1.getDate() == date2.getDate();
 }
 
-void operator << (Date date1, Date date2) {
+void operator << (Date &date1, Date &date2) {
     date1.setDate(date2.getDay(), date2.getMonth(), date2.getYear());
 }
 
-void operator >> (Date date1, Date date2) {
+void operator >> (Date &date1, Date &date2) {
     date2.setDate(date1.getDay(), date1.getMonth(), date1.getYear());
 }
 
 
 int main ()
 {
+    Date d1 = Date(23, 0, 2021);
+    Date d2 = Date(10, 7, 2002);
+    d1 >> d2;
+    bool answer = d1 != d2;
+    cout << answer;
     return 0;
 }
