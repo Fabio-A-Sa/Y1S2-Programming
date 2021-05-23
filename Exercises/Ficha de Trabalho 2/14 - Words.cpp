@@ -39,12 +39,34 @@ void store (vector<vector<string>> &data) {
 
 void print_data (vector<vector<string>> data) {
 
+    cout << endl << "Book.txt: \n" << endl;
     for (auto v : data) {
         for (string word : v) {
             cout << word << " ";
         }
         cout << endl;
     }
+    cout << endl;
+}
+
+void ask (vector<vector<string>> data) {
+
+    string word;
+    cout << "WORD? ";
+    cin >> word;
+    cout << "Results: " << endl;
+    for (int i = 0 ; i < data.size() ; i++ ) {
+        for (int j = 0 ; j < data[i].size() ; j++ ) {
+            if (word == data[i][j]) {
+                cout << i+1 << ": ";
+                for (auto word : data[i]) {
+                    cout << word << " " ;
+                }
+                cout << endl;
+            }
+        }
+    }
+    cout << endl;
 }
 
 int main ()
@@ -52,5 +74,13 @@ int main ()
     vector<vector<string>> all_data;
     store(all_data);
     print_data(all_data);
+    while (!cin.eof()) {
+
+        string answer;
+        ask(all_data);
+        cout << "\nCTRL+Z to stop or other letter to continue: ";
+        cin >> answer;
+        cout << endl;
+    }
     return 0;
 }
