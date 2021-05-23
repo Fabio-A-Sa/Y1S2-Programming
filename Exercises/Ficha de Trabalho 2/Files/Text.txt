@@ -1,0 +1,17 @@
+Programs that will run as console applications
+under Visual Studio C++ are programs that
+read data from the command line and output
+the results to the command line. To avoid
+having to dig into the complexities of creating
+and managing application windows before you
+have enough knowledge to understand how
+they work, all the examples that you will write
+to understand how the C++ language works
+will be console programs, either Win32
+console programs or .NET console programs.
+This will enable you to focus entirely on the
+C++ language in the first instance; once you
+have mastered that, you will be ready to deal
+with creating and managing application
+windows. You will first look at how console
+programs are structured.
