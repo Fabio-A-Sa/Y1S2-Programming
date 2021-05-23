@@ -17,6 +17,8 @@ class Date
     friend bool operator == (Date date1, Date date2);
     friend void operator << (Date &date1, Date &date2);
     friend void operator >> (Date &date1, Date &date2);
+    friend void operator ++ (Date &date);
+    friend void operator -- (Date &date);
 
     public:
         Date();
@@ -254,6 +256,13 @@ void operator >> (Date &date1, Date &date2) {
     date2.setDate(date1.getYear(), date1.getMonth(), date1.getDay());
 }
 
+void operator ++ (Date &date1) {
+    date1.setDay(date1.getDay()+1);
+}
+
+void operator -- (Date &date1) {
+    date1.setDay(date1.getDay()-1);
+}
 
 int main ()
 {
@@ -261,7 +270,10 @@ int main ()
     Date d2 = Date(2002, 7, 10);
     cout << "Initial conditions:\n" << d1.getDate() << endl << d2.getDate() << endl;
     d1 >> d2;
-    bool answer = d1 != d2;
-    cout << answer;
+    cout << "Depois:\n" << d1.getDate() << endl << d2.getDate() << endl;
+    ++d1;
+    cout << "Um dia depois de d1: " << d1.getDate() << endl;
+    --d2;
+    cout << "Um dia antes de d2: " << d2.getDate() << endl;
     return 0;
 }
