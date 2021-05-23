@@ -15,13 +15,20 @@ void store (vector<vector<string>> &data) {
     if (file.good()) {
         
         while (!file.eof()) {
-            string current_line;
+            string current_line, current_word = "";
             vector<string> current_content = {};
             getline(file, current_line);
             for (int i = 0 ; i < current_line.size() ; i++ ) {
                 char current_char = current_line[i];
-
+                if (current_char == ' ') {
+                    current_content.push_back(current_word);
+                    current_word = "";
+                }
+                else {
+                    current_word += current_char;
+                }
             }
+            current_content.push_back(current_word);
             data.push_back(current_content);
         }
     }   
@@ -31,7 +38,7 @@ void store (vector<vector<string>> &data) {
 }
 
 void print_data (vector<vector<string>> data) {
-    
+
 }
 
 int main ()
