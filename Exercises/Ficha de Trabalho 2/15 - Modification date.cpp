@@ -7,7 +7,16 @@
 using namespace std;
 
 class Date
-{
+{   
+    friend bool operator < (Date date1, Date date2);
+    friend bool operator > (Date date1, Date date2);
+    friend bool operator != (Date date1, Date date2);
+    friend bool operator <= (Date date1, Date date2);
+    friend bool operator >= (Date date1, Date date2);
+    friend bool operator == (Date date1, Date date2);
+    friend bool operator << (Date date1, Date date2);
+    friend bool operator >> (Date date1, Date date2);
+
     public:
         Date();
         Date(unsigned int year, unsigned int month,unsigned int day);
