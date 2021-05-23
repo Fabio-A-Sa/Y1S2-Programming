@@ -14,6 +14,10 @@ void myfuncs::cout(const string &s) {
 
 }
 
+bool myfuncs::endl(const string &s) {
+    
+}
+
 int main ()
 {
     std::cout << "Test";
