@@ -247,18 +247,19 @@ bool operator == (Date date1, Date date2) {
 }
 
 void operator << (Date &date1, Date &date2) {
-    date1.setDate(date2.getDay(), date2.getMonth(), date2.getYear());
+    date1.setDate(date2.getYear(), date2.getMonth(), date2.getDay());
 }
 
 void operator >> (Date &date1, Date &date2) {
-    date2.setDate(date1.getDay(), date1.getMonth(), date1.getYear());
+    date2.setDate(date1.getYear(), date1.getMonth(), date1.getDay());
 }
 
 
 int main ()
 {
-    Date d1 = Date(23, 0, 2021);
-    Date d2 = Date(10, 7, 2002);
+    Date d1 = Date(2021, 5, 23);
+    Date d2 = Date(2002, 7, 10);
+    cout << "Initial conditions:\n" << d1.getDate() << endl << d2.getDate() << endl;
     d1 >> d2;
     bool answer = d1 != d2;
     cout << answer;
