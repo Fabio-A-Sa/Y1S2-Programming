@@ -15,8 +15,12 @@ void myfuncs::cout(const std::string &s) {
         if (isalpha(s[i])) {
             std::cout << s[i];
         }
+        else {
+            std::cout << " ";
+        }
         i++;
     }
+    std::cout << std::endl;
 }
 
 bool myfuncs::endl(const std::string &s) {
@@ -25,8 +29,9 @@ bool myfuncs::endl(const std::string &s) {
 
 int main ()
 {
-    std::string test = "This0isa7test0stofMainFunctioN";
+    std::string test = "Th78392is0is5627a7t892es0t3tof5Main0Fun82737c2837tio327N";
     myfuncs::cout(test);
-    std::string answer = 
+    std::string answer = myfuncs::endl(test) ? "Lower case" : "Upper case";
+    std::cout << answer << std::endl;
     return 0;
 }
