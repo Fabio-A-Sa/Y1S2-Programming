@@ -39,6 +39,12 @@ void store (vector<vector<string>> &data) {
 
 void print_data (vector<vector<string>> data) {
 
+    for (auto v : data) {
+        for (string word : v) {
+            cout << word << " ";
+        }
+        cout << endl;
+    }
 }
 
 int main ()
