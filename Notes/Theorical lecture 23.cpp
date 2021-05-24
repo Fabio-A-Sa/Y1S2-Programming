@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <random>
+#include <ctime>
 
 using namespace std;
 
