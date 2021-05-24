@@ -11,17 +11,20 @@ using namespace std;
 
 namespace test {
     void cout(int number);
-    int getRandomNumber();
+    void getRandomNumber();
 }
 
 void test::cout(int number) {
-    std::cout << "Int number " << number << std::endl;
+    std::cout << "Int number: " << number << std::endl;
 }
 
-int
+void test::getRandomNumber() {
+    std::cout << "Random Number: " << rand() % 100 << endl;
+}
 
 int main ()
 {
-
+    srand(time(NULL));
+    test::getRandomNumber();
     return 0;
 }
