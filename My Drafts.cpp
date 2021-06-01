@@ -8449,3 +8449,21 @@ FEUP_person::FEUP_person(string name, int upCode) {
 
 string FEUP_person::getName() { return name; }
 int FEUP_person::getUpCode() { return upCode; }
+
+
+#include <iostream>
+using namespace std;
+
+struct Point {
+    int x, y;
+};
+
+int main ()
+{
+    Point p;
+    p.x = 4;
+    p.y = 10;
+    Point *q = &p;
+    cout << (*q).x;
+    return 0;
+}
