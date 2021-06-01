@@ -1,6 +1,6 @@
 // Created on May 24, 2021
 // @author: Fábio Araújo de Sá
-// Theorical lecture 23, pages 285 --> ???
+// Theorical lecture 23, pages 320 --> 340
 
 #include <iostream>
 #include <vector>
