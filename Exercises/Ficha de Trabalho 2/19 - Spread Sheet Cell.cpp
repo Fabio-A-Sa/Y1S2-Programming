@@ -1,4 +1,17 @@
-// Created on May, 2021
-// @author: Fábio Araújo de Sá
 
-class SpreadsheetCell// an "abstract class" {public:SpreadsheetCell() { };virtual~SpreadsheetCell() { };virtualvoidset(conststd::string& inString) = 0;virtualstd::stringgetString() const= 0;};
+#include <iostream>
+using namespace std;
+
+struct Point {
+    int x, y;
+};
+
+int main ()
+{
+    Point p;
+    p.x = 4;
+    p.y = 10;
+    Point *q = &p;
+    cout << (*q).x;
+    return 0;
+}
