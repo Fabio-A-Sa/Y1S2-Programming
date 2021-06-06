@@ -27,11 +27,13 @@ Personal project that includes much of the knowledge acquired in the practical a
 
 ### Project 1
 Pratical work done between 29/03/2021 and 30/04/2021 with [Pedro Ferreira](https://github.com/Pedro-PFerreira). <br>
-Developed in C++ language, this project is a Robot's Game with a maze that will be loaded from .txt simple file. using several datatypes (strings, arrays, vectors, structs, files and Object-Oriented Programming, dinamically memory allocation, Operating System compatibility) and modules that are available in StandardLibrary. <br>
+Developed in C++ language, this project is a Robot's Game with a maze that will be loaded from .txt simple file. using several datatypes (strings, arrays, vectors, structs, files and dinamically memory allocation, Operating System compatibility) and modules that are available in StandardLibrary. <br>
 After the deadline, the project can be viewed in [Proj 1 PROG](https://github.com/Fabio-A-Sa/Proj_PROG). <br/>
 
 ### Project 2
-Description available soon. <br/>
+Pratical work done between 29/03/2021 and 30/04/2021 with [Pedro Ferreira](https://github.com/Pedro-PFerreira). <br>
+Developed in C++ language, this project is a Robot's Game with a maze that will be loaded from .txt simple file. using several datatypes (strings, arrays, vectors, structs, files and dinamically memory allocation, Operating System compatibility) and modules that are available in StandardLibrary. <br>
+After the deadline, the project can be viewed in [Proj 2 PROG](https://github.com/Pedro-PFerreira/PROJ_PROG_2). <br/>
 
 <br>
 
