@@ -8511,3 +8511,18 @@ int main ()
     cout << "X / Y = " << (double) x/y << endl;
     return 0;
 }
+
+int main ()
+{   
+    int number1, number2;
+    cout << "Two numbers: ";
+    cin >> number1 >> number2;
+    cout << fixed << setprecision(10) << (double) number1 / number2 << endl;
+    cout << setprecision(5) << (double) number1 / number2 << endl;
+
+    string name1, name2;
+    cout << "Two names: ";
+    cin >> name1 >> name2;
+    cout << fixed << setfill('F') << setprecision(10) << name1 << name2 << endl;
+    return 0;
+}
