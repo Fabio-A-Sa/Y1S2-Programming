@@ -11,7 +11,7 @@ int main()
 {   
     string example = "eXAmple";
     for (auto c : example) {
-        cout << tolower(c);
+        cout << (char) tolower(c);
     }
     return 0;
 }
