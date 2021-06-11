@@ -32,6 +32,10 @@ int main ()
     char number = 100;
     cout << "Letter " << letter << " to decimal number: " << (int) letter << endl;
     cout << "Number " << number << " to letter: " << (char) number << endl;
-    
+
+    // Using single, double and backslash sequences:
+    cout << "This is a \'test\' for exam" << endl;
+    cout << "This is a \\'test\\' for exam\n";
+
     return 0;
 }
