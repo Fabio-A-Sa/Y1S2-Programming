@@ -8616,3 +8616,18 @@ int main()
 
     return 0;
 }
+
+int main()
+{   
+    string example = "eXAmpLE";
+    cout << "Default: " << example << endl;
+    cout << "Example in lowercase: ";
+    for (auto c : example) {
+        cout << (char) tolower(c);
+    }
+    cout << "\nExample in uppercase: ";
+    for (auto c : example) {
+        cout << (char) toupper(c);
+    }
+    return 0;
+}
