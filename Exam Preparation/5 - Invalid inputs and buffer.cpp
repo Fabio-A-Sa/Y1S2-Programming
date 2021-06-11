@@ -7,6 +7,20 @@
 #include <string>
 using namespace std;
 
+void to_do() {
+
+    int current_number;
+    cout << "Chars: ";
+    while (cin >> current_number) {
+        if (cin) {
+            cout << current_number;
+        }
+        else {
+            continue;
+        }
+    }
+}
+
 int main()
 {   
     vector<int> numbers;
@@ -32,6 +46,8 @@ int main()
     for (auto number : numbers) {
         cout << number << " ";
     }
+
+    to_do();
 
     return 0;
 }
