@@ -37,15 +37,22 @@ int main()
     while (numbers.size() != 10) {
         cout << "Number " << counter+1 << ": ";
         cin >> current_number;
-        if (cin && cin.peek() == '\n') {
-            numbers.push_back(current_number);
-            cin.ignore(10000, '\n');
-            counter+=1;
+
+        if (!cin.eof()) { // CTRL+Z for example
+
+            if (cin && cin.peek() == '\n') {
+                numbers.push_back(current_number);
+                cin.ignore(10000, '\n');
+                counter+=1;
+            }
+            else {
+                cout << "Input error, please try again!" << endl;
+                cin.clear();
+                cin.ignore(10000, '\n');
+            }
         }
         else {
-            cout << "Input error, please try again!" << endl;
-            cin.clear();
-            cin.ignore(10000, '\n');
+            break;
         }
     }
 
