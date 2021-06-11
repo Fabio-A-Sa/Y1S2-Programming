@@ -4,24 +4,26 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 int main()
 {   
     vector<int> numbers;
-    cout << "Input 10 numbers: ";
+    cout << "Input 10 numbers: " << endl;
     int counter = 0;
     int current_number;
 
     while (numbers.size() != 10) {
         cout << "Number " << counter+1 << ": ";
         cin >> current_number;
-        if (cin) {
+        if (cin && cin.peek() == '\n') {
             numbers.push_back(current_number);
             cin.ignore(10000, '\n');
             counter+=1;
         }
         else {
+            cout << "Input error, please try again!" << endl;
             cin.clear();
             cin.ignore(10000, '\n');
         }
