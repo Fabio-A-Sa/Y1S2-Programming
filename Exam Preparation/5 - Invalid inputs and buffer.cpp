@@ -21,6 +21,7 @@ void to_do() {
             cin.clear();
         }
         else {
+            cin.clear();
             break;
         }
     }

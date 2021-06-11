@@ -10,6 +10,8 @@ using namespace std;
 int main()
 {   
     string example = "eXAmple";
-    cout << "Word " << example << " is " << example.toupper() << " in uppercase and " << tolower(example) << " in lowercase\n";
+    for (auto c : example) {
+        cout << tolower(c);
+    }
     return 0;
 }
