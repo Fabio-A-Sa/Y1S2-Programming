@@ -7,6 +7,13 @@
 #include <array>
 using namespace std;
 
+void convertion () {
+
+    cout << atoi("999654") * 10 << endl;
+    cout << atol("56") << endl;
+    cout << atof("9.655") * 10 << endl;
+}
+
 int main()
 {   
     string example = "eXAmpLE";
@@ -22,7 +29,9 @@ int main()
 
     cout << "String in C: " << endl;
     char s[] = "fabiosa";
-    cout << "String size is: " << sizeof(s) / sizeof(s[0]) << endl; // String.size() + 1 --> '\n'
+    cout << "String size is: " << sizeof(s) / sizeof(s[0]) << endl; // String.size() + 1 --> '\0'
+
+    convertion();
 
     return 0;
 }
