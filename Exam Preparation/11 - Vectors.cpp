@@ -8,13 +8,15 @@
 using namespace std;
 
 int main ()
-{
+{   
+    // Initialization
     vector<int> example(10); // Initialize with 10 zeros
     for (auto number: example) {
         cout << number << " ";
     }
     cout << endl;
 
+    // Cout numbers
     srand(time(NULL));
     vector<int> numbers;
     while (numbers.size() != 10) {
@@ -25,5 +27,14 @@ int main ()
     }
     cout << endl;
 
+    // 2D vector initialization
+    vector<vector<int>> more_numbers(4, vector<int>(3)); // 4 lines and 3 columns
+    more_numbers.at(3).at(2) = 3289736;
+    for (auto v: more_numbers) {
+        for (auto n : v) {
+            cout << n << " " ;
+        }
+        cout << endl;
+    }
     return 0;
 }
