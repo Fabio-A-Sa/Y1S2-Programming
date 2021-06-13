@@ -31,9 +31,10 @@ int main()
     cout << "String in C: " << endl;
     char s[] = "fabiosa";
     cout << "String size is: " << sizeof(s) / sizeof(s[0]) << endl; // String.size() + 1 --> '\0'
-    cout << sizeof(s) << endl;
 
     convertion();
 
+    string fabio = "Araujo de Sa";
+    cout << fabio.substr(10, 2) << endl; // Initial index and his length
     return 0;
 }
