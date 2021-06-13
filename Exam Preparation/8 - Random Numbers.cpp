@@ -16,7 +16,8 @@ int main ()
         cout << min + rand() % (max - min + 1) << endl;
         counter++; 
     }
-    cout << "Random: " << rand();
+    cout << "Random: " << rand() << endl;
+    cout << "Number of seconds after 1 January 1970: " << time(NULL) << endl;
 
     return 0;
 }
