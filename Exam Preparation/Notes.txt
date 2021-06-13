@@ -4,3 +4,8 @@
 // Page 69 of Lectures Material --> The eficiency of recursion
 A cada chamada recursiva, o endereço de memória dessa instrução tem de ser empurrado para a Stack (pilha), para que quando regressar
 ao caso de paragem, o programa volte ao passo anterior para resgatar o valor formado totalmente.
+
+// Page 79 of Lectures Material --> Arrays
+Functions cannot return arrays, using a return statement.
+However, an array can be returned, if it is embedded in a struct.
+
