@@ -18,6 +18,6 @@ int main ()
     string name1, name2;
     cout << "Two names: ";
     cin >> name1 >> name2;
-    cout << fixed << setfill('F') << setprecision(10) << name1 << name2 << endl;
+    cout << fixed << setw(10) << name1 << setw(10) << name2 << endl;
     return 0;
 }
