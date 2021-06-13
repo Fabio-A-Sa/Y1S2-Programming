@@ -25,7 +25,15 @@ int main()
     
     // * --> Returns the value of number in adress *p1
     int another = *p1;
-    cout << another;
+    cout << another << endl;
+
+    // Pointers and arrays:
+    int arr[] = {10, 52, -9, 56, 23, 7, 23};
+    int *pointer = arr;
+    for (int i = 0 ; i < sizeof(arr) / sizeof(arr[0]) ; i++ ) {
+        cout << *(pointer+i) << " ";
+    }
+    cout << endl;
 
     return 0;
 }
