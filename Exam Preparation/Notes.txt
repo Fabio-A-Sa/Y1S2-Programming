@@ -1,0 +1,6 @@
+// Created on June, 2021
+// @author: Fábio Araújo de Sá
+
+// Page 69 of Lectures Material --> The eficiency of recursion
+A cada chamada recursiva, o endereço de memória dessa instrução tem de ser empurrado para a Stack (pilha), para que quando regressar
+ao caso de paragem, o programa volte ao passo anterior para resgatar o valor formado totalmente.
