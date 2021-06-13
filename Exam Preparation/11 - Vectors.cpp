@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <ctime>
 using namespace std;
 
 int main ()
@@ -12,5 +13,17 @@ int main ()
     for (auto number: example) {
         cout << number << " ";
     }
+    cout << endl;
+
+    srand(time(NULL));
+    vector<int> numbers;
+    while (numbers.size() != 10) {
+        numbers.push_back(rand() % 100);
+    }
+    for (auto number : numbers) {
+        cout << number << " ";
+    }
+    cout << endl;
+
     return 0;
 }
