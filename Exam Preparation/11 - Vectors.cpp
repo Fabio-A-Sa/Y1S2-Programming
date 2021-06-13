@@ -7,6 +7,12 @@
 #include <ctime>
 using namespace std;
 
+void fill(vector<int> &v) {
+    for (int i = 0 ; i < v.size() ; i++ ) {
+        v[i] = rand() % 100;
+    }
+} 
+
 int main ()
 {   
     // Initialization
@@ -18,10 +24,8 @@ int main ()
 
     // Cout numbers
     srand(time(NULL));
-    vector<int> numbers;
-    while (numbers.size() != 10) {
-        numbers.push_back(rand() % 100);
-    }
+    vector<int> numbers(10);
+    fill(numbers);
     for (size_t i = 0 ; i < numbers.size() ; i++ ) {
         cout << numbers[i] << " ";
     }
@@ -37,5 +41,6 @@ int main ()
         }
         cout << endl;
     }
+    
     return 0;
 }
