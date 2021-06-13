@@ -11,6 +11,7 @@ int getTicketNumber() {
     ticketNum++;
     return ticketNum;
 }
+
 int main()
 {
     int i;
