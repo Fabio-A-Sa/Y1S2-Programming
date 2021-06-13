@@ -31,6 +31,7 @@ int main()
     cout << "String in C: " << endl;
     char s[] = "fabiosa";
     cout << "String size is: " << sizeof(s) / sizeof(s[0]) << endl; // String.size() + 1 --> '\0'
+    cout << sizeof(s) << endl;
 
     convertion();
 
