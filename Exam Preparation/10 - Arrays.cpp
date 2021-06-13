@@ -22,7 +22,6 @@ void without_const (int a[]) {
     cout << endl;
 }
 
-
 int main ()
 {
     const int number_of_numbers = 10; // Is good practice

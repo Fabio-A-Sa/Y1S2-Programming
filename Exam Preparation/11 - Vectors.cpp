@@ -8,5 +8,9 @@ using namespace std;
 
 int main ()
 {
+    vector<int> example(10); // Initialize with 10 zeros
+    for (auto number: example) {
+        cout << number << " ";
+    }
     return 0;
 }
