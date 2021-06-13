@@ -6,6 +6,14 @@
 #include <array>
 using namespace std;
 
+void using_C () {
+
+}
+
+void using_CPP () {
+    
+}
+
 int main ()
 {
     return 0;

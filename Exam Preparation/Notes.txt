@@ -15,10 +15,12 @@ Be careful about const arrays declaration!
 & --> Returns the memory adress of its operand
 int example = 10;
 int *p1 = &example;
-cout << "& example: " << p1 << endl; (returns 0x7389FED9)
+cout << "& example: " << p1 << endl; (returns "0x7389FED9")
 * --> Returns the value of number in adress *p1
 int another = *p1;
-cout << another << endl; (returns 10)
+cout << another << endl; (returns "10")
 You can compare 2 pointers in a relational expression: if ( p1 < p2 ) cout << "p1 points to lower memory than p2"; 
 
-// Page 106 of Lectures Material --> Dynamic Memory Allocation
+// Page 106 of Lectures Material --> Types of Memory
+Heap --> Zona para armazenar os dados provenientes dos métodos new, delete, malloc() e free()
+Stack --> Onde são guardados os endereços de retorno de chamadas das funções (recursivas, por exemplo)
