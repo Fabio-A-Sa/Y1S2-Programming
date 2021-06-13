@@ -30,6 +30,7 @@ int main ()
     // 2D vector initialization
     vector<vector<int>> more_numbers(4, vector<int>(3)); // 4 lines and 3 columns
     more_numbers.at(3).at(2) = 3289736;
+    more_numbers[1][2] = 6541;
     for (auto v: more_numbers) {
         for (auto n : v) {
             cout << n << " " ;
