@@ -38,7 +38,11 @@ int main()
     cout << endl;
 
     // Pointers and functions:
-    
+    int (*p_function) (int, int) = sum;
+    int result = (*p_function) (2, 3);
+    cout << "Sum with pointer function: " << result << endl;
+
+
 
     return 0;
 }
