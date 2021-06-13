@@ -6,6 +6,23 @@
 #include <array>
 using namespace std;
 
+void using_const (const int a[]) {
+    int size = sizeof(a) / sizeof(a[0]);
+    for (int i = 0 ; i < size ; i++ ) {
+        cout << a[i] << " " ;
+    }
+    cout << endl;
+}
+
+void not_using_const (int a[]) {
+    int size = sizeof(a) / sizeof(a[0]);
+    for (int i = 0 ; i < size ; i++ ) {
+        cout << a[i] << " " ;
+    }
+    cout << endl;
+}
+
+
 int main ()
 {
     const int number_of_numbers = 10; // Is good practice
@@ -27,6 +44,9 @@ int main ()
     cout << "Out of range but not a error message: " << numbers[23] << endl;
     cout << numbers << endl; // Show a memory adress of 1st element of numbers array
     cout << &numbers[0] << endl; // Show a memory adress of 1st element of numbers array
+
+    int example[] = {45, 5, 654, 654, 6, 54, 21, 3, 0, 879, -84, 95, 5};
+
     
     return 0;
 }
