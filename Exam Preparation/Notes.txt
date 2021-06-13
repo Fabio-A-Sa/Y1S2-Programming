@@ -19,3 +19,4 @@ cout << "& example: " << p1 << endl; (returns 0x7389FED9)
 * --> Returns the value of number in adress *p1
 int another = *p1;
 cout << another << endl; (returns 10)
+You can compare 2 pointers in a relational expression: if ( p1 < p2 ) cout << "p1 points to lower memory than p2"; 
