@@ -10,3 +10,12 @@ Functions cannot return arrays, using a return statement. However, an array can 
 When a multidimensional array is used as a formal function parameter, the size of the first dimension is not given, 
 but the remaining dimension sizes must be given in square brackets. Example: int numbers[2][] = {{2, 3, 4}, {3282, 12389, 12}};
 Be careful about const arrays declaration!
+
+// Page 102 of Lectures Material --> Pointers
+& --> Returns the memory adress of its operand
+int example = 10;
+int *p1 = &example;
+cout << "& example: " << p1 << endl; (returns 0x7389FED9)
+* --> Returns the value of number in adress *p1
+int another = *p1;
+cout << another << endl; (returns 10)
