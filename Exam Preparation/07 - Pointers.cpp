@@ -5,6 +5,8 @@
 #include <iostream>
 using namespace std;
 
+int sum (int number1, int number2) { return number1 + number2 ; }
+
 int main()
 {
     // Y is memory-copy of X. If X is changed, Y is changed too.
@@ -34,6 +36,9 @@ int main()
         cout << *(pointer+i) << " ";
     }
     cout << endl;
+
+    // Pointers and functions:
+    
 
     return 0;
 }
