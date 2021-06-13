@@ -16,6 +16,9 @@ int main ()
     for (auto number : numbers) {
         cout << number << endl;
     }
-    
+
+    cout << "Length of array: " << sizeof(numbers) / sizeof(numbers[0]) << endl;
+    cout << "Out of range but not a error message: " << numbers[23] << endl;
+
     return 0;
 }
