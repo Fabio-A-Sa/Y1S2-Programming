@@ -9,6 +9,7 @@ using namespace std;
 
 void convertion () {
 
+    // Convert strings to numbers (integer, long int and double)
     cout << atoi("999654") * 10 << endl;
     cout << atol("56") << endl;
     cout << atof("9.655") * 10 << endl;
