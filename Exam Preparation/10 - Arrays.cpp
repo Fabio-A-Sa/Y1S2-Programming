@@ -14,6 +14,8 @@ int main ()
     int another[] = {4234, 341, 546, 123, 365}; // Size not needed
     int zeros[100] = {0}; // All numbers equal to zero
     int some_zeros[5] = {1, 2, 3}; // 4 and 5 elements equal to zero
+    int score[3][2] = {{1, 2}, {3, 4}, {5, 6}}; // 2D array
+    int many[][2] = {{1, 2}, {3, 4}, {5, 6}}; // 2D array --> Not a error!
 
     numbers[1] = 0;
     numbers[8] = 65165;
@@ -23,7 +25,7 @@ int main ()
 
     cout << "Length of array: " << sizeof(numbers) / sizeof(numbers[0]) << endl;
     cout << "Out of range but not a error message: " << numbers[23] << endl;
-    cout << numbers << endl; // Show a memory adress of 1st element of number
-
+    cout << numbers << endl; // Show a memory adress of 1st element of numbers array
+    cout << &numbers[0] << endl; // Show a memory adress of 1st element of numbers array
     return 0;
 }
