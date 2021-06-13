@@ -16,6 +16,7 @@ int main ()
         cout << min + rand() % (max - min + 1) << endl;
         counter++; 
     }
+    cout << "Random: " << rand();
 
     return 0;
 }
