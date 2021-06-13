@@ -20,8 +20,8 @@ int main ()
     while (numbers.size() != 10) {
         numbers.push_back(rand() % 100);
     }
-    for (auto number : numbers) {
-        cout << number << " ";
+    for (size_t i = 0 ; i < numbers.size() ; i++ ) {
+        cout << numbers[i] << " ";
     }
     cout << endl;
 
