@@ -9,6 +9,7 @@ ao caso de paragem, o programa volte ao passo anterior para resgatar o valor for
 Functions cannot return arrays, using a return statement. However, an array can be returned, if it is embedded in a struct.
 When a multidimensional array is used as a formal function parameter, the size of the first dimension is not given, 
 but the remaining dimension sizes must be given in square brackets. Example: int numbers[][3] = {{2, 3, 4}, {3282, 12389, 12}};
+See page 118 of Notes.
 Be careful about const arrays declaration!
 
 // Page 102 of Lectures Material --> Pointers
