@@ -8,7 +8,7 @@ ao caso de paragem, o programa volte ao passo anterior para resgatar o valor for
 // Page 79, 80 of Lectures Material --> Arrays
 Functions cannot return arrays, using a return statement. However, an array can be returned, if it is embedded in a struct.
 When a multidimensional array is used as a formal function parameter, the size of the first dimension is not given, 
-but the remaining dimension sizes must be given in square brackets. Example: int numbers[2][] = {{2, 3, 4}, {3282, 12389, 12}};
+but the remaining dimension sizes must be given in square brackets. Example: int numbers[][3] = {{2, 3, 4}, {3282, 12389, 12}};
 Be careful about const arrays declaration!
 
 // Page 102 of Lectures Material --> Pointers
@@ -20,3 +20,5 @@ cout << "& example: " << p1 << endl; (returns 0x7389FED9)
 int another = *p1;
 cout << another << endl; (returns 10)
 You can compare 2 pointers in a relational expression: if ( p1 < p2 ) cout << "p1 points to lower memory than p2"; 
+
+// Page 106 of Lectures Material --> Dynamic Memory Allocation
