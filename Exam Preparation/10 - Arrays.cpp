@@ -7,15 +7,15 @@
 using namespace std;
 
 void using_const (const int a[]) {
-    int size = sizeof(a) / sizeof(a[0]);
+    int size = 13;
     for (int i = 0 ; i < size ; i++ ) {
         cout << a[i] << " " ;
     }
     cout << endl;
 }
 
-void not_using_const (int a[]) {
-    int size = sizeof(a) / sizeof(a[0]);
+void without_const (int a[]) {
+    int size = 13;
     for (int i = 0 ; i < size ; i++ ) {
         cout << a[i] << " " ;
     }
@@ -47,6 +47,8 @@ int main ()
 
     int example[] = {45, 5, 654, 654, 6, 54, 21, 3, 0, 879, -84, 95, 5};
 
+    without_const(example);
+    using_const(example);
     
     return 0;
 }
