@@ -10,10 +10,11 @@ int main ()
 {   
     srand(time(NULL));
     int counter = 0;
-    int min = 100, max = 98123;
+    int min = 100, max = 102;
 
     while (counter != 10) {
-        cout << min + (rand() % (max-min));
+        cout << min + rand() % (max - min + 1) << endl;
+        counter++; 
     }
 
     return 0;
