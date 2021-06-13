@@ -60,6 +60,31 @@ void using_CPP () {
     }
     cout << endl;
     delete [] p;
+
+    // 2D array
+    int nc = 10, nl = 20, **matrix;
+    matrix = new int*[nl];
+    for (int i = 0 ; i < nl ; i++ ) {
+        matrix[i] = new int[nc];
+    }
+
+    for (int i = 0 ; i < nl ; i++ ) {
+        for (int j = 0 ; j < nc ; j++ ) {
+            matrix[i][j] = i+j;
+        }
+    }
+
+    for (int i = 0 ; i < nl ; i++ ) {
+        for (int j = 0 ; j < nc ; j++ ) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    for (int i = 0 ; i < nl ; i++) {
+        delete[] matrix[i];
+    }
+    delete[] matrix;
 }
 
 int main ()
