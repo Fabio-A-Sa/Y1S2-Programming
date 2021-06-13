@@ -35,6 +35,7 @@ int main()
     convertion();
 
     string fabio = "Araujo de Sa";
-    cout << fabio.substr(10, 2) << endl; // Initial index and his length
+    cout << fabio.substr(10, 2) << endl; // Initial index and its length
+    
     return 0;
 }
