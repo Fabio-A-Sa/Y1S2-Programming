@@ -23,7 +23,7 @@ int main ()
 
     cout << "Length of array: " << sizeof(numbers) / sizeof(numbers[0]) << endl;
     cout << "Out of range but not a error message: " << numbers[23] << endl;
-    cout << numbers << endl;
+    cout << numbers << endl; // Show a memory adress of 1st element of number
 
     return 0;
 }
