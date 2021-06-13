@@ -27,5 +27,6 @@ int main ()
     cout << "Out of range but not a error message: " << numbers[23] << endl;
     cout << numbers << endl; // Show a memory adress of 1st element of numbers array
     cout << &numbers[0] << endl; // Show a memory adress of 1st element of numbers array
+    
     return 0;
 }
