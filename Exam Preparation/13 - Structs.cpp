@@ -31,5 +31,6 @@ int main ()
     (*f).price = 700;
     cout << f->location << " " << (*f).price << " " << f->students << endl; // Note: *p.location make an error!
     free(f);
+    
     return 0;
 }
