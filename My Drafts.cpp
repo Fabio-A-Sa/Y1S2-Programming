@@ -8721,3 +8721,18 @@ int main ()
     return 0;
 }
 
+int getTicketNumber() {
+
+    static int ticketNum = 0; // initialized only once, at program startup
+    ticketNum++;
+    return ticketNum;
+}
+
+int main()
+{
+    int i;
+    for (i=1; i <= 10; i++)
+    cout << "ticket number = " << getTicketNumber() << endl;
+    return 0;
+}
+
