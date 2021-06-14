@@ -11,7 +11,6 @@ typedef unsigned long long int IdNum;
 
 struct FEUP {
 
-    string location;
     int students;
     double price;
 };
@@ -20,23 +19,30 @@ int main ()
 {   
     // Normal
     FEUP faculty;
-    faculty.location = "Rua Torcato Gomes";
     faculty.students = 4300;
     faculty.price = 697.00;
-    cout << faculty.location << " " << faculty.price << " " << faculty.students << endl;
+    cout << faculty.price << " " << faculty.students << endl;
 
     // Using pointers
     FEUP * f;
     f = (FEUP *) malloc (sizeof(FEUP));
-    f->location = "Rua da Silva";
     f->students = 3287;
-    (*f).price = 700;
-    cout << f->location << " " << (*f).price << " " << f->students << endl; // Note: *p.location make an error!
+    f->price = 700.02;
+    cout << (*f).price << " " << f->students << endl; // Note: *p.location make an error!
     free(f);
 
     // using typedef
     IdNum number = 516516516;
     cout << "Typedef number: " << number << endl;
+
+    // Using struct + typedef
+    typedef struct {
+        char gender;
+        int number;
+    } Person;
+
+    Person Fabio = {'M', 18};
+    cout << Fabio.gender << " " << Fabio.number << endl;
 
     return 0;
 }
