@@ -17,7 +17,8 @@ void showNotes () {
         while (!file.eof()) {
             getline(file, current_line);
             cout << current_line << endl;
-        }file.close();
+        }
+        file.close();
     }
     else {
         cout << "This file not exists!" << endl;
