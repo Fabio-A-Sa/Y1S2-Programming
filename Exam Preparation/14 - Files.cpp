@@ -9,7 +9,7 @@ using namespace std;
 
 void showNotes () {
 
-    string file_name = "Notes.txt";
+    string file_name = "Notes.txt"; // Note: does not necessarily have the extension .txt
     ifstream file;
     file.open(file_name);
     if (file.good()) {
