@@ -25,11 +25,11 @@ int main ()
 
     // Using pointers
     FEUP * f;
-    f = (FEUP *) malloc(sizeof(FEUP));
+    f = (FEUP *) malloc (sizeof(FEUP));
     f->location = "Rua da Silva";
     f->students = 3287;
-    f->price = 700;
-    cout << f->price << " " << f->price << " " << f->price << endl; // Note: *p.location make an error!
+    (*f).price = 700;
+    cout << f->location << " " << (*f).price << " " << f->students << endl; // Note: *p.location make an error!
     free(f);
     return 0;
 }
