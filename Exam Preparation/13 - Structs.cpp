@@ -7,6 +7,8 @@
 #include <cstdlib>
 using namespace std;
 
+typedef unsigned long long int IdNum;
+
 struct FEUP {
 
     string location;
@@ -31,6 +33,10 @@ int main ()
     (*f).price = 700;
     cout << f->location << " " << (*f).price << " " << f->students << endl; // Note: *p.location make an error!
     free(f);
-    
+
+    // using typedef
+    IdNum number = 516516516;
+    cout << "Typedef number: " << number << endl;
+
     return 0;
 }
