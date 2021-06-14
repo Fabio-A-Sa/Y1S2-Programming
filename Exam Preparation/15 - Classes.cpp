@@ -48,7 +48,8 @@ void Person::setName(string name) { this -> name = name ; }
 
 int Person::getAge() { return age; }
 char Person::getGender() { return gender; }
-string Person::
+string Person::getFaculty() { return faculty; }
+string Person::getName() { return name; }
 
 int main ()
 {   
