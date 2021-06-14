@@ -44,6 +44,11 @@ Person::Person(int age, char gender, string faculty, string name) {
 void Person::setAge(int age) { this -> age = age ; }
 void Person::setGender(char gender) { this -> gender = gender ; }
 void Person::setFaculty(string faculty) { this -> faculty = faculty ; }
+void Person::setName(string name) { this -> name = name ; }
+
+int Person::getAge() { return age; }
+char Person::getGender() { return gender; }
+string Person::
 
 int main ()
 {   
