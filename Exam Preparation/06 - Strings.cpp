@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <array>
-#include <sstreams>
+#include <sstream>
 using namespace std;
 
 void convertion () {
@@ -18,6 +18,13 @@ void convertion () {
 
 void using_stringstreams() {
 
+    string example = "14 March , 2021";
+    char comma, barr = '/';
+    int day, year;
+    string month;
+    istringstream i(example);
+    i >> day >> month >> comma >> year;
+    cout << year << barr << month << barr << day << endl;
 }
 
 int main()
