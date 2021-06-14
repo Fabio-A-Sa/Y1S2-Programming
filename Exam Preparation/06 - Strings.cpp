@@ -1,10 +1,11 @@
 // Created on June, 2021
 // @author: Fábio Araújo de Sá
-// Page 27/123 of Lectures Material
+// Page 27/123/172 of Lectures Material
 
 #include <iostream>
 #include <string>
 #include <array>
+#include <sstreams>
 using namespace std;
 
 void convertion () {
@@ -13,6 +14,10 @@ void convertion () {
     cout << atoi("999654") * 10 << endl;
     cout << atol("56") << endl;
     cout << atof("9.655") * 10 << endl;
+}
+
+void using_stringstreams() {
+
 }
 
 int main()
@@ -36,6 +41,8 @@ int main()
 
     string fabio = "Araujo de Sa";
     cout << fabio.substr(10, 2) << endl; // Initial index and its length
+
+    using_stringstreams();
     
     return 0;
 }
