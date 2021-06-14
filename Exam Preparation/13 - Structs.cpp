@@ -51,7 +51,7 @@ int main ()
 
     Numbers n;
     n.i = 10;
-    n.d = 3826.3;
+    n.d = 3826.3;   // Ao colocar o Double, acabo por estragar o inteiro anterior
     cout << "Union: int = " << n.i << " and double = " << n.d << endl;
 
 

@@ -28,4 +28,4 @@ Stack --> Onde são guardados os endereços de retorno de chamadas das funções
 
 // Page 149 of Lectures Material --> Unions and Enum
 Unions --> Permite fazer store de tipos diferentes de dados no mesmo sítio da memória. O tamanho é ditado pelo maior tipo que a
-union contém. 
+union contém. Ao colocar um novo valor na zona de memória, estrago os anteriores.
