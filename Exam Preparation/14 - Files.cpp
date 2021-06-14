@@ -18,11 +18,12 @@ void showNotes () {
             getline(file, current_line);
             cout << current_line << endl;
         }
-        file.close();
     }
     else {
-        cout << "This file not exists!" << endl;
+        cerr << "This file not exists!" << endl;
+        exit(1);
     }
+    file.close();
 }
 
 int main()
