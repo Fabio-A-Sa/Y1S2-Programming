@@ -44,5 +44,16 @@ int main ()
     Person Fabio = {'M', 18};
     cout << Fabio.gender << " " << Fabio.number << endl;
 
+    union Numbers {
+        int i;
+        double d;
+    };
+
+    Numbers n;
+    n.i = 10;
+    n.d = 3826.3;
+    cout << "Union: int = " << n.i << " and double = " << n.d << endl;
+
+
     return 0;
 }

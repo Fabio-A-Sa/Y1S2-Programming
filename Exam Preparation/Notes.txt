@@ -27,4 +27,5 @@ Heap --> Zona para armazenar os dados provenientes dos métodos new, delete, mal
 Stack --> Onde são guardados os endereços de retorno de chamadas das funções (recursivas, por exemplo)
 
 // Page 149 of Lectures Material --> Unions and Enum
-Unions --> Permite fazer store de tipos diferentes de dados no mesmo sítio da memória
+Unions --> Permite fazer store de tipos diferentes de dados no mesmo sítio da memória. O tamanho é ditado pelo maior tipo que a
+union contém. 
