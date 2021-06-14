@@ -9,7 +9,7 @@ using namespace std;
 
 void showNotes () {
 
-    string file_name = "Notes.txt"; // Note: does not necessarily have the extension .txt
+    string file_name = "Nots.txt"; // Note: does not necessarily have the extension .txt
     ifstream file;
     file.open(file_name);
     if (file.good()) {
@@ -17,9 +17,11 @@ void showNotes () {
         while (!file.eof()) {
             getline(file, current_line);
             cout << current_line << endl;
-        }
+        }file.close();
     }
-    file.close();
+    else {
+        cout << "This file not exists!" << endl;
+    }
 }
 
 int main()
