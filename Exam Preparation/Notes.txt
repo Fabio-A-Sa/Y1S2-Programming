@@ -25,3 +25,6 @@ You can compare 2 pointers in a relational expression: if ( p1 < p2 ) cout << "p
 // Page 106 of Lectures Material --> Types of Memory
 Heap --> Zona para armazenar os dados provenientes dos métodos new, delete, malloc() e free()
 Stack --> Onde são guardados os endereços de retorno de chamadas das funções (recursivas, por exemplo)
+
+// Page 149 of Lectures Material --> Unions and Enum
+Unions --> Permite fazer store de tipos diferentes de dados no mesmo sítio da memória
