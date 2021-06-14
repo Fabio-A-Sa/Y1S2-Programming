@@ -42,7 +42,5 @@ int main()
     int result = (*p_function) (2, 3);
     cout << "Sum with pointer function: " << result << endl;
 
-
-
     return 0;
 }
