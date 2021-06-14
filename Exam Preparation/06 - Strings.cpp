@@ -18,7 +18,7 @@ void convertion () {
 
 void using_stringstreams() {
 
-    string example = "14 March , 2021";
+    string example = "14 June , 2021";
     char comma, barr = '/';
     int day, year;
     string month;
