@@ -32,3 +32,6 @@ union contém. Ao colocar um novo valor na zona de memória, estrago os anterior
 como por exemplo strings ou vectors (uma vez que têm comprimento dinâmico).
 Enum --> Serve para enumerar tipos de alguma coisa, caracterizar uma union por exemplo, de modo a só buscar. O resultado
 de struct.typeNum = número, de índex escolhido aquando a formação do enum.
+
+// Page 159 of Lecture Material --> Files
+Streams devem ser sempre colocadas em parâmetro do tipo call-by-reference e não call-by-value
