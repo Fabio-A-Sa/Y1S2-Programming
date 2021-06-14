@@ -1,6 +1,6 @@
 // Created on June, 2021
 // @author: Fábio Araújo de Sá
-// Page 142 of Lectures Material
+// Page 142/150 of Lectures Material
 
 #include <iostream>
 #include <string>
@@ -44,16 +44,32 @@ int main ()
     Person Fabio = {'M', 18};
     cout << Fabio.gender << " " << Fabio.number << endl;
 
+    enum numType {Int, Double, Float};
+
     union Numbers {
         int i;
         double d;
+        numType type;
     };
 
     Numbers n;
     n.i = 10;
-    n.d = 3826.3;   // Ao colocar o Double, acabo por estragar o inteiro anterior
+    n.d = 3826.3;   // Ao colocar o Double, acabo por estragar o inteiro anterior (partilham a mesma zona de memória)
+    n.type = Double;
     cout << "Union: int = " << n.i << " and double = " << n.d << endl;
+    cout << "Type: " << n.type << endl;
 
+    typedef union {
+        struct { double x, y, z; };
+        double coords[3];
+    } Point3D;
+    
+    // Como ocupam a mesma zona de memória, aceder por array ou por doubles funciona na mesma!
+    Point3D p;
+    p.x = 2.5; p.y = -3.7; p.z = 1.3;
+    for (int i = 0 ; i < 3 ; i++ ) {
+        cout << "Point " << p.coords[i] << endl;
+    }
 
     return 0;
 }
