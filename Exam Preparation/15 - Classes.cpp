@@ -34,11 +34,20 @@ Person::Person() {
     name = "";
 }
 
-Person::Person(int age, char gender,)
+Person::Person(int age, char gender, string faculty, string name) {
+    this -> age = age;
+    this -> gender = gender;
+    this -> faculty = faculty;
+    this -> name = name;
+}
+
+void Person::setAge(int age) { this -> age = age ; }
+void Person::setGender(char gender) { this -> gender = gender ; }
+void Person::setFaculty(string faculty) { this -> faculty = faculty ; }
 
 int main ()
 {   
     Person P = Person(18, 'M', "FEUP", "Fabio");
-    cout << p.getName();
+    cout << P.getName();
     return 0;
 }
