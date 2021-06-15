@@ -12,12 +12,12 @@ class Person {
     
     public:
         Person();
+        ~Person();
         Person(int age, char gender, string faculty, string name);
         void setAge(int age);
         void setGender(char gender);
         void setFaculty(string faculty);
         void setName(string name);
-        void setID(ID id);
         int getAge();
         char getGender();
         string getFaculty();
@@ -33,11 +33,13 @@ class Person {
         ID id;
 };
 
+ID Person::numID = 0;
+
 Person::Person() {
     age = 0;
     gender = ' ';
     faculty = "";
-    name = "";
+    name = "UNKNOWN";
     numID++;
     id = numID;
 }
@@ -51,22 +53,25 @@ Person::Person(int age, char gender, string faculty, string name) {
     id = numID;
 }
 
+Person::~Person() { cout << "Desctructor called for " << name << " object!" << endl; }
+
 void Person::setAge(int age) { this -> age = age ; }
 void Person::setGender(char gender) { this -> gender = gender ; }
 void Person::setFaculty(string faculty) { this -> faculty = faculty ; }
 void Person::setName(string name) { this -> name = name ; }
-void Person::setID(ID id) { this -> id = id ; }
 
 int Person::getAge() { return age; }
 char Person::getGender() { return gender; }
 string Person::getFaculty() { return faculty; }
 string Person::getName() { return name; }
+ID Person::getID() { return id; }
 
 int main ()
 {   
     Person P = Person(18, 'M', "FEUP", "Fabio");
-    cout << P.getName();
+    cout << P.getName() << endl;
     Person F;
-    F = ()
+    F.setFaculty("ISEP");
+    cout << F.getFaculty() << " " << F.getID() << endl;
     return 0;
 }
