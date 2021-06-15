@@ -9136,6 +9136,30 @@ int main ()
     return 0;
 }
 
+template<typename T>
+T sum (T a, T b) { return a + b ; }
+
+template<typename S>
+void printArray (const S a[], size_t n) {
+    for (size_t i = 0 ; i < n ; i++ ) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+}
+
+int main ()
+{
+    int number1 = 10;
+    int number2 = 5;
+    cout << sum (number1, number2) << endl;
+    double number3 = 7.5;
+    double number4 = 9.32;
+    cout << sum (number3, number4) << endl;
+    int arr[] = {56, 5415, 546, 541, 321, 3215, 6541, 5, 0, 65416};
+    printArray(arr, sizeof(arr) / sizeof(arr[0]));
+    return 0;
+}
+
 void using_iterators() {
     
     vector<string> names = {"Marco", "Ilias", "Aurelio", "Tobias", "Crespo", "Vint"};
