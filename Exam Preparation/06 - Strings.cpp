@@ -18,6 +18,7 @@ void convertion () {
 
 void using_stringstreams() {
 
+    // Extract string stream
     string example = "14 June , 2021";
     char comma, barr = '/';
     int day, year;
@@ -25,6 +26,11 @@ void using_stringstreams() {
     istringstream i(example);
     i >> day >> month >> comma >> year;
     cout << year << barr << month << barr << day << endl;
+
+    // Concatenate string stream
+    string another_example = "Fabio";
+    char space = ' ';
+    
 }
 
 int main()
