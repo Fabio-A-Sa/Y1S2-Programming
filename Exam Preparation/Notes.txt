@@ -35,3 +35,5 @@ de struct.typeNum = número, de índex escolhido aquando a formação do enum.
 
 // Page 159 of Lecture Material --> Files
 Streams devem ser sempre colocadas em parâmetro do tipo call-by-reference e não call-by-value
+
+// Page 209 of Lecture Material --> Multiple definitions of a Class (error in C++)
