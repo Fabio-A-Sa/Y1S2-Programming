@@ -30,7 +30,11 @@ void using_stringstreams() {
     // Concatenate string stream
     string another_example = "Fabio";
     char space = ' ';
-    
+    string correction = "Araujo";
+    ostringstream o;
+    o << another_example << space << correction;
+    string final = o.str();
+    cout << "Final: " << final << endl;
 }
 
 int main()
