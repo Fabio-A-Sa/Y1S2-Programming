@@ -40,3 +40,10 @@ Streams devem ser sempre colocadas em parâmetro do tipo call-by-reference e nã
 #ifndef CLASS_H - Verifica se a classe já está definida antes no stack
 #define CLASS_H - Define a classe
 #endif - Se ifndef, então salta para endif e não a define novamente, para evitar os erros de compilação separada
+
+// Page 217 of Lecture Material --> Declaring variables
+A variable is defined when the compiler allocates the storage for the variable.
+A variable is declared when the compiler is informed that a variable exists (and which is its type). It does not allocate the storage for the variable at that point.
+
+// Page 223 of Lecture Material --> Linked lists implementation
+Ver isto com mais calma! Se é que sai no exame...
