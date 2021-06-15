@@ -4,12 +4,11 @@
 
 #include <iostream>
 #include <array>
-#include <cstddef>
 using namespace std;
 
-// T admite ser um valor genérico (int, long, float, double)
-template<typename T> // or template<class T>
+// T e S admitem ser um valor genérico (int, long, float, double)
 
+template<typename T>
 T sum (T a, T b) { return a + b ; }
 
 template<typename S>
