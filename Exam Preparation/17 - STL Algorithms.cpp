@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>    // Important!
 using namespace std;
 
 void using_iterators() {
@@ -32,10 +33,14 @@ void using_iterators() {
 void removing_numbers() {
 
     vector<int> numbers = {2, 0, 6541, 0, 0, 654, 0, 8, 5, 6, 0, 15, 0, 5, 0, 0};
-    remove(numbers.begin(), numbers.end(), 0);
+    int n = count(numbers.begin(), numbers.end(), 0); cout << n << endl;
+
+    cout << "Initial size: " << numbers.size() << endl;
+    numbers.erase(remove(numbers.begin(), numbers.end(), 0), numbers.end());
     for (int n : numbers) 
         cout << n << " ";
     cout << endl;
+    cout << "Final size: " << numbers.size() << endl;
 }
 
 int main ()
