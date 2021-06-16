@@ -77,7 +77,8 @@ void STL_vectors() {
     show_vectors(n2, n2.size());
 
     // Fazer clean total num vector
-    
+    n2.clear();
+    show_vectors(n2, n2.size());
 }
 
 int main ()
