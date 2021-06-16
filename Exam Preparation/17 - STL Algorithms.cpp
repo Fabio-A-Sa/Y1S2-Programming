@@ -156,10 +156,15 @@ void STL_map() {
         p = *f; // each element of a "map" is a "pair"
         cout << n << " - " << p.first << ", " << p.second << endl;
     }
+    cout << endl;
 
     // Insertions to map container
-    map<string, int>
-
+    map<string, int> phoneList;
+    phoneList.insert(pair<string, int> ("Mary", 99999999));
+    phoneList.insert(pair<string, int> ("John", 516599999));
+    for (auto l : phoneList) {
+        cout << l.first << " - " << l.second << endl;
+    }
 }
 
 int main ()
