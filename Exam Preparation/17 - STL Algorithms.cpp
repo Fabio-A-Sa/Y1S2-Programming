@@ -115,13 +115,23 @@ void STL_lists() {
     list<int>::iterator P = l.begin();
     int index = 5;
     int value = 541;
-    for (int i = 0 ; i < index ; i++ ) { P++; }
+    for (int i = 0 ; i < index ; i++ ) { P++ ; }
     l.insert(P, value);
     show_lists(l, l.size());
 }
 
 void STL_map() {
 
+    // Muito parecido aos dicionários em Python
+    map<int, int> m;
+    m[0] = 90;
+    m[1] = 91;
+    cout << "Using map:\n";
+    int n = 0;
+    for (auto pair : m) {
+        n++;
+        cout << n << ": " << pair.first << " - " << pair.second << endl;
+    }
 
 }
 
