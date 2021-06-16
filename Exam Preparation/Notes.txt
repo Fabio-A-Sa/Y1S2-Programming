@@ -69,5 +69,6 @@ for (const auto & x : phone_user) won't create copies and won't allow you to do 
 // Page 336 of Lecture Material --> Object Oriented Languages
 Encapsulamento --> Não deixa certos atributos serem modificados por funções externas. Private atributes;
 Herança --> O objecto fica com as propriedades de outros objectos. Definir classes a partir de outras classes (derivadas);
-Polimorfismo --> Código comporta-se de formas diferentes de acordo com o contexto. Existe polimorfismo em tempo de compilação (overloading e templates), 
-mas também existe polimorfismo em run-time, com a herança e as funções virtuais (Virtual Functions);
+Polimorfismo --> Código comporta-se de formas diferentes de acordo com o contexto. Existe polimorfismo em tempo de compilação (estático, como overloading e templates), 
+mas também existe polimorfismo em run-time (dinâmico), como a herança e as funções virtuais (Virtual Functions);
+Virtual Functions --> Em vez do compilador determinar qual método é chamado, os parâmetros da função é que decidem qual a função a ser invocada;
