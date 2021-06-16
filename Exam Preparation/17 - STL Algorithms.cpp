@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 #include <cstddef>
 #include <string>
 #include <vector>
@@ -184,6 +185,29 @@ void STL_map() {
     }
 }
 
+void using_arrays() {
+
+    int a[] = { 30, 50, 10, 40, 20 };
+    remove(a, a+5, 50);
+    for (auto x : a)
+        cout << x << endl;
+}
+
+int root (int x) { return sqrt(x) ; }
+
+void transform_lambda() {
+
+    // Using extern non-void function
+    vector<int> inicio = {1, 4, 9, 16, 25, 36, 49};
+    vector<int> fim(inicio.size());
+    transform(inicio.begin(), inicio.end(), fim.begin(), root);
+    show_vectors(fim, fim.size());
+
+    // Using lambda function
+    transform(inicio.begin(), inicio.end(), fim.begin(), [](int x) -> int { return x*x*x ; });
+    show_vectors(fim, fim.size());
+}
+
 int main ()
 {   
     //using_iterators();
@@ -191,11 +215,7 @@ int main ()
     //STL_vectors();
     //STL_lists();
     //STL_map();
-
-    int a[] = { 30, 50, 10, 40, 20 };
-    remove(a, a+5, 50);
-    for (auto x : a)
-        cout << x << endl;
-
+    //using_arrays();
+    transform_lambda();
     return 0;
 }
