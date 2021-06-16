@@ -6,8 +6,9 @@
 #include <vector>
 #include <array>
 #include <list>
-#include <map>
-#include <algorithm>
+#include <map>              // For map and multimap
+#include <utility>          // For pair
+#include <algorithm>        // For begin(), end(), erase(), insert() ... and others iterator's methods
 using namespace std;
 
 void using_iterators() {
@@ -129,7 +130,7 @@ void STL_map() {
     m[10] = 8;
     cout << "Using map:\n";
     int n = 0;
-    
+
     map<int, int>::const_iterator i = m.begin(); // Another example, const iterator
 
     for (auto pair : m) {
