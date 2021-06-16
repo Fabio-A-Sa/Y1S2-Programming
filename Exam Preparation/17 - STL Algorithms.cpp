@@ -19,12 +19,14 @@ void using_iterators() {
     for (n = names.begin() ; n != names.end() ; n++ ) {
         cout << *n << endl;                                     // Retorna o que encontra na memória                            
     }
+    cout << endl;
 
     // Reverse iterators
     vector<string>::reverse_iterator m;
     for (m = names.rbegin() ; m != names.rend() ; m++ ) {
         cout << *m << endl;
     }
+    cout << endl;
 }
 
 int main ()
