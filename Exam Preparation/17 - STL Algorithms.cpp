@@ -236,10 +236,11 @@ void STL_set () {
     }
     cout << endl;
 
-    // Erase a number in a set
-    int goal = 5;
-    multiset<int>::iterator pointer = n.begin();
-    remove(pointer , n.end(), goal);
+    // Erase numbers in a set
+    cout << "Erase: ";
+    int lim_min = 5, lim_max = 10;
+    multiset<int>::iterator pointer1 = n.find(lim_min), pointer2 = n.find(lim_max);
+    n.erase(pointer1, pointer2);
     for (auto pair : n) {
         cout << pair << " ";
     }
