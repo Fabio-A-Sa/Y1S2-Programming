@@ -45,9 +45,27 @@ void removing_numbers() {
     cout << "Final size: " << numbers.size() << endl;
 }
 
+template<class U>
+void show_vectors(vector<U> v) {
+
+    cout << "Show vector: ";
+    for (auto n : v) {
+        cout << n << " "
+    }
+    cout << endl;
+}
+
+void STL_vectors() {
+
+    vector<int> numbers = {1, 2, 3, 4, 5};
+    show_vectors(numbers);
+    
+}
+
 int main ()
 {   
     //using_iterators();
-    removing_numbers();
+    //removing_numbers();
+    STL_vectors();
     return 0;
 }
