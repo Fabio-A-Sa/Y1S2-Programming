@@ -1,13 +1,13 @@
 // Created on June, 2021
 // @author: Fábio Araújo de Sá
-// Page 224 of Lectures Material
+// Page 224/300 of Lectures Material
 
 #include <iostream>
 #include <array>
+#include <string>
 using namespace std;
 
 // T e S admitem ser um valor genérico (int, long, float, double...)
-
 template<typename T>
 T sum (T a, T b) { return a + b ; }
 
@@ -36,6 +36,7 @@ class Person {
     friend Person operator + (Person, Person);
 
     public:
+
         Person();
         Person(string name, int age);
         string getName();
@@ -44,6 +45,7 @@ class Person {
         void setAge(int age);
     
     private:
+
         int age;
         string name;
 };
@@ -58,9 +60,17 @@ Person::Person(string name, int age) {
     this -> age = age;
 }
 
+string Person::getName () { return name; }
+int Person::getAge() { return age; }
+
+void Person::setName(string name) { this -> name = name ; }
+void Person::setAge(int age) { this -> age = age ; }
+
+
+
 void overloading() {
 
-    Person p1 = Person("Fabio", 18);
+    Person p1 = Person("Fabio", 15);
     Person p2;
     p2.setName("Araujo");
     p2.setAge(3);
