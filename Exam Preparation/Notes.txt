@@ -73,5 +73,6 @@ Polimorfismo --> Código comporta-se de formas diferentes de acordo com o contex
 mas também existe polimorfismo em run-time (dinâmico), como a herança e as funções virtuais (Virtual Functions);
 Virtual Functions --> Em vez do compilador determinar qual método é chamado, os parâmetros da função é que decidem qual a função a ser invocada;
 
-// Page 340 of Lecture Material --> OOP characterists
+// Page 340/341 of Lecture Material --> OOP characterists
 Protected: usada na parent class. Os atributos em protected são privados fora da classe e públicos nas child classes;
+Note: see summary-table in page 341

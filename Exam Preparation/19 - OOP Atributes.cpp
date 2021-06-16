@@ -39,6 +39,8 @@ class Student : public FEUPerson { // Child Class
 };
 
 int main ()
-{
+{   
+    Student Me = Student("Fabio", 202007658, 15.45);
+    cout << Me.getUP();
     return 0;
 }
