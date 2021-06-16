@@ -3,6 +3,7 @@
 // Page 246 of Lectures Material
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <vector>
 #include <array>
@@ -56,7 +57,7 @@ void show_vectors(vector<U> v, int number) {
     cout << "Size of vector: " << number << endl;
     cout << "Show vector: ";
     for (int i = 0 ; i < number ; i++) {
-        cout << v[i] << " ";
+        cout << setw(3) << v[i] << " ";
     }
     cout << endl << endl;
 }
@@ -83,6 +84,13 @@ void STL_vectors() {
     // Fazer clean total num vector
     n2.clear();
     show_vectors(n2, n2.size());
+
+    // Fill algorithm
+    vector<int> n3(20);
+    fill(n3.begin(), n3.end(), 19);
+    show_vectors(n3, n3.size());
+    fill_n(n3.begin()+5, 3, 2);     // A partir do index 0+5, colocar 3 valores com o número 2
+    show_vectors(n3, n3.size());
 }
 
 template<class V>
@@ -165,16 +173,14 @@ void STL_map() {
     for (auto l : phoneList) {
         cout << l.first << " - " << l.second << endl;
     }
-
-    
 }
 
 int main ()
 {   
     //using_iterators();
     //removing_numbers();
-    //STL_vectors();
+    STL_vectors();
     //STL_lists();
-    STL_map();
+    //STL_map();
     return 0;
 }
