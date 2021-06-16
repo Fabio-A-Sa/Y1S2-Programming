@@ -36,8 +36,8 @@ void removing_numbers() {
     int n = count(numbers.begin(), numbers.end(), 0); cout << n << endl;
 
     cout << "Initial size: " << numbers.size() << endl;
-    //numbers.erase(remove(numbers.begin(), numbers.end(), 0), numbers.end());
-    remove(numbers.begin(), numbers.end(), 0);
+    numbers.erase(remove(numbers.begin(), numbers.end(), 0), numbers.end());
+
     for (int n : numbers) 
         cout << n << " ";
     cout << endl;
