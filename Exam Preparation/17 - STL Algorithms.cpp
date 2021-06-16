@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <list>
 #include <algorithm>    // Important!
 using namespace std;
 
@@ -81,10 +82,25 @@ void STL_vectors() {
     show_vectors(n2, n2.size());
 }
 
+template<class V>
+void show_lists(list<V> l, size_t size) {
+    cout << "Size: " << size << endl;
+    for (auto n : l) {
+        cout << n << " ";
+    }
+    cout << endl << endl;
+}
+
+void STL_lists() {
+
+    cout << "Begin" << endl;
+}
+
 int main ()
 {   
     //using_iterators();
     //removing_numbers();
-    STL_vectors();
+    //STL_vectors();
+    STL_lists();
     return 0;
 }
