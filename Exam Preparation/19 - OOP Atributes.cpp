@@ -6,7 +6,7 @@
 #include <string>
 using namespace std;
 
-class FEUPerson {
+class FEUPerson { // Parent Class
     
     public:
 
@@ -21,6 +21,21 @@ class FEUPerson {
 
         string name;
         int UP;
+};
+
+class Student : public FEUPerson { // Child Class
+
+    public:
+
+        Student() { this -> name = "UNKNOWN" ; this -> UP = 0 ; this -> average = 0 ; }
+        Student(string name, int UP, double average) { this -> name = name ; this -> UP = UP ; this -> average = average ; }
+        double getAverage () { return average ; }
+        void setAverage(double average) { this -> average = average ; }
+    
+    private:
+
+        double average;
+
 };
 
 int main ()
