@@ -214,6 +214,8 @@ void transform_lambda() {
 
 void STL_set () {
 
+    // Fill set using random seed method #include <ctime>
+    // Números não repetidos e ordenados
     set<int> numbers;
     while (numbers.size() != 10) {
         numbers.insert(rand() % 100);
@@ -222,6 +224,20 @@ void STL_set () {
         cout << number << " ";
     }
     cout << endl;
+
+    // Fill multiset using random seed method #include <ctime>
+    // Números repetidos e ordenados
+    multiset<int> n;
+    while (n.size() != 10) {
+        n.insert(rand()%10);
+    }
+    for (auto pair : n) {
+        cout << pair << " ";
+    }
+    cout << endl;
+
+    // Erase a number in a set
+    
 }
 
 int main ()
