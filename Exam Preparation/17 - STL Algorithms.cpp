@@ -6,7 +6,8 @@
 #include <vector>
 #include <array>
 #include <list>
-#include <algorithm>    // Important!
+#include <map>
+#include <algorithm>
 using namespace std;
 
 void using_iterators() {
@@ -119,9 +120,9 @@ void STL_lists() {
     show_lists(l, l.size());
 }
 
-void STL_maps() {
+void STL_map() {
 
-    
+
 }
 
 int main ()
@@ -130,6 +131,6 @@ int main ()
     //removing_numbers();
     //STL_vectors();
     //STL_lists();
-    STL_maps();
+    STL_map();
     return 0;
 }
