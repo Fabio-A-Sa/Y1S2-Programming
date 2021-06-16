@@ -80,7 +80,7 @@ void overloading() {
     p2.setName("Araujo");
     p2.setAge(3);
     Person p3 = p1 + p2;
-    cout << p3.getName() << " have " << p3.getAge() " years!" << endl;
+    cout << p3.getName() << " have " << p3.getAge() << " years!" << endl;
 }
 
 int main ()
