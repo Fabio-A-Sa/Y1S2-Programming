@@ -5,6 +5,7 @@
 #include <iostream>
 #include <array>
 #include <string>
+#include <ctime>
 using namespace std;
 
 // T e S admitem ser um valor genérico (int, long, float, double...)
@@ -40,6 +41,8 @@ class Person {
         Person();
         Person(string name, int age);
         int operator()();
+        int operator()(int);
+        int operator()(int, int);
         string getName();
         int getAge();
         void setName(string name);
@@ -74,8 +77,16 @@ Person operator + (Person p1, Person p2) {
     return p3;
 }
 
-int Person::operator() () {
+int Person::operator () () {
     return rand() % 100;
+}
+
+int Person::operator () (int lim_min) {
+    return lim_min + rand() % 100;
+}
+
+int Person::operator () (int lim_min, int lim_max) {
+    return lim_min + (rand() % (lim_max - lim_min + 1));
 }
 
 void overloading() {
@@ -86,11 +97,14 @@ void overloading() {
     p2.setAge(3);
     Person p3 = p1 + p2;
     cout << p3.getName() << " have " << p3.getAge() << " years!" << endl;
-    cout << p3();
+    cout << p3(); cout << endl;
+    cout << p3(p3()); cout << endl;
+    cout << p3(p3(), p3()); cout << endl;
 }
 
 int main ()
-{
+{   
+    srand(time(NULL));
     template_function();
     overloading();
     return 0;
