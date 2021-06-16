@@ -17,7 +17,7 @@ class FEUPerson { // Parent Class
         void setUP(int UP) { this -> UP = UP ; }
         string getName() { return name ; }
         int getUP() { return UP ; }
-        virtual void showData() { cout << name << " " << UP << " " << endl;} ;
+        virtual void showData() { cout << name << " " << UP << " " << endl ; }
 
     protected:
 
@@ -33,7 +33,8 @@ class Student : public FEUPerson { // Child Class
         Student(string name, int UP, double average) : FEUPerson (name, UP) { this -> average = average ; }
         double getAverage () { return average ; }
         void setAverage(double average) { this -> average = average ; }
-    
+        virtual void showData() { cout << name << " " << UP << " " << average << endl ; }
+
     private:
 
         double average;
@@ -47,6 +48,7 @@ class Teacher : public FEUPerson { // Child Class
         Teacher(string name, int UP, string course) : FEUPerson (name, UP) { this -> course = course ; }
         string getCourse() { return course ; }
         void setCourse(string course) { this -> course = course ; }
+        virtual void showData() { cout << name << " " << UP << " " << course << endl ; }
 
     private:
 
@@ -65,6 +67,6 @@ int main ()
     persons[1] = Prof;
 
     for (auto person : persons) { person->showData() ; }
-    
+
     return 0;
 }
