@@ -181,6 +181,7 @@ void STL_map() {
     phoneList.insert(pair<string, int> ("Mary", 99999999));
     phoneList.insert(pair<string, int> ("John", 516599999));
     phoneList.insert(pair<string, int> ("John", 59999));
+    // Note: John fica associado a dois números de telemóvel
     for (auto l : phoneList) {
         cout << l.first << " - " << l.second << endl;
     }
@@ -211,12 +212,12 @@ void transform_lambda() {
 
 int main ()
 {   
-    //using_iterators();
-    //removing_numbers();
-    //STL_vectors();
-    //STL_lists();
+    using_iterators();
+    removing_numbers();
+    STL_vectors();
+    STL_lists();
     STL_map();
-    //using_arrays();
-    //transform_lambda();
+    using_arrays();
+    transform_lambda();
     return 0;
 }
