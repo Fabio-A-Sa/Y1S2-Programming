@@ -119,11 +119,17 @@ void STL_lists() {
     show_lists(l, l.size());
 }
 
+void STL_maps() {
+
+    
+}
+
 int main ()
 {   
     //using_iterators();
     //removing_numbers();
     //STL_vectors();
-    STL_lists();
+    //STL_lists();
+    STL_maps();
     return 0;
 }
