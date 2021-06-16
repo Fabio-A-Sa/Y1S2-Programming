@@ -27,23 +27,22 @@ class Student : public FEUPerson { // Child Class
 
     public:
 
-        Student() { this -> name = "UNKNOWN" ; this -> UP = 0 ; this -> average = 0 ; }
-        Student(string name, int UP, double average) { this -> name = name ; this -> UP = UP ; this -> average = average ; }
+        Student() : FEUPerson() { this -> average = 0 ; }
+        Student(string name, int UP, double average) : FEUPerson (name, UP) { this -> average = average ; }
         double getAverage () { return average ; }
         void setAverage(double average) { this -> average = average ; }
     
     private:
 
         double average;
-
 };
 
 class Teacher : public FEUPerson { // Child Class
 
     public:
 
-        Teacher() { this -> name = "UNKNOWN" ; this -> UP = 0 ; this -> course = "UNKNOWN" ; }
-        Teacher(string name, int UP, string couse) { this -> name = name ; this -> UP = UP ; this -> course = course ; }
+        Teacher() : FEUPerson() { this -> course = "UNKNOWN" ; }
+        Teacher(string name, int UP, string course) : FEUPerson (name, UP) { this -> course = course ; }
         string getCourse() { return course ; }
         void setCourse(string course) { this -> course = course ; }
 
@@ -55,8 +54,8 @@ class Teacher : public FEUPerson { // Child Class
 int main ()
 {   
     Student Me = Student("Fabio", 202007658, 15.45);
-    cout << Me.getUP();
-    Teacher Prof = Teacher("Jorge Silva", 1950, "Programming");
-    cout << Prof.getCourse();
+    cout << Me.getAverage() << endl;
+    Teacher Prof = Teacher("Jorge Silva", 1913, "Programming");
+    cout << Prof.getCourse() << endl;
     return 0;
 }
