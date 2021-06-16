@@ -59,17 +59,25 @@ void show_vectors(vector<U> v, int number) {
 
 void STL_vectors() {
 
+    // Inserir elemento num index específico do container vector
     vector<int> numbers = {1, 2, 3, 4, 5};
     show_vectors(numbers, numbers.size());
     numbers.insert(numbers.begin()+4, 16); // Insere o número 16 no index 0+4
     
+    // Inserir o conteúdo de um array no vector
     const int size3 = 3;
     vector<int> n1 = {1, 2, 3};
     int array[size3] = {7, 8, 9};
     numbers.insert(n1.begin(), array, array+size3);
     show_vectors(n1, n1.size());
 
-    vector<int> n2 = {4, 5, 6};
+    // Apagar um elemento num vector
+    vector<int> n2 = {4, 5, 6, 7, 8, 9, 10};
+    n2.erase(n2.begin()+5); // Apaga o elemento de index 0+5 --> o número 9
+    show_vectors(n2, n2.size());
+
+    // Fazer clean total num vector
+    
 }
 
 int main ()
