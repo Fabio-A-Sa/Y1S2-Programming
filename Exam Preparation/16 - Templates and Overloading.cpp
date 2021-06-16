@@ -6,7 +6,7 @@
 #include <array>
 using namespace std;
 
-// T e S admitem ser um valor genérico (int, long, float, double)
+// T e S admitem ser um valor genérico (int, long, float, double...)
 
 template<typename T>
 T sum (T a, T b) { return a + b ; }
@@ -19,8 +19,8 @@ void printArray (const S a[], size_t n) {
     cout << endl;
 }
 
-int main ()
-{
+void template_function() {
+
     int number1 = 10;
     int number2 = 5;
     cout << sum (number1, number2) << endl;
@@ -29,5 +29,12 @@ int main ()
     cout << sum (number3, number4) << endl;
     int arr[] = {56, 5415, 546, 541, 321, 3215, 6541, 5, 0, 65416};
     printArray(arr, sizeof(arr) / sizeof(arr[0]));
+}
+
+
+
+int main ()
+{
+    template_function();
     return 0;
 }
