@@ -20,7 +20,7 @@ void using_iterators() {
         cout << *n << endl;                                     // Retorna o que encontra na memória                            
     }
 
-    // Continue in page 253 tomorrow!
+    
 }
 
 int main ()
