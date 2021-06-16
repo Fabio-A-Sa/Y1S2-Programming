@@ -9237,11 +9237,11 @@ void Person::setGender(char gender) { this -> gender = gender ; }
 void Person::setFaculty(string faculty) { this -> faculty = faculty ; }
 void Person::setName(string name) { this -> name = name ; }
 
-int Person::getAge() { return age; }
-char Person::getGender() { return gender; }
-string Person::getFaculty() { return faculty; }
-string Person::getName() { return name; }
-ID Person::getID() { return id; }
+int Person::getAge() { return age ; }
+char Person::getGender() { return gender ; }
+string Person::getFaculty() { return faculty ; }
+string Person::getName() { return name ; }
+ID Person::getID() { return id ; }
 
 int main ()
 {   
