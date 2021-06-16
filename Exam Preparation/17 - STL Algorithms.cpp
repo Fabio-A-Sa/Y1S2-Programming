@@ -124,16 +124,16 @@ void STL_lists() {
 void STL_map() {
 
     // Muito parecido aos dicionários em Python
-    map<int, int> m;
-    m[0] = 90;
-    m[1] = 91;
-    m[10] = 8;
+    map<int, int> ma;
+    ma[0] = 90;
+    ma[1] = 91;
+    ma[10] = 8;
     cout << "Using map:\n";
     int n = 0;
 
-    map<int, int>::const_iterator i = m.begin(); // Another example, const iterator
+    map<int, int>::const_iterator i = ma.begin(); // Another example, const iterator
 
-    for (auto pair : m) {
+    for (auto pair : ma) {
         n++;
         cout << n << ": " << pair.first << " - " << pair.second << endl;
     }
@@ -141,8 +141,21 @@ void STL_map() {
     // Find keys in map associative container
     int key1 = 9;
     int key2 = 10;
-    if (m.find(key1) != m.end()) { cout << "Found it. Value is " << m[key1] << endl; } else { cout << "Not found this key in map" << endl; }
-    if (m.find(key2) != m.end()) { cout << "Found it. Value is " << m[key2] << endl; } else { cout << "Not found this key in map" << endl; }
+    if (ma.find(key1) != ma.end()) { cout << "Found it. Value is " << ma[key1] << endl; } else { cout << "Not found this key in map" << endl; }
+    if (ma.find(key2) != ma.end()) { cout << "Found it. Value is " << ma[key2] << endl; } else { cout << "Not found this key in map" << endl; }
+
+    map<string,int> m;
+    pair<string,int> p; // a pair is a templated struct
+    m["Sporting"]=1; // easy way to insert a new element; not possible with multimaps!
+    m["Porto"]=2;
+    cout << "MAP\n";
+    int n=0;
+    for (map<string,int>::const_iterator mi=m.begin(); mi!=m.end(); mi++)
+    {
+    n++;
+    p = *mi; // each element of a "map" is a "pair"
+    cout << n << " - " << p.first << ", " << p.second << endl;
+    }
 }
 
 int main ()
