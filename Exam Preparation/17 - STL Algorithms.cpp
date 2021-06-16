@@ -20,7 +20,7 @@ void using_iterators() {
         cout << *n << endl;                                     // Retorna o que encontra na memória                            
     }
     cout << endl;
-    
+
     // Reverse iterators
     vector<string>::reverse_iterator m;
     for (m = names.rbegin() ; m != names.rend() ; m++ ) {
@@ -29,8 +29,18 @@ void using_iterators() {
     cout << endl;
 }
 
+void removing_numbers() {
+
+    vector<int> numbers = {2, 0, 6541, 0, 0, 654, 0, 8, 5, 6, 0, 15, 0, 5, 0, 0};
+    remove(numbers.begin(), numbers.end(), 0);
+    for (int n : numbers) 
+        cout << n << " ";
+    cout << endl;
+}
+
 int main ()
 {   
-    using_iterators();
+    //using_iterators();
+    removing_numbers();
     return 0;
 }
