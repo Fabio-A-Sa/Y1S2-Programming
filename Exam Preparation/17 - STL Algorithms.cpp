@@ -3,6 +3,7 @@
 // Page 246 of Lectures Material
 
 #include <iostream>
+#include <string>
 #include <vector>
 #include <array>
 #include <list>
@@ -144,7 +145,7 @@ void STL_map() {
     if (ma.find(key1) != ma.end()) { cout << "Found it. Value is " << ma[key1] << endl; } else { cout << "Not found this key in map" << endl; }
     if (ma.find(key2) != ma.end()) { cout << "Found it. Value is " << ma[key2] << endl; } else { cout << "Not found this key in map" << endl; }
 
-    // Antoher example, using pair container
+    // Anther example, using pair container
     map<string,int> fut;
     pair<string,int> p;
     fut["Sporting"] = 1;
@@ -155,6 +156,10 @@ void STL_map() {
         p = *f; // each element of a "map" is a "pair"
         cout << n << " - " << p.first << ", " << p.second << endl;
     }
+
+    // Insertions to map container
+    map<string, int>
+
 }
 
 int main ()
