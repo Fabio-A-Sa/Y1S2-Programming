@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <cstddef>
 #include <string>
 #include <vector>
 #include <array>
@@ -90,6 +91,14 @@ void STL_vectors() {
     fill(n3.begin(), n3.end(), 19);
     show_vectors(n3, n3.size());
     fill_n(n3.begin()+5, 3, 2);     // A partir do index 0+5, colocar 3 valores com o número 2
+    show_vectors(n3, n3.size());
+
+    // Shuffle and Sort
+    cout << "Shuffle: \n";
+    random_shuffle(n3.begin(), n3.end());
+    show_vectors(n3, n3.size());
+    cout << "Sorted: \n";
+    sort(n3.begin(), n3.end());
     show_vectors(n3, n3.size());
 }
 
@@ -179,8 +188,14 @@ int main ()
 {   
     //using_iterators();
     //removing_numbers();
-    STL_vectors();
+    //STL_vectors();
     //STL_lists();
     //STL_map();
+
+    int a[] = { 30, 50, 10, 40, 20 };
+    sort(a, a + 5); // TRY WITH remove(a, a+5, 50);
+    for (auto x : a)
+        cout << x << endl;
+        
     return 0;
 }
