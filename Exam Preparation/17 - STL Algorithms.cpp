@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include <array>
+#include <set>
 #include <list>
 #include <map>              // For map and multimap
 #include <utility>          // For pair
@@ -211,13 +212,21 @@ void transform_lambda() {
     show_vectors(fim, fim.size());
 }
 
-void STL_set() {
+void STL_set () {
 
-
+    set<int> numbers;
+    while (numbers.size() != 10) {
+        numbers.insert(rand() % 100);
+    }
+    for (int number : numbers) {
+        cout << number << " ";
+    }
+    cout << endl;
 }
 
 int main ()
 {   
+    srand(time(NULL));
     //using_iterators();
     //removing_numbers();
     //STL_vectors();
