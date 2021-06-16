@@ -67,3 +67,7 @@ for (auto & x : phone_user) won't create copies, and allows you to modify the el
 for (const auto & x : phone_user) won't create copies and won't allow you to do any modifications; this can prevent accidental modifications.
 
 // Page 336 of Lecture Material --> Object Oriented Languages
+Encapsulamento --> Não deixa certos atributos serem modificados por funções externas. Private atributes;
+Herança --> O objecto fica com as propriedades de outros objectos. Definir classes a partir de outras classes (derivadas);
+Polimorfismo --> Código comporta-se de formas diferentes de acordo com o contexto. Existe polimorfismo em tempo de compilação (overloading e templates), 
+mas também existe polimorfismo em run-time, com a herança e as funções virtuais (Virtual Functions);
