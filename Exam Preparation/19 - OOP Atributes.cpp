@@ -33,7 +33,7 @@ class Student : public FEUPerson { // Child Class
         Student(string name, int UP, double average) : FEUPerson (name, UP) { this -> average = average ; }
         double getAverage () { return average ; }
         void setAverage(double average) { this -> average = average ; }
-        virtual void showData() { cout << name << " " << UP << " " << average << endl ; }
+        void showData() { cout << name << " " << UP << " " << average << endl ; }
 
     private:
 
@@ -48,7 +48,7 @@ class Teacher : public FEUPerson { // Child Class
         Teacher(string name, int UP, string course) : FEUPerson (name, UP) { this -> course = course ; }
         string getCourse() { return course ; }
         void setCourse(string course) { this -> course = course ; }
-        virtual void showData() { cout << name << " " << UP << " " << course << endl ; }
+        void showData() { cout << name << " " << UP << " " << course << endl ; }
 
     private:
 
@@ -66,7 +66,17 @@ int main ()
     persons[0] = Me;
     persons[1] = Prof;
 
-    for (auto person : persons) { person->showData() ; }
+    for (auto person : persons) { person -> showData() ; }
+    cout << endl;
+
+    // How to determinate which object is in FEUPersons pointer vector? Page 356
+    for (auto person: persons) {
+
+        cout << person->getName();
+        Teacher *T = dynamic_cast<Teacher *> (person);
+        string answer = T == NULL ? " is a Student" : " is a Teacher";
+        cout << answer << endl;
+    }  
 
     return 0;
 }
