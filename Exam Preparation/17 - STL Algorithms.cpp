@@ -54,7 +54,7 @@ void show_vectors(vector<U> v, int number) {
     for (int i = 0 ; i < number ; i++) {
         cout << v[i] << " ";
     }
-    cout << endl;
+    cout << endl << endl;
 }
 
 void STL_vectors() {
