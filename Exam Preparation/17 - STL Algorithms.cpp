@@ -129,11 +129,19 @@ void STL_map() {
     m[10] = 8;
     cout << "Using map:\n";
     int n = 0;
+    
+    map<int, int>::const_iterator i = m.begin(); // Another example, const iterator
+
     for (auto pair : m) {
         n++;
         cout << n << ": " << pair.first << " - " << pair.second << endl;
     }
 
+    // Find keys in map associative container
+    int key1 = 9;
+    int key2 = 10;
+    if (m.find(key1) != m.end()) { cout << "Found it. Value is " << m[key1] << endl; } else { cout << "Not found this key in map" << endl; }
+    if (m.find(key2) != m.end()) { cout << "Found it. Value is " << m[key2] << endl; } else { cout << "Not found this key in map" << endl; }
 }
 
 int main ()
