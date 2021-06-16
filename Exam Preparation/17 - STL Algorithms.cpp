@@ -52,7 +52,7 @@ void removing_numbers() {
 }
 
 template<class U>
-void show_vectors(vector<U> v, int number) {
+void show_vectors(const vector<U> &v, int number) {
 
     cout << "Size of vector: " << number << endl;
     cout << "Show vector: ";
