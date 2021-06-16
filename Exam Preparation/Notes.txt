@@ -48,6 +48,7 @@ A variable is declared when the compiler is informed that a variable exists (and
 // Page 223 of Lecture Material --> Linked lists implementation
 Ver isto com mais calma! Se é que sai no exame...
 NOTA: Ver o significado e importância do #include <cstddef> e <cassert> e o method assert()
+NOTA: Ver como se remove um valor específico em vectores e em arrays
 
 // Page 245 of Lecture Material --> Template classes and FunctionsHow does template specialization work?
 When we write any template based function or class, compiler creates a copy of that function/class
