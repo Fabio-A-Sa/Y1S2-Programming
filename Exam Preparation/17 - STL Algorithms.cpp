@@ -20,10 +20,7 @@ void using_iterators() {
         cout << *n << endl;                                     // Retorna o que encontra na memória                            
     }
     cout << endl;
-    for (n = names.end() ; n != names.begin() ; n-- ) {
-        cout << *n << endl;                                     // Retorna o que encontra na memória                            
-    }
-    cout << endl;
+    
     // Reverse iterators
     vector<string>::reverse_iterator m;
     for (m = names.rbegin() ; m != names.rend() ; m++ ) {
