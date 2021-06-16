@@ -97,7 +97,7 @@ void STL_vectors() {
 
     // Shuffle and Sort
     cout << "Shuffle: \n";
-    random_shuffle(n3.begin(), n3.end());
+    //random_shuffle(n3.begin(), n3.end());
     show_vectors(n3, n3.size());
     cout << "Sorted: \n";
     sort(n3.begin(), n3.end());
