@@ -144,17 +144,16 @@ void STL_map() {
     if (ma.find(key1) != ma.end()) { cout << "Found it. Value is " << ma[key1] << endl; } else { cout << "Not found this key in map" << endl; }
     if (ma.find(key2) != ma.end()) { cout << "Found it. Value is " << ma[key2] << endl; } else { cout << "Not found this key in map" << endl; }
 
-    map<string,int> m;
-    pair<string,int> p; // a pair is a templated struct
-    m["Sporting"]=1; // easy way to insert a new element; not possible with multimaps!
-    m["Porto"]=2;
-    cout << "MAP\n";
-    int n=0;
-    for (map<string,int>::const_iterator mi=m.begin(); mi!=m.end(); mi++)
-    {
-    n++;
-    p = *mi; // each element of a "map" is a "pair"
-    cout << n << " - " << p.first << ", " << p.second << endl;
+    // Antoher example, using pair container
+    map<string,int> fut;
+    pair<string,int> p;
+    fut["Sporting"] = 1;
+    fut["Porto"] = 2;
+    n = 0;
+    for (map<string,int>::const_iterator f = fut.begin(); f != fut.end(); f++ ) {
+        n++;
+        p = *f; // each element of a "map" is a "pair"
+        cout << n << " - " << p.first << ", " << p.second << endl;
     }
 }
 
