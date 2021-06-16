@@ -11,7 +11,8 @@ typedef unsigned int ID;
 class Person {
 
     // A friend function have permition to view private members of a class
-    friend bool compar (Person, Person);
+    // Use a nonmember function if the task involves more than one object
+    friend bool comparation (Person, Person);
     
     public:
         Person();
@@ -69,7 +70,7 @@ string Person::getFaculty() { return faculty; }
 string Person::getName() { return name; }
 ID Person::getID() { return id; }
 
-bool compar (Person P1, Person P2) { return P1.getAge() == P2.getAge() ; }
+bool comparation (Person P1, Person P2) { return P1.getAge() == P2.getAge() ; }
 
 int main ()
 {   
@@ -78,9 +79,9 @@ int main ()
     F.setFaculty("ISEP");
     F.setAge(19);
     F.setGender('M');
-    F.setName("Jeraldo");
+    F.setName("Geraldo");
 
-    if (compar(P, F)) {
+    if (comparation(P, F)) {
         cout << P.getName() << " and " << F.getName() << " have the same age!" << endl;
     }
     else { 
