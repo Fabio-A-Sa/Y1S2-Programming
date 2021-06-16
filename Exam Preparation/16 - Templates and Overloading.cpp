@@ -31,10 +31,45 @@ void template_function() {
     printArray(arr, sizeof(arr) / sizeof(arr[0]));
 }
 
+class Person {
 
+    friend Person operator + (Person, Person);
+
+    public:
+        Person();
+        Person(string name, int age);
+        string getName();
+        int getAge();
+        void setName(string name);
+        void setAge(int age);
+    
+    private:
+        int age;
+        string name;
+};
+
+Person::Person() {
+    this -> age = 0;
+    this -> name = "UNKNOWN";
+}
+
+Person::Person(string name, int age) {
+    this -> name = name;
+    this -> age = age;
+}
+
+void overloading() {
+
+    Person p1 = Person("Fabio", 18);
+    Person p2;
+    p2.setName("Araujo");
+    p2.setAge(3);
+
+}
 
 int main ()
 {
-    template_function();
+    //template_function();
+    overloading();
     return 0;
 }
