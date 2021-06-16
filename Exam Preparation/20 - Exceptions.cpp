@@ -10,8 +10,8 @@ int main ()
     int number = 10;
     int zero = 0;
     try { 
-        int result = number / zero ; 
-        cout << "The result is : " << result << endl ; 
+        // int result = number / zero ; 
+        cout << "The result is : " << endl ; 
     }
     catch (...) { 
         cout << "Divide by zero error!" << endl; 
