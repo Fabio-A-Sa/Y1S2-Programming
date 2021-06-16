@@ -211,14 +211,20 @@ void transform_lambda() {
     show_vectors(fim, fim.size());
 }
 
+void STL_set() {
+
+
+}
+
 int main ()
 {   
-    using_iterators();
-    removing_numbers();
-    STL_vectors();
-    STL_lists();
-    STL_map();
-    using_arrays();
-    transform_lambda();
+    //using_iterators();
+    //removing_numbers();
+    //STL_vectors();
+    //STL_lists();
+    //STL_map();
+    //using_arrays();
+    //transform_lambda();
+    STL_set();
     return 0;
 }

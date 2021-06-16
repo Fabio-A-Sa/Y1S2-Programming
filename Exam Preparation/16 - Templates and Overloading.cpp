@@ -85,7 +85,7 @@ void overloading() {
 
 int main ()
 {
-    //template_function();
+    template_function();
     overloading();
     return 0;
 }
