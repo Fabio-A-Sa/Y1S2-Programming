@@ -66,7 +66,12 @@ int Person::getAge() { return age; }
 void Person::setName(string name) { this -> name = name ; }
 void Person::setAge(int age) { this -> age = age ; }
 
-
+Person operator + (Person p1, Person p2) {
+    Person p3;
+    p3.setAge(p1.getAge() + p2.getAge());
+    p3.setName(p1.getName() + " " + p2.getName());
+    return p3;
+}
 
 void overloading() {
 
@@ -74,7 +79,8 @@ void overloading() {
     Person p2;
     p2.setName("Araujo");
     p2.setAge(3);
-
+    Person p3 = p1 + p2;
+    cout << p3.getName() << " have " << p3.getAge() " years!" << endl;
 }
 
 int main ()
