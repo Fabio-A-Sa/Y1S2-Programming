@@ -110,7 +110,13 @@ void STL_lists() {
     }
     show_lists(l, l.size());
 
-    
+    // Insert algorithm --> In vectors is more easy!
+    list<int>::iterator P;
+    int index = 5;
+    int value = 541;
+    for (int i = 0 ; i < index ; i++ ) { P++; }
+    l.insert(P, value);
+    show_lists(l, l.size());
 }
 
 int main ()
