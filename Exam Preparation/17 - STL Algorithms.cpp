@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <cmath>
 #include <cstddef>
+#include <ctime>
 #include <string>
 #include <vector>
 #include <array>

@@ -9,6 +9,9 @@ using namespace std;
 typedef unsigned int ID;
 
 class Person {
+
+    // A friend function have permition to view private members of a class
+    friend bool compar (Person, Person);
     
     public:
         Person();
@@ -66,12 +69,23 @@ string Person::getFaculty() { return faculty; }
 string Person::getName() { return name; }
 ID Person::getID() { return id; }
 
+bool compar (Person P1, Person P2) { return P1.getAge() == P2.getAge() ; }
+
 int main ()
 {   
     Person P = Person(18, 'M', "FEUP", "Fabio");
-    cout << P.getName() << endl;
     Person F;
     F.setFaculty("ISEP");
-    cout << F.getFaculty() << " " << F.getID() << endl;
+    F.setAge(19);
+    F.setGender('M');
+    F.setName("Jeraldo");
+
+    if (compar(P, F)) {
+        cout << P.getName() << " and " << F.getName() << " have the same age!" << endl;
+    }
+    else { 
+        cout << P.getName() << " and " << F.getName() << " havent the same age!" << endl ;
+    }
+
     return 0;
 }
