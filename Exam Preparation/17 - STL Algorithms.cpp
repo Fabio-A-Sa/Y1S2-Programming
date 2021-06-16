@@ -177,9 +177,10 @@ void STL_map() {
     cout << endl;
 
     // Insertions to map container --> LIFO (Last in First Out)
-    map<string, int> phoneList;
+    multimap<string, int> phoneList;
     phoneList.insert(pair<string, int> ("Mary", 99999999));
     phoneList.insert(pair<string, int> ("John", 516599999));
+    phoneList.insert(pair<string, int> ("John", 59999));
     for (auto l : phoneList) {
         cout << l.first << " - " << l.second << endl;
     }
@@ -214,8 +215,8 @@ int main ()
     //removing_numbers();
     //STL_vectors();
     //STL_lists();
-    //STL_map();
+    STL_map();
     //using_arrays();
-    transform_lambda();
+    //transform_lambda();
     return 0;
 }
