@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
 
 class FEUPerson { // Parent Class
@@ -16,6 +17,7 @@ class FEUPerson { // Parent Class
         void setUP(int UP) { this -> UP = UP ; }
         string getName() { return name ; }
         int getUP() { return UP ; }
+        virtual void showData() { cout << name << " " << UP << " " << endl;} ;
 
     protected:
 
@@ -53,9 +55,16 @@ class Teacher : public FEUPerson { // Child Class
 
 int main ()
 {   
-    Student Me = Student("Fabio", 202007658, 15.45);
-    cout << Me.getAverage() << endl;
-    Teacher Prof = Teacher("Jorge Silva", 1913, "Programming");
-    cout << Prof.getCourse() << endl;
+    Student *Me = new Student("Fabio", 202007658, 15.45);
+    cout << (*Me).getAverage() << endl;
+    Teacher *Prof = new Teacher("Jorge Silva", 1913, "Programming");
+    cout << (*Prof).getCourse() << endl;
+
+    vector<FEUPerson * > persons(2);
+    persons[0] = Me;
+    persons[1] = Prof;
+
+    for (auto person : persons) { person->showData() ; }
+    
     return 0;
 }
