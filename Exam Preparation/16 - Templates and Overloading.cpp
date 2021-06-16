@@ -39,6 +39,7 @@ class Person {
 
         Person();
         Person(string name, int age);
+        int operator()();
         string getName();
         int getAge();
         void setName(string name);
@@ -73,6 +74,10 @@ Person operator + (Person p1, Person p2) {
     return p3;
 }
 
+int Person::operator() () {
+    return rand() % 100;
+}
+
 void overloading() {
 
     Person p1 = Person("Fabio", 15);
@@ -81,6 +86,7 @@ void overloading() {
     p2.setAge(3);
     Person p3 = p1 + p2;
     cout << p3.getName() << " have " << p3.getAge() << " years!" << endl;
+    cout << p3();
 }
 
 int main ()
