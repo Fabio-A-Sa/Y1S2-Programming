@@ -38,9 +38,25 @@ class Student : public FEUPerson { // Child Class
 
 };
 
+class Teacher : public FEUPerson { // Child Class
+
+    public:
+
+        Teacher() { this -> name = "UNKNOWN" ; this -> UP = 0 ; this -> course = "UNKNOWN" ; }
+        Teacher(string name, int UP, string couse) { this -> name = name ; this -> UP = UP ; this -> course = course ; }
+        string getCourse() { return course ; }
+        void setCourse(string course) { this -> course = course ; }
+
+    private:
+
+        string course;
+};
+
 int main ()
 {   
     Student Me = Student("Fabio", 202007658, 15.45);
     cout << Me.getUP();
+    Teacher Prof = Teacher("Jorge Silva", 1950, "Programming");
+    cout << Prof.getCourse();
     return 0;
 }
