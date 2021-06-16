@@ -237,7 +237,12 @@ void STL_set () {
     cout << endl;
 
     // Erase a number in a set
-    
+    int goal = 5;
+    multiset<int>::iterator pointer = n.begin();
+    remove(pointer , n.end(), goal);
+    for (auto pair : n) {
+        cout << pair << " ";
+    }
 }
 
 int main ()
