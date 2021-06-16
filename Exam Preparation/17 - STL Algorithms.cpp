@@ -126,6 +126,7 @@ void STL_map() {
     map<int, int> m;
     m[0] = 90;
     m[1] = 91;
+    m[10] = 8;
     cout << "Using map:\n";
     int n = 0;
     for (auto pair : m) {
