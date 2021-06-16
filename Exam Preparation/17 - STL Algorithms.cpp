@@ -193,9 +193,9 @@ int main ()
     //STL_map();
 
     int a[] = { 30, 50, 10, 40, 20 };
-    sort(a, a + 5); // TRY WITH remove(a, a+5, 50);
+    remove(a, a+5, 50);
     for (auto x : a)
         cout << x << endl;
-        
+
     return 0;
 }
