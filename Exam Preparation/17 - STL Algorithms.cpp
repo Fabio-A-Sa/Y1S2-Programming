@@ -84,7 +84,7 @@ void STL_vectors() {
 
 template<class V>
 void show_lists(list<V> l, size_t size) {
-    cout << "Size: " << size << endl;
+    cout << "Size: " << size << "\nNumbers: ";
     for (auto n : l) {
         cout << n << " ";
     }
@@ -93,7 +93,24 @@ void show_lists(list<V> l, size_t size) {
 
 void STL_lists() {
 
-    cout << "Begin" << endl;
+    // Empty list
+    list<int> l;
+    show_lists(l, l.size());
+
+    // Fill list with push_front
+    for (int i = 1 ; i <= 10 ; i++) {
+        l.push_front(i);
+    }
+    show_lists(l, l.size());
+    l.clear();
+
+    // Fill list with push_back
+    for (int i = 1 ; i <= 10 ; i++) {
+        l.push_back(i);
+    }
+    show_lists(l, l.size());
+
+    
 }
 
 int main ()
