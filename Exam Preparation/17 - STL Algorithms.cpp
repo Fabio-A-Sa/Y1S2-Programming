@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <array>
 #include <algorithm>    // Important!
 using namespace std;
 
@@ -46,11 +47,12 @@ void removing_numbers() {
 }
 
 template<class U>
-void show_vectors(vector<U> v) {
+void show_vectors(vector<U> v, int number) {
 
+    cout << "Size of vector: " << number << endl;
     cout << "Show vector: ";
-    for (auto n : v) {
-        cout << n << " "
+    for (int i = 0 ; i < number ; i++) {
+        cout << v[i] << " ";
     }
     cout << endl;
 }
@@ -58,8 +60,16 @@ void show_vectors(vector<U> v) {
 void STL_vectors() {
 
     vector<int> numbers = {1, 2, 3, 4, 5};
-    show_vectors(numbers);
+    show_vectors(numbers, numbers.size());
+    numbers.insert(numbers.begin()+4, 16); // Insere o número 16 no index 0+4
     
+    const int size3 = 3;
+    vector<int> n1 = {1, 2, 3};
+    int array[size3] = {7, 8, 9};
+    numbers.insert(n1.begin(), array, array+size3);
+    show_vectors(n1, n1.size());
+
+    vector<int> n2 = {4, 5, 6};
 }
 
 int main ()
