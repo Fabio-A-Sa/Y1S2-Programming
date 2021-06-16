@@ -158,7 +158,7 @@ void STL_map() {
     }
     cout << endl;
 
-    // Insertions to map container
+    // Insertions to map container --> LIFO (Last in First Out)
     map<string, int> phoneList;
     phoneList.insert(pair<string, int> ("Mary", 99999999));
     phoneList.insert(pair<string, int> ("John", 516599999));
