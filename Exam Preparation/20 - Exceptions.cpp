@@ -7,14 +7,22 @@ using namespace std;
 
 int main ()
 {   
-    int number = 10;
-    int zero = 0;
+    int numerator = 10;
+    int denominator = 0;
+
     try { 
-        int result = number / zero ; 
-        cout << "The result is : " << endl ; 
+
+        if (!denominator) {
+            throw 99;
+        }
+        else {
+            int result = numerator / denominator ; 
+            cout << "The result is : " << endl ; 
+        }
     }
-    catch (...) { 
-        cout << "Divide by zero error!" << endl; 
+    catch (int x) { 
+        cout << "Divide by zero error! Error number " << x << "!" << endl; 
     }
+    
     return 0;
 }
