@@ -11,6 +11,7 @@ int main ()
     int x;
     cout << "Input a value between 0 and 10: ";
     cin >> x;
-    assert(x > 10 && x < 0);
+    assert(x <= 10 && x >= 0);
+    cout << "Valid" << endl;
     return 0;
 }
