@@ -11498,5 +11498,5 @@ void showAvailableVehicles(Vehicle vei) {
 			cout << v.getMatricula() << v.getMarca() << v.getModelo() << endl;
 		}
 	}
-
 }
+
