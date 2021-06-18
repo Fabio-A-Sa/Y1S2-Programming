@@ -261,3 +261,4 @@ ApostaDeEuroMilhoes::ApostaDeEuroMilhoes(vector<vector<char>>numerosAp, vector<v
 		}
 	}
 }
+
