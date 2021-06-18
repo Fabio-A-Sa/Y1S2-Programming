@@ -10,7 +10,7 @@
 #include <list>
 using namespace std;
 
-// Exam PROG 2019-2020 resolution
+// Exam PROG 2010-2011 resolution
 // Fábio Araújo de Sá
 
 // Question 1 a)

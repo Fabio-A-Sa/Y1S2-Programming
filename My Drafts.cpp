@@ -9732,3 +9732,1210 @@ int main ()
     cout << "Valid" << endl;
     return 0;
 }
+
+#include <iostream>
+#include <cmath>
+#include <array>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <iomanip>
+#include <map>
+#include <list>
+using namespace std;
+
+// Exam PROG 2019-2020 resolution
+// Fábio Araújo de Sá
+
+// Question 1 a)
+
+while (value >= lim1 && value <= lim2);
+
+// Question 1 b)
+
+temperatura[10..50] ?
+o
+0
+
+// Question 1 c)
+
+/*
+	Enquanto o buffer não receber um valor que garanta a insersão de uma variável do tipo int em "value"
+	então deve-se apagar a flag de erro do buffer (usando cin.clear) e o conteúdo do mesmo (cin.ignore())
+*/
+
+// Question 1 d)
+
+vector<string> code;
+vector<unsigned int> grade;
+
+int current_grade;
+for (auto c : code) {
+	cout << "Classificacao de " << code << " [0..20] ? ";
+	cin >> current_grade;
+	grade.push_back(current_grade);
+}
+
+// Question 1 e)
+
+vector<map<int, string>> all, ou seja, um vector contendo maps de int e string;
+para obter cada dado faríamos:
+for (auto m : all) {
+	cout << m->first << " " << m->second << endl;
+}
+
+// Question 1 f)
+
+Dá erro uma vez que a função poderia só retornar double.
+Poderia fazer overloading escolhendo este processo com uma template function:
+
+template<class T>
+T getValue (const std::string &msg, T number1, T number2)
+
+
+// Question 1 g)
+
+É o mais acertado a se fazer, uma vez que map e multimap são STL containers do tipo associativo e de busca/manipulação log linar (O(1)).
+Assim, o que poderia fazer era:
+
+#include <map> , para importar map e multimap
+map<string, int> all_grades, onde:
+	this -> string = name --> Nome do estudante
+	this -> int grade --> Nota do estudante
+
+// Question 2
+
+class Point {
+
+	friend double dist(const Point& p1, const Point& p2); //calcula a distância entre p1 e p2
+	public:
+		Point(double x, double y);
+		double getX() const; // devolve coordenada x
+		double getY() const; // devolve coordenada y
+		// outros métodos da classe Point
+	private:
+		double x, y; //coordenadas do ponto
+};
+
+class Polygon {
+
+	public:
+		Polygon();
+		Polygon& addVertex(Point p); // acrescenta vértice ao polígono
+		Polygon& addVertex(Point p, size_t pos); // acrescenta vértice na posição pos
+		size_t getSize() const; // devolve no de lados do polígono = no de vértices
+		Point getVertex(size_t pos) const; // devolve vértice na posição pos
+		double mystery() const; // ver alínea c)
+		// outros métodos da classe Polygon
+	private:
+		list<Point> v; // vértices do polígono
+};
+
+// Question 2 a)
+
+Point::Point(double x, double y) {
+
+	this->x = x;
+	this->y = y;
+}
+
+// Question 2 b)
+
+Não é possível mesmo que, de seguida, se faça p(double x, double y) para caracterizar o objecto da classe. 
+Isto porque não existe um default constructor da classe, por exemplo, um Point(), como acontece na classe Polygon.
+
+// Questioon 2 c)
+
+O código mystery retorna um double com a soma das distâncias de dois ponto consecutivos, ou seja, o perímetro 
+do objecto da classe polígono.
+
+// Question 2 d)
+
+A função retorna o ponto (objecto Point) que está na posição pos do vector privado da classe Poligon
+Point getVertex(size_t pos) {
+	return v[pos];
+}
+
+// Question 2 e)
+
+É desadequada.Uma lista(list) é um STL container sequencial e, como tal, tem algoritmo de busca O(n)-- > log linear, o que implica
+um esforço computacional desadequado.Além disso, como é preenchido com objectos Point e não apontadores(*) para esses mesmos objectos,
+acaba por criar cópias deles na memória, alocando mais bytes do que era necessário à função desempenhada.
+Assim, nem a inserção nem a busca se torna viável neste tipo de container.Em vez disso, usar map<Point*> poderia ser mais correcto.
+
+// Question 2 f)
+
+O código não está sintaticamente correcto pois o método público da classe Polygon addVertex(Point p) não retorna um apontador para o
+objecto polygon. Assim, escrever numa só instrução a inserção de três pontos torna-se inviável. Em vez disso, a alternativa seria:
+
+Polygon p;
+p.addVertex(p1);
+p.addVertex(p2);
+p.addVertex(p3);
+
+// Question 3
+
+class Biblioteca {
+
+	private:
+		string nomeBiblioteca; // guarda o nome da biblioteca
+		vector<Livro> livros; // guarda os livros existentes na biblioteca
+	public:
+		vector<unsigned int> histograma() const; // devolve um histograma - ver alínea c)
+};
+
+class Livro {
+
+	private:
+		string titulo; // título do livro
+		string autor; // autor do livro
+		vector<string> texto; // linhas de texto que constituem o livro
+	public:
+		Livro(string nomeFicheiro);
+		unsigned int numeroPalavras() const;
+};
+
+// Question 3 a)
+
+Livro::Livro(string nomeFicheiro) {
+
+	ifstream file;
+	file.open(nomeFicheiro);
+	if (file.good()) {
+
+		string current_line;
+		getline(file, current_line);
+		titulo = current_line;
+		getline(file, current_line);
+		autor = current_line;
+
+		while (!file.eof()) {
+			getline(file, current_line);
+			texto.push_back(current_line);
+		}
+	}
+	else { cout << "File not found!" << endl; }
+	file.close();
+}
+
+// Question 3 b)
+
+unsigned int Livro::numeroPalavras() const {
+		
+	unsigned int answer = 0;
+	for (auto line : texto) {
+		
+		string current_word;
+		istringstream l(line);
+		while (l >> current_word) {
+			answer++;
+		}
+	}
+		
+	return answer + texto.size();
+}
+
+// Question 3 c)
+
+vector<unsigned int> Biblioteca::histograma() const {
+		
+	vector<unsigned int> histo(10);
+	for (auto livro : livros) {
+		int words = livro.numeroPalavras();
+		histo[(words + 1) % 100]++;
+	}
+	return histo;
+}
+
+// Question 4 a)
+
+string geraMutacoes(string DNA, int number) {
+	
+	vector<char> letters;
+	for (auto c : DNA) {
+		letters.push_back(c);
+	}
+
+	vector<char> mut = { 'A', 'C', 'G', 'T' };
+	while (number) {
+		int index = rand() % DNA.size();
+		int let_index = rand() % 4;
+		while (mut[let_index] == letters[index])
+			let_index = rand() % 4;
+
+		letters[index] == mut[let_index];
+	}
+
+	string answer = "";
+	for (auto l : letters) { answer = + l; }
+
+	return answer;
+}
+
+// Question 4 b)
+
+vector<int> listaMutacoes(string n1, string n2) {
+			
+	vector<int> result;
+	for (int i = 0; i < n1.size(); i++) {
+		for (int j = 0; j < n2.size(); j++) {
+			if (i == j && n1[i] != n2[j]) {
+				result.push_back(i);
+			}
+		}
+	}
+	return result;
+}
+
+// Question 4 c)
+
+int sum(vector<int> v) {
+	
+	int result = 0;
+	for (auto n : v) { result += n; }
+	return result;
+}
+
+vector<vector<int>> matrizDeDistâncias(vector<string> &seq) {
+
+	vector<vector<int>> all;
+	vector<int> current_line;
+	
+	for (int i = 0; i < seq.size(); i++) {
+		for (int j = 0; j < seq.size(); j++) {
+			int result = sum(listaMutacoes(seq[i], seq[j]));
+			current_line.push_back(result);
+		}
+		all.push_back(current_line);
+		current_line.clear();
+	}
+	return all;
+}
+
+#include <iostream>
+#include <cmath>
+#include <array>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <iomanip>
+#include <map>
+#include <list>
+using namespace std;
+
+// Exam PROG 2010-2011 resolution
+// Fábio Araújo de Sá
+
+// Question 1 a)
+
+A forma como está escrita a função, permite apenas a inserção de uma palavra na variável "name", uma vez que o buffer, assim que encontra um
+espaço, acaba a leitura. Assim, o buffer ainda contém a string "Costa" e completa, incorrectamente, a int age. O número 92 é o código ASCII do char 'C'.
+
+// Question 1 b)
+
+Uma possível solução do problema:
+#include <iostream>
+#include <string>
+int main()
+{
+	string name; int age;
+	cout << "Nome ? "; 
+	getline(cin, name);
+	cin.clear();
+	cin.ignore(1000, '\n');
+	cout << "Age ? ";
+	cin >> age;
+	cout << "Nome = " << name << " and age = " << age << endl;
+	return 0;
+}
+
+// Question 2 a)
+
+A função mystery2 "apaga" o valor "value" sempre que este ocorre no vector v, puxando todos os valores um index atrás e atualizando,
+sempre que isso acontece, o tamanho do mesmo.
+
+// Question 2 b)
+
+1, 2, 3, 4, 5
+1, 3, 4, 5
+
+// Question 3
+
+class Point {
+	friend double dist(const Point& p1, const Point& p2); //calcula a distância entre p1 e p2
+	public:
+		Point();
+		Point(double x, double y);
+		double getX() const; // devolve coordenada x
+		double getY() const; // devolve coordenada y
+		// outros métodos da classe Point
+	private:
+		double x, y; //coordenadas do ponto
+};
+
+class Polygon {
+	public:
+		Polygon();
+		void addVertex(Point p); // acrescenta vértice ao polígono
+		size_t getSize() const; // devolve no de lados do polígono = no de vértices
+		Point getVertex(size_t num) const;
+		// outros métodos da classe Polygon
+	private:
+		//A COMPLETAR com estrutura de dados para representar os vértices de um polígono
+};
+
+// Question 3 a)
+
+A função dist é externa à classe Point e, para ter acesso direto aos atributos private da classe em questão, deve-se colocar
+o qualificativo "friend", para dar mais flexibilidade a esta.
+
+Um exemplo de código dessa função:
+#include <cmath>
+double dist(const Point& p1, const Point& p2) {
+
+	double x1 = p1.getX(), x2 = p2.getX(), y1 = p2.getY(), y2 = p2.getY();
+	return sqrt(pow(x1-x2, 2)+pow(y1-y2, 2));
+}
+
+// Question 3 b)
+
+class Polygon {
+
+	public:
+		Polygon();
+		void addVertex(Point p); // acrescenta vértice ao polígono
+		size_t getSize() const; // devolve no de lados do polígono = no de vértices
+		Point getVertex(size_t num) const;
+
+	private:
+		vector<Point> points // Vector of points;
+		int n; // Number of points
+		double area; // Are of polygon
+};
+
+// Question 3 c)
+
+size_t Polygon::getSize() { return points.size(); }
+
+// Question 3 d)
+
+Polygon t;
+Point p1(0.0, 1.0); t.addVertex(p1);
+Point p2(1.0, 1.0); t.addVertex(p2);
+Point p3(1.0, 0.0); t.addVertex(p3);
+
+// Question 4
+
+class User {
+
+	private:
+		string name;
+		vector<Message> messages;
+	public:
+		User(string name);
+		string getName() const;
+		vector<Message> getMessages() const;
+		vector<Message> getMessages(string subject) const;
+		void addMessage(Message message);
+};
+
+class Message {
+	
+	friend ostream& operator<<(ostream& os, Message& message);
+	private:
+		time_t date; //time_t é um inteiro sem sinal
+		string content;
+	public:
+		Message(time_t timeMsg, string content);
+		time_t getDate() const;
+		string getContent() const;
+};
+
+// Question 4 a)
+
+Message::Message(time_t timeMsg, string content) {
+
+	this->date = timeMsg;
+	this->content = content;
+}
+
+// Question 4 b)
+
+ostream& operator<< (ostream& os, Message& message) {
+
+	os << message.getDate() << endl;
+	os << message.getContent() << endl;
+	return os;
+}
+
+// Question 4 c)
+
+vector<Message> User::getMessages(string subject) const {
+		
+	vector<Message> answer;
+	for (auto mes : messages) {
+		if (mes.getContent().find(subject) <= mes.getContent().size()) {
+			answer.push_back(mes);
+		}
+	}
+	return answer;
+}
+
+// Question 5
+
+unsigned int NPROJECTS = 10;
+typedef vector< vector<unsigned int> > Preferences;
+typedef vector<unsigned int> Assignments;
+
+// Question 5 a)
+
+Assignments assignFirstPreference(const Preferences& prefs) {
+
+	Assignments result;
+	for (auto p : prefs) {
+		result.push_back(p[0]);
+	}
+	return result;
+}
+
+// Question 5 b)
+
+vector<int> assignmentsPerProject(const Assignments& assig) {
+
+	vector<int> histo(NPROJECTS);
+	for (auto p : assig) {
+		histo[p - 1]++;
+	}
+	return histo;
+}
+
+#include <iostream>
+#include <cmath>
+#include <array>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <iomanip>
+#include <map>
+#include <list>
+using namespace std;
+
+// Exam PROG 2010-2011 resolution
+// Fábio Araújo de Sá
+
+// Question 1 a)
+
+A forma como está escrita a função, permite apenas a inserção de uma palavra na variável "name", uma vez que o buffer, assim que encontra um
+espaço, acaba a leitura. Assim, o buffer ainda contém a string "Costa" e completa, incorrectamente, a int age. O número 92 é o código ASCII do char 'C'.
+
+// Question 1 b)
+
+Uma possível solução do problema:
+#include <iostream>
+#include <string>
+int main()
+{
+	string name; int age;
+	cout << "Nome ? "; 
+	getline(cin, name);
+	cin.clear();
+	cin.ignore(1000, '\n');
+	cout << "Age ? ";
+	cin >> age;
+	cout << "Nome = " << name << " and age = " << age << endl;
+	return 0;
+}
+
+// Question 2 a)
+
+A função mystery2 "apaga" o valor "value" sempre que este ocorre no vector v, puxando todos os valores um index atrás e atualizando,
+sempre que isso acontece, o tamanho do mesmo.
+
+// Question 2 b)
+
+1, 2, 3, 4, 5
+1, 3, 4, 5
+
+// Question 3
+
+class Point {
+	friend double dist(const Point& p1, const Point& p2); //calcula a distância entre p1 e p2
+	public:
+		Point();
+		Point(double x, double y);
+		double getX() const; // devolve coordenada x
+		double getY() const; // devolve coordenada y
+		// outros métodos da classe Point
+	private:
+		double x, y; //coordenadas do ponto
+};
+
+class Polygon {
+	public:
+		Polygon();
+		void addVertex(Point p); // acrescenta vértice ao polígono
+		size_t getSize() const; // devolve no de lados do polígono = no de vértices
+		Point getVertex(size_t num) const;
+		// outros métodos da classe Polygon
+	private:
+		//A COMPLETAR com estrutura de dados para representar os vértices de um polígono
+};
+
+// Question 3 a)
+
+A função dist é externa à classe Point e, para ter acesso direto aos atributos private da classe em questão, deve-se colocar
+o qualificativo "friend", para dar mais flexibilidade a esta.
+
+Um exemplo de código dessa função:
+#include <cmath>
+double dist(const Point& p1, const Point& p2) {
+
+	double x1 = p1.getX(), x2 = p2.getX(), y1 = p2.getY(), y2 = p2.getY();
+	return sqrt(pow(x1-x2, 2)+pow(y1-y2, 2));
+}
+
+// Question 3 b)
+
+class Polygon {
+
+	public:
+		Polygon();
+		void addVertex(Point p); // acrescenta vértice ao polígono
+		size_t getSize() const; // devolve no de lados do polígono = no de vértices
+		Point getVertex(size_t num) const;
+
+	private:
+		vector<Point> points // Vector of points;
+		int n; // Number of points
+		double area; // Are of polygon
+};
+
+// Question 3 c)
+
+size_t Polygon::getSize() { return points.size(); }
+
+// Question 3 d)
+
+Polygon t;
+Point p1(0.0, 1.0); t.addVertex(p1);
+Point p2(1.0, 1.0); t.addVertex(p2);
+Point p3(1.0, 0.0); t.addVertex(p3);
+
+// Question 4
+
+class User {
+
+	private:
+		string name;
+		vector<Message> messages;
+	public:
+		User(string name);
+		string getName() const;
+		vector<Message> getMessages() const;
+		vector<Message> getMessages(string subject) const;
+		void addMessage(Message message);
+};
+
+class Message {
+	
+	friend ostream& operator<<(ostream& os, Message& message);
+	private:
+		time_t date; //time_t é um inteiro sem sinal
+		string content;
+	public:
+		Message(time_t timeMsg, string content);
+		time_t getDate() const;
+		string getContent() const;
+};
+
+// Question 4 a)
+
+Message::Message(time_t timeMsg, string content) {
+
+	this->date = timeMsg;
+	this->content = content;
+}
+
+// Question 4 b)
+
+ostream& operator<< (ostream& os, Message& message) {
+
+	os << message.getDate() << endl;
+	os << message.getContent() << endl;
+	return os;
+}
+
+// Question 4 c)
+
+vector<Message> User::getMessages(string subject) const {
+		
+	vector<Message> answer;
+	for (auto mes : messages) {
+		if (mes.getContent().find(subject) <= mes.getContent().size()) {
+			answer.push_back(mes);
+		}
+	}
+	return answer;
+}
+
+// Question 5
+
+unsigned int NPROJECTS = 10;
+typedef vector< vector<unsigned int> > Preferences;
+typedef vector<unsigned int> Assignments;
+
+// Question 5 a)
+
+Assignments assignFirstPreference(const Preferences& prefs) {
+
+	Assignments result;
+	for (auto p : prefs) {
+		result.push_back(p[0]);
+	}
+	return result;
+}
+
+// Question 5 b)
+
+vector<int> assignmentsPerProject(const Assignments& assig) {
+
+	vector<int> histo(NPROJECTS);
+	for (auto p : assig) {
+		histo[p - 1]++;
+	}
+	return histo;
+}
+
+#include <iostream>
+#include <cmath>
+#include <array>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <iomanip>
+#include <map>
+using namespace std;
+
+// Exam PROG 2019-2020 resolution
+// Fábio Araújo de Sá
+
+/*
+	Question 1
+	
+	False --> "private" is a reserved word of C++ programming language
+	False --> (*p).x or p->x are two correct options to get a x atribute of pointer p
+	False --> if (x <= 10 && x >= 0) is the correct syntax
+	True
+	True
+	True
+	False --> "PROG" isn't a constant string
+	True
+	False --> Person is a class and Queue<Person> is a linear/sequence container of Person's objects
+	True
+	True
+	False --> cin.clear() erases the buffer error flag while cin.ignore(1000, '\n') erases the buffer content
+	False --> This is a .h definition (header file definition) of a class, not a caller of constructor
+	True
+	True
+	False --> Sets are formed by unique values in linear ascending order
+	True
+	True
+	False --> Methods of Parent Class A are private to Child Class B
+	True
+*/
+
+// Question 2 a)
+
+vector<int> genRandom (int n, int m) {
+
+	vector<int> result;
+	while (result.size() != n) {
+		int random_number = rand() % (m + 1);
+		result.push_back(random_number);
+	}
+	return result;
+}
+
+// Question 2 b)
+
+int vectorReduce (vector<int> v1, vector<int> &v2) {
+
+	int counter = 0;
+	
+	for (int i = 0 ; i < v1.size() ; i++ ) {
+		for (int j = 0; j < v2.size(); j++ ) {
+			if (v1[i] == v2[j]) {
+				counter++;
+				v2.erase(v2.begin() + j);
+			}
+		}
+	}
+	return counter;
+}
+
+// Question 2 c)
+
+void showVector(const vector<int>& v) {
+
+	for (int n : v) {
+		cout << setw(3) << n;
+	}
+	cout << endl;
+}
+
+int main()
+{
+	int n, m, counter;
+	cout << "n? "; cin >> n;
+	cout << "m? "; cin >> m;
+	vector<int> v1 = genRandom(n, m);
+	vector<int> v2 = genRandom(n, m);
+	counter = vectorReduce(v1, v2);
+	showVector(v1);
+	showVector(v2);
+	cout << counter << " elements were removed from 2nd vector" << endl;
+	return 0;
+}
+
+// Question 2 d)
+
+int* genRandom2(int n, int m) {
+
+	int* p = (int*) malloc(n * sizeof(int));
+	for (int i = 0; i < n; i++) {
+		p[i] = rand() % (m + 1);
+	}
+	return p;
+}
+
+// Question 3
+
+class Game {
+	public:
+		Game(const string& filename);
+		int neighborMines(int line, int col) const;
+	private:
+		vector<vector<char>> mines;
+};
+
+// Question 3 a)
+
+Game::Game(const string& filename) {
+
+	ifstream file;
+	file.open(filename);
+
+	if (file.good()) {
+
+		string current_line;
+		char trash;
+		int lines, cols;
+		getline(file, current_line);
+		istringstream s(current_line);
+		s >> lines >> trash >> cols;
+		
+		mines.resize(lines, vector<char>(cols, ' '));
+
+		int x, y;
+		while (!file.eof()) {
+			getline(file, current_line);
+			istringstream n(current_line);
+			n >> x >> trash >> y;
+			mines.at(x).at(y) = 'M';
+		}
+	}
+	else { cout << "File not exists!" << endl; }
+}
+
+// Question 3 b)
+
+int Game::neighborMines(int line, int col) const {
+	
+	int counter = 0;
+	if (mines[line][col] == 'M') { throw runtime_error("Boom") ; }
+	else {
+
+		if (line - 1 < 0 || col - 1 < 0 || line + 1 > mines.size() || col + 1 > mines[0].size()) {
+
+			if (mines[line++][col++] == 'M') counter++;
+		}
+		else {
+			if (mines[line++][col] == 'M') counter++;
+			if (mines[line][col++] == 'M') counter++;
+			if (mines[line++][col--] == 'M') counter++;
+			if (mines[line--][col++] == 'M') counter++;
+			if (mines[line++][col++] == 'M') counter++;
+			if (mines[line--][col--] == 'M') counter++;
+			if (mines[line--][col++] == 'M') counter++;
+			if (mines[line--][col] == 'M') counter++;
+		}
+	}
+	return counter;
+}
+
+// Question 4
+
+class Student {
+	public:
+		Student(int id = 0, const string& name = "");
+		int getId() const;
+		string getName() const;
+		void enrollCourse(Course* course);
+		bool setGrade(int courseId, int grade);
+		int getAverageGrade();
+
+	private:
+		int id;
+		string name;
+		vector<Course*> courses;
+		map<int, int> grades;
+} ;
+
+class Course {
+
+	public:
+		Course(int id = 0, const string& name = "");
+		int getId() const;
+		string getName() const;
+
+	private:
+		int id;
+		string name;
+};
+
+// Question 4 a)
+
+Student::Student(int i, const string& name) {
+
+	this->id = id;
+	this->name = name;
+}
+
+// Question 4 b)
+
+void Student::enrollCourse(Course* course) {
+
+	courses.push_back(course);
+}
+
+// Question 4 c)
+
+bool Student::setGrade(int courseId, int grade) {
+
+	bool answer = false;
+	for (auto course : courses) {
+
+		if (course->getId() == courseId) {
+			!answer;
+			break;
+		}
+		if (grades.find(courseId) != grades.end()) {
+			!answer;
+			break;
+		}
+	}
+	if (!answer) {
+		grades[courseId] = grade;
+	}
+	return answer;
+}
+
+// Question 4 d)
+
+int id = 1;
+string name = "PROG";
+Course *c = new Course(id, name);
+int id2 = 12345;
+string name2 = "Ada";
+Student *t = new Student(id2, name2);
+t->enrollCourse(c);
+t->setGrade(1, 20);
+
+// Question 5 a)
+
+int Student::getAverageGrade() {
+
+	int result = 0;
+	for (auto course : courses) {
+		result += grades[course->getId()];
+	}
+	return (int) (result / courses.size() + 0.5);
+}
+
+// Question 5 b)
+
+/*
+	Usar um tipo de container STL vector para este tipo de dados não é o mais correcto.
+	Além de alocar automaticamente a memória, como é um container do tipo linear, com busca O(n) e sequenciável, torna
+	a busca / inserção de novas notas computacionalmente mais complexa.
+*/
+
+// Question 5 c)
+
+/*
+	Escolheria um map, STL container associativo, do tipo map<Course, map<Year, Grade>, que a cada parâmetro associava:
+	this-> Course , o curso frequentado
+	this-> Year, o ano de frequência
+	this-> Grade, a frequência obtida
+	A busca/manipulação dos dados seria O(1), log constante, e computacionalmente mais viável.
+*/
+
+#include <iostream>
+#include <cmath>
+#include <array>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <fstream>
+#include <iomanip>
+#include <map>
+#include <list>
+using namespace std;
+
+// Exam PROG 2011-2012 resolution
+// Fábio Araújo de Sá
+
+// Question 1 a)
+
+O parâmetro é passado por referência, o que não se justifica uma vez que a função não irá modificá-lo.
+Uma possível solução:
+
+unsigned int countZeros(vector<int>& v) {
+	
+	unsigned int numZeros = 0;
+	for (size_t i = 0; i < v.size(); i++)
+		if (v[i] == 0) numZeros++;
+	return numZeros;
+}
+
+// Question 1 b)
+
+string cardRankToSymbol(unsigned int rank) {
+
+	string names[] = { " A"," 2"," 3"," 4"," 5"," 6"," 7"," 8"," 9","10"," J"," Q"," K" };
+	return names[rank - 1];
+
+	map<char, string> p;
+	for (auto name : names) {
+		pair<char, string> current(name, 0);
+		p.insert(current);
+	}
+}
+
+// Question 1 c)
+
+template<class F>
+F absolute(F number) {
+	
+	if (number > 0) {
+		return number;
+	}
+	else {
+		return (T)-number;
+	}
+}
+
+// Question 1 d)
+
+class String {
+
+	friend std::ostream& operator<<(std::ostream& out, const String& right);
+	friend bool operator==(const String& left, const String& right);
+	friend String operator+(const String& left, const String& right);
+
+	public:
+		String();
+		String(const char s[]);
+		String(const String& right);
+		~String();
+		String& operator=(const String& right);
+		char& operator[](int index);
+		char operator[](int index) const;
+		int length() const;
+
+	private:
+		char* buffer;
+		int len;
+};
+
+O qualificativo "friend" serve para vincular uma função externa à classe, isto é, que não pertence aos atributos privados e públicos da mesma,
+mas que pode ter acesso aos atributos privados do objecto a manipular.
+Trata-se essencialmente para facilitismo e flexibilidade na implementação do código.
+O destruidor implementou-se pois existe métodos que tratam da alocação dinâmica de memória e, como tal, necessitam que a memória seja desocupada
+logo depois da sua utilização (libertação da Heap Memory).
+
+// Question 2 a)
+
+string open() {
+
+	ifstream file;
+	string fileName;
+	cout << "File name? ";
+	cin >> fileName;
+
+	file.open(fileName);
+
+	if (file.good()) {
+		
+		file.close();
+		cout << "Open Successfuly! " << endl;
+		return fileName;
+	}
+	else { cout << "File not exist!" << endl; exit(1); }
+}
+
+// Question 2 b)
+
+vector<string> getDict() {
+
+	string fileName = open();
+	ifstream file;
+	string current_word;
+	vector<string> dictionary;
+
+	file.open(fileName);
+	while (!file.eof()) {
+		getline(file, current_word);
+		dictionary.push_back(current_word);
+	}
+	file.close();
+
+	return dictionary;
+}
+
+// Qustion 2 c)
+
+bool match(string pattern, string attemp) {
+
+	if (pattern.size() != attemp.size()) return false;
+	else {
+
+		bool answer = true;
+
+		for (int i = 0; i < pattern.size(); i++) {
+			if (pattern[i] != '.') {
+				answer = answer && pattern[i] == attemp[i];
+
+		return answer;
+	}
+}
+
+// Question 3
+
+class Card {
+
+	friend ostream& operator<<(ostream& os, const Card& card);
+
+	public:
+		Card();
+		Card(char suit, unsigned int rank, unsigned int points, bool isFaceUp);
+		char getSuit() const; // retorna o naipe
+		unsigned int getRank() const; // retorna o valor
+		unsigned int getPoints() const; // retorna a pontuação da carta
+
+	private:
+		char suit; // o naipe da carta: 'C' - copas, 'E' - espadas, 'O' - ouros, 'P' - paus
+		unsigned int rank; // o valor da carta: 1 - ás, 2 - duque, ..., 11 - valete, 12 - dama, 13 - rei
+		unsigned int points; // a pontuação da carta: ás - 11, duque - 2, ..., valete/dama/rei - 10
+		bool isFaceUp; // true = face virada para cima
+};
+
+class Hand {
+
+	public:
+		Hand();
+		void addCard(Card c); // acrescenta uma carta à mão
+		Card getCard(); // retira uma carta da mão
+		void show() const; // mostra as cartas da mão, no estado em que cada uma estiver
+		unsigned int getPointsTotal() const; // obtém a pontuação total das cartas da mão
+	private:
+		vector<Card> cards; // o conteúdo da mão
+};
+
+// Question 3 a)
+
+Card::Card(char suit, unsigned int rank, unsigned int points, bool isFaceUp) {
+
+	this->suit = suit;
+	this->rank = rank;
+	this->points = points;
+	this->isFaceUp = isFaceUp;
+}
+
+// Question 3 b)
+
+ostream& operator<<(ostream& os, const Card& card) {
+
+	if (card->isFacedUp) {
+		os << card->rank << "." << card->suit << endl;
+	}
+	else {
+		os << "XXXX" << endl;
+	}
+
+	return os;
+}
+
+// Question 3 c)
+
+int Hand::getPointsTotal() {
+
+	int points = 0;
+	bool as = false;
+	for (auto card : cards) {
+		points += card->rank;
+		if (card->rank == 1) as = true;
+	}
+	if (points > 21 && as) return points - 10;
+	return points;
+}
+
+// Question 3 d)
+
+void Hand::show() {
+	
+	for (auto c : cards) {
+		cout << c; // O operador está implementado
+	}
+}
+
+// Question 4 
+
+class Coin
+{
+	public:
+		Coin(int v, char u);
+		void showDescription() const; //mostra descrição da moeda (ex: 1E para um euro ou 2C para 2 cêntimos)
+		double getValue() const; //NOTAR o double: retorna o valor da moeda em euros (ex: 0.01 para 1 cênt.)
+	private:
+		int value;
+		char unit; // 'E' para 'euro' ou 'C' para 'cêntimo'
+};
+
+// Question 4 a)
+
+#ifndef PURSE_H
+#define PURSE_H
+
+Coin::Coin(int v, char u) {
+
+	this->value = v;
+	this->unit = u;
+}
+
+void Coin::showDescription() const {
+	
+	cout << value << toupper(unit) << endl;
+}
+
+double Coin::getValue() const {
+		
+	if (unit == 'C') return (double) value / 100.0;
+	return (double) value;
+}
+
+#endif 
