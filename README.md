@@ -8,7 +8,7 @@ This repository contains all the exercises and assessments of the UC Programming
       title = "FEUP logo"
       src = ".\Images\FEUP_Logo.png" 
       alt = "FEUP Logo" 
-    />
+  />
 </p>
 
 ## Here are several documents, namely:
