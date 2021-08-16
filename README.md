@@ -2,14 +2,16 @@
 
 This repository contains all the exercises and assessments of the UC Programming, taught by [Jorge Silva](https://sigarra.up.pt/feup/pt/FUNC_GERAL.FORMVIEW?p_codigo=208785) at [Integrated Master in Informatics and Computing Engineering](https://sigarra.up.pt/feup/pt/cur_geral.cur_view?pv_curso_id=742) [MIEIC] at the [Faculty of Engineering of the University of Porto](https://sigarra.up.pt/feup/pt/web_page.Inicial) [FEUP]. <br/>
 
-<p align = 'center' <Final Grade: 16/20 ></p>
 <br/>
-<p align="center">
+<p align = "center" >
+  <h2 align = "center" >
+    Final Grade: 16/20
+  </p>
   <img 
-      title = "FEUP logo"
-      src = ".\Images\FEUP_Logo.png" 
-      alt = "FEUP Logo" 
-  />
+       title = "FEUP logo"
+       src = ".\Images\FEUP_Logo.png" 
+       alt = "FEUP Logo" 
+       />
 </p>
 
 ## Here are several documents, namely:
