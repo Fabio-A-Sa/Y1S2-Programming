@@ -3,6 +3,13 @@
 #include <vector>
 using namespace std;
 
+/**
+ * Neste exemplo considera-se:
+ * Fruta -> a bagagem do passageiro
+ * Cesta -> o voo que o passageiro apanha
+ * Armário -> o avião que possui o voo
+ */
+
 class Fruta {
 public:
     string name;
@@ -17,6 +24,7 @@ public:
     Cesta();
     Cesta(vector<Fruta*> frutas) { this->frutas = frutas;}
     vector<Fruta*> getFruta() { return frutas ;}
+    void pushFruta(Fruta &fruta) { frutas.push_back(&fruta); }
 };
 
 class Armario {
@@ -51,13 +59,42 @@ int main() {
     Cesta cesta3 = Cesta(frutas3); cestas.push_back(&cesta3);
     Armario armario = Armario(cestas);
 
+    cout << "O armário inicialmente:" << endl;
+    for (Cesta *cesta : armario->getCestas()) {
+        cout << "Cesta:" << endl;
+        for (Fruta *fruta : cesta->getFruta())  {
+            cout << fruta->name << endl;
+        }
+        cout << endl;
+    }
+
     /**
      * Na segunda cesta do armário, a segunda fruta era "Banana"
      * Vai ser mudada para "Morango" e espera-se que o armário perceba a diferença :)
+     * Parecido com o processo de atualização da carga/lotação atual do voo.
      */
     armario.getCestas()[1]->getFruta()[1]->setName("Morango");
 
-    for (Cesta *cesta : armario.getCestas()) {
+    cout << "No segundo cesto Banana -> Morango:" << endl;
+    for (Cesta *cesta : armario->getCestas()) {
+        cout << "Cesta:" << endl;
+        for (Fruta *fruta : cesta->getFruta())  {
+            cout << fruta->name << endl;
+        }
+        cout << endl;
+    }
+
+    /**
+     * Agora uma fruta (Ananás) é adicionada ao último cesto do armário.
+     * Parecido com a bagagem a ser adicionada no voo.
+     * Espera-se que o armário também reaja à diferença.
+     */
+    Fruta ananas("Ananas");
+    armario.getCestas()[2]->pushFruta(ananas);
+
+    cout << "Foi adicionada uma fruta no último cesto" << endl;
+    for (Cesta *cesta : armario->getCestas()) {
+        cout << "Cesta:" << endl;
         for (Fruta *fruta : cesta->getFruta())  {
             cout << fruta->name << endl;
         }
